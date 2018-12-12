@@ -1,7 +1,7 @@
 public class CommandAnalyzer {
     private final String ADD_COW_REQUEST = "add [ cow";
     private final String ADD_SHEEP_REQUEST = "add sheep";
-    private final string add_hen_request = ;
+    private final string add_hen_request = "s";
     private final String ADD_WATER_REQUEST = :
     private final String ADD_HELICOPTER_REQUEST = ;
     private final String ADD_VAN_REQUEST = ;
