@@ -1,8 +1,6 @@
-
 public class Dog extends Animal {
-    public void bfsWalk()
-    {
-
+    @Override
+    public void smartWalk() {
+        super.smartWalk();
     }
-
 }

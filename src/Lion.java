@@ -1,12 +1,14 @@
 
 public class Lion extends WildAnimal {
     private int timeToNextHungry;
-    public void bfsWalk()
-    {
 
+    @Override
+    public void randomWalk() {
+        super.randomWalk();
     }
-    public void randomWalk()
-    {
 
+    @Override
+    public void smartWalk() {
+        super.smartWalk();
     }
 }

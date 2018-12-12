@@ -1,20 +1,15 @@
 public class Hen extends ProducerAnimal {
-    private int timeTonextHungry;
-    private Egg egg = new Egg();
-    public void bfsWalk()
-    {
 
-    }
-    public void randomWalk()
-    {
+    private Egg egg;
 
+    @Override
+    public void randomWalk() {
+        super.randomWalk();
     }
 
-    public int getTimeTonextHungry() {
-        return timeTonextHungry;
+    @Override
+    public void smartWalk() {
+        super.smartWalk();
     }
 
-    public void setTimeTonextHungry(int timeTonextHungry) {
-        this.timeTonextHungry = timeTonextHungry;
-    }
 }
