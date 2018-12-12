@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c64801da-0b49-48e1-b1f4-71066c99b6ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Requests/AddAnimalRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Requests/AddWaterRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Requests/PickUpRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CommandAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CommandAnalyzer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FarmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FarmController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProducerAnimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProducerAnimal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -158,8 +151,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="97" column="63" selection-start-line="97" selection-start-column="63" selection-end-line="97" selection-end-column="63" />
+            <state relative-caret-position="184">
+              <caret line="8" column="51" lean-forward="true" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -299,7 +292,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544647547673" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544647726318" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -379,7 +372,7 @@
       <workItem from="1543817315500" duration="501000" />
       <workItem from="1544027284785" duration="969000" />
       <workItem from="1544618391243" duration="1194000" />
-      <workItem from="1544626071310" duration="12836000" />
+      <workItem from="1544626071310" duration="13093000" />
     </task>
     <task id="LOCAL-00001" summary="hello world">
       <created>1544618928867</created>
@@ -388,11 +381,18 @@
       <option name="project" value="LOCAL" />
       <updated>1544618928867</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="hello world">
+      <created>1544647745370</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1544647745371</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50235000" />
+    <option name="totallyTimeSpent" value="50492000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1179,8 +1179,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="97" column="63" selection-start-line="97" selection-start-column="63" selection-end-line="97" selection-end-column="63" />
+        <state relative-caret-position="184">
+          <caret line="8" column="51" lean-forward="true" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
         </state>
       </provider>
     </entry>
