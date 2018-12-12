@@ -1,10 +1,12 @@
 public class FarmController {
-    private OurFarm ourFarm = new OurFarm();
+    private OurFarm ourFarm = OurFarm.getOurFarm();
     private Map map = new Map();
 
     public boolean isGameFinished()
     {
       return false ;
+    }
+    public void listenForCommand() {
     }
     public void newGame()
     {
@@ -44,8 +46,6 @@ public class FarmController {
     public void upgradeRequest(){
 
     }
-
-
 
 
 
