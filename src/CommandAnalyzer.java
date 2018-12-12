@@ -13,6 +13,7 @@ public class CommandAnalyzer {
     private final String PUT_WILD_INTO_CAGE = "put [a-z]+ to cage";
     private final String BUY_PRODUCT = "buy product [a-z]+";
     private final String SELL_PRODUCT = "sell product [a-z]+";
+    private final String END_REQUEST = "end game";
 
     public Request getRequest(String command) {
         if (command.matches(ADD_Animal_REQUEST)) {
