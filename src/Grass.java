@@ -1,26 +1,26 @@
 public class Grass extends Entity {
-    private int lenght ;
+    private int length ;
     private Well well  ;
-    private int maxLenght ;
+    private int maxLength ;
 
-    public int getLenght() {
-        return lenght;
+    public int getLength() {
+        return length;
     }
 
-    public void setLenght(int lenght) {
-        this.lenght = lenght;
+    public void setlength(int length) {
+        this.length = length;
     }
 
-    public int getMaxLenght() {
-        return maxLenght;
+    public int getMaxLength() {
+        return maxLength;
     }
 
-    public void setMaxLenght(int maxLenght) {
-        this.maxLenght = maxLenght;
+    public void setMaxLength(int maxLength) {
+        this.maxLength = maxLength;
     }
-    public void irrigation (int lenght)
+    public void irrigation (int length)
     {
         well.pickUpWater();
-        lenght++;
+        length++;
     }
 }
