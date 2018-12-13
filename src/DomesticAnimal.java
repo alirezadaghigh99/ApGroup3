@@ -6,18 +6,17 @@ public class DomesticAnimal extends Animal implements EatForage {
     private boolean isFullEnergy ;
 
     @Override
-    public void eatForage() {
-
-    }
-
-
-    @Override
     public void randomWalk() {
-
+        super.randomWalk();
     }
 
     @Override
     public void smartWalk() {
+        super.smartWalk();
+    }
+
+    @Override
+    public void eatForage() {
 
     }
 }
