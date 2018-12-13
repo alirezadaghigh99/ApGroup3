@@ -20,7 +20,7 @@ public class Grass extends Entity {
     }
     public void irrigation (int length)
     {
-        well.pickUpWater();
+//        well.pickUpWater();
         length++;
     }
 }
