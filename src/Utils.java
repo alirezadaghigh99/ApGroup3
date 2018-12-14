@@ -96,11 +96,4 @@ public class Utils {
     public static final int DEPOT_SIZE_FOR_CAGED_WHITE_BEAR = 20;
     public static final int BUY_COST_FOR_CAGED_WHITE_BEAR = 100;
     public static final int SALE_COST_FOR_CAGED_WHITE_BEAR = 100;
-
-
-
-
-
-
-
 }

@@ -9,4 +9,8 @@ public class Map {
             }
         }
     }
+
+    public Cell[][] getCells() {
+        return cells;
+    }
 }
