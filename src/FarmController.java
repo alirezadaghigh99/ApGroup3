@@ -64,7 +64,7 @@ public class FarmController {
             {
 
             }
-            if (request instanceof SellProductRequest)
+            if (request instanceof SaleProductRequest)
             {
 
             }
