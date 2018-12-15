@@ -16,6 +16,14 @@ public class Depot extends Building implements Upgradable {
         return depot;
     }
 
+    public ArrayList<WildAnimal> getStoredWildAnimal() {
+        return storedWildAnimal;
+    }
+
+    public void setStoredWildAnimal(ArrayList<WildAnimal> storedWildAnimal) {
+        this.storedWildAnimal = storedWildAnimal;
+    }
+
     @Override
     public void upgrade() {
 
@@ -25,6 +33,7 @@ public class Depot extends Building implements Upgradable {
 
 
     private ArrayList<Product> storedProducts;
+    private ArrayList<WildAnimal> storedWildAnimal ;
 
    // public void store(Product... products) {
    //     storedProducts.addAll(Arrays.asList(products));

@@ -58,7 +58,14 @@ public class FarmController {
             if (request instanceof AddWaterRequest) {
 
             }
-            if (request instanceof BuyCageRequest) {
+            if (request instanceof CageRequest) {
+                try {
+                    cageAction(((CageRequest) request).getX(), ((CageRequest) request).getY());
+                }
+                catch (Exception e)
+                {
+                    System.out.println(e.getMessage());
+                }
 
             }
             if (request instanceof BuyProductRequest) {
@@ -166,7 +173,7 @@ public class FarmController {
         cells[x][y].getCellProducts().clear();
     }
 
-    public void collision() {
+    public void load() {
 
     }
 
@@ -174,13 +181,13 @@ public class FarmController {
         //  parseSTRING.ourFarm
     }
 
-    public void load() {
+    public void collision() {
         Depot depot = Depot.getDepot();
         Cell[][] cells = map.getCells();
         for (int i = 0; i < Utils.mapSize; i++) {
             for (int j = 0; j < Utils.mapSize; j++) {
-                ArrayList<Animal> animals = new ArrayList<>();
-                ArrayList<Product> products = new ArrayList<>();
+                ArrayList<Animal> animals = cells[i][j].getCellAnimals();
+                ArrayList<Product> products = cells[i][j].getCellProducts();
                 if (animals.size() >= 2) {
                     for (int k = animals.size() - 1; k >= 1; k--) {
                         for (int l = k - 1; l >= 0; l--) {
@@ -249,8 +256,24 @@ public class FarmController {
                     System.out.print(1);
             }
             System.out.print("\n");
-            System.out.println(22);
+
         }
+
+    }
+    public void cageAction(int x , int y) throws Exception
+    {
+        Cell[][] cell = map.getCells() ;
+        ArrayList<Animal> animals = cell[x][y].getCellAnimals();
+        Depot depot = Depot.getDepot();
+        for (int j = animals.size()-1   ; j>=0 ; j--)
+        {
+            if (animals.get(j) instanceof WildAnimal)
+            {
+                depot.getStoredWildAnimal().add((WildAnimal) animals.get(j));
+                cell[x][y].getCellAnimals().remove(j);
+            }
+        }
+
 
     }
 
