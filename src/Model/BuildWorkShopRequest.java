@@ -1,4 +1,6 @@
 package Model;
 
-public class BuildWorkShopRequest extends Request{
+import Requests.Request;
+
+public class BuildWorkShopRequest extends Request {
 }

@@ -6,4 +6,8 @@ public class AddAnimalRequest extends Request {
     public AddAnimalRequest(String animalName) {
         this.animalName = animalName;
     }
+
+    public String getAnimalName() {
+        return animalName;
+    }
 }
