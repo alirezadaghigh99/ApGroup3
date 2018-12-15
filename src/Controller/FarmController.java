@@ -102,42 +102,46 @@ public class FarmController {
             Hen hen = new Hen();
             int x = (int) (Math.random() * 30);
             int y = (int) (Math.random() * 30);
-            hen.setX(x);
-            hen.setY((y));
+            hen.setX(10);
+            hen.setY(8);
             Cell[][] cells = map.getCells();
-            cells[x][y].getCellAnimals().add(hen);
+            cells[10][8].getCellAnimals().add(hen);
         } else if (input.equals("sheep")) {
             Sheep sheep = new Sheep();
             int x = (int) (Math.random() * 30);
             int y = (int) (Math.random() * 30);
             sheep.setX(x);
-            sheep.setY((y));
+            sheep.setY(y);
             Cell[][] cells = map.getCells();
             cells[x][y].getCellAnimals().add(sheep);
         } else if (input.equals("cow")) {
+            Lion lion =  new Lion();
+            lion.setX(10);
+            lion.setY(8);
             Cow cow = new Cow();
             int x = (int) (Math.random() * 30);
             int y = (int) (Math.random() * 30);
             cow.setX(x);
-            cow.setY((y));
+            cow.setY(y);
             Cell[][] cells = map.getCells();
             cells[x][y].getCellAnimals().add(cow);
+            cells[10][8].getCellAnimals().add(lion);
         } else if (input.equals("cat")) {
             Cat cat = new Cat();
             int x = (int) (Math.random() * 30);
             int y = (int) (Math.random() * 30);
             cat.setX(x);
-            cat.setY((y));
+            cat.setY(y);
             Cell[][] cells = map.getCells();
             cells[x][y].getCellAnimals().add(cat);
         } else if (input.equals("dog")) {
             Dog dog = new Dog();
             int x = (int) (Math.random() * 30);
-            int y = (int) Math.random() * 30;
-            dog.setX(x);
-            dog.setY((y));
+            int y = (int) (Math.random() * 30);
+            dog.setX(10);
+            dog.setY((8));
             Cell[][] cells = map.getCells();
-            cells[x][y].getCellAnimals().add(dog);
+            cells[10][8].getCellAnimals().add(dog);
         } else
             throw new Exception("buy exception");
     }
@@ -171,6 +175,20 @@ public class FarmController {
             }
         }
         cells[x][y].getCellProducts().clear();
+    }
+    public void test()
+    {
+        Cell[][] cells = map.getCells();
+        for (int i = 0 ; i<30 ; i++)
+            for (int j =0 ; j<30 ; j++)
+            {
+                ArrayList<Animal> animals = cells[i][j].getCellAnimals();
+                for (Animal animal : animals)
+                {
+                    System.out.printf("%d %d\n" , i , j);
+
+                }
+            }
     }
 
     public void load() {
