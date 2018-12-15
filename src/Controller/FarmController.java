@@ -47,6 +47,16 @@ public class FarmController {
                 }
 
             }
+            if (request instanceof PrintMapRequest)
+            {
+                try{
+                    printMapAction();
+                }
+                catch (Exception e)
+                {
+                    System.out.println(e.getMessage());
+                }
+            }
             if (request instanceof AddWaterRequest) {
 
             }
@@ -85,39 +95,39 @@ public class FarmController {
     private void addAnimalAction(String input) throws Exception {
         if (input.equals("hen")) {
             Hen hen = new Hen();
-            int x = (int) Math.random() * 30;
-            int y = (int) Math.random() * 30;
+            int x = (int) (Math.random() * 30);
+            int y = (int) (Math.random() * 30);
             hen.setX(x);
             hen.setY((y));
             Cell[][] cells = map.getCells();
             cells[x][y].getCellAnimals().add(hen);
         } else if (input.equals("sheep")) {
             Sheep sheep = new Sheep();
-            int x = (int) Math.random() * 30;
-            int y = (int) Math.random() * 30;
+            int x = (int) (Math.random() * 30);
+            int y = (int) (Math.random() * 30);
             sheep.setX(x);
             sheep.setY((y));
             Cell[][] cells = map.getCells();
             cells[x][y].getCellAnimals().add(sheep);
         } else if (input.equals("cow")) {
             Cow cow = new Cow();
-            int x = (int) Math.random() * 30;
-            int y = (int) Math.random() * 30;
+            int x = (int) (Math.random() * 30);
+            int y = (int)( Math.random() * 30);
             cow.setX(x);
             cow.setY((y));
             Cell[][] cells = map.getCells();
             cells[x][y].getCellAnimals().add(cow);
         } else if (input.equals("cat")) {
             Cat cat = new Cat();
-            int x = (int) Math.random() * 30;
-            int y = (int) Math.random() * 30;
+            int x = (int)( Math.random() * 30);
+            int y = (int) (Math.random() * 30);
             cat.setX(x);
             cat.setY((y));
             Cell[][] cells = map.getCells();
             cells[x][y].getCellAnimals().add(cat);
         } else if (input.equals("dog")) {
             Dog dog = new Dog();
-            int x = (int) Math.random() * 30;
+            int x = (int) (Math.random() * 30);
             int y = (int) Math.random() * 30;
             dog.setX(x);
             dog.setY((y));
@@ -130,24 +140,14 @@ public class FarmController {
     {
         Grass grass = new Grass();
         Cell[][] cells = map.getCells();
-        if (cells[xOfGrass][yOfGrass].getGrass().isGrass()==false)
-            cells[xOfGrass][yOfGrass].getGrass().setGrass(true);
-        if (cells[xOfGrass-1][yOfGrass-1].getGrass().isGrass()==false)
-            cells[xOfGrass-1][yOfGrass-1].getGrass().setGrass(true);
-        if (cells[xOfGrass+1][yOfGrass+1].getGrass().isGrass()==false)
-            cells[xOfGrass+1][yOfGrass+1].getGrass().setGrass(true);
-        if (cells[xOfGrass-1][yOfGrass+1].getGrass().isGrass()==false)
-            cells[xOfGrass-1][yOfGrass+1].getGrass().setGrass(true);
-        if (cells[xOfGrass+1][yOfGrass-1].getGrass().isGrass()==false)
-            cells[xOfGrass+1][yOfGrass-1].getGrass().setGrass(true);
-        if (cells[xOfGrass][yOfGrass-1].getGrass().isGrass()==false)
-            cells[xOfGrass][yOfGrass-1].getGrass().setGrass(true);
-        if (cells[xOfGrass][yOfGrass+1].getGrass().isGrass()==false)
-            cells[xOfGrass][yOfGrass+1].getGrass().setGrass(true);
-        if (cells[xOfGrass-1][yOfGrass].getGrass().isGrass()==false)
-            cells[xOfGrass-1][yOfGrass].getGrass().setGrass(true);
-        if (cells[xOfGrass+1][yOfGrass].getGrass().isGrass()==false)
-            cells[xOfGrass+1][yOfGrass].getGrass().setGrass(true);
+        for (int i = xOfGrass-1 ; i<=xOfGrass+1 ; i++)
+        {
+            for (int j = xOfGrass-1 ; j<=xOfGrass+1 ; j++)
+            {
+                if (cells[i][j].getGrass().isGrass()==false &&i>=0&&i<30&&j>=0&&j<30)
+                    cells[i][j].getGrass().setGrass(true);
+            }
+        }
 
     }
     public void addWaterAction()
@@ -178,7 +178,7 @@ public class FarmController {
     }
 
     public void save() {
-    parseSTRING.ourFarm
+  //  parseSTRING.ourFarm
     }
 
     public void load() {
@@ -196,6 +196,25 @@ public class FarmController {
 
     public void upgradeRequest() {
 
+
+    }
+    public void printMapAction()
+    {
+        Cell[][] cell = map.getCells();
+        for (int i =0 ; i<30 ; i++)
+        {
+            for (int j = 0 ; j<30 ; j++)
+            {
+                if ((cell[i][j].getGrass() == null
+                        || !cell[i][j].getGrass().isGrass())
+                        &&cell[i][j].getCellProducts().isEmpty()
+                        &&cell[i][j].getCellAnimals().isEmpty())
+                    System.out.print(0);
+                else
+                    System.out.print(1);
+            }
+            System.out.print("\n");
+        }
 
     }
 
