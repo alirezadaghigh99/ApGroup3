@@ -167,9 +167,10 @@ public class FarmController {
             for (int i = 0 ; i<cells[x][y].getCellProducts().size() ; i++)
             {
                 depot.getStoredProducts().add(cells[x][y].getCellProducts().get(i));
-                cells[x][y].getCellProducts().remove(i);
+
             }
         }
+        cells[x][y].getCellProducts().clear();
     }
 
     public void collision() {
@@ -177,7 +178,7 @@ public class FarmController {
     }
 
     public void save() {
-
+    parseSTRING.ourFarm
     }
 
     public void load() {
@@ -194,6 +195,7 @@ public class FarmController {
     }
 
     public void upgradeRequest() {
+
 
     }
 
