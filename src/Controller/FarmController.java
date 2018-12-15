@@ -214,6 +214,7 @@ public class FarmController {
                     System.out.print(1);
             }
             System.out.print("\n");
+            System.out.println(22);
         }
 
     }
