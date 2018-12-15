@@ -1,6 +1,6 @@
 package Model;
 
-import Requests.Request;
+import Model.Requests.Request;
 
 public class BuildWorkShopRequest extends Request {
 }

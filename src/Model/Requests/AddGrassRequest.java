@@ -1,9 +1,9 @@
-package Requests;
+package Model.Requests;
 
-public class CageRequest extends Request {
-    private int x, y ;
+public class AddGrassRequest extends Request{
+    private int x ,y ;
 
-    public CageRequest(int x, int y) {
+    public AddGrassRequest(int x, int y) {
         this.x = x;
         this.y = y;
     }

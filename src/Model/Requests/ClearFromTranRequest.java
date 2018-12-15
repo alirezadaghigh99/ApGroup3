@@ -1,4 +1,4 @@
-package Requests;
+package Model.Requests;
 
 public class ClearFromTranRequest extends Request {
     private String transnName ;

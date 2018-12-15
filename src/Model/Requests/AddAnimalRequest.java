@@ -1,4 +1,4 @@
-package Requests;
+package Model.Requests;
 
 public class AddAnimalRequest extends Request {
     private String animalName;

@@ -3,6 +3,13 @@ package Model;
 public class Well extends Building{
     private int capacity ;
     private int storage ;
+    private static Well well  = new Well();
+    private Well() {
+    }
+
+    public static Well getWell() {
+        return well;
+    }
 
     public int getCapacity() {
         return capacity;
