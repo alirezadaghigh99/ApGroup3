@@ -5,6 +5,8 @@ import Model.Requests.*;
 import Model.Requests.Request;
 import View.View;
 
+import java.util.ArrayList;
+
 public class FarmController {
     private OurFarm ourFarm = OurFarm.getOurFarm();
     private Map map = new Map();
@@ -40,20 +42,16 @@ public class FarmController {
             }
             if (request instanceof AddGrassRequest) {
                 try {
-                    addGrassAction(((AddGrassRequest) request).getX() , ((AddGrassRequest) request).getY());
-                }
-                catch (Exception e) {
+                    addGrassAction(((AddGrassRequest) request).getX(), ((AddGrassRequest) request).getY());
+                } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
 
             }
-            if (request instanceof PrintMapRequest)
-            {
-                try{
+            if (request instanceof PrintMapRequest) {
+                try {
                     printMapAction();
-                }
-                catch (Exception e)
-                {
+                } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
             }
@@ -70,7 +68,7 @@ public class FarmController {
 
             }
             if (request instanceof PickUpRequest) {
-                pickUpAction(((PickUpRequest) request).getX() , ((PickUpRequest) request).getY());
+                pickUpAction(((PickUpRequest) request).getX(), ((PickUpRequest) request).getY());
 
             }
             if (request instanceof PutToCageRequest) {
@@ -112,14 +110,14 @@ public class FarmController {
         } else if (input.equals("cow")) {
             Cow cow = new Cow();
             int x = (int) (Math.random() * 30);
-            int y = (int)( Math.random() * 30);
+            int y = (int) (Math.random() * 30);
             cow.setX(x);
             cow.setY((y));
             Cell[][] cells = map.getCells();
             cells[x][y].getCellAnimals().add(cow);
         } else if (input.equals("cat")) {
             Cat cat = new Cat();
-            int x = (int)( Math.random() * 30);
+            int x = (int) (Math.random() * 30);
             int y = (int) (Math.random() * 30);
             cat.setX(x);
             cat.setY((y));
@@ -136,25 +134,22 @@ public class FarmController {
         } else
             throw new Exception("buy exception");
     }
-    public void addGrassAction(int xOfGrass, int yOfGrass)
-    {
+
+    public void addGrassAction(int xOfGrass, int yOfGrass) {
         Grass grass = new Grass();
         Cell[][] cells = map.getCells();
-        for (int i = xOfGrass-1 ; i<=xOfGrass+1 ; i++)
-        {
-            for (int j = xOfGrass-1 ; j<=xOfGrass+1 ; j++)
-            {
-                if (cells[i][j].getGrass().isGrass()==false &&i>=0&&i<30&&j>=0&&j<30)
+        for (int i = xOfGrass - 1; i <= xOfGrass + 1; i++) {
+            for (int j = xOfGrass - 1; j <= xOfGrass + 1; j++) {
+                if (cells[i][j].getGrass().isGrass() == false && i >= 0 && i < 30 && j >= 0 && j < 30)
                     cells[i][j].getGrass().setGrass(true);
             }
         }
 
     }
-    public void addWaterAction()
-    {
-        Well well = Well.getWell() ;
-        if (well.getCapacity()!=well.getStorage())
-        {
+
+    public void addWaterAction() {
+        Well well = Well.getWell();
+        if (well.getCapacity() != well.getStorage()) {
             well.setStorage(well.getCapacity());
         }
     }
@@ -162,10 +157,8 @@ public class FarmController {
     public void pickUpAction(int x, int y) {
         Cell[][] cells = map.getCells();
         Depot depot = Depot.getDepot();
-        if (cells[x][y].getCellProducts().size()!=0)
-        {
-            for (int i = 0 ; i<cells[x][y].getCellProducts().size() ; i++)
-            {
+        if (cells[x][y].getCellProducts().size() != 0) {
+            for (int i = 0; i < cells[x][y].getCellProducts().size(); i++) {
                 depot.getStoredProducts().add(cells[x][y].getCellProducts().get(i));
 
             }
@@ -178,10 +171,54 @@ public class FarmController {
     }
 
     public void save() {
-  //  parseSTRING.ourFarm
+        //  parseSTRING.ourFarm
     }
 
     public void load() {
+        Depot depot = Depot.getDepot();
+        Cell[][] cells = map.getCells();
+        for (int i = 0; i < Utils.mapSize; i++) {
+            for (int j = 0; j < Utils.mapSize; j++) {
+                ArrayList<Animal> animals = new ArrayList<>();
+                ArrayList<Product> products = new ArrayList<>();
+                if (animals.size() >= 2) {
+                    for (int k = animals.size() - 1; k >= 1; k--) {
+                        for (int l = k - 1; l >= 0; l--) {
+                            if (animals.get(k) instanceof WildAnimal) {
+                                if (animals.get(l) instanceof Dog) {
+                                    animals.remove(animals.get(k));
+                                    animals.remove(animals.get(l));
+                                }
+                                if (animals.get(l) instanceof DomesticAnimal) {
+                                    animals.remove(animals.get(l));
+                                }
+                            }
+                            if (animals.get(k) instanceof Dog) {
+                                if (animals.get(l) instanceof WildAnimal) {
+                                    animals.remove(animals.get(k));
+                                    animals.remove(animals.get(l));
+                                }
+                            }
+                            if (animals.get(k) instanceof DomesticAnimal) {
+                                if (animals.get(l) instanceof WildAnimal) {
+                                    animals.remove(animals.get(k));
+                                }
+                            }
+                        }
+                    }
+                }
+                for (Animal animal : animals) {
+                    if (animal instanceof Cat) {
+                        if (products.size() > 0) {
+                            for (Product product : products) {
+                                depot.getStoredProducts().add(product);
+                            }
+                            products.clear();
+                        }
+                    }
+                }
+            }
+        }
 
     }
 
@@ -198,17 +235,15 @@ public class FarmController {
 
 
     }
-    public void printMapAction()
-    {
+
+    public void printMapAction() {
         Cell[][] cell = map.getCells();
-        for (int i =0 ; i<30 ; i++)
-        {
-            for (int j = 0 ; j<30 ; j++)
-            {
+        for (int i = 0; i < 30; i++) {
+            for (int j = 0; j < 30; j++) {
                 if ((cell[i][j].getGrass() == null
                         || !cell[i][j].getGrass().isGrass())
-                        &&cell[i][j].getCellProducts().isEmpty()
-                        &&cell[i][j].getCellAnimals().isEmpty())
+                        && cell[i][j].getCellProducts().isEmpty()
+                        && cell[i][j].getCellAnimals().isEmpty())
                     System.out.print(0);
                 else
                     System.out.print(1);

@@ -1,4 +1,6 @@
 package Model;
 
-public class SaveRequest extends Request{
+import Model.Requests.Request;
+
+public class SaveRequest extends Request {
 }
