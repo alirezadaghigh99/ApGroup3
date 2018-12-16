@@ -61,9 +61,7 @@ public class FarmController {
             if (request instanceof CageRequest) {
                 try {
                     cageAction(((CageRequest) request).getX(), ((CageRequest) request).getY());
-                }
-                catch (Exception e)
-                {
+                } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
 
@@ -102,10 +100,10 @@ public class FarmController {
             Hen hen = new Hen();
             int x = (int) (Math.random() * 30);
             int y = (int) (Math.random() * 30);
-            hen.setX(10);
-            hen.setY(8);
+            hen.setX(0);
+            hen.setY(0);
             Cell[][] cells = map.getCells();
-            cells[10][8].getCellAnimals().add(hen);
+            cells[0][0].getCellAnimals().add(hen);
         } else if (input.equals("sheep")) {
             Sheep sheep = new Sheep();
             int x = (int) (Math.random() * 30);
@@ -115,9 +113,9 @@ public class FarmController {
             Cell[][] cells = map.getCells();
             cells[x][y].getCellAnimals().add(sheep);
         } else if (input.equals("cow")) {
-            Lion lion =  new Lion();
-            lion.setX(10);
-            lion.setY(8);
+            Lion lion = new Lion();
+            lion.setX(0);
+            lion.setY(0);
             Cow cow = new Cow();
             int x = (int) (Math.random() * 30);
             int y = (int) (Math.random() * 30);
@@ -125,7 +123,7 @@ public class FarmController {
             cow.setY(y);
             Cell[][] cells = map.getCells();
             cells[x][y].getCellAnimals().add(cow);
-            cells[10][8].getCellAnimals().add(lion);
+            cells[0][0].getCellAnimals().add(lion);
         } else if (input.equals("cat")) {
             Cat cat = new Cat();
             int x = (int) (Math.random() * 30);
@@ -138,10 +136,10 @@ public class FarmController {
             Dog dog = new Dog();
             int x = (int) (Math.random() * 30);
             int y = (int) (Math.random() * 30);
-            dog.setX(10);
-            dog.setY((8));
+            dog.setX(0);
+            dog.setY((0));
             Cell[][] cells = map.getCells();
-            cells[10][8].getCellAnimals().add(dog);
+            cells[0][0].getCellAnimals().add(dog);
         } else
             throw new Exception("buy exception");
     }
@@ -176,16 +174,14 @@ public class FarmController {
         }
         cells[x][y].getCellProducts().clear();
     }
-    public void test()
-    {
+
+    public void test() {
         Cell[][] cells = map.getCells();
-        for (int i = 0 ; i<30 ; i++)
-            for (int j =0 ; j<30 ; j++)
-            {
+        for (int i = 0; i < 30; i++)
+            for (int j = 0; j < 30; j++) {
                 ArrayList<Animal> animals = cells[i][j].getCellAnimals();
-                for (Animal animal : animals)
-                {
-                    System.out.printf("%d %d\n" , i , j);
+                for (Animal animal : animals) {
+                    System.out.printf("%d %d\n", i, j);
 
                 }
             }
@@ -208,25 +204,26 @@ public class FarmController {
                 ArrayList<Product> products = cells[i][j].getCellProducts();
                 if (animals.size() >= 2) {
                     for (int k = animals.size() - 1; k >= 1; k--) {
+                        Animal animal = animals.get(k);
                         for (int l = k - 1; l >= 0; l--) {
-                            if (animals.get(k) instanceof WildAnimal) {
+                            if (animal instanceof WildAnimal) {
                                 if (animals.get(l) instanceof Dog) {
-                                    animals.remove(animals.get(k));
+                                    animals.remove(animal);
                                     animals.remove(animals.get(l));
                                 }
                                 if (animals.get(l) instanceof DomesticAnimal) {
                                     animals.remove(animals.get(l));
                                 }
                             }
-                            if (animals.get(k) instanceof Dog) {
+                            if (animal instanceof Dog) {
                                 if (animals.get(l) instanceof WildAnimal) {
-                                    animals.remove(animals.get(k));
+                                    animals.remove(animal);
                                     animals.remove(animals.get(l));
                                 }
                             }
-                            if (animals.get(k) instanceof DomesticAnimal) {
+                            if (animal instanceof DomesticAnimal) {
                                 if (animals.get(l) instanceof WildAnimal) {
-                                    animals.remove(animals.get(k));
+                                    animals.remove(animal);
                                 }
                             }
                         }
@@ -278,22 +275,20 @@ public class FarmController {
         }
 
     }
-    public void cageAction(int x , int y) throws Exception
-    {
-        Cell[][] cell = map.getCells() ;
+
+    public void cageAction(int x, int y) throws Exception {
+        Cell[][] cell = map.getCells();
         ArrayList<Animal> animals = cell[x][y].getCellAnimals();
         Depot depot = Depot.getDepot();
-        for (int j = animals.size()-1   ; j>=0 ; j--)
-        {
-            if (animals.get(j) instanceof WildAnimal)
-            {
-                depot.getStoredWildAnimal().add((WildAnimal) animals.get(j));
-                cell[x][y].getCellAnimals().remove(j);
+        if (animals.size() == 0)
+            throw new Exception("no wild animal found");
+        else {
+            for (int j = animals.size() - 1; j >= 0; j--) {
+                if (animals.get(j) instanceof WildAnimal) {
+                    depot.getStoredAnimal().add(animals.get(j));
+                    cell[x][y].getCellAnimals().remove(animals.get(j));
+                }
             }
         }
-
-
     }
-
-
 }
