@@ -37,9 +37,7 @@ public class FarmController {
             if (request instanceof CreateWorkShopRequest) {
 
             }
-            if (request instanceof CageRequest) {
 
-            }
             if (request instanceof AddGrassRequest) {
                 try {
                     addGrassAction(((AddGrassRequest) request).getX(), ((AddGrassRequest) request).getY());
@@ -56,7 +54,14 @@ public class FarmController {
                 }
             }
             if (request instanceof AddWaterRequest) {
-
+                try
+                {
+                    addWaterAction();
+                }
+                catch (Exception e)
+                {
+                    System.out.println(e.getMessage());
+                }
             }
             if (request instanceof CageRequest) {
                 try {
@@ -78,11 +83,17 @@ public class FarmController {
                 pickUpAction(((PickUpRequest) request).getX(), ((PickUpRequest) request).getY());
 
             }
-            if (request instanceof PutToCageRequest) {
 
-            }
             if (request instanceof SaleProductRequest) {
 
+            }
+            if (request instanceof NextTurnRequest)
+            {
+                passTurn(((NextTurnRequest) request).getNumberOfTurn());
+            }
+            if (request instanceof UpgradeRequest)
+            {
+                upgradeRequest(((UpgradeRequest) request).getThingWeWantUpgrade());
             }
             if (request instanceof EndRequest) {
                 isFinished = true;
@@ -148,21 +159,28 @@ public class FarmController {
 
     public void addGrassAction(int xOfGrass, int yOfGrass) {
         Grass grass = new Grass();
+        Well well = Well.getWell();
         Cell[][] cells = map.getCells();
+        if (well.getStorage()>=18){
         for (int i = xOfGrass - 1; i <= xOfGrass + 1; i++) {
             for (int j = xOfGrass - 1; j <= xOfGrass + 1; j++) {
-                if (cells[i][j].getGrass().isGrass() == false && i >= 0 && i < 30 && j >= 0 && j < 30)
+                if (!cells[i][j].getGrass().isGrass() && i >= 0 && i < 30 && j >= 0 && j < 30) {
                     cells[i][j].getGrass().setGrass(true);
+                    well.pickUpWater(2);
+                }
+
+                }
             }
+            System.out.println(well.getStorage());
         }
+       // else throw Exception ;
 
     }
 
     public void addWaterAction() {
         Well well = Well.getWell();
-        if (well.getCapacity() != well.getStorage()) {
-            well.setStorage(well.getCapacity());
-        }
+       well.addWater();
+        System.out.println(well.getStorage());
     }
 
     public void pickUpAction(int x, int y) {
@@ -248,7 +266,7 @@ public class FarmController {
     }
 
 
-    public void passTurn() {
+    public void passTurn(int numberOfTurn) {
 
     }
 
@@ -256,7 +274,17 @@ public class FarmController {
 
     }
 
-    public void upgradeRequest() {
+    public void upgradeRequest(String type) {
+
+        if (type.equals("well")) {
+            Well well = Well.getWell();
+            well.upgrade();
+        }
+        if (type.equals("depot"))
+        {
+            Depot depot = Depot.getDepot();
+
+        }
 
 
     }
@@ -271,7 +299,16 @@ public class FarmController {
                         && cell[i][j].getCellAnimals().isEmpty())
                     System.out.print(0);
                 else
-                    System.out.print(1);
+                    if (!cell[i][j].getCellAnimals().isEmpty() && !cell[i][j].getGrass().isGrass())
+                        System.out.print(1);
+                    else if (cell[i][j].getCellAnimals().isEmpty() && cell[i][j].getGrass().isGrass())
+                        System.out.println(2);
+                    else if (!cell[i][j].getCellAnimals().isEmpty() && cell[i][j].getGrass().isGrass())
+                        System.out.println(3);
+                    else System.out.println(4);
+
+
+
             }
             System.out.print("\n");
 

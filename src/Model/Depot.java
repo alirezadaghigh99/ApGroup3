@@ -9,7 +9,16 @@ public class Depot extends Building implements Upgradable {
     private int maxLevel;
     private static Depot depot = new Depot();
 
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
     private Depot() {
+
     }
 
     public static Depot getDepot() {
@@ -26,7 +35,7 @@ public class Depot extends Building implements Upgradable {
 
     @Override
     public void upgrade() {
-
+        depot.setCapacity(depot.getCapacity()+20);
     }
 
     private boolean isFull = false;
@@ -58,6 +67,7 @@ public class Depot extends Building implements Upgradable {
     public void setFull(boolean full) {
         isFull = full;
     }
+
 }
 
 

@@ -1,8 +1,18 @@
 package Model;
 
-public class Well extends Building{
-    private int capacity ;
-    private int storage ;
+public class Well extends Building  implements  Upgradable{
+    private int capacity = 50 ;
+    private int storage = 50 ;
+    private int level ;
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
     private static Well well  = new Well();
     private Well() {
     }
@@ -28,12 +38,20 @@ public class Well extends Building{
     }
 
     public void pickUpWater(int litre){
-
+        well.setStorage(well.getStorage()-litre);
+    }
+    public void addWater()
+    {
+        if (well.getCapacity() != well.getStorage()) {
+            well.setStorage(well.getCapacity());
+        }
     }
 
-    public void addWater(int litre){
 
+
+    @Override
+    public void upgrade() {
+        level = level + 1 ;
+        capacity = capacity + 10 ;
     }
-
-
 }

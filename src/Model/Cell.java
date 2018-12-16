@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Cell {
    private ArrayList<Animal> cellAnimals = new ArrayList<>();
    private ArrayList<Product> cellProducts = new ArrayList<>();
-   private Grass grass;
+   private Grass grass = new Grass();
 
    public ArrayList<Animal> getCellAnimals() {
       return cellAnimals;

@@ -17,6 +17,7 @@ public class CommandAnalyzer {
     private final String CLEAR_THINGS_FROM_TRANSFORMATION = "[a-z]+ clear";
     private final String START_WORKSHOP_REQUEST = "start [a-z]+";
     private final String   PRINT_MAP = "print map";
+    private final String  NEXT_TURN_REQUEST = "turn [\\d]+";
 
     private final String END_REQUEST = "end game";
 
@@ -75,6 +76,11 @@ public class CommandAnalyzer {
         if (command.matches(PRINT_MAP))
         {
             return new PrintMapRequest();
+        }
+        if (command.matches(NEXT_TURN_REQUEST))
+        {
+           String[] params = command.split(" ");
+            return new NextTurnRequest(Integer.parseInt(params[1]));
         }
         else return new EndRequest();
 
