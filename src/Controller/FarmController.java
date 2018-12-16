@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.*;
+import Model.Animals.*;
 import Model.Requests.*;
 import View.View;
 

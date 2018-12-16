@@ -1,5 +1,7 @@
 package Model;
 
+import Model.Animals.Animal;
+
 import java.util.ArrayList;
 
 public class Cell {

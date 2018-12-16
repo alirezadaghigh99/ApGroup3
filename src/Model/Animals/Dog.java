@@ -1,28 +1,15 @@
-package Model;
+package Model.Animals;
 
-import Model.Animals.Animal;
-import Model.Animals.DomesticAnimal;
+import Model.Cell;
+import Model.Utils;
+import Model.WildAnimal;
 
-public class WildAnimal extends Animal {
-    private boolean isHungry;
-
-    public boolean isHungry() {
-        return isHungry;
-    }
-
-    public void setHungry(boolean hungry) {
-        isHungry = hungry;
-    }
-
-    @Override
-    public void randomWalk() {
-
-    }
-
+public class Dog extends Animal {
     @Override
     public void smartWalk() {
+
         Cell[][] cells = map.getCells();
-        for (int k = 1 ; k<Utils.mapSize ; k++)
+        for (int k = 1; k< Utils.mapSize ; k++)
         {
             for (int i = xOfAnimal-k ; i<xOfAnimal+k ; i++)
             {
@@ -32,7 +19,8 @@ public class WildAnimal extends Animal {
                     {
                         for (int z = 0 ; j<cells[i][j].getCellAnimals().size() ; z++)
                         {
-                            if (cells[i][j].getCellAnimals().get(z)instanceof  ProducerAnimal)
+                            if (cells[i][j].getCellAnimals().get(z) instanceof WildAnimal
+                                    )
                             {
                                 if (i>xOfAnimal)
                                     xOfAnimal = xOfAnimal+1;

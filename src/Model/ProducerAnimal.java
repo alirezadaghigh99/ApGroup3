@@ -1,5 +1,7 @@
 package Model;
 
+import Model.Animals.DomesticAnimal;
+
 public class ProducerAnimal extends DomesticAnimal {
     protected int timeTonextHungry;
     protected boolean isHungry;

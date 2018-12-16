@@ -1,7 +1,8 @@
 package Model;
 
+import Model.Animals.Animal;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Depot extends Building implements Upgradable {
     private int capacity;

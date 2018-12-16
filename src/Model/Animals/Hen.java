@@ -1,7 +1,10 @@
-package Model;
+package Model.Animals;
 
-public class Bear extends WildAnimal {
-    private int timeToNextHungry;
+import Model.*;
+
+public class Hen extends ProducerAnimal {
+
+    private Egg egg;
 
     @Override
     public void randomWalk() {
@@ -11,5 +14,7 @@ public class Bear extends WildAnimal {
     @Override
     public void smartWalk() {
         super.smartWalk();
+
     }
+
 }

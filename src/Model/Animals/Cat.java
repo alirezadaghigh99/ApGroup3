@@ -1,4 +1,6 @@
-package Model;
+package Model.Animals;
+
+import Model.Upgradable;
 
 public class Cat extends DomesticAnimal implements Upgradable {
     @Override

@@ -1,4 +1,6 @@
-package Model;
+package Model.Animals;
+
+import Model.WildAnimal;
 
 public class Lion extends WildAnimal {
     private int timeToNextHungry;

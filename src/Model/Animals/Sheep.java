@@ -1,8 +1,10 @@
-package Model;
+package Model.Animals;
 
-public class Hen extends ProducerAnimal {
+import Model.ProducerAnimal;
+import Model.Wool;
 
-    private Egg egg;
+public class Sheep extends ProducerAnimal {
+    private Wool wool = new Wool();
 
     @Override
     public void randomWalk() {
@@ -13,5 +15,4 @@ public class Hen extends ProducerAnimal {
     public void smartWalk() {
         super.smartWalk();
     }
-
 }

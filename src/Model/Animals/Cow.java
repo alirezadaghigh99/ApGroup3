@@ -1,4 +1,7 @@
-package Model;
+package Model.Animals;
+
+import Model.Milk;
+import Model.ProducerAnimal;
 
 public class Cow extends ProducerAnimal {
     private Milk milk = new Milk();

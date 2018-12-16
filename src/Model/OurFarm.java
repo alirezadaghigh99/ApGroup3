@@ -1,5 +1,7 @@
 package Model;
 
+import Model.Animals.DomesticAnimal;
+
 import java.util.ArrayList;
 
 public class OurFarm {

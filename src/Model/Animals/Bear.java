@@ -1,7 +1,9 @@
-package Model;
+package Model.Animals;
 
-public class Sheep extends ProducerAnimal {
-    private Wool wool = new Wool();
+import Model.WildAnimal;
+
+public class Bear extends WildAnimal {
+    private int timeToNextHungry;
 
     @Override
     public void randomWalk() {
