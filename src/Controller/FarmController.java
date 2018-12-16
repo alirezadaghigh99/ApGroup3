@@ -152,21 +152,27 @@ public class FarmController {
             throw new Exception("buy exception");
     }
 
+    private boolean isOnMap(int X, int Y) {
+        if (X >= 0 && Y >= 0 && X < Utils.mapSize && Y < Utils.mapSize)
+            return true;
+        else
+            return false;
+    }
+
     public void addGrassAction(int xOfGrass, int yOfGrass) {
-        Grass grass = new Grass();
         Well well = Well.getWell();
         Cell[][] cells = map.getCells();
         if (well.getStorage() >= 18) {
             for (int i = xOfGrass - 1; i <= xOfGrass + 1; i++) {
-                for (int j = xOfGrass - 1; j <= xOfGrass + 1; j++) {
-                    if (!cells[i][j].getGrass().isGrass() && i >= 0 && i < 30 && j >= 0 && j < 30) {
+                for (int j = yOfGrass - 1; j <= yOfGrass + 1; j++) {
+                    if (isOnMap(i, j) && !cells[i][j].getGrass().isGrass()) {
                         cells[i][j].getGrass().setGrass(true);
                         well.pickUpWater(2);
                     }
-
                 }
             }
             System.out.println(well.getStorage());
+            System.out.println(Utils.mapSize);
         }
         // else throw Exception ;
 
@@ -275,6 +281,7 @@ public class FarmController {
         }
         if (type.equals("depot")) {
             Depot depot = Depot.getDepot();
+            depot.upgrade();
 
         }
 
@@ -289,14 +296,10 @@ public class FarmController {
                         || !cell[i][j].getGrass().isGrass())
                         && cell[i][j].getCellProducts().isEmpty()
                         && cell[i][j].getCellAnimals().isEmpty())
+                {
                     System.out.print(0);
-                else if (!cell[i][j].getCellAnimals().isEmpty() && !cell[i][j].getGrass().isGrass())
-                    System.out.print(1);
-                else if (cell[i][j].getCellAnimals().isEmpty() && cell[i][j].getGrass().isGrass())
-                    System.out.println(2);
-                else if (!cell[i][j].getCellAnimals().isEmpty() && cell[i][j].getGrass().isGrass())
-                    System.out.println(3);
-                else System.out.println(4);
+                }
+                else System.out.print(1);
 
 
             }

@@ -23,4 +23,5 @@ public class Entity {
     public void passTurn(int numberOfTurn){
 
     }
+
 }
