@@ -2,7 +2,6 @@ package Model;
 
 public class Animal extends Entity {
 
-
     public void randomWalk() {
         double rand = Math.random()*8;
         int random  = (int) rand;
