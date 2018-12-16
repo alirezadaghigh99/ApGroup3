@@ -11,7 +11,7 @@ public class FarmController {
     private OurFarm ourFarm = OurFarm.getOurFarm();
     private Map map = new Map();
     private View view = new View();
-    CommandAnalyzer commandAnalyzer = new CommandAnalyzer();
+    private CommandAnalyzer commandAnalyzer = new CommandAnalyzer();
 
     public boolean isGameFinished() {
         return false;
@@ -56,7 +56,7 @@ public class FarmController {
                 }
             }
             if (request instanceof AddWaterRequest) {
-
+                addWaterAction();
             }
             if (request instanceof CageRequest) {
                 try {
@@ -74,9 +74,6 @@ public class FarmController {
             }
             if (request instanceof PickUpRequest) {
                 pickUpAction(((PickUpRequest) request).getX(), ((PickUpRequest) request).getY());
-
-            }
-            if (request instanceof PutToCageRequest) {
 
             }
             if (request instanceof SaleProductRequest) {
@@ -100,10 +97,10 @@ public class FarmController {
             Hen hen = new Hen();
             int x = (int) (Math.random() * 30);
             int y = (int) (Math.random() * 30);
-            hen.setX(0);
-            hen.setY(0);
+            hen.setX(x);
+            hen.setY(y);
             Cell[][] cells = map.getCells();
-            cells[0][0].getCellAnimals().add(hen);
+            cells[x][y].getCellAnimals().add(hen);
         } else if (input.equals("sheep")) {
             Sheep sheep = new Sheep();
             int x = (int) (Math.random() * 30);
@@ -113,9 +110,6 @@ public class FarmController {
             Cell[][] cells = map.getCells();
             cells[x][y].getCellAnimals().add(sheep);
         } else if (input.equals("cow")) {
-            Lion lion = new Lion();
-            lion.setX(0);
-            lion.setY(0);
             Cow cow = new Cow();
             int x = (int) (Math.random() * 30);
             int y = (int) (Math.random() * 30);
@@ -123,7 +117,6 @@ public class FarmController {
             cow.setY(y);
             Cell[][] cells = map.getCells();
             cells[x][y].getCellAnimals().add(cow);
-            cells[0][0].getCellAnimals().add(lion);
         } else if (input.equals("cat")) {
             Cat cat = new Cat();
             int x = (int) (Math.random() * 30);
@@ -136,20 +129,19 @@ public class FarmController {
             Dog dog = new Dog();
             int x = (int) (Math.random() * 30);
             int y = (int) (Math.random() * 30);
-            dog.setX(0);
-            dog.setY((0));
+            dog.setX(x);
+            dog.setY(y);
             Cell[][] cells = map.getCells();
-            cells[0][0].getCellAnimals().add(dog);
+            cells[x][y].getCellAnimals().add(dog);
         } else
             throw new Exception("buy exception");
     }
 
     public void addGrassAction(int xOfGrass, int yOfGrass) {
-        Grass grass = new Grass();
         Cell[][] cells = map.getCells();
         for (int i = xOfGrass - 1; i <= xOfGrass + 1; i++) {
-            for (int j = xOfGrass - 1; j <= xOfGrass + 1; j++) {
-                if (cells[i][j].getGrass().isGrass() == false && i >= 0 && i < 30 && j >= 0 && j < 30)
+            for (int j = yOfGrass - 1; j <= yOfGrass + 1; j++) {
+                if (i >= 0 && i < 30 && j >= 0 && j < 30 && !cells[i][j].getGrass().isGrass())
                     cells[i][j].getGrass().setGrass(true);
             }
         }
