@@ -41,7 +41,6 @@ public class CommandAnalyzer {
         }
         if (command.matches(PICKUP_REQUEST)) {
             String[] params = command.split(" ");
-
             return new PickUpRequest(Integer.parseInt(params[1]), Integer.parseInt(params[2]));
         }
 

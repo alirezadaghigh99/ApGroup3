@@ -5,7 +5,6 @@ import java.util.Arrays;
 
 public class Depot extends Building implements Upgradable {
     private int capacity;
-    private int level;
     private int maxLevel;
     private static Depot depot = new Depot();
 
@@ -25,12 +24,12 @@ public class Depot extends Building implements Upgradable {
         return depot;
     }
 
-    public ArrayList<WildAnimal> getStoredWildAnimal() {
-        return storedWildAnimal;
+    public ArrayList<Animal> getStoredAnimal() {
+        return storedAnimal;
     }
 
-    public void setStoredWildAnimal(ArrayList<WildAnimal> storedWildAnimal) {
-        this.storedWildAnimal = storedWildAnimal;
+    public void setStoredAnimal(ArrayList<Animal> storedAnimal) {
+        this.storedAnimal = storedAnimal;
     }
 
     @Override
@@ -39,14 +38,8 @@ public class Depot extends Building implements Upgradable {
     }
 
     private boolean isFull = false;
-
-
-    private ArrayList<Product> storedProducts;
-    private ArrayList<WildAnimal> storedWildAnimal ;
-
-   // public void store(Product... products) {
-   //     storedProducts.addAll(Arrays.asList(products));
-   // }
+    private ArrayList<Product> storedProducts = new ArrayList<>();
+    private ArrayList<Animal> storedAnimal = new ArrayList<>();
 
     public Product pickUp(Product... products) {
         return null;
