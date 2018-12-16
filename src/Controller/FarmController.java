@@ -1,8 +1,8 @@
 package Controller;
 
 import Model.*;
-import Requests.*;
-import Requests.Request;
+import Model.Requests.*;
+import Model.Requests.Request;
 import View.View;
 
 public class FarmController {
@@ -28,7 +28,6 @@ public class FarmController {
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
-
             }
             if (request instanceof AddProductToWorkshopRequest) {
 
@@ -40,6 +39,12 @@ public class FarmController {
 
             }
             if (request instanceof AddGrassRequest) {
+                try {
+                    addGrassAction(((AddGrassRequest) request).getX() , ((AddGrassRequest) request).getY());
+                }
+                catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
 
             }
             if (request instanceof AddWaterRequest) {
@@ -55,6 +60,7 @@ public class FarmController {
 
             }
             if (request instanceof PickUpRequest) {
+                pickUpAction(((PickUpRequest) request).getX() , ((PickUpRequest) request).getY());
 
             }
             if (request instanceof PutToCageRequest) {
@@ -120,13 +126,50 @@ public class FarmController {
         } else
             throw new Exception("buy exception");
     }
-
-    public void wildEatDomesticAction() {
+    public void addGrassAction(int xOfGrass, int yOfGrass)
+    {
+        Grass grass = new Grass();
+        Cell[][] cells = map.getCells();
+        if (cells[xOfGrass][yOfGrass].getGrass().isGrass()==false)
+            cells[xOfGrass][yOfGrass].getGrass().setGrass(true);
+        if (cells[xOfGrass-1][yOfGrass-1].getGrass().isGrass()==false)
+            cells[xOfGrass-1][yOfGrass-1].getGrass().setGrass(true);
+        if (cells[xOfGrass+1][yOfGrass+1].getGrass().isGrass()==false)
+            cells[xOfGrass+1][yOfGrass+1].getGrass().setGrass(true);
+        if (cells[xOfGrass-1][yOfGrass+1].getGrass().isGrass()==false)
+            cells[xOfGrass-1][yOfGrass+1].getGrass().setGrass(true);
+        if (cells[xOfGrass+1][yOfGrass-1].getGrass().isGrass()==false)
+            cells[xOfGrass+1][yOfGrass-1].getGrass().setGrass(true);
+        if (cells[xOfGrass][yOfGrass-1].getGrass().isGrass()==false)
+            cells[xOfGrass][yOfGrass-1].getGrass().setGrass(true);
+        if (cells[xOfGrass][yOfGrass+1].getGrass().isGrass()==false)
+            cells[xOfGrass][yOfGrass+1].getGrass().setGrass(true);
+        if (cells[xOfGrass-1][yOfGrass].getGrass().isGrass()==false)
+            cells[xOfGrass-1][yOfGrass].getGrass().setGrass(true);
+        if (cells[xOfGrass+1][yOfGrass].getGrass().isGrass()==false)
+            cells[xOfGrass+1][yOfGrass].getGrass().setGrass(true);
 
     }
+    public void addWaterAction()
+    {
+        Well well = Well.getWell() ;
+        if (well.getCapacity()!=well.getStorage())
+        {
+            well.setStorage(well.getCapacity());
+        }
+    }
 
-    public void pickUpAction() {
-
+    public void pickUpAction(int x, int y) {
+        Cell[][] cells = map.getCells();
+        Depot depot = Depot.getDepot();
+        if (cells[x][y].getCellProducts().size()!=0)
+        {
+            for (int i = 0 ; i<cells[x][y].getCellProducts().size() ; i++)
+            {
+                depot.getStoredProducts().add(cells[x][y].getCellProducts().get(i));
+                cells[x][y].getCellProducts().remove(i);
+            }
+        }
     }
 
     public void collision() {
@@ -140,6 +183,7 @@ public class FarmController {
     public void load() {
 
     }
+
 
     public void passTurn() {
 
