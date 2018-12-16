@@ -1,4 +1,4 @@
-package Requests;
+package Model.Requests;
 
 public class SaleProductRequest extends Request {
     private String transName , produtName ;

@@ -1,28 +1,22 @@
 package Model;
 
 public class Grass extends Entity {
-    private int length ;
+    private boolean isGrass = false;
     private Well well  ;
-    private int maxLength ;
 
-    public int getLength() {
-        return length;
+    public boolean isGrass() {
+        return isGrass;
     }
 
-    public void setlength(int length) {
-        this.length = length;
+    public void setGrass(boolean grass) {
+        isGrass = grass;
     }
 
-    public int getMaxLength() {
-        return maxLength;
+    public Well getWell() {
+        return well;
     }
 
-    public void setMaxLength(int maxLength) {
-        this.maxLength = maxLength;
-    }
-    public void irrigation (int length)
-    {
-//        well.pickUpWater();
-        length++;
+    public void setWell(Well well) {
+        this.well = well;
     }
 }

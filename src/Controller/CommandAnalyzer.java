@@ -1,7 +1,7 @@
 package Controller;
 
-import Requests.*;
-import Requests.Request;
+import Model.Requests.*;
+import Model.Requests.Request;
 
 public class CommandAnalyzer {
     private final String ADD_Animal_REQUEST = "buy [a-z]+";

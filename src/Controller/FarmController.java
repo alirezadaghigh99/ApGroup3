@@ -5,8 +5,6 @@ import Requests.*;
 import Requests.Request;
 import View.View;
 
-import java.util.ArrayList;
-
 public class FarmController {
     private OurFarm ourFarm = OurFarm.getOurFarm();
     private Map map = new Map();
@@ -81,50 +79,50 @@ public class FarmController {
     private void addAnimalAction(String input) throws Exception {
         if (input.equals("hen")) {
             Hen hen = new Hen();
-            int x = (int) (Math.random() * 30);
-            int y = (int) (Math.random() * 30);
-            hen.setX(4);
-            hen.setY(4);
+            int x = (int) Math.random() * 30;
+            int y = (int) Math.random() * 30;
+            hen.setX(x);
+            hen.setY((y));
             Cell[][] cells = map.getCells();
-            cells[4][4].addCellAnimals(hen);
+            cells[x][y].getCellAnimals().add(hen);
         } else if (input.equals("sheep")) {
             Sheep sheep = new Sheep();
-            int x = (int) (Math.random() * 30);
-            int y = (int) (Math.random() * 30);
+            int x = (int) Math.random() * 30;
+            int y = (int) Math.random() * 30;
             sheep.setX(x);
-            sheep.setY(y);
+            sheep.setY((y));
             Cell[][] cells = map.getCells();
-            cells[x][y].addCellAnimals(sheep);
+            cells[x][y].getCellAnimals().add(sheep);
         } else if (input.equals("cow")) {
             Cow cow = new Cow();
-            int x = (int) (Math.random() * 30);
-            int y = (int) (Math.random() * 30);
+            int x = (int) Math.random() * 30;
+            int y = (int) Math.random() * 30;
             cow.setX(x);
-            cow.setY(y);
-            Lion lion = new Lion();
-            lion.setX(4);
-            lion.setY(4);
+            cow.setY((y));
             Cell[][] cells = map.getCells();
-            cells[x][y].addCellAnimals(cow);
-            cells[4][4].addCellAnimals(lion);
+            cells[x][y].getCellAnimals().add(cow);
         } else if (input.equals("cat")) {
             Cat cat = new Cat();
-            int x = (int) (Math.random() * 30);
-            int y = (int) (Math.random() * 30);
+            int x = (int) Math.random() * 30;
+            int y = (int) Math.random() * 30;
             cat.setX(x);
-            cat.setY(y);
+            cat.setY((y));
             Cell[][] cells = map.getCells();
-            cells[x][y].addCellAnimals(cat);
+            cells[x][y].getCellAnimals().add(cat);
         } else if (input.equals("dog")) {
             Dog dog = new Dog();
-            int x = (int) (Math.random() * 30);
-            int y = (int) (Math.random() * 30);
-            dog.setX(4);
-            dog.setY(4);
+            int x = (int) Math.random() * 30;
+            int y = (int) Math.random() * 30;
+            dog.setX(x);
+            dog.setY((y));
             Cell[][] cells = map.getCells();
-            cells[4][4].addCellAnimals(dog);
+            cells[x][y].getCellAnimals().add(dog);
         } else
             throw new Exception("buy exception");
+    }
+
+    public void wildEatDomesticAction() {
+
     }
 
     public void pickUpAction() {
@@ -132,56 +130,7 @@ public class FarmController {
     }
 
     public void collision() {
-        Cell[][] cells = map.getCells();
-        for (int i = 0; i < Utils.mapSize; i++) {
-            for (int j = 0; j < Utils.mapSize; j++) {
-                ArrayList<Animal> animals = cells[i][j].getCellAnimals();
-                int temp = animals.size();
-                for (int k = 0; k < temp - 1; k++) {
-                    for (int l = k + 1; l < temp; l++) {
-                        if (animals.get(k) instanceof Dog) {
-                            if (animals.get(l) instanceof Lion || animals.get(l) instanceof Bear) {
-                                cells[i][j].removeCellAnimals(animals.get(k));
-                                cells[i][j].removeCellAnimals(animals.get(l));
-                            }
-                        }
-                        if (animals.get(k) instanceof Lion || animals.get(k) instanceof Bear) {
-                            if (animals.get(l) instanceof Dog) {
-                                cells[i][j].removeCellAnimals(animals.get(k));
-                                cells[i][j].removeCellAnimals(animals.get(l));
-                            }
-                            if (animals.get(l) instanceof Sheep || animals.get(l) instanceof Hen
-                                    || animals.get(l) instanceof Cow) {
-                                cells[i][j].removeCellAnimals(animals.get(l));
-                            }
-                        }
-                        if (animals.get(k) instanceof Sheep || animals.get(k) instanceof Hen
-                                || animals.get(k) instanceof Cow) {
-                            if (animals.get(l) instanceof Lion || animals.get(l) instanceof Bear) {
-                                cells[i][j].removeCellAnimals(animals.get(k));
-                            }
-                        }
-                    }
-                }
-                for (Animal animal : animals) {
-                    if (animal instanceof Cat && cells[i][j].getCellProducts().size() != 0) {
-                        cells[i][j].getCellProducts().clear();
-                    }
-                }
 
-            }
-        }
-    }
-
-    public void test() {
-        Cell[][] cells = map.getCells();
-        for (int i = 0; i < Utils.mapSize; i++) {
-            for (int j = 0; j < Utils.mapSize; j++) {
-                for (Animal animal : cells[i][j].getCellAnimals()) {
-                    System.out.printf("%d %d %s\n", i, j, "Dog");
-                }
-            }
-        }
     }
 
     public void save() {
@@ -203,4 +152,6 @@ public class FarmController {
     public void upgradeRequest() {
 
     }
+
+
 }

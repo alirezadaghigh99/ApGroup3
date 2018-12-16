@@ -1,9 +1,9 @@
-package Requests;
+package Model.Requests;
 
-public class PickUpRequest extends Request {
-    private int x , y ;
+public class CageRequest extends Request {
+    private int x, y ;
 
-    public PickUpRequest(int x, int y) {
+    public CageRequest(int x, int y) {
         this.x = x;
         this.y = y;
     }

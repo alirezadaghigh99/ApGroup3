@@ -1,4 +1,4 @@
-package Requests;
+package Model.Requests;
 
 public class UpgradeRequest extends Request {
    private String thingWeWantUpgrade ;

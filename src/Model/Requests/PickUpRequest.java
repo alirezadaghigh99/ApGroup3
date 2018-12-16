@@ -1,9 +1,9 @@
-package Requests;
+package Model.Requests;
 
-public class AddGrassRequest extends Request{
-    private int x ,y ;
+public class PickUpRequest extends Request {
+    private int x , y ;
 
-    public AddGrassRequest(int x, int y) {
+    public PickUpRequest(int x, int y) {
         this.x = x;
         this.y = y;
     }

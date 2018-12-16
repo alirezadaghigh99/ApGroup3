@@ -1,4 +1,4 @@
-package Requests;
+package Model.Requests;
 
 public class GoRequest extends Request{
     private String transName ;
