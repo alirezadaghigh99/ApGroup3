@@ -1,5 +1,6 @@
 package Model;
 
+
 public class Animal extends Entity {
 
     public void randomWalk() {
@@ -36,5 +37,8 @@ public class Animal extends Entity {
     }
 
     public void smartWalk() {
+    }
+    public void nextTurn(){
+
     }
 }

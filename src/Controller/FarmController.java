@@ -75,7 +75,6 @@ public class FarmController {
                 }
                 if (request instanceof PickUpRequest) {
                     pickUpAction(((PickUpRequest) request).getX(), ((PickUpRequest) request).getY());
-
                 }
 
                 if (request instanceof SaleProductRequest) {
@@ -108,8 +107,8 @@ public class FarmController {
             Hen hen = new Hen();
             int x = (int) (Math.random() * 30);
             int y = (int) (Math.random() * 30);
-            hen.setX(10);
-            hen.setY(8);
+            hen.setX(x);
+            hen.setY(y);
             Cell[][] cells = map.getCells();
             cells[10][8].getCellAnimals().add(hen);
         } else if (input.equals("sheep")) {
@@ -121,9 +120,6 @@ public class FarmController {
             Cell[][] cells = map.getCells();
             cells[x][y].getCellAnimals().add(sheep);
         } else if (input.equals("cow")) {
-            Lion lion = new Lion();
-            lion.setX(10);
-            lion.setY(8);
             Cow cow = new Cow();
             int x = (int) (Math.random() * 30);
             int y = (int) (Math.random() * 30);
@@ -131,7 +127,6 @@ public class FarmController {
             cow.setY(y);
             Cell[][] cells = map.getCells();
             cells[x][y].getCellAnimals().add(cow);
-            cells[10][8].getCellAnimals().add(lion);
         } else if (input.equals("cat")) {
             Cat cat = new Cat();
             int x = (int) (Math.random() * 30);
@@ -144,37 +139,41 @@ public class FarmController {
             Dog dog = new Dog();
             int x = (int) (Math.random() * 30);
             int y = (int) (Math.random() * 30);
-            dog.setX(10);
-            dog.setY((8));
+            dog.setX(x);
+            dog.setY(y);
             Cell[][] cells = map.getCells();
-            cells[10][8].getCellAnimals().add(dog);
+            cells[x][y].getCellAnimals().add(dog);
         } else
             throw new Exception("buy exception");
     }
 
-    private boolean isOnMap(int X, int Y) {
+    private boolean isOnMap(int X, int Y) throws Exception {
         if (X >= 0 && Y >= 0 && X < Utils.mapSize && Y < Utils.mapSize)
             return true;
-        else
-            return false;
+        else {
+            throw new Exception("not on map!");
+        }
     }
 
     public void addGrassAction(int xOfGrass, int yOfGrass) {
         Well well = Well.getWell();
         Cell[][] cells = map.getCells();
         if (well.getStorage() >= 18) {
+            outer:
             for (int i = xOfGrass - 1; i <= xOfGrass + 1; i++) {
                 for (int j = yOfGrass - 1; j <= yOfGrass + 1; j++) {
-                    if (isOnMap(i, j) && !cells[i][j].getGrass().isGrass()) {
-                        cells[i][j].getGrass().setGrass(true);
-                        well.pickUpWater(2);
+                    try {
+                        if (isOnMap(i, j) && !cells[i][j].getGrass().isGrass()) {
+                            cells[i][j].getGrass().setGrass(true);
+                            well.pickUpWater(2);
+                        }
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                        break outer;
                     }
                 }
             }
-            System.out.println(well.getStorage());
-            System.out.println(Utils.mapSize);
         }
-        // else throw Exception ;
 
     }
 
@@ -187,7 +186,7 @@ public class FarmController {
     public void pickUpAction(int x, int y) {
         Cell[][] cells = map.getCells();
         Depot depot = Depot.getDepot();
-        if (cells[x][y].getCellProducts().size() != 0) {
+        if (!cells[x][y].getCellProducts().isEmpty()) {
             for (int i = 0; i < cells[x][y].getCellProducts().size(); i++) {
                 depot.getStoredProducts().add(cells[x][y].getCellProducts().get(i));
 
@@ -266,7 +265,19 @@ public class FarmController {
 
 
     public void passTurn(int numberOfTurn) {
+        Cell[][] cells = map.getCells();
+        for (int i = 0; i < Utils.mapSize; i++) {
+            for (int j = 0; j < Utils.mapSize; j++) {
+                ArrayList<Animal> animals = cells[i][j].getCellAnimals();
+                for(Animal animal:animals){
+                    ourFarm.getAnimals().clear();
+                    ourFarm.getAnimals().add(animal);
+                }
+            }
+        }
+        for (Animal animal:ourFarm.getAnimals()){
 
+        }
     }
 
     public void buyRequest() {
@@ -295,11 +306,9 @@ public class FarmController {
                 if ((cell[i][j].getGrass() == null
                         || !cell[i][j].getGrass().isGrass())
                         && cell[i][j].getCellProducts().isEmpty()
-                        && cell[i][j].getCellAnimals().isEmpty())
-                {
+                        && cell[i][j].getCellAnimals().isEmpty()) {
                     System.out.print(0);
-                }
-                else System.out.print(1);
+                } else System.out.print(1);
 
 
             }

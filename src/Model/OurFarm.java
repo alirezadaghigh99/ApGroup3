@@ -3,11 +3,9 @@ package Model;
 import java.util.ArrayList;
 
 public class OurFarm {
-    private ArrayList<WildAnimal>wildAnimals = new ArrayList<>();
-    private ArrayList<DomesticAnimal>domesticAnimals = new ArrayList<>();
+    private ArrayList<Animal> animals = new ArrayList<>();
     private ArrayList <Product>products = new ArrayList<>();
-    private ArrayList <Building> buildings = new ArrayList<Building>();
-    Map map ;
+    private ArrayList <Building> buildings = new ArrayList<>();
     private static OurFarm ourFarm = new OurFarm();
 
     private OurFarm() {
@@ -18,5 +16,15 @@ public class OurFarm {
         return ourFarm ;
     }
 
+    public ArrayList<Animal> getAnimals() {
+        return animals;
+    }
 
+    public ArrayList<Product> getProducts() {
+        return products;
+    }
+
+    public ArrayList<Building> getBuildings() {
+        return buildings;
+    }
 }
