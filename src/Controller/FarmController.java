@@ -22,65 +22,68 @@ public class FarmController {
 
         while (!isFinished) {
             String command = view.getCommand().trim();
-
-            Request request = commandAnalyzer.getRequest(command);
-            if (request instanceof AddAnimalRequest) {
-                try {
-                    addAnimalAction(((AddAnimalRequest) request).getAnimalName());
-                } catch (Exception e) {
-                    System.out.println(e.getMessage());
+            try {
+                Request request = commandAnalyzer.getRequest(command);
+                if (request instanceof AddAnimalRequest) {
+                    try {
+                        addAnimalAction(((AddAnimalRequest) request).getAnimalName());
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
                 }
-            }
-            if (request instanceof AddProductToWorkshopRequest) {
+                if (request instanceof AddProductToWorkshopRequest) {
 
-            }
-            if (request instanceof CreateWorkShopRequest) {
-
-            }
-            if (request instanceof CageRequest) {
-
-            }
-            if (request instanceof AddGrassRequest) {
-                try {
-                    addGrassAction(((AddGrassRequest) request).getX(), ((AddGrassRequest) request).getY());
-                } catch (Exception e) {
-                    System.out.println(e.getMessage());
                 }
+                if (request instanceof CreateWorkShopRequest) {
 
-            }
-            if (request instanceof PrintMapRequest) {
-                try {
-                    printMapAction();
-                } catch (Exception e) {
-                    System.out.println(e.getMessage());
                 }
-            }
-            if (request instanceof AddWaterRequest) {
-                addWaterAction();
-            }
-            if (request instanceof CageRequest) {
-                try {
-                    cageAction(((CageRequest) request).getX(), ((CageRequest) request).getY());
-                } catch (Exception e) {
-                    System.out.println(e.getMessage());
+                if (request instanceof CageRequest) {
+
                 }
+                if (request instanceof AddGrassRequest) {
+                    try {
+                        addGrassAction(((AddGrassRequest) request).getX(), ((AddGrassRequest) request).getY());
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
 
-            }
-            if (request instanceof BuyProductRequest) {
+                }
+                if (request instanceof PrintMapRequest) {
+                    try {
+                        printMapAction();
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                }
+                if (request instanceof AddWaterRequest) {
+                    addWaterAction();
+                }
+                if (request instanceof CageRequest) {
+                    try {
+                        cageAction(((CageRequest) request).getX(), ((CageRequest) request).getY());
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
 
-            }
-            if (request instanceof BuyTransportationRequest) {
+                }
+                if (request instanceof BuyProductRequest) {
 
-            }
-            if (request instanceof PickUpRequest) {
-                pickUpAction(((PickUpRequest) request).getX(), ((PickUpRequest) request).getY());
+                }
+                if (request instanceof BuyTransportationRequest) {
 
-            }
-            if (request instanceof SaleProductRequest) {
+                }
+                if (request instanceof PickUpRequest) {
+                    pickUpAction(((PickUpRequest) request).getX(), ((PickUpRequest) request).getY());
 
-            }
-            if (request instanceof EndRequest) {
-                isFinished = true;
+                }
+                if (request instanceof SaleProductRequest) {
+
+                }
+                if (request instanceof EndRequest) {
+                    isFinished = true;
+                }
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
             }
         }
     }
