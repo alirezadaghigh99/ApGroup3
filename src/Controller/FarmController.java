@@ -74,9 +74,11 @@ public class FarmController {
                 }
                 if (request instanceof PickUpRequest) {
                     pickUpAction(((PickUpRequest) request).getX(), ((PickUpRequest) request).getY());
-
                 }
                 if (request instanceof SaleProductRequest) {
+
+                }
+                if(request instanceof TurnRequest){
 
                 }
                 if (request instanceof EndRequest) {
