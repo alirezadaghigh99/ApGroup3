@@ -16,7 +16,7 @@ public class WildAnimal extends Animal {
 
     @Override
     public void randomWalk() {
-
+        super.randomWalk();
     }
 
     @Override
