@@ -2,10 +2,12 @@ package Model;
 
 public class DomesticAnimal extends Animal implements EatForage {
     private int energy;
-    private boolean weak;
-    private boolean averageEnergy;
-    private boolean fullEnergy;
-    private boolean dead;
+    Cell cell;
+    Product product;
+
+    public DomesticAnimal() {
+        energy = Utils.FULL_ENERGY_AMOUNT;
+    }
 
     @Override
     public void randomWalk() {
@@ -30,6 +32,22 @@ public class DomesticAnimal extends Animal implements EatForage {
         return energy;
     }
 
+    public Cell getCell() {
+        return cell;
+    }
+
+    public void setCell(Cell cell) {
+        this.cell = cell;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
     public boolean isWeak() {
         return this.energy <= Utils.LOW_ENERGY_AMOUNT && this.energy > 0;
     }
@@ -42,8 +60,39 @@ public class DomesticAnimal extends Animal implements EatForage {
         return this.energy == Utils.FULL_ENERGY_AMOUNT;
     }
 
+    public boolean isDead() {
+        return this.energy == 0;
+    }
+
+    public void produce() {
+
+    }
+
     @Override
     public void nextTurn() {
-        if ()
+        if (isFullEnergy()) {
+            this.randomWalk();
+            this.setEnergy(this.getEnergy() - 1);
+        } else if (isAverageEnergy()) {
+            if (this.getCell().getGrass().isGrass()) {
+                this.getCell().getGrass().setGrass(false);
+            } else {
+                this.setEnergy(this.getEnergy() - 1);
+            }
+            this.randomWalk();
+            if (this.energy == Utils.LOW_ENERGY_AMOUNT + 1) {
+                this.produce();
+                this.getCell().getCellProducts().add(this.getProduct());
+            }
+        } else if (isWeak()) {
+            if (this.getCell().getGrass().isGrass()) {
+                this.getCell().getGrass().setGrass(false);
+            } else {
+                this.setEnergy(this.getEnergy() - 1);
+            }
+            this.smartWalk();
+        } else if (isDead()) {
+            this.getCell().getCellAnimals().remove(this);
+        }
     }
 }
