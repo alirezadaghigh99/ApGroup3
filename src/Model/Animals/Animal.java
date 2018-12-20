@@ -1,31 +1,15 @@
 package Model.Animals;
 
+import Model.Cell;
 import Model.Entity;
 import Model.Map;
 
 
 public class Animal extends Entity {
-protected int xOfAnimal , yOfAnimal ;
-
-    public int getxOfAnimal() {
-        return xOfAnimal;
-    }
-
-    public void setxOfAnimal(int xOfAnimal) {
-        this.xOfAnimal = xOfAnimal;
-    }
-
-    public int getyOfAnimal() {
-        return yOfAnimal;
-    }
-
-    public void setyOfAnimal(int yOfAnimal) {
-        this.yOfAnimal = yOfAnimal;
-    }
-
+    protected Cell cell;
     public void randomWalk() {
-        double rand = Math.random()*8;
-        int random  = (int) rand;
+        double rand = Math.random() * 8;
+        int random = (int) rand;
         if (random == 0) {
             this.x--;
         }
@@ -58,7 +42,8 @@ protected int xOfAnimal , yOfAnimal ;
 
     public void smartWalk() {
     }
-    public void nextTurn(){
+
+    public void nextTurn() {
 
     }
 }

@@ -5,10 +5,6 @@ import Model.ProducerAnimal;
 
 public class Cow extends ProducerAnimal {
     private Milk milk = new Milk();
-    public void bfsWalk()
-    {
-
-    }
 
     @Override
     public void randomWalk() {
@@ -18,5 +14,10 @@ public class Cow extends ProducerAnimal {
     @Override
     public void smartWalk() {
         super.smartWalk();
+    }
+
+    @Override
+    public void nextTurn() {
+        super.nextTurn();
     }
 }

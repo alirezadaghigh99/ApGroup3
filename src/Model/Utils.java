@@ -1,6 +1,9 @@
 package Model;
 
 public class Utils {
+    private Utils() {
+    }
+
     public static final int mapSize = 30;
     public static final int LOW_ENERGY_AMOUNT = 3;
     public static final int FULL_ENERGY_AMOUNT = 10;

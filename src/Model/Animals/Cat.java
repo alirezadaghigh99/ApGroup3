@@ -3,13 +3,12 @@ package Model.Animals;
 import Model.Upgradable;
 
 public class Cat extends DomesticAnimal implements Upgradable {
+    private int level = 1;
+
     @Override
     public void upgrade() {
-
+        this.setLevel(2);
     }
-
-    private int level;
-    private int maxLevel;
 
     @Override
     public void randomWalk() {
@@ -18,22 +17,18 @@ public class Cat extends DomesticAnimal implements Upgradable {
 
     @Override
     public void smartWalk() {
-        super.smartWalk();
-    }
 
-    public int getLevel() {
-        return level;
     }
 
     public void setLevel(int level) {
         this.level = level;
     }
 
-    public int getMaxLevel() {
-        return maxLevel;
-    }
-
-    public void setMaxLevel(int maxLevel) {
-        this.maxLevel = maxLevel;
+    @Override
+    public void nextTurn() {
+        if(this.level == 1)
+            this.randomWalk();
+        else
+            this.smartWalk();
     }
 }

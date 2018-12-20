@@ -3,8 +3,7 @@ package Model;
 import Model.Animals.DomesticAnimal;
 
 public class ProducerAnimal extends DomesticAnimal {
-    private int energy=Utils.FULL_ENERGY_AMOUNT;
-    Cell cell;
+    private int energy = Utils.FULL_ENERGY_AMOUNT;
     Product product;
 
     @Override
@@ -14,12 +13,27 @@ public class ProducerAnimal extends DomesticAnimal {
 
     @Override
     public void smartWalk() {
-        super.smartWalk();
-    }
-
-    @Override
-    public void eatForage() {
-
+        Map map = Map.getMap();
+        Cell[][] cell = map.getCells();
+        for (int k = 1; k < Utils.mapSize; k++) {
+            for (int i = x - k; i < x + k; i++) {
+                for (int j = y - k; j < y + k; j++) {
+                    if (i < Utils.mapSize && i >= 0 && j < Utils.mapSize && j >= 0
+                            && cell[i][j].getGrass().isGrass()) {
+                        if (i > x)
+                            x = x + 1;
+                        else if (i < x)
+                            x = x - 1;
+                        if (j > y)
+                            y = y + 1;
+                        else if (j < y)
+                            y = y - 1;
+                        return;
+                    }
+                }
+            }
+        }
+        this.randomWalk();
     }
 
     public void setEnergy(int energy) {

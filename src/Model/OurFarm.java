@@ -1,5 +1,6 @@
 package Model;
 
+import Model.Animals.Animal;
 import Model.Animals.DomesticAnimal;
 
 import java.util.ArrayList;

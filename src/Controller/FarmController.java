@@ -2,6 +2,7 @@ package Controller;
 
 import Model.*;
 import Model.Animals.*;
+import Model.Animals.DomesticAnimal;
 import Model.Requests.*;
 import View.View;
 
@@ -10,12 +11,8 @@ import java.util.ArrayList;
 public class FarmController {
     CommandAnalyzer commandAnalyzer = new CommandAnalyzer();
     private OurFarm ourFarm = OurFarm.getOurFarm();
-    private Map map = new Map();
+    private Map map = Map.getMap();
     private View view = new View();
-
-    public boolean isGameFinished() {
-        return false;
-    }
 
     public void listenForCommand() {
         boolean isFinished = false;
@@ -100,9 +97,6 @@ public class FarmController {
 
     }
 
-    //    public boolean isFinished(CheckGoal checkgoal){
-//
-//    }
     private void addAnimalAction(String input) throws Exception {
         if (input.equals("hen")) {
             Hen hen = new Hen();
@@ -111,7 +105,7 @@ public class FarmController {
             hen.setX(x);
             hen.setY(y);
             Cell[][] cells = map.getCells();
-            cells[10][8].getCellAnimals().add(hen);
+            cells[x][y].getCellAnimals().add(hen);
         } else if (input.equals("sheep")) {
             Sheep sheep = new Sheep();
             int x = (int) (Math.random() * 30);
@@ -226,24 +220,27 @@ public class FarmController {
                 if (animals.size() >= 2) {
                     for (int k = animals.size() - 1; k >= 1; k--) {
                         for (int l = k - 1; l >= 0; l--) {
-                            if (animals.get(k) instanceof WildAnimal) {
+                            Animal animal = animals.get(k);
+                            if (animal instanceof WildAnimal) {
                                 if (animals.get(l) instanceof Dog) {
-                                    animals.remove(animals.get(k));
+                                    animals.remove(animal);
                                     animals.remove(animals.get(l));
                                 }
                                 if (animals.get(l) instanceof DomesticAnimal) {
                                     animals.remove(animals.get(l));
+                                    ((WildAnimal) animal).setEnergy(Utils.FULL_ENERGY_AMOUNT);
                                 }
                             }
-                            if (animals.get(k) instanceof Dog) {
+                            if (animal instanceof Dog) {
                                 if (animals.get(l) instanceof WildAnimal) {
-                                    animals.remove(animals.get(k));
+                                    animals.remove(animal);
                                     animals.remove(animals.get(l));
                                 }
                             }
-                            if (animals.get(k) instanceof DomesticAnimal) {
+                            if (animal instanceof DomesticAnimal) {
                                 if (animals.get(l) instanceof WildAnimal) {
-                                    animals.remove(animals.get(k));
+                                    animals.remove(animal);
+                                    ((WildAnimal) animals.get(l)).setEnergy(Utils.FULL_ENERGY_AMOUNT);
                                 }
                             }
                         }
@@ -267,17 +264,17 @@ public class FarmController {
 
     public void passTurn(int numberOfTurn) {
         Cell[][] cells = map.getCells();
+        ourFarm.getAnimals().clear();
         for (int i = 0; i < Utils.mapSize; i++) {
             for (int j = 0; j < Utils.mapSize; j++) {
                 ArrayList<Animal> animals = cells[i][j].getCellAnimals();
-                for(Animal animal:animals){
-                    ourFarm.getAnimals().clear();
+                for (Animal animal : animals) {
                     ourFarm.getAnimals().add(animal);
                 }
             }
         }
-        for (Animal animal:ourFarm.getAnimals()){
-
+        for (Animal animal : ourFarm.getAnimals()) {
+            animal.nextTurn();
         }
     }
 
@@ -296,8 +293,6 @@ public class FarmController {
             depot.upgrade();
 
         }
-
-
     }
 
     public void printMapAction() {
@@ -323,15 +318,15 @@ public class FarmController {
         Cell[][] cell = map.getCells();
         ArrayList<Animal> animals = cell[x][y].getCellAnimals();
         Depot depot = Depot.getDepot();
-        for (int j = animals.size() - 1; j >= 0; j--) {
-            if (animals.get(j) instanceof WildAnimal) {
-                depot.getStoredAnimal().add((WildAnimal) animals.get(j));
-                cell[x][y].getCellAnimals().remove(j);
+        if (!animals.isEmpty()) {
+            for (int j = animals.size() - 1; j >= 0; j--) {
+                if (animals.get(j) instanceof WildAnimal) {
+                    depot.getStoredAnimal().add(animals.get(j));
+                    cell[x][y].getCellAnimals().remove(j);
+                }
             }
-        }
-
+        } else
+            throw new Exception("no wild animal");
 
     }
-
-
 }
