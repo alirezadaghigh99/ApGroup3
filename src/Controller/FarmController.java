@@ -105,6 +105,8 @@ public class FarmController {
             hen.setX(x);
             hen.setY(y);
             Cell[][] cells = map.getCells();
+            System.out.println(x);
+            System.out.println(y);
             cells[x][y].getCellAnimals().add(hen);
         } else if (input.equals("sheep")) {
             Sheep sheep = new Sheep();
@@ -190,18 +192,6 @@ public class FarmController {
         cells[x][y].getCellProducts().clear();
     }
 
-    public void test() {
-        Cell[][] cells = map.getCells();
-        for (int i = 0; i < 30; i++)
-            for (int j = 0; j < 30; j++) {
-                ArrayList<Animal> animals = cells[i][j].getCellAnimals();
-                for (Animal animal : animals) {
-                    System.out.printf("%d %d\n", i, j);
-
-                }
-            }
-    }
-
     public void load() {
 
     }
@@ -279,6 +269,8 @@ public class FarmController {
                 animal.nextTurn();
                 int x = animal.getX();
                 int y = animal.getY();
+                System.out.println(x);
+                System.out.println(y);
                 cells[x][y].getCellAnimals().add(animal);
             }
             collision();
@@ -305,8 +297,8 @@ public class FarmController {
 
     public void printMapAction() {
         Cell[][] cell = map.getCells();
-        for (int i = 0; i < 30; i++) {
-            for (int j = 0; j < 30; j++) {
+        for (int i = 0; i < Utils.mapSize; i++) {
+            for (int j = 0; j < Utils.mapSize; j++) {
                 if ((cell[i][j].getGrass() == null
                         || !cell[i][j].getGrass().isGrass())
                         && cell[i][j].getCellProducts().isEmpty()

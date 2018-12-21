@@ -3,20 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c64801da-0b49-48e1-b1f4-71066c99b6ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CommandAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CommandAnalyzer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/FarmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FarmController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Animals/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Animals/Bear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/Bear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Animals/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/Cat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Animals/Cow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/Cow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Animals/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/Dog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Animals/DomesticAnimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/DomesticAnimal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Animals/Hen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/Hen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Animals/Lion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/Lion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Animals/Sheep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/Sheep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Grass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Grass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/ProducerAnimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ProducerAnimal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/WildAnimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/WildAnimal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Requests/NextTurnRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Requests/NextTurnRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Requests/TurnRequest.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -119,24 +110,24 @@
     <session id="2058630927">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="70" />
+          <entry key="java" value="73" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="70" />
+          <entry key="JAVA" value="73" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1602" />
-          <entry key="txt" value="107" />
+          <entry key="java" value="1662" />
+          <entry key="txt" value="127" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1602" />
-          <entry key="PLAIN_TEXT" value="107" />
+          <entry key="JAVA" value="1662" />
+          <entry key="PLAIN_TEXT" value="127" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -150,11 +141,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/FarmController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="81" selection-end-line="340" />
+            <state relative-caret-position="142">
+              <caret line="80" column="47" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -163,34 +154,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Requests/NextTurnRequest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/CommandAnalyzer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="62" column="13" lean-forward="true" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Animals/Dog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
-              <folding>
-                <element signature="e#1283#1284#0" expanded="true" />
-                <element signature="e#1315#1316#0" expanded="true" />
-                <element signature="e#1359#1360#0" expanded="true" />
-                <element signature="e#1391#1392#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Animals/Animal.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="613">
-              <caret line="62" column="1" lean-forward="true" selection-start-line="62" selection-start-column="1" selection-end-line="62" selection-end-column="1" />
+            <state relative-caret-position="525">
+              <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
             </state>
           </provider>
         </entry>
@@ -257,19 +242,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Animals/Lion.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-              <folding>
-                <element signature="e#399#400#0" expanded="true" />
-                <element signature="e#431#432#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -302,7 +274,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Entity.java" />
         <option value="$PROJECT_DIR$/src/DomesticAnimal.java" />
         <option value="$PROJECT_DIR$/src/Animal.java" />
         <option value="$PROJECT_DIR$/src/Lion.java" />
@@ -330,9 +301,7 @@
         <option value="$PROJECT_DIR$/src/Model/Requests/ClearFromTranRequest.java" />
         <option value="$PROJECT_DIR$/src/Model/Well.java" />
         <option value="$PROJECT_DIR$/src/Model/Requests/PrintMapRequest.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Model/Depot.java" />
-        <option value="$PROJECT_DIR$/src/Controller/CommandAnalyzer.java" />
         <option value="$PROJECT_DIR$/src/Model/Cell.java" />
         <option value="$PROJECT_DIR$/src/Model/Entity.java" />
         <option value="$PROJECT_DIR$/src/Model/Animal.java" />
@@ -352,7 +321,10 @@
         <option value="$PROJECT_DIR$/src/Model/Utils.java" />
         <option value="$PROJECT_DIR$/src/Model/ProducerAnimal.java" />
         <option value="$PROJECT_DIR$/src/Model/WildAnimal.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Controller/FarmController.java" />
+        <option value="$PROJECT_DIR$/src/Model/Requests/NextTurnRequest.java" />
+        <option value="$PROJECT_DIR$/src/Controller/CommandAnalyzer.java" />
       </list>
     </option>
   </component>
@@ -435,7 +407,7 @@
     <property name="SearchEverywhereHistoryKey" value="stored&#9;PSI&#9;JAVA://Model.Depot#storedAnimal" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545375608032" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545377676523" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -535,7 +507,7 @@
       <workItem from="1544734572334" duration="2459000" />
       <workItem from="1544857777996" duration="1936000" />
       <workItem from="1544869392064" duration="6551000" />
-      <workItem from="1545313173125" duration="10904000" />
+      <workItem from="1545313173125" duration="12534000" />
     </task>
     <task id="LOCAL-00001" summary="hello world">
       <created>1544618928867</created>
@@ -733,11 +705,18 @@
       <option name="project" value="LOCAL" />
       <updated>1545335551291</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="pass turn completed!">
+      <created>1545376061939</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1545376061939</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102580000" />
+    <option name="totallyTimeSpent" value="104210000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -750,6 +729,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17181209" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -765,7 +745,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32876712" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32765958" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32765958" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Statistic" order="9" sideWeight="0.49924126" weight="0.21276596" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.24828768" />
@@ -842,16 +822,10 @@
     <MESSAGE value="next turn started" />
     <MESSAGE value="Domestic animal: next turn method added" />
     <MESSAGE value="All of next turns added" />
-    <option name="LAST_COMMIT_MESSAGE" value="All of next turns added" />
+    <MESSAGE value="pass turn completed!" />
+    <option name="LAST_COMMIT_MESSAGE" value="pass turn completed!" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Model/Requests/SaleProductRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Requests/UpgradeRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -966,13 +940,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Upgradable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -998,18 +965,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Requests/TurnRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-          <folding>
-            <element signature="e#142#143#0" expanded="true" />
-            <element signature="e#192#193#0" expanded="true" />
-            <element signature="e#265#266#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1236,20 +1191,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/CommandAnalyzer.java">
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="62" column="13" lean-forward="true" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
+        <state relative-caret-position="154">
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/FarmController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="81" selection-end-line="340" />
+        <state relative-caret-position="142">
+          <caret line="80" column="47" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Requests/NextTurnRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Requests/TurnRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+          <folding>
+            <element signature="e#142#143#0" expanded="true" />
+            <element signature="e#192#193#0" expanded="true" />
+            <element signature="e#265#266#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/CommandAnalyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
         </state>
       </provider>
     </entry>

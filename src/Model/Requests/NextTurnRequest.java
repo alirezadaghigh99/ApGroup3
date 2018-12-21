@@ -10,8 +10,4 @@ public class NextTurnRequest  extends  Request{
     public int getNumberOfTurn() {
         return numberOfTurn;
     }
-
-    public void setNumberOfTurn(int numberOfTurn) {
-        this.numberOfTurn = numberOfTurn;
-    }
 }
