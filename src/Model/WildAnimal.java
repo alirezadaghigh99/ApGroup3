@@ -37,6 +37,7 @@ public class WildAnimal extends Animal {
                                     y = y + 1;
                                 else if (j < y)
                                     y = y - 1;
+                                setOnMap();
                                 return;
                             }
                         }
@@ -56,5 +57,10 @@ public class WildAnimal extends Animal {
             this.setEnergy(this.getEnergy() - 1);
             this.smartWalk();
         }
+    }
+
+    @Override
+    public void setOnMap() {
+        super.setOnMap();
     }
 }

@@ -3,10 +3,12 @@ package Model.Animals;
 import Model.Cell;
 import Model.Entity;
 import Model.Map;
+import Model.Utils;
 
 
 public class Animal extends Entity {
     protected Cell cell;
+
     public void randomWalk() {
         double rand = Math.random() * 8;
         int random = (int) rand;
@@ -38,6 +40,7 @@ public class Animal extends Entity {
             this.x--;
             this.y--;
         }
+        setOnMap();
     }
 
     public void smartWalk() {
@@ -45,5 +48,16 @@ public class Animal extends Entity {
 
     public void nextTurn() {
 
+    }
+
+    public void setOnMap() {
+        if (this.x < 0)
+            this.x = 0;
+        if (this.x > Utils.mapSize)
+            this.x = Utils.mapSize - 1;
+        if (this.y < 0)
+            this.y = 0;
+        if (this.y > Utils.mapSize)
+            this.y = Utils.mapSize - 1;
     }
 }

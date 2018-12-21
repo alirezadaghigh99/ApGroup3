@@ -28,6 +28,7 @@ public class ProducerAnimal extends DomesticAnimal {
                             y = y + 1;
                         else if (j < y)
                             y = y - 1;
+                        setOnMap();
                         return;
                     }
                 }
@@ -106,5 +107,10 @@ public class ProducerAnimal extends DomesticAnimal {
         } else if (isDead()) {
             this.getCell().getCellAnimals().remove(this);
         }
+    }
+
+    @Override
+    public void setOnMap() {
+        super.setOnMap();
     }
 }

@@ -14,4 +14,9 @@ public class DomesticAnimal extends Animal {
     public void nextTurn() {
 
     }
+
+    @Override
+    public void setOnMap() {
+        super.setOnMap();
+    }
 }

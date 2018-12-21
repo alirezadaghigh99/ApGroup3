@@ -262,19 +262,27 @@ public class FarmController {
     }
 
 
-    public void passTurn(int numberOfTurn) {
-        Cell[][] cells = map.getCells();
-        ourFarm.getAnimals().clear();
-        for (int i = 0; i < Utils.mapSize; i++) {
-            for (int j = 0; j < Utils.mapSize; j++) {
-                ArrayList<Animal> animals = cells[i][j].getCellAnimals();
-                for (Animal animal : animals) {
-                    ourFarm.getAnimals().add(animal);
+    private void passTurn(int numberOfTurns) {
+        while (numberOfTurns != 0) {
+            Cell[][] cells = map.getCells();
+            ourFarm.getAnimals().clear();
+            for (int i = 0; i < Utils.mapSize; i++) {
+                for (int j = 0; j < Utils.mapSize; j++) {
+                    ArrayList<Animal> animals = cells[i][j].getCellAnimals();
+                    for (Animal animal : animals) {
+                        ourFarm.getAnimals().add(animal);
+                    }
+                    cells[i][j].getCellAnimals().clear();
                 }
             }
-        }
-        for (Animal animal : ourFarm.getAnimals()) {
-            animal.nextTurn();
+            for (Animal animal : ourFarm.getAnimals()) {
+                animal.nextTurn();
+                int x = animal.getX();
+                int y = animal.getY();
+                cells[x][y].getCellAnimals().add(animal);
+            }
+            collision();
+            numberOfTurns--;
         }
     }
 

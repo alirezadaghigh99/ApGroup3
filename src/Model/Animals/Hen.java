@@ -21,4 +21,5 @@ public class Hen extends ProducerAnimal {
     public void nextTurn() {
         super.nextTurn();
     }
+
 }

@@ -31,4 +31,9 @@ public class Cat extends DomesticAnimal implements Upgradable {
         else
             this.smartWalk();
     }
+
+    @Override
+    public void setOnMap() {
+        super.setOnMap();
+    }
 }

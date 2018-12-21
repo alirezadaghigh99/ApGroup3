@@ -20,4 +20,9 @@ public class Cow extends ProducerAnimal {
     public void nextTurn() {
         super.nextTurn();
     }
+
+    @Override
+    public void setOnMap() {
+        super.setOnMap();
+    }
 }

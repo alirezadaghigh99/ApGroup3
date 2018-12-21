@@ -13,7 +13,8 @@ public class Dog extends Animal {
         for (int k = 1; k < Utils.mapSize; k++) {
             for (int i = x - k; i < x + k; i++) {
                 for (int j = y - k; j < y + k; j++) {
-                    if (i >= 0 && i < 30 && j >= 0 && j < 30 && !cells[i][j].getCellAnimals().isEmpty()) {
+                    if (i >= 0 && i < Utils.mapSize && j >= 0 && j < Utils.mapSize
+                            && !cells[i][j].getCellAnimals().isEmpty()) {
                         for (int z = 0; z < cells[i][j].getCellAnimals().size(); z++) {
                             if (cells[i][j].getCellAnimals().get(z) instanceof WildAnimal) {
                                 if (i > x)
@@ -24,6 +25,7 @@ public class Dog extends Animal {
                                     y = y + 1;
                                 else
                                     y = y - 1;
+                                setOnMap();
                                 return;
                             }
                         }
@@ -37,5 +39,10 @@ public class Dog extends Animal {
     @Override
     public void nextTurn() {
         this.smartWalk();
+    }
+
+    @Override
+    public void setOnMap() {
+        super.setOnMap();
     }
 }

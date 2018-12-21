@@ -7,7 +7,7 @@ public class Utils {
     public static final int mapSize = 30;
     public static final int LOW_ENERGY_AMOUNT = 3;
     public static final int FULL_ENERGY_AMOUNT = 10;
-    public static final int DEPOT_SIZE_FOREGG = 1;
+    public static final int DEPOT_SIZE_FOR_EGG = 1;
     public static final int BUY_COST_FOR_EGG = 20;
     public static final int SALE_COST_FOR_EGG = 10;
     public static final int DEPOT_SIZE_FOR_WOOL = 5;
