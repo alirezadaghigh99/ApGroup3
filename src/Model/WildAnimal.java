@@ -18,15 +18,15 @@ public class WildAnimal extends Animal {
     public void randomWalk() {
         super.randomWalk();
     }
-
+    private Map map = Map.getMap() ;
     @Override
     public void smartWalk() {
         Cell[][] cells = map.getCells();
         for (int k = 1 ; k<Utils.mapSize ; k++)
         {
-            for (int i = xOfAnimal-k ; i<xOfAnimal+k ; i++)
+            for (int i = x -k ; i<=x +k ; i++)
             {
-                for (int j = yOfAnimal - k ;j<yOfAnimal + k ; j++)
+                for (int j = y  - k ;j<=y  + k ; j++)
                 {
                     if (i>=0&&i<30&&j>=0&&j<30&&!cells[i][j].getCellAnimals().isEmpty())
                     {
@@ -34,13 +34,13 @@ public class WildAnimal extends Animal {
                         {
                             if (cells[i][j].getCellAnimals().get(z)instanceof  ProducerAnimal)
                             {
-                                if (i>xOfAnimal)
-                                    xOfAnimal = xOfAnimal+1;
+                                if (i>x )
+                                    x  = x +1;
                                 else
-                                    xOfAnimal = xOfAnimal-1 ;
-                                if (j>yOfAnimal)
-                                    yOfAnimal = yOfAnimal+1 ;
-                                else yOfAnimal = yOfAnimal-1 ;
+                                    x  = x -1 ;
+                                if (j>y )
+                                    y  = y +1 ;
+                                else y  = y -1 ;
                                 return;
                             }
                         }
@@ -48,8 +48,8 @@ public class WildAnimal extends Animal {
                 }
             }
         }
-        xOfAnimal = xOfAnimal+1;
-        yOfAnimal = yOfAnimal-1 ;
+        x  = x +1;
+        y  = y -1 ;
 
     }
 }

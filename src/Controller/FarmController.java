@@ -2,15 +2,19 @@ package Controller;
 
 import Model.*;
 import Model.Animals.*;
+import Model.Animals.DomesticAnimal;
 import Model.Requests.*;
 import View.View;
+import com.gilecode.yagson.YaGson;
+import com.gilecode.yagson.com.google.gson.Gson;
 
+import java.io.*;
 import java.util.ArrayList;
 
 public class FarmController {
     CommandAnalyzer commandAnalyzer = new CommandAnalyzer();
     private OurFarm ourFarm = OurFarm.getOurFarm();
-    private Map map = new Map();
+    private Map map =Map.getMap();
     private View view = new View();
 
     public boolean isGameFinished() {
@@ -208,12 +212,63 @@ public class FarmController {
             }
     }
 
-    public void load() {
+    public Map load() {
+        File f = new File("OURFARM.json");
+        InputStream stream = null;
+        try {
+            stream = new FileInputStream(f);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        StringBuilder json = new StringBuilder();
+        int byteCode = 0;
+        try {
+            byteCode = stream.read();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        while (byteCode != -1) {
+            json.append((char) byteCode);
+            try {
+                byteCode = stream.read();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        try {
+            stream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
+        Map map = new YaGson().fromJson(json.toString(), Map.class);
+
+        return map;
     }
 
     public void save() {
+        YaGson yaGson = new YaGson();
+        String objToString = yaGson.toString();
+        OurFarm ourFarm = OurFarm.getOurFarm();
+        Map map = Map.getMap();
         //  parseSTRING.ourFarm
+        BufferedWriter writer = null;
+        try {
+            writer = new BufferedWriter(new FileWriter("OURFARM.json"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            writer.write(objToString);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void collision() {
@@ -309,7 +364,24 @@ public class FarmController {
                         && cell[i][j].getCellProducts().isEmpty()
                         && cell[i][j].getCellAnimals().isEmpty()) {
                     System.out.print(0);
-                } else System.out.print(1);
+                } else if (cell[i][j].getGrass().isGrass()
+                        &&cell[i][j].getCellProducts().isEmpty()
+                          &&cell[i][j].getCellAnimals().isEmpty())
+                    System.out.print(1);
+                 else if (cell[i][j].getGrass().isGrass()
+                        &&!cell[i][j].getCellProducts().isEmpty()
+                        &&cell[i][j].getCellAnimals().isEmpty())
+                    System.out.print(2);
+                 else if (cell[i][j].getGrass().isGrass()
+                &&cell[i][j].getCellProducts().isEmpty()
+                &&!cell[i][j].getCellAnimals().isEmpty())
+                    System.out.print(3);
+                else if (cell[i][j].getGrass().isGrass()
+                        &&!cell[i][j].getCellProducts().isEmpty()
+                        &&!cell[i][j].getCellAnimals().isEmpty())
+                    System.out.print(4);
+                else System.out.print(5);
+
 
 
             }

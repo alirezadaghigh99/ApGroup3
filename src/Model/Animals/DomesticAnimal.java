@@ -2,6 +2,7 @@ package Model.Animals;
 
 import Model.Cell;
 import Model.EatForage;
+import Model.Map;
 import Model.Utils;
 
 public class DomesticAnimal extends Animal implements EatForage {
@@ -14,15 +15,15 @@ public class DomesticAnimal extends Animal implements EatForage {
     public void randomWalk() {
         super.randomWalk();
     }
-
+    private Map map = Map.getMap();
     @Override
     public void smartWalk() {
         Cell[][] cell = map.getCells();
         for (int k = 1; k< Utils.mapSize ; k++)
         {
-            for (int i = x -k ; i<x +k ; i++)
+            for (int i = x -k ; i<=x +k ; i++)
             {
-                for (int j = y -k ; j<y +k ; j++)
+                for (int j = y -k ; j<=y +k ; j++)
                 {
                     if (i<30&&i>=0&&j<30&&j>=0&&cell[i][j].getGrass().isGrass())
                     {

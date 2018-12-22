@@ -3,13 +3,17 @@ package Model;
 public class Map {
 
     private Cell[][] cells = new Cell[Utils.mapSize][Utils.mapSize];
-
-    public Map() {
+    private static Map map = new Map();
+    private Map() {
         for (int i = 0; i < Utils.mapSize ; i++) {
             for (int j = 0; j < Utils.mapSize ; j++) {
                 cells[i][j] = new Cell();
             }
         }
+    }
+
+    public static Map getMap() {
+        return map;
     }
 
     public Cell[][] getCells() {
