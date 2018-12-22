@@ -248,7 +248,7 @@ public class FarmController {
 
     public void save() {
         YaGson yaGson = new YaGson();
-        String objToString = yaGson.toString();
+        String objToString = yaGson.toJson(map);
         OurFarm ourFarm = OurFarm.getOurFarm();
         Map map = Map.getMap();
         //  parseSTRING.ourFarm

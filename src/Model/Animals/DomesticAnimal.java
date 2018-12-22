@@ -1,11 +1,11 @@
 package Model.Animals;
 
 import Model.Cell;
-import Model.EatForage;
+
 import Model.Map;
 import Model.Utils;
 
-public class DomesticAnimal extends Animal implements EatForage {
+public class DomesticAnimal extends Animal  {
     private double energy ;
     private boolean isWeak ;
     private boolean canEat ;
@@ -44,8 +44,5 @@ public class DomesticAnimal extends Animal implements EatForage {
         y  = y  +1 ;
     }
 
-    @Override
-    public void eatForage() {
 
-    }
 }
