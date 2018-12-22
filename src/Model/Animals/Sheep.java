@@ -15,4 +15,15 @@ public class Sheep extends ProducerAnimal {
     public void smartWalk() {
         super.smartWalk();
     }
+
+    @Override
+    public void nextTurn() {
+        super.nextTurn();
+    }
+
+    @Override
+    public void setOnMap() {
+        super.setOnMap();
+    }
+
 }

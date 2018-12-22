@@ -17,4 +17,9 @@ public class Hen extends ProducerAnimal {
 
     }
 
+    @Override
+    public void nextTurn() {
+        super.nextTurn();
+    }
+
 }

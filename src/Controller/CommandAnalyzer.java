@@ -62,11 +62,10 @@ public class CommandAnalyzer {
             return new PrintMapRequest();
         } else if (command.matches(TURN_REQUEST)) {
             String[] params = command.split(" ");
-            return new TurnRequest(Integer.parseInt(params[1]));
+            return new NextTurnRequest(Integer.parseInt(params[1]));
         } else if (command.matches(END_REQUEST)) {
             return new EndRequest();
-        }
-        else
+        } else
             throw new Exception("this command is not allowed");
     }
 }

@@ -14,4 +14,14 @@ public class Lion extends WildAnimal {
     public void smartWalk() {
         super.smartWalk();
     }
+
+    @Override
+    public void nextTurn() {
+        super.nextTurn();
+    }
+
+    @Override
+    public void setOnMap() {
+        super.setOnMap();
+    }
 }
