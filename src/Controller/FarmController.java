@@ -53,6 +53,10 @@ public class FarmController {
 
 
                 }
+                if (request instanceof LoadRequest)
+                {
+                    this.map = load();
+                }
                 if (request instanceof SaveRequest) {
                     try {
                         save();
@@ -153,7 +157,7 @@ public class FarmController {
             hen.setX(x);
             hen.setY(y);
             Cell[][] cells = map.getCells();
-            cells[10][8].getCellAnimals().add(hen);
+            cells[0][0].getCellAnimals().add(hen);
         } else if (input.equals("sheep")) {
             Sheep sheep = new Sheep();
             int x = (int) (Math.random() * 30);
@@ -472,11 +476,4 @@ public class FarmController {
 
 
     }
-
-    public static void main(String[] args) {
-        FarmController farmController = new FarmController();
-        farmController.save();
-    }
-
-
 }

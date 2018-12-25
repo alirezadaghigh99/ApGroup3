@@ -20,5 +20,8 @@ public class Bear extends WildAnimal {
         super.nextTurn();
     }
 
-
+    @Override
+    public void setOnMap() {
+        super.setOnMap();
+    }
 }

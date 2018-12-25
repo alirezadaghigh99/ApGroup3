@@ -66,7 +66,16 @@ public class CommandAnalyzer {
             return new NextTurnRequest(Integer.parseInt(params[1]));
         } else if (command.matches(END_REQUEST)) {
             return new EndRequest();
-        } else
+        }
+        if (command.matches(SAVE_REQUEST))
+        {
+            return new SaveRequest();
+        }
+        if (command.matches(LOAD_REQUEST))
+        {
+            return new LoadRequest() ;
+        }
+            else
             throw new Exception("this command is not allowed");
     }
 }
