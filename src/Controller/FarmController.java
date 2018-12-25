@@ -4,6 +4,7 @@ import Model.*;
 import Model.Animals.*;
 import Model.Animals.DomesticAnimal;
 import Model.Requests.*;
+import Model.Requests.SaveRequest;
 import View.View;
 import com.gilecode.yagson.YaGson;
 import com.gilecode.yagson.com.google.gson.Gson;
@@ -49,6 +50,15 @@ public class FarmController {
                         System.out.println(e.getMessage());
                     }
 
+
+
+                }
+                if (request instanceof SaveRequest) {
+                    try {
+                        save();
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
                 }
                 if (request instanceof PrintMapRequest) {
                     try {
@@ -75,15 +85,26 @@ public class FarmController {
                 if (request instanceof BuyProductRequest) {
 
                 }
-                if (request instanceof BuyTransportationRequest) {
-
+                if (request instanceof ClearFromTranRequest) {
+                    try{
+                        clearAction(((ClearFromTranRequest) request).getTransnName());
+                    }
+                    catch (Exception e)
+                    {
+                        System.out.println(e.getMessage());
+                    }
                 }
                 if (request instanceof PickUpRequest) {
                     pickUpAction(((PickUpRequest) request).getX(), ((PickUpRequest) request).getY());
                 }
 
                 if (request instanceof SaleProductRequest) {
-
+                    try{
+                        saleAction(((SaleProductRequest) request).getTransName() , ((SaleProductRequest) request).getProdutName() , ((SaleProductRequest) request).getCount());
+                    }
+                    catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
                 }
                 if (request instanceof NextTurnRequest) {
                     passTurn(((NextTurnRequest) request).getNumberOfTurn());
@@ -100,9 +121,26 @@ public class FarmController {
         }
     }
 
-    public void newGame() {
+    private void saleAction(String transName, String produtName, int count) {
+        if (transName.equals("truck"))
+        {
+            Truck truck = Truck.getTruck();
+            for (int i = 0 ;i<count ; i++)
+            {
 
+            }
+        }
+        if (transName.equals("helicopter"))
+        {
+            Helicopter helicopter = Helicopter.getHelicopter();
+            for (int i = 0 ; i<count  ;i++)
+            {
+
+            }
+
+        }
     }
+
 
     //    public boolean isFinished(CheckGoal checkgoal){
 //
@@ -123,6 +161,8 @@ public class FarmController {
             sheep.setX(x);
             sheep.setY(y);
             Cell[][] cells = map.getCells();
+            System.out.println(x);
+            System.out.println(y);
             cells[x][y].getCellAnimals().add(sheep);
         } else if (input.equals("cow")) {
             Cow cow = new Cow();
@@ -157,6 +197,35 @@ public class FarmController {
             return true;
         else {
             throw new Exception("not on map!");
+        }
+    }
+    private void clearAction(String type)
+    {
+        Depot depot = Depot.getDepot();
+        if (type.equals("truck"))
+        {
+            Truck truck = Truck.getTruck();
+            while (!depot.isFull()&&!truck.getProductsInTransportation().isEmpty()&&!truck.getAnimalsInTransportation().isEmpty()) {
+                for (int i = 0; i < truck.getAnimalsInTransportation().size(); i++) {
+                    depot.getStoredAnimal().add(truck.getAnimalsInTransportation().get(i));
+                }
+                for (int i = 0; i < truck.getProductsInTransportation().size(); i++) {
+                    depot.getStoredProducts().add(truck.getProductsInTransportation().get(i));
+                }
+            }
+        }
+        if (type.equals("helicopter"))
+        {
+            Helicopter helicopter = Helicopter.getHelicopter();
+            while (!helicopter.getProductsInTransportation().isEmpty()&&!depot.isFull()&&!helicopter.getAnimalsInTransportation().isEmpty())
+            {
+                for (int i = 0; i < helicopter.getAnimalsInTransportation().size(); i++) {
+                    depot.getStoredAnimal().add(helicopter.getAnimalsInTransportation().get(i));
+                }
+                for (int i = 0; i < helicopter.getProductsInTransportation().size(); i++) {
+                    depot.getStoredProducts().add(helicopter.getProductsInTransportation().get(i));
+                }
+            }
         }
     }
 
@@ -249,8 +318,7 @@ public class FarmController {
     public void save() {
         YaGson yaGson = new YaGson();
         String objToString = yaGson.toJson(map);
-        OurFarm ourFarm = OurFarm.getOurFarm();
-        Map map = Map.getMap();
+
         //  parseSTRING.ourFarm
         BufferedWriter writer = null;
         try {
@@ -403,6 +471,11 @@ public class FarmController {
         }
 
 
+    }
+
+    public static void main(String[] args) {
+        FarmController farmController = new FarmController();
+        farmController.save();
     }
 
 

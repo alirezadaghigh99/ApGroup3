@@ -40,6 +40,6 @@ public class Dog extends Animal {
         }
         x  = x +1;
         y  = y -1 ;
-
     }
+
 }

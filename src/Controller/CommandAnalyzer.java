@@ -19,7 +19,8 @@ public class CommandAnalyzer {
     private final String PRINT_MAP = "print map";
     private final String TURN_REQUEST = "turn [\\d]+";
     private final String END_REQUEST = "end game";
-
+    private final String SAVE_REQUEST = "save game";
+    private final String LOAD_REQUEST = "load game";
     public Request getRequest(String command) throws Exception {
         if (command.matches(ADD_Animal_REQUEST)) {
             String[] params = command.split(" ");
