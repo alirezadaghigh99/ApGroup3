@@ -126,13 +126,74 @@ public class FarmController {
     }
 
     private void saleAction(String transName, String produtName, int count) {
-        if (transName.equals("truck"))
-        {
+       Depot depot = Depot.getDepot() ;
+        if (transName.equals("truck")) {
             Truck truck = Truck.getTruck();
-            for (int i = 0 ;i<count ; i++)
-            {
-
+            if (produtName.equals("egg")) {
+                while (!truck.isFullTruck()) {
+                    for (int i = 0; i < count; i++) {
+                        if (depot.getStoredProducts().get(i) instanceof Egg)
+                            truck.getProductsInTransportation().add(depot.getStoredProducts().get(i));
+                    }
+                }
             }
+            if (produtName.equals("milk")) {
+                while (!truck.isFullTruck()) {
+                    for (int i = 0; i < count; i++) {
+                        if (depot.getStoredProducts().get(i) instanceof Milk)
+                            truck.getProductsInTransportation().add(depot.getStoredProducts().get(i));
+                    }
+                }
+            }
+            if (produtName.equals("wool")) {
+                while (!truck.isFullTruck()) {
+                    for (int i = 0; i < count; i++) {
+                        if (depot.getStoredProducts().get(i) instanceof Wool)
+                            truck.getProductsInTransportation().add(depot.getStoredProducts().get(i));
+                    }
+                }
+            }
+            if (produtName.equals("egg")) {
+                while (!truck.isFullTruck()) {
+                    for (int i = 0; i < count; i++) {
+                        if (depot.getStoredProducts().get(i) instanceof Egg)
+                            truck.getProductsInTransportation().add(depot.getStoredProducts().get(i));
+                    }
+                }
+            }
+            if (produtName.equals("egg")) {
+                while (!truck.isFullTruck()) {
+                    for (int i = 0; i < count; i++) {
+                        if (depot.getStoredProducts().get(i) instanceof Egg)
+                            truck.getProductsInTransportation().add(depot.getStoredProducts().get(i));
+                    }
+                }
+            }
+            if (produtName.equals("egg")) {
+                while (!truck.isFullTruck()) {
+                    for (int i = 0; i < count; i++) {
+                        if (depot.getStoredProducts().get(i) instanceof Egg)
+                            truck.getProductsInTransportation().add(depot.getStoredProducts().get(i));
+                    }
+                }
+            }
+            if (produtName.equals("egg")) {
+                while (!truck.isFullTruck()) {
+                    for (int i = 0; i < count; i++) {
+                        if (depot.getStoredProducts().get(i) instanceof Egg)
+                            truck.getProductsInTransportation().add(depot.getStoredProducts().get(i));
+                    }
+                }
+            }
+            if (produtName.equals("egg")) {
+                while (!truck.isFullTruck()) {
+                    for (int i = 0; i < count; i++) {
+                        if (depot.getStoredProducts().get(i) instanceof Egg)
+                            truck.getProductsInTransportation().add(depot.getStoredProducts().get(i));
+                    }
+                }
+            }
+
         }
         if (transName.equals("helicopter"))
         {
@@ -145,6 +206,10 @@ public class FarmController {
         }
     }
 
+
+    //    public boolean isFinished(CheckGoal checkgoal){
+//
+//    }
     private void addAnimalAction(String input) throws Exception {
         if (input.equals("hen")) {
             Hen hen = new Hen();
@@ -161,6 +226,8 @@ public class FarmController {
             sheep.setX(x);
             sheep.setY(y);
             Cell[][] cells = map.getCells();
+            System.out.println(x);
+            System.out.println(y);
             cells[x][y].getCellAnimals().add(sheep);
         } else if (input.equals("cow")) {
             Cow cow = new Cow();
@@ -370,7 +437,7 @@ public class FarmController {
                 }
                 for (Animal animal : animals) {
                     if (animal instanceof Cat) {
-                        if (!products.isEmpty()) {
+                        if (products.size() > 0) {
                             for (Product product : products) {
                                 depot.getStoredProducts().add(product);
                             }
@@ -401,6 +468,7 @@ public class FarmController {
                 animal.nextTurn();
                 int x = animal.getX();
                 int y = animal.getY();
+
                 cells[x][y].getCellAnimals().add(animal);
             }
             collision();
@@ -473,5 +541,7 @@ public class FarmController {
                 cell[x][y].getCellAnimals().remove(j);
             }
         }
+
+
     }
 }
