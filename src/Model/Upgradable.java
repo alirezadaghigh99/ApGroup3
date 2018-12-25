@@ -1,6 +1,6 @@
 package Model;
 
 public interface Upgradable {
-    public void upgrade();
+    public void upgrade() throws Exception;
 
 }

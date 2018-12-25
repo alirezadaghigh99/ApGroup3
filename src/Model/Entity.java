@@ -24,4 +24,6 @@ public class Entity {
 
     }
 
+    protected int money ;
+
 }
