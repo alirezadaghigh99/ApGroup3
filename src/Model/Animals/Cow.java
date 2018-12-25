@@ -1,6 +1,6 @@
 package Model.Animals;
 
-import Model.Milk;
+import Model.Products.Milk;
 import Model.ProducerAnimal;
 
 public class Cow extends ProducerAnimal {

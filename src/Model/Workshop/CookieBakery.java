@@ -1,9 +1,8 @@
 package Model.Workshop;
 
-import Model.Cookie;
-import Model.Egg;
-import Model.Flour;
-import Model.WorkShop;
+import Model.Products.Cookie;
+import Model.Products.Egg;
+import Model.Products.Flour;
 
 public class CookieBakery extends WorkShop {
     // eggpowder --> cookie

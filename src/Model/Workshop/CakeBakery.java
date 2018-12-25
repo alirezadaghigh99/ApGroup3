@@ -1,9 +1,8 @@
 package Model.Workshop;
 
-import Model.Cake;
-import Model.Egg;
-import Model.Flour;
-import Model.WorkShop;
+import Model.Products.Cake;
+import Model.Products.Egg;
+import Model.Products.Flour;
 
 public class CakeBakery extends WorkShop {
     // flour & cookie --> cake

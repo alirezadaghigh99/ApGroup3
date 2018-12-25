@@ -1,7 +1,7 @@
 package Model.Animals;
 
 import Model.ProducerAnimal;
-import Model.Wool;
+import Model.Products.Wool;
 
 public class Sheep extends ProducerAnimal {
     private Wool wool = new Wool();

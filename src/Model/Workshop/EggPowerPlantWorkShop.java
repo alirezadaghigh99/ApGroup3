@@ -1,8 +1,7 @@
 package Model.Workshop;
 
-import Model.Egg;
-import Model.Flour;
-import Model.WorkShop;
+import Model.Products.Egg;
+import Model.Products.Flour;
 
 public class EggPowerPlantWorkShop extends WorkShop {
     // EGG --> eggpowder

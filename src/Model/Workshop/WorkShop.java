@@ -1,7 +1,10 @@
-package Model;
+package Model.Workshop;
 
 
-public class WorkShop extends Building implements Upgradable{
+import Model.Building;
+import Model.Upgradable;
+
+public class WorkShop extends Building implements Upgradable {
     @Override
     public void upgrade() throws Exception {
         if( level == maxLevel)

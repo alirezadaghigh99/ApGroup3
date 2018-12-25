@@ -1,6 +1,7 @@
 package Model.Animals;
 
 import Model.*;
+import Model.Products.Egg;
 
 public class Hen extends ProducerAnimal {
 
