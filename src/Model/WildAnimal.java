@@ -1,43 +1,46 @@
 package Model;
 
 import Model.Animals.Animal;
+import Model.Animals.DomesticAnimal;
 
 public class WildAnimal extends Animal {
-    private int energy = Utils.FULL_ENERGY_AMOUNT;
+    private boolean isHungry;
 
-    public int getEnergy() {
-        return energy;
+    public boolean isHungry() {
+        return isHungry;
     }
 
-    public void setEnergy(int energy) {
-        this.energy = energy;
+    public void setHungry(boolean hungry) {
+        isHungry = hungry;
     }
 
     @Override
     public void randomWalk() {
         super.randomWalk();
     }
-
+    private Map map = Map.getMap() ;
     @Override
     public void smartWalk() {
-        Map map = Map.getMap();
         Cell[][] cells = map.getCells();
-        for (int k = 1; k < Utils.mapSize; k++) {
-            for (int i = x - k; i < x + k; i++) {
-                for (int j = x - k; j < x + k; j++) {
-                    if (i >= 0 && i < Utils.mapSize && j >= 0 && j < Utils.mapSize &&
-                            !cells[i][j].getCellAnimals().isEmpty()) {
-                        for (int z = 0; z < cells[i][j].getCellAnimals().size(); z++) {
-                            if (cells[i][j].getCellAnimals().get(z) instanceof ProducerAnimal) {
-                                if (i > x)
-                                    x = x + 1;
-                                else if (i < x)
-                                    x = x - 1;
-                                if (j > y)
-                                    y = y + 1;
-                                else if (j < y)
-                                    y = y - 1;
-                                setOnMap();
+        for (int k = 1 ; k<Utils.mapSize ; k++)
+        {
+            for (int i = x -k ; i<=x +k ; i++)
+            {
+                for (int j = y  - k ;j<=y  + k ; j++)
+                {
+                    if (i>=0&&i<30&&j>=0&&j<30&&!cells[i][j].getCellAnimals().isEmpty())
+                    {
+                        for (int z = 0 ; j<cells[i][j].getCellAnimals().size() ; z++)
+                        {
+                            if (cells[i][j].getCellAnimals().get(z)instanceof  ProducerAnimal)
+                            {
+                                if (i>x )
+                                    x  = x +1;
+                                else
+                                    x  = x -1 ;
+                                if (j>y )
+                                    y  = y +1 ;
+                                else y  = y -1 ;
                                 return;
                             }
                         }
@@ -45,22 +48,8 @@ public class WildAnimal extends Animal {
                 }
             }
         }
-        this.randomWalk();
-    }
+        x  = x +1;
+        y  = y -1 ;
 
-    @Override
-    public void nextTurn() {
-        if (this.energy > Utils.LOW_ENERGY_AMOUNT) {
-            this.setEnergy(this.getEnergy() - 1);
-            this.randomWalk();
-        } else {
-            this.setEnergy(this.getEnergy() - 1);
-            this.smartWalk();
-        }
-    }
-
-    @Override
-    public void setOnMap() {
-        super.setOnMap();
     }
 }
