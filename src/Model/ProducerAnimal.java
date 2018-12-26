@@ -5,6 +5,7 @@ import Model.Animals.DomesticAnimal;
 public class ProducerAnimal extends DomesticAnimal {
     private int energy = Utils.FULL_ENERGY_AMOUNT;
     Product product;
+    Map map = Map.getMap();
 
     @Override
     public void randomWalk() {
@@ -83,29 +84,30 @@ public class ProducerAnimal extends DomesticAnimal {
 
     @Override
     public void nextTurn() {
+        Cell[][] cells = map.getCells();
         if (isFullEnergy()) {
             this.randomWalk();
             this.setEnergy(this.getEnergy() - 1);
         } else if (isAverageEnergy()) {
-            if (this.getCell().getGrass().isGrass()) {
-                this.getCell().getGrass().setGrass(false);
+            if (cells[x][y].getGrass().isGrass()) {
+                cells[x][y].getGrass().setGrass(false);
             } else {
                 this.setEnergy(this.getEnergy() - 1);
             }
             this.randomWalk();
             if (this.energy == Utils.LOW_ENERGY_AMOUNT + 1) {
                 this.produce();
-                this.getCell().getCellProducts().add(this.getProduct());
+                cells[x][y].getCellProducts().add(this.getProduct());
             }
         } else if (isWeak()) {
-            if (this.getCell().getGrass().isGrass()) {
-                this.getCell().getGrass().setGrass(false);
+            if (cells[x][y].getGrass().isGrass()) {
+                cells[x][y].getGrass().setGrass(false);
             } else {
                 this.setEnergy(this.getEnergy() - 1);
             }
             this.smartWalk();
         } else if (isDead()) {
-            this.getCell().getCellAnimals().remove(this);
+            cells[x][y].getCellAnimals().remove(this);
         }
     }
 

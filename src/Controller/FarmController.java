@@ -145,10 +145,6 @@ public class FarmController {
         }
     }
 
-
-    //    public boolean isFinished(CheckGoal checkgoal){
-//
-//    }
     private void addAnimalAction(String input) throws Exception {
         if (input.equals("hen")) {
             Hen hen = new Hen();
@@ -165,8 +161,6 @@ public class FarmController {
             sheep.setX(x);
             sheep.setY(y);
             Cell[][] cells = map.getCells();
-            System.out.println(x);
-            System.out.println(y);
             cells[x][y].getCellAnimals().add(sheep);
         } else if (input.equals("cow")) {
             Cow cow = new Cow();
@@ -376,7 +370,7 @@ public class FarmController {
                 }
                 for (Animal animal : animals) {
                     if (animal instanceof Cat) {
-                        if (products.size() > 0) {
+                        if (!products.isEmpty()) {
                             for (Product product : products) {
                                 depot.getStoredProducts().add(product);
                             }
@@ -407,8 +401,6 @@ public class FarmController {
                 animal.nextTurn();
                 int x = animal.getX();
                 int y = animal.getY();
-                System.out.println(x);
-                System.out.println(y);
                 cells[x][y].getCellAnimals().add(animal);
             }
             collision();
@@ -481,7 +473,5 @@ public class FarmController {
                 cell[x][y].getCellAnimals().remove(j);
             }
         }
-
-
     }
 }
