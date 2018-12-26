@@ -7,7 +7,7 @@ import Model.Requests.*;
 import Model.Requests.SaveRequest;
 import View.View;
 import com.gilecode.yagson.YaGson;
-import com.gilecode.yagson.com.google.gson.Gson;
+
 
 import java.io.*;
 import java.util.ArrayList;
@@ -157,7 +157,7 @@ public class FarmController {
             hen.setX(x);
             hen.setY(y);
             Cell[][] cells = map.getCells();
-            cells[0][0].getCellAnimals().add(hen);
+            cells[x][y].getCellAnimals().add(hen);
         } else if (input.equals("sheep")) {
             Sheep sheep = new Sheep();
             int x = (int) (Math.random() * 30);
@@ -314,9 +314,7 @@ public class FarmController {
             e.printStackTrace();
         }
 
-        Map map = new YaGson().fromJson(json.toString(), Map.class);
-
-        return map;
+        return new YaGson().fromJson(json.toString(), Map.class);
     }
 
     public void save() {
@@ -392,19 +390,29 @@ public class FarmController {
     }
 
 
-    public void passTurn(int numberOfTurn) {
-        Cell[][] cells = map.getCells();
-        for (int i = 0; i < Utils.mapSize; i++) {
-            for (int j = 0; j < Utils.mapSize; j++) {
-                ArrayList<Animal> animals = cells[i][j].getCellAnimals();
-                for(Animal animal:animals){
-                    ourFarm.getAnimals().clear();
-                    ourFarm.getAnimals().add(animal);
+    private void passTurn(int numberOfTurns) {
+        while (numberOfTurns != 0) {
+            Cell[][] cells = map.getCells();
+            ourFarm.getAnimals().clear();
+            for (int i = 0; i < Utils.mapSize; i++) {
+                for (int j = 0; j < Utils.mapSize; j++) {
+                    ArrayList<Animal> animals = cells[i][j].getCellAnimals();
+                    for (Animal animal : animals) {
+                        ourFarm.getAnimals().add(animal);
+                    }
+                    cells[i][j].getCellAnimals().clear();
                 }
             }
-        }
-        for (Animal animal:ourFarm.getAnimals()){
-
+            for (Animal animal : ourFarm.getAnimals()) {
+                animal.nextTurn();
+                int x = animal.getX();
+                int y = animal.getY();
+                System.out.println(x);
+                System.out.println(y);
+                cells[x][y].getCellAnimals().add(animal);
+            }
+            collision();
+            numberOfTurns--;
         }
     }
 
