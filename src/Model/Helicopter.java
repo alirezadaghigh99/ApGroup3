@@ -1,10 +1,10 @@
 package Model;
 
 public class Helicopter extends Transportation{
-    private int capacity ;
-    private int speed ;
+    private int capacity = 100 ;
+    private int speed = 5 ;
     private static Helicopter helicopter = new Helicopter();
-    private int stored ;
+    private int stored = 0 ;
 
     public int getStored() {
         return stored;

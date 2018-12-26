@@ -3,6 +3,9 @@ package Model;
 import Model.Animals.Animal;
 import Model.Animals.Bear;
 import Model.Animals.Lion;
+import Model.Products.Egg;
+import Model.Products.Milk;
+import Model.Products.Wool;
 
 import java.util.ArrayList;
 
@@ -81,7 +84,7 @@ public class Depot extends Building implements Upgradable {
                 depotStorage += Utils.DEPOT_SIZE_FOR_EGG;
             if (storedProducts.get(i) instanceof Milk)
                 depotStorage+=Utils.DEPOT_SIZE_FOR_MILK;
-            if (storedProducts.get(i) instanceof  Wool)
+            if (storedProducts.get(i) instanceof Wool)
                 depotStorage+=Utils.DEPOT_SIZE_FOR_WOOL ;
         }
         return depotStorage ;

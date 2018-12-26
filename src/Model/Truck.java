@@ -1,9 +1,9 @@
 package Model;
 
 public class Truck extends Transportation{
-    private int capacity ;
-    private int speed ;
-    private int stored ;
+    private int capacity = 50 ;
+    private int speed  = 2 ;
+    private int stored = 0;
 
 
     public int getStored() {
