@@ -2,10 +2,11 @@ package Model.Workshop;
 
 import Controller.FarmController;
 import Model.Building;
+import Model.OurFarm;
 import Model.Upgradable;
 
 public class WorkShop extends Building implements Upgradable {
-
+protected OurFarm ourFarm = OurFarm.getOurFarm();
     private boolean isWorking = false ;
 
     public boolean isWorking() {

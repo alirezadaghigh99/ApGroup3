@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="com.github.arteam:simple-json-rpc-core:0.9" type="repository">
+    <properties maven-id="com.github.arteam:simple-json-rpc-core:0.9" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/arteam/simple-json-rpc-core/0.9/simple-json-rpc-core-0.9.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.7.5/jackson-databind-2.7.5.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.7.0/jackson-annotations-2.7.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.7.5/jackson-core-2.7.5.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/intellij/annotations/12.0/annotations-12.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

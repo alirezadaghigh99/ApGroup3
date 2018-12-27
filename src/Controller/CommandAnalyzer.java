@@ -19,8 +19,8 @@ public class CommandAnalyzer {
     private final String PRINT_MAP = "print map";
     private final String TURN_REQUEST = "turn [\\d]+";
     private final String END_REQUEST = "end game";
-    private final String SAVE_REQUEST = "save game";
-    private final String LOAD_REQUEST = "load game";
+    private final String SAVE_REQUEST = "save game [a-z]+.json";
+    private final String LOAD_REQUEST = "load game [a-z]+.json";
     public Request getRequest(String command) throws Exception {
         if (command.matches(ADD_Animal_REQUEST)) {
             String[] params = command.split(" ");
@@ -42,7 +42,7 @@ public class CommandAnalyzer {
             return new SaleProductRequest(params[0], params[2], Integer.parseInt(params[3]));
         } else if (command.matches(GO_TRANSFORMATION_REQUEST)) {
             String[] params = command.split(" ");
-            return new GoRequest(params[1]);
+            return new GoRequest(params[0]);
         } else if (command.matches(UPGRADE_REQUEST)) {
             String[] params = command.split(" ");
             return new UpgradeRequest(params[1]);
@@ -69,11 +69,13 @@ public class CommandAnalyzer {
         }
         if (command.matches(SAVE_REQUEST))
         {
-            return new SaveRequest();
+            String[] params = command.split(" ");
+            return new SaveRequest(params[2]);
         }
         if (command.matches(LOAD_REQUEST))
         {
-            return new LoadRequest() ;
+            String[] params = command.split(" ");
+            return new LoadRequest(params[2]) ;
         }
             else
             throw new Exception("this command is not allowed");

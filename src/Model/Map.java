@@ -10,6 +10,7 @@ public class Map {
                 cells[i][j] = new Cell();
             }
         }
+        well = Well.getWell();
     }
 
     public static Map getMap() {
@@ -18,5 +19,10 @@ public class Map {
 
     public Cell[][] getCells() {
         return cells;
+    }
+   private Well well = Well.getWell();
+
+    public Well getWell() {
+        return well;
     }
 }
