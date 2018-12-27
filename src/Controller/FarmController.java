@@ -40,10 +40,24 @@ public class FarmController {
                         System.out.println(e.getMessage());
                     }
                 }
-                if (request instanceof AddProductToWorkshopRequest) {
+                if (request instanceof FromWorkShopToDepot) {
+                    try{
+                        pickToDepot(((FromWorkShopToDepot) request).getProductName() , ((FromWorkShopToDepot) request).getWorkShopName())
+                    }
+                    catch (Exception e)
+                    {
+                        System.out.println(e.getMessage());
+                    }
 
                 }
-                if (request instanceof CreateWorkShopRequest) {
+                if (request instanceof FromDepotToWorkShop) {
+                    try{
+                        pickToWorkShop(((FromDepotToWorkShop) request).getProductName() , ((FromDepotToWorkShop) request).getWorkShopName());
+                    }
+                    catch (Exception e)
+                    {
+                        System.out.println(e.getMessage());
+                    }
 
                 }
 
@@ -131,6 +145,60 @@ public class FarmController {
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
+        }
+    }
+
+    private void pickToDepot(String productName, String workShopName) {
+        if (workShopName.equals("cakeBakery"))
+        {
+
+        }
+        if (workShopName.equals("cookieBakery"))
+        {
+
+        }
+        if (workShopName.equals("spinneryFactory"))
+        {
+
+        }
+        if (workShopName.equals("sewingFactory"))
+        {
+
+        }
+        if (workShopName.equals("weavingFactory"))
+        {
+
+        }
+        if (workShopName.equals("eggPowderPlantWorkShop"))
+        {
+
+        }
+    }
+
+    private void pickToWorkShop(String productName, String workShopName) {
+        if (workShopName.equals("cakeBakery"))
+        {
+
+        }
+        if (workShopName.equals("cookieBakery"))
+        {
+
+        }
+        if (workShopName.equals("spinneryFactory"))
+        {
+
+        }
+        if (workShopName.equals("sewingFactory"))
+        {
+
+        }
+        if (workShopName.equals("weavingFactory"))
+        {
+
+        }
+        if (workShopName.equals("eggPowderPlantWorkShop"))
+        {
+
         }
     }
 

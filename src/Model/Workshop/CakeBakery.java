@@ -35,7 +35,7 @@ public class CakeBakery extends WorkShop {
                 if (ourFarm.getInPutsOfCakeBakery().get(k) instanceof Flour)
                     count2 = true;
                 if (count1&&count2)
-                    ourFarm.getInPutsOfCakeBakery().add(new Cake());
+                    ourFarm.getOutPutsOfCakeBakery().add(new Cake());
 
             }
             if (!(count2&&count1))

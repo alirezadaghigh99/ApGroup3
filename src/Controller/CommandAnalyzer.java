@@ -21,6 +21,8 @@ public class CommandAnalyzer {
     private final String END_REQUEST = "end game";
     private final String SAVE_REQUEST = "save game [a-z]+.json";
     private final String LOAD_REQUEST = "load game [a-z]+.json";
+    private final String FROM_DEPOT_TO_WORKSHOP = "[a-z]+ add [a-z]+";
+    private final String FROM_WORKSHOP_TO_DEPOT = "[a-z]+ out [a-z]+";
     public Request getRequest(String command) throws Exception {
         if (command.matches(ADD_Animal_REQUEST)) {
             String[] params = command.split(" ");
@@ -76,6 +78,17 @@ public class CommandAnalyzer {
         {
             String[] params = command.split(" ");
             return new LoadRequest(params[2]) ;
+        }
+        if (command.matches(FROM_DEPOT_TO_WORKSHOP))
+        {
+            String[] params = command.split(" ");
+            return new FromWorkShopToDepot(params[3] , params[1]);
+        }
+        if (command.matches(FROM_WORKSHOP_TO_DEPOT))
+        {
+            String[] params = command.split(" ");
+            return new FromDepotToWorkShop(params[3] , params[1]);
+
         }
             else
             throw new Exception("this command is not allowed");
