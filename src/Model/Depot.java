@@ -48,8 +48,8 @@ public class Depot extends Building implements Upgradable {
     private ArrayList<Product> storedProducts = new ArrayList<>();
     private ArrayList<Animal> storedAnimal = new ArrayList<>();
 
-    public Product pickUp(Product... products) {
-        return null;
+    public void pickUp(int index) {
+        storedProducts.remove(index);
     }
 
     public boolean isFull() {
@@ -66,6 +66,9 @@ public class Depot extends Building implements Upgradable {
         this.storedProducts = storedProducts;
     }
 
+    public void addStoredProducts(Product product){
+        this.storedProducts.add(product);
+    }
     public void setFull(boolean full) {
         isFull = full;
     }
@@ -80,12 +83,22 @@ public class Depot extends Building implements Upgradable {
 
         }
         for (int i = 0 ; i<storedProducts.size() ; i++) {
-            if (storedProducts.get(i) instanceof Egg)
+            if (storedProducts.get(i) instanceof Egg) {
                 depotStorage += Utils.DEPOT_SIZE_FOR_EGG;
+<<<<<<< Updated upstream
             if (storedProducts.get(i) instanceof Milk)
                 depotStorage+=Utils.DEPOT_SIZE_FOR_MILK;
             if (storedProducts.get(i) instanceof Wool)
                 depotStorage+=Utils.DEPOT_SIZE_FOR_WOOL ;
+=======
+            }
+            if (storedProducts.get(i) instanceof Milk) {
+                depotStorage += Utils.DEPOT_SIZE_FOR_MILK;
+            }
+            if (storedProducts.get(i) instanceof Wool) {
+                depotStorage += Utils.DEPOT_SIZE_FOR_WOOL;
+            }
+>>>>>>> Stashed changes
         }
         return depotStorage ;
     }

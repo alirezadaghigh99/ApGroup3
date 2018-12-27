@@ -14,11 +14,21 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class FarmController {
+    public int money;
+
     CommandAnalyzer commandAnalyzer = new CommandAnalyzer();
     private OurFarm ourFarm = OurFarm.getOurFarm();
     private Map map =Map.getMap();
     private View view = new View();
     private int Money = 10000 ;
+
+    public int getMoney() {
+        return money;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
+    }
 
     public boolean isGameFinished() {
         return false;
