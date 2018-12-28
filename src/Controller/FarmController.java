@@ -19,6 +19,15 @@ public class FarmController {
     private OurFarm ourFarm = OurFarm.getOurFarm();
     private Map map = Map.getMap();
     private View view = new View();
+    private int Money;
+    public int getMoney() {
+        return money;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
+    }
+
     private int money = 10000;
     private long time = 0;
 
