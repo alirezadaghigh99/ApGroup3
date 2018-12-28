@@ -5,8 +5,6 @@ import Model.Products.Egg;
 
 public class Hen extends ProducerAnimal {
 
-    private Egg egg;
-
     @Override
     public void randomWalk() {
         super.randomWalk();

@@ -57,6 +57,7 @@ public class WildAnimal extends Animal {
             this.setEnergy(this.getEnergy() - 1);
             this.smartWalk();
         }
+        setOnMap();
     }
 
     @Override

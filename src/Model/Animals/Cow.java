@@ -4,7 +4,7 @@ import Model.Products.Milk;
 import Model.ProducerAnimal;
 
 public class Cow extends ProducerAnimal {
-    private Milk milk = new Milk();
+    private Milk milk;
 
     @Override
     public void randomWalk() {

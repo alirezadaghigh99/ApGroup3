@@ -1,6 +1,12 @@
 package Model;
 
+import Model.Animals.Cow;
 import Model.Animals.DomesticAnimal;
+import Model.Animals.Hen;
+import Model.Animals.Sheep;
+import Model.Products.Egg;
+import Model.Products.Milk;
+import Model.Products.Wool;
 
 public class ProducerAnimal extends DomesticAnimal {
     private int energy = Utils.FULL_ENERGY_AMOUNT;
@@ -78,8 +84,23 @@ public class ProducerAnimal extends DomesticAnimal {
         return this.energy == 0;
     }
 
-    public void produce() {
-
+    public Product produced() {
+        if (this instanceof Hen) {
+            Egg egg = new Egg();
+            egg.setX(this.x);
+            egg.setY(this.y);
+            return egg;
+        } else if (this instanceof Sheep) {
+            Wool wool = new Wool();
+            wool.setX(this.x);
+            wool.setY(this.y);
+            return wool;
+        } else {
+            Milk milk = new Milk();
+            milk.setX(this.x);
+            milk.setY(this.y);
+            return milk;
+        }
     }
 
     @Override
@@ -96,12 +117,12 @@ public class ProducerAnimal extends DomesticAnimal {
             }
             this.randomWalk();
             if (this.energy == Utils.LOW_ENERGY_AMOUNT + 1) {
-                this.produce();
-                cells[x][y].getCellProducts().add(this.getProduct());
+                cells[x][y].getCellProducts().add(this.produced());
             }
         } else if (isWeak()) {
             if (cells[x][y].getGrass().isGrass()) {
                 cells[x][y].getGrass().setGrass(false);
+                this.setEnergy(this.getEnergy() + 1);
             } else {
                 this.setEnergy(this.getEnergy() - 1);
             }
@@ -109,6 +130,7 @@ public class ProducerAnimal extends DomesticAnimal {
         } else if (isDead()) {
             cells[x][y].getCellAnimals().remove(this);
         }
+        setOnMap();
     }
 
     @Override

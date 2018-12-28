@@ -39,6 +39,7 @@ public class Dog extends Animal {
     @Override
     public void nextTurn() {
         this.smartWalk();
+        setOnMap();
     }
 
     @Override

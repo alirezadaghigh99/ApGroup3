@@ -35,8 +35,6 @@ public class EggPowderPlantWorkShop extends WorkShop {
                     ourFarm.getOutPutsOfEggPowderPlantWorkshop().add(new EggPowder());
                     ourFarm.getInPutsOfEggPowderPlantWorkshop().remove(i);
                 }
-
-
             }
         }
     }

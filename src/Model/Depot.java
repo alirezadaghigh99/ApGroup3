@@ -102,10 +102,6 @@ public class Depot extends Building implements Upgradable {
         }
         return depotStorage ;
     }
-    {
-        Egg egg = new Egg();
-        storedProducts.add(egg);
-    }
 
 }
 

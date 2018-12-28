@@ -26,10 +26,11 @@ public class Cat extends DomesticAnimal implements Upgradable {
 
     @Override
     public void nextTurn() {
-        if(this.level == 1)
+        if (this.level == 1)
             this.randomWalk();
         else
             this.smartWalk();
+        setOnMap();
     }
 
     @Override
