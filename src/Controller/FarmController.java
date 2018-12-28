@@ -175,48 +175,43 @@ public class FarmController {
             if (this.time - start == 3)
                 spinneryFactory.makeSewing();
         }
-        if (workshopName.equals("costum")) {
+        if (workshopName.equals("custom")) {
 
         }
     }
 
     private void goAction(String transName) {
-
         if (transName.equals("truck")) {
             Truck truck = Truck.getTruck();
             for (int i = truck.getProductsInTransportation().size() - 1; i >= 0; i--) {
                 if (truck.getProductsInTransportation().get(i) instanceof Egg) {
                     money += Utils.SALE_COST_FOR_EGG;
-                    truck.getProductsInTransportation().remove(i);
                 }
                 if (truck.getProductsInTransportation().get(i) instanceof Milk) {
                     money += Utils.SALE_COST_FOR_MILK;
-                    truck.getProductsInTransportation().remove(i);
                 }
                 if (truck.getProductsInTransportation().get(i) instanceof Wool) {
                     money += Utils.SALE_COST_FOR_WOOL;
-                    truck.getProductsInTransportation().remove(i);
                 }
                 if (truck.getProductsInTransportation().get(i) instanceof Cake) {
                     money += Utils.SALE_COST_FOR_CAKE;
-                    truck.getProductsInTransportation().remove(i);
                 }
                 if (truck.getProductsInTransportation().get(i) instanceof Cookie) {
                     money += Utils.SALE_COST_FOR_FLOURY_CAKE;
-                    truck.getProductsInTransportation().remove(i);
                 }
                 if (truck.getProductsInTransportation().get(i) instanceof Fabric) {
                     money += Utils.SALE_COST_FOR_FABRIC;
-                    truck.getProductsInTransportation().remove(i);
                 }
                 if (truck.getProductsInTransportation().get(i) instanceof Flour) {
                     money += Utils.SALE_COST_FOR_FLOUR;
-                    truck.getProductsInTransportation().remove(i);
                 }
                 if (truck.getProductsInTransportation().get(i) instanceof Sewing) {
                     money += Utils.SALE_COST_FOR_SWING;
-                    truck.getProductsInTransportation().remove(i);
                 }
+                if (truck.getProductsInTransportation().get(i) instanceof Clothe) {
+                    money += Utils.SALE_COST_FOR_CARNIVAL_DRESS;
+                }
+                truck.getProductsInTransportation().remove(i);
             }
             for (int i = 0; i < truck.getAnimalsInTransportation().size(); i++) {
                 if (truck.getAnimalsInTransportation().get(i) instanceof Lion) {
@@ -226,7 +221,6 @@ public class FarmController {
                 if (truck.getAnimalsInTransportation().get(i) instanceof Bear) {
                     money += Utils.SALE_COST_FOR_CAGED_BROWN_BEAR;
                     truck.getAnimalsInTransportation().remove(i);
-
                 }
             }
         }
@@ -265,6 +259,10 @@ public class FarmController {
                     money += Utils.SALE_COST_FOR_SWING;
                     helicopter.getProductsInTransportation().remove(i);
                 }
+                if (helicopter.getProductsInTransportation().get(i) instanceof Clothe) {
+                    money += Utils.SALE_COST_FOR_CARNIVAL_DRESS;
+                    helicopter.getProductsInTransportation().remove(i);
+                }
             }
             for (int i = 0; i < helicopter.getAnimalsInTransportation().size(); i++) {
                 if (helicopter.getAnimalsInTransportation().get(i) instanceof Lion) {
@@ -275,10 +273,8 @@ public class FarmController {
                 if (helicopter.getAnimalsInTransportation().get(i) instanceof Bear) {
                     money += Utils.SALE_COST_FOR_CAGED_BROWN_BEAR;
                     helicopter.getAnimalsInTransportation().remove(i);
-
                 }
             }
-
         }
     }
 
