@@ -173,6 +173,10 @@ public class FarmController {
                 if (request instanceof UpgradeRequest) {
                     upgradeRequest(((UpgradeRequest) request).getThingWeWantUpgrade());
                 }
+                if (request instanceof OpenDirectory)
+                {
+                    openDirectory(((OpenDirectory) request).getPath());
+                }
                 if (request instanceof EndRequest) {
                     isFinished = true;
                 }
@@ -180,6 +184,23 @@ public class FarmController {
                 System.out.println(e.getMessage());
             }
         }
+    }
+
+    private void openDirectory(String path) {
+        File directory = new File(path);
+        File[] contestOfDirectory = directory.listFiles();
+        for (File object : contestOfDirectory)
+        {
+            if (object.isFile())
+            {
+                System.out.println("File name is: "+object.getName());
+            }
+            else if (object.isDirectory())
+            {
+                System.out.println("directory name is : "+object.getName());
+            }
+        }
+
     }
 
     private Costum startCustom(String path) {

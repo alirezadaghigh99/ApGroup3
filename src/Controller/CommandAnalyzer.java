@@ -24,6 +24,7 @@ public class CommandAnalyzer {
     private final String FROM_DEPOT_TO_WORKSHOP = "[a-z]+ add [a-z]+";
     private final String FROM_WORKSHOP_TO_DEPOT = "[a-z]+ out [a-z]+";
     private final String CUSTOM_WORKSHOP_START = "start [a-z].json";
+    private final String OPEN_DIRECTORY = "open directory [a-z]+";
     public Request getRequest(String command) throws Exception {
         if (command.matches(ADD_Animal_REQUEST)) {
             String[] params = command.split(" ");
@@ -95,6 +96,12 @@ public class CommandAnalyzer {
         {
             String[] params = command.split(" ");
             return new CustomRequest(params[1]);
+        }
+        if (command.matches(OPEN_DIRECTORY))
+        {
+            String[] params = command.split(" ");
+            return new OpenDirectory(params[2]);
+
         }
             else
             throw new Exception("this command is not allowed");
