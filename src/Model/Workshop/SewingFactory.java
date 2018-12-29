@@ -1,11 +1,8 @@
 package Model.Workshop;
 
-import Model.Depot;
-import Model.Product;
+import Model.OnMaps.Depot;
 import Model.Products.Clothe;
 import Model.Products.Fabric;
-
-import java.util.ArrayList;
 
 public class SewingFactory extends WorkShop {
     // fabric  --> clothe
@@ -16,7 +13,7 @@ public class SewingFactory extends WorkShop {
         return sewingFactory;
     }
 
-    private SewingFactory() {
+    public SewingFactory() {
     }
 
     Depot depot = Depot.getDepot() ;

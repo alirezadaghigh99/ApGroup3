@@ -1,6 +1,9 @@
-package Model;
+package Model.OnMaps;
 
-public class Well extends Building  implements  Upgradable{
+import Model.Upgradable;
+import Model.Workshop.Building;
+
+public class Well extends Building implements Upgradable {
     private int capacity = 50 ;
     private int storage = 50 ;
     private int level ;

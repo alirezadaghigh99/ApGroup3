@@ -1,8 +1,12 @@
-package Model;
+package Model.Animals;
 
-import Model.Animals.Animal;
+import Model.OnMaps.Cell;
+import Model.OnMaps.Map;
+import Model.OurFarm;
+import Model.Utils;
 
 public class WildAnimal extends Animal {
+    OurFarm ourFarm =OurFarm.getOurFarm();
     private int energy = Utils.FULL_ENERGY_AMOUNT;
 
     public int getEnergy() {
@@ -20,7 +24,7 @@ public class WildAnimal extends Animal {
 
     @Override
     public void smartWalk() {
-        Map map = Map.getMap();
+        Map map = ourFarm.getMap();
         Cell[][] cells = map.getCells();
         for (int k = 1; k < Utils.mapSize; k++) {
             for (int i = x - k; i < x + k; i++) {

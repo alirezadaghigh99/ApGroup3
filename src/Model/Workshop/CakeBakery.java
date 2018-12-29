@@ -1,11 +1,8 @@
 package Model.Workshop;
 
-import Model.Product;
 import Model.Products.Cake;
 import Model.Products.Egg;
 import Model.Products.Flour;
-
-import java.util.ArrayList;
 
 public class CakeBakery extends WorkShop {
     // flour & cookie --> cake
@@ -13,7 +10,7 @@ public class CakeBakery extends WorkShop {
     private boolean count2 = false;
     private static CakeBakery cakeBakery = new CakeBakery();
 
-    private CakeBakery() {
+    public CakeBakery() {
     }
 
     public static CakeBakery getCakeBakery() {

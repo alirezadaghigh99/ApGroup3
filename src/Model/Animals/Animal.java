@@ -1,8 +1,7 @@
 package Model.Animals;
 
-import Model.Cell;
-import Model.Entity;
-import Model.Map;
+import Model.OnMaps.Cell;
+import Model.OnMaps.Entity;
 import Model.Utils;
 
 

@@ -1,4 +1,4 @@
-package Model;
+package Model.Requests;
 
 import Model.Requests.Request;
 

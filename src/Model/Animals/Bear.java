@@ -1,7 +1,5 @@
 package Model.Animals;
 
-import Model.WildAnimal;
-
 public class Bear extends WildAnimal {
     private int timeToNextHungry;
 

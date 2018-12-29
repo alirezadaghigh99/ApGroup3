@@ -1,10 +1,12 @@
-package Model;
+package Model.OnMaps;
+
+import Model.Utils;
 
 public class Map {
 
     private Cell[][] cells = new Cell[Utils.mapSize][Utils.mapSize];
-    private static Map map = new Map();
-    private Map() {
+
+    public Map() {
         for (int i = 0; i < Utils.mapSize ; i++) {
             for (int j = 0; j < Utils.mapSize ; j++) {
                 cells[i][j] = new Cell();
@@ -13,9 +15,7 @@ public class Map {
         well = Well.getWell();
     }
 
-    public static Map getMap() {
-        return map;
-    }
+
 
     public Cell[][] getCells() {
         return cells;

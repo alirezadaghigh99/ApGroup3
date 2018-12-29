@@ -1,11 +1,12 @@
-package Model;
+package Model.OnMaps;
 
 import Model.Animals.Animal;
 import Model.Animals.Bear;
 import Model.Animals.Lion;
-import Model.Products.Egg;
-import Model.Products.Milk;
-import Model.Products.Wool;
+import Model.Products.*;
+import Model.Upgradable;
+import Model.Utils;
+import Model.Workshop.Building;
 
 import java.util.ArrayList;
 
@@ -77,7 +78,7 @@ public class Depot extends Building implements Upgradable {
         for (int i = 0 ; i<storedAnimal.size() ; i++)
         {
             if (storedAnimal.get(i) instanceof Lion)
-                depotStorage+=Utils.DEPOT_SIZE_FOR_CAGED_LION;
+                depotStorage+= Utils.DEPOT_SIZE_FOR_CAGED_LION;
             if (storedAnimal.get(i) instanceof Bear)
                 depotStorage+=Utils.DEPOT_SIZE_FOR_CAGED_BROWN_BEAR;
 
@@ -92,11 +93,23 @@ public class Depot extends Building implements Upgradable {
                 depotStorage+=Utils.DEPOT_SIZE_FOR_WOOL ;
 //=======
             }
-            if (storedProducts.get(i) instanceof Milk) {
-                depotStorage += Utils.DEPOT_SIZE_FOR_MILK;
+            if (storedProducts.get(i) instanceof Flour) {
+                depotStorage += Utils.DEPOT_SIZE_FOR_FLOUR;
             }
-            if (storedProducts.get(i) instanceof Wool) {
-                depotStorage += Utils.DEPOT_SIZE_FOR_WOOL;
+            if (storedProducts.get(i) instanceof Cake) {
+                depotStorage += Utils.DEPOT_SIZE_FOR_CAKE;
+            }
+            if (storedProducts.get(i) instanceof Cookie) {
+                depotStorage += Utils.DEPOT_SIZE_FOR_FLOURY_CAKE;
+            }
+            if (storedProducts.get(i) instanceof Fabric) {
+                depotStorage += Utils.DEPOT_SIZE_FOR_FABRIC;
+            }
+            if (storedProducts.get(i) instanceof Sewing) {
+                depotStorage += Utils.DEPOT_SIZE_FOR_SEWING;
+            }
+            if (storedProducts.get(i) instanceof Clothe) {
+                depotStorage += Utils.DEPOT_SIZE_FOR_CARNIVAL_DRESS;
             }
 //>>>>>>> Stashed changes
         }

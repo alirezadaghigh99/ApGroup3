@@ -1,6 +1,8 @@
-package Model;
+package Model.Transport;
 
 import Model.Animals.Animal;
+import Model.OnMaps.Depot;
+import Model.Products.Product;
 
 import java.util.ArrayList;
 

@@ -1,17 +1,22 @@
-package Model;
+package Model.Animals;
 
-import Model.Animals.Cow;
 import Model.Animals.DomesticAnimal;
 import Model.Animals.Hen;
 import Model.Animals.Sheep;
+import Model.OnMaps.Cell;
+import Model.OnMaps.Map;
+import Model.OurFarm;
 import Model.Products.Egg;
 import Model.Products.Milk;
+import Model.Products.Product;
 import Model.Products.Wool;
+import Model.Utils;
 
 public class ProducerAnimal extends DomesticAnimal {
     private int energy = Utils.FULL_ENERGY_AMOUNT;
     Product product;
-    Map map = Map.getMap();
+    OurFarm ourFarm = OurFarm.getOurFarm();
+    Map map = ourFarm.getMap();
 
     @Override
     public void randomWalk() {
@@ -20,7 +25,8 @@ public class ProducerAnimal extends DomesticAnimal {
 
     @Override
     public void smartWalk() {
-        Map map = Map.getMap();
+        OurFarm ourFarm = OurFarm.getOurFarm();
+        Map map = ourFarm.getMap();
         Cell[][] cell = map.getCells();
         for (int k = 1; k < Utils.mapSize; k++) {
             for (int i = x - k; i < x + k; i++) {

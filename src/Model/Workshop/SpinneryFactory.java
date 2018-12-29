@@ -1,14 +1,8 @@
 package Model.Workshop;
 
-import Model.Depot;
-import Model.OurFarm;
-import Model.Product;
-import Model.Products.Cookie;
-import Model.Products.EggPowder;
+import Model.OnMaps.Depot;
 import Model.Products.Sewing;
 import Model.Products.Wool;
-
-import java.util.ArrayList;
 
 public class SpinneryFactory extends WorkShop {
     //wool --> sewing
@@ -16,7 +10,7 @@ public class SpinneryFactory extends WorkShop {
     Depot depot = Depot.getDepot() ;
     private static SpinneryFactory spinneryFactory  = new SpinneryFactory();
 
-    private SpinneryFactory() {
+    public SpinneryFactory() {
     }
 
     public static SpinneryFactory getSpinneryFactory() {

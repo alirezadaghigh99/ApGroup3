@@ -1,6 +1,4 @@
 package Model.Products;
 
-import Model.Product;
-
 public class Wool extends Product {
 }

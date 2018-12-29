@@ -1,13 +1,8 @@
 package Model.Workshop;
 
-import Model.Depot;
-import Model.Product;
-import Model.Products.Cookie;
+import Model.OnMaps.Depot;
 import Model.Products.Egg;
 import Model.Products.EggPowder;
-import Model.Products.Flour;
-
-import java.util.ArrayList;
 
 public class EggPowderPlantWorkShop extends WorkShop {
     // EGG --> eggpowder
@@ -15,7 +10,7 @@ public class EggPowderPlantWorkShop extends WorkShop {
 
     private static EggPowderPlantWorkShop eggPowderPlantWorkShop = new EggPowderPlantWorkShop();
 
-    private EggPowderPlantWorkShop() {
+    public EggPowderPlantWorkShop() {
     }
 
     public static EggPowderPlantWorkShop getEggPowderPlantWorkShop() {

@@ -1,14 +1,8 @@
 package Model.Workshop;
 
-import Model.Depot;
-import Model.OurFarm;
-import Model.Product;
-import Model.Products.Cookie;
-import Model.Products.EggPowder;
+import Model.OnMaps.Depot;
 import Model.Products.Fabric;
 import Model.Products.Sewing;
-
-import java.util.ArrayList;
 
 public class WeavingFactory extends WorkShop {
     // sewing --> Fabric
@@ -16,7 +10,7 @@ public class WeavingFactory extends WorkShop {
     Fabric fabric = new Fabric() ;
     private static WeavingFactory weavingFactory = new WeavingFactory();
 
-    private WeavingFactory() {
+    public WeavingFactory() {
     }
 
     public static WeavingFactory getWeavingFactory() {

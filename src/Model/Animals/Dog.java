@@ -1,14 +1,15 @@
 package Model.Animals;
 
-import Model.Cell;
-import Model.Map;
+import Model.OnMaps.Cell;
+import Model.OnMaps.Map;
+import Model.OurFarm;
 import Model.Utils;
-import Model.WildAnimal;
 
 public class Dog extends Animal {
     @Override
     public void smartWalk() {
-        Map map = Map.getMap();
+        OurFarm ourFarm = OurFarm.getOurFarm();
+        Map map = ourFarm.getMap();
         Cell[][] cells = map.getCells();
         for (int k = 1; k < Utils.mapSize; k++) {
             for (int i = x - k; i < x + k; i++) {

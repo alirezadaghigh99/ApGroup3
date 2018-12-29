@@ -1,6 +1,10 @@
 package Model;
 
 import Model.Animals.Animal;
+import Model.OnMaps.Cell;
+import Model.OnMaps.Map;
+import Model.Products.Product;
+import Model.Workshop.Building;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,7 +14,12 @@ public class OurFarm implements java.io.Serializable{
     private ArrayList <Product> products = new ArrayList<>();
     private ArrayList <Building> buildings = new ArrayList<>();
     private static OurFarm ourFarm = new OurFarm();
-    Map map = Map.getMap();
+    Map map = new Map();
+
+    public Map getMap() {
+        return map;
+    }
+
     Cell[][] cells = map.getCells();
 
     @Override

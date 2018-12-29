@@ -3,9 +3,15 @@ package Controller;
 import Model.*;
 import Model.Animals.*;
 import Model.Animals.DomesticAnimal;
+import Model.OnMaps.Cell;
+import Model.OnMaps.Depot;
+import Model.OnMaps.Map;
+import Model.OnMaps.Well;
 import Model.Products.*;
 import Model.Requests.*;
 import Model.Requests.SaveRequest;
+import Model.Transport.Helicopter;
+import Model.Transport.Truck;
 import Model.Workshop.*;
 import View.View;
 import com.gilecode.yagson.YaGson;
@@ -17,7 +23,7 @@ import java.util.ArrayList;
 public class FarmController {
     CommandAnalyzer commandAnalyzer = new CommandAnalyzer();
     private OurFarm ourFarm = OurFarm.getOurFarm();
-    private Map map = Map.getMap();
+    private Map map = ourFarm.getMap();
     private View view = new View();
     private int money = 10000;
     private long time = 0;
@@ -42,7 +48,7 @@ public class FarmController {
                 }
                 if (request instanceof FromWorkShopToDepot) {
                     try{
-                        pickToDepot(((FromWorkShopToDepot) request).getProductName() , ((FromWorkShopToDepot) request).getWorkShopName())
+                        pickToDepot(((FromWorkShopToDepot) request).getProductName() , ((FromWorkShopToDepot) request).getWorkShopName());
                     }
                     catch (Exception e)
                     {
@@ -71,11 +77,11 @@ public class FarmController {
 
                 }
                 if (request instanceof LoadRequest) {
-                    this.map = load();
+                    this.map = load(((LoadRequest) request).getPath());
                 }
                 if (request instanceof SaveRequest) {
                     try {
-                        save();
+                        save(((SaveRequest) request).getPath());
                     } catch (Exception e) {
                         System.out.println(e.getMessage());
                     }
@@ -149,56 +155,137 @@ public class FarmController {
     }
 
     private void pickToDepot(String productName, String workShopName) {
+        Depot depot = Depot.getDepot();
         if (workShopName.equals("cakeBakery"))
         {
+         CakeBakery cakeBakery = CakeBakery.getCakeBakery();
+         for (int i= ourFarm.getOutPutsOfCakeBakery().size()-1 ; i>=0 ; i--)
+         {
+            depot.addStoredProducts(ourFarm.getInPutsOfCakeBakery().get(i));
+         }
+         ourFarm.getOutPutsOfCakeBakery().clear();
 
         }
         if (workShopName.equals("cookieBakery"))
         {
+            CookieBakery cookieBakery = CookieBakery.getCookieBakery();
+            for (int i= ourFarm.getOutPutsOfCookieBakery().size()-1 ; i>=0 ; i--)
+            {
+                depot.addStoredProducts(ourFarm.getInPutsOfCookieBakery().get(i));
+            }
+            ourFarm.getOutPutsOfCookieBakery().clear();
 
         }
         if (workShopName.equals("spinneryFactory"))
         {
-
+            SpinneryFactory spinneryFactory = SpinneryFactory.getSpinneryFactory();
+            for (int i= ourFarm.getOutPutsOfSpinnery().size()-1 ; i>=0 ; i--)
+            {
+                depot.addStoredProducts(ourFarm.getInPutsOfSpinnery().get(i));
+            }
+            ourFarm.getOutPutsOfSpinnery().clear();
         }
         if (workShopName.equals("sewingFactory"))
         {
-
+            SewingFactory sewingFactory = SewingFactory.getSewingFactory();
+            for (int i= ourFarm.getOutPutsOfSewingFactory().size()-1 ; i>=0 ; i--)
+            {
+                depot.addStoredProducts(ourFarm.getInPutsOfSewingFactory().get(i));
+            }
+            ourFarm.getOutPutsOfSewingFactory().clear();
         }
         if (workShopName.equals("weavingFactory"))
         {
-
+            WeavingFactory weavingFactory = WeavingFactory.getWeavingFactory();
+            for (int i= ourFarm.getOutPutsOfWeavingFactory().size()-1 ; i>=0 ; i--)
+            {
+                depot.addStoredProducts(ourFarm.getInPutsOfWeavingFactory().get(i));
+            }
+            ourFarm.getOutPutsOfWeavingFactory().clear();
         }
         if (workShopName.equals("eggPowderPlantWorkShop"))
         {
-
+            EggPowderPlantWorkShop eggPowderPlantWorkShop = EggPowderPlantWorkShop.getEggPowderPlantWorkShop();
+            for (int i= ourFarm.getOutPutsOfEggPowderPlantWorkshop().size()-1 ; i>=0 ; i--)
+            {
+                depot.addStoredProducts(ourFarm.getInPutsOfEggPowderPlantWorkshop().get(i));
+            }
+            ourFarm.getOutPutsOfEggPowderPlantWorkshop().clear();
         }
     }
 
     private void pickToWorkShop(String productName, String workShopName) {
-        if (workShopName.equals("cakeBakery"))
+        Depot depot = Depot.getDepot();
+        if (workShopName.equals("cakeBakery")&&true)
         {
+            for (int i = depot.getStoredProducts().size()-1 ; i>=0  ;i--)
+            {
+                if (depot.getStoredProducts().get(i) instanceof Egg ||depot.getStoredProducts().get(i) instanceof Flour)
+                {
+                    ourFarm.getInPutsOfCakeBakery().add(depot.getStoredProducts().get(i));
+                    depot.getStoredProducts().remove(i);
 
+                }
+            }
         }
         if (workShopName.equals("cookieBakery"))
         {
+            for (int i = depot.getStoredProducts().size()-1 ; i>=0  ;i--)
+            {
+                if (depot.getStoredProducts().get(i) instanceof EggPowder)
+                {
+                    ourFarm.getInPutsOfCookieBakery().add(depot.getStoredProducts().get(i));
+                    depot.getStoredProducts().remove(i);
 
+                }
+            }
         }
         if (workShopName.equals("spinneryFactory"))
         {
+            for (int i = depot.getStoredProducts().size()-1 ; i>=0  ;i--)
+            {
+                if (depot.getStoredProducts().get(i) instanceof Wool)
+                {
+                    ourFarm.getInPutsOfSpinnery().add(depot.getStoredProducts().get(i));
+                    depot.getStoredProducts().remove(i);
 
+                }
+            }
         }
         if (workShopName.equals("sewingFactory"))
         {
+            for (int i = depot.getStoredProducts().size()-1 ; i>=0  ;i--)
+            {
+                if (depot.getStoredProducts().get(i) instanceof Fabric)
+                {
+                    ourFarm.getInPutsOfSewingFactory().add(depot.getStoredProducts().get(i));
+                    depot.getStoredProducts().remove(i);
 
+                }
+            }
         }
         if (workShopName.equals("weavingFactory"))
         {
+            for (int i = depot.getStoredProducts().size()-1 ; i>=0  ;i--)
+            {
+                if (depot.getStoredProducts().get(i) instanceof Sewing)
+                {
+                    ourFarm.getInPutsOfSewingFactory().add(depot.getStoredProducts().get(i));
+                    depot.getStoredProducts().remove(i);
 
+                }
+            }
         }
         if (workShopName.equals("eggPowderPlantWorkShop"))
         {
-
+            for (int i = depot.getStoredProducts().size()-1 ; i>=0  ;i--)
+            {
+                if (depot.getStoredProducts().get(i) instanceof Egg )
+                {
+                    ourFarm.getInPutsOfEggPowderPlantWorkshop().add(depot.getStoredProducts().get(i));
+                    depot.getStoredProducts().remove(i);
+                }
+            }
         }
     }
 
@@ -244,7 +331,7 @@ public class FarmController {
         if (transName.equals("truck")) {
             Truck truck = Truck.getTruck();
             for (int i = truck.getProductsInTransportation().size() - 1; i >= 0; i--) {
-                if (truck.getProductsInTransportation().get(i) instanceof Egg) {
+                if (truck.getProductsInTransportation().get(i) instanceof Egg&&true) {
                     money += Utils.SALE_COST_FOR_EGG;
                     truck.getProductsInTransportation().remove(i);
                 }
@@ -326,7 +413,7 @@ public class FarmController {
                 }
             }
             for (int i = 0; i < helicopter.getAnimalsInTransportation().size(); i++) {
-                if (helicopter.getAnimalsInTransportation().get(i) instanceof Lion) {
+                if (helicopter.getAnimalsInTransportation().get(i) instanceof Lion&&true) {
                     money += Utils.SALE_COST_FOR_CAGED_LION;
                     helicopter.getAnimalsInTransportation().remove(i);
 
@@ -493,52 +580,56 @@ public class FarmController {
         Depot depot = Depot.getDepot();
         if (type.equals("truck")) {
             Truck truck = Truck.getTruck();
-            while (!depot.isFull() && !truck.getProductsInTransportation().isEmpty() && !truck.getAnimalsInTransportation().isEmpty()) {
-                for (int i = truck.getAnimalsInTransportation().size() - 1; i >= 0; i--) {
-                    depot.getStoredAnimal().add(truck.getAnimalsInTransportation().get(i));
-                    if (truck.getProductsInTransportation().get(i) instanceof Egg) {
-                        money -= Utils.BUY_COST_FOR_EGG;
+            if (truck.getProductsInTransportation().isEmpty() && truck.getAnimalsInTransportation().isEmpty())
+                System.out.println("hichi nis ke!!!!");
+            else {
+                while (!depot.isFull() && !truck.getProductsInTransportation().isEmpty() && !truck.getAnimalsInTransportation().isEmpty()) {
+                    for (int i = truck.getAnimalsInTransportation().size() - 1; i >= 0; i--) {
+                        depot.getStoredAnimal().add(truck.getAnimalsInTransportation().get(i));
+                        if (truck.getProductsInTransportation().get(i) instanceof Egg) {
+                            money -= Utils.BUY_COST_FOR_EGG;
+                        }
+                        if (truck.getProductsInTransportation().get(i) instanceof Milk) {
+                            money -= Utils.BUY_COST_FOR_MILK;
+                        }
+                        if (truck.getProductsInTransportation().get(i) instanceof Wool) {
+                            money -= Utils.BUY_COST_FOR_WOOL;
+                        }
+                        if (truck.getProductsInTransportation().get(i) instanceof Fabric) {
+                            money -= Utils.BUY_COST_FOR_FABRIC;
+                        }
+                        if (truck.getProductsInTransportation().get(i) instanceof Flour) {
+                            money -= Utils.BUY_COST_FOR_FLOUR;
+                        }
+                        if (truck.getProductsInTransportation().get(i) instanceof Cake) {
+                            money -= Utils.BUY_COST_FOR_CAKE;
+                        }
+                        if (truck.getProductsInTransportation().get(i) instanceof Cookie) {
+                            money -= Utils.BUY_COST_FOR_FLOURY_CAKE;
+                        }
+                        if (truck.getProductsInTransportation().get(i) instanceof Sewing) {
+                            money -= Utils.BUY_COST_FOR_SEWING;
+                        }
+                        truck.getAnimalsInTransportation().remove(i);
                     }
-                    if (truck.getProductsInTransportation().get(i) instanceof Milk) {
-                        money -= Utils.BUY_COST_FOR_MILK;
+                    for (int i = truck.getAnimalsInTransportation().size() - 1; i >= 0; i--) {
+                        depot.getStoredProducts().add(truck.getProductsInTransportation().get(i));
+                        if (truck.getAnimalsInTransportation().get(i) instanceof Bear) {
+                            money -= Utils.BUY_COST_FOR_SPRUCE_BROWN_BEAR;
+                        }
+                        if (truck.getAnimalsInTransportation().get(i) instanceof Lion)
+                            money -= Utils.BUY_COST_FOR_CAGED_LION;
+                        truck.getProductsInTransportation().remove(i);
                     }
-                    if (truck.getProductsInTransportation().get(i) instanceof Wool) {
-                        money -= Utils.BUY_COST_FOR_WOOL;
-                    }
-                    if (truck.getProductsInTransportation().get(i) instanceof Fabric) {
-                        money -= Utils.BUY_COST_FOR_FABRIC;
-                    }
-                    if (truck.getProductsInTransportation().get(i) instanceof Flour) {
-                        money -= Utils.BUY_COST_FOR_FLOUR;
-                    }
-                    if (truck.getProductsInTransportation().get(i) instanceof Cake) {
-                        money -= Utils.BUY_COST_FOR_CAKE;
-                    }
-                    if (truck.getProductsInTransportation().get(i) instanceof Cookie) {
-                        money -= Utils.BUY_COST_FOR_FLOURY_CAKE;
-                    }
-                    if (truck.getProductsInTransportation().get(i) instanceof Sewing) {
-                        money -= Utils.BUY_COST_FOR_SEWING;
-                    }
-                    truck.getAnimalsInTransportation().remove(i);
-                }
-                for (int i = truck.getAnimalsInTransportation().size() - 1; i >= 0; i--) {
-                    depot.getStoredProducts().add(truck.getProductsInTransportation().get(i));
-                    if (truck.getAnimalsInTransportation().get(i) instanceof Bear) {
-                        money -= Utils.BUY_COST_FOR_SPRUCE_BROWN_BEAR;
-                    }
-                    if (truck.getAnimalsInTransportation().get(i) instanceof Lion)
-                        money -= Utils.BUY_COST_FOR_CAGED_LION;
-                    truck.getProductsInTransportation().remove(i);
                 }
             }
         }
         if (type.equals("helicopter")) {
             Helicopter helicopter = Helicopter.getHelicopter();
-            while (!helicopter.getProductsInTransportation().isEmpty() && !depot.isFull() && !helicopter.getAnimalsInTransportation().isEmpty()) {
+            while (!depot.isFull() &&!helicopter.getProductsInTransportation().isEmpty() &&  !helicopter.getAnimalsInTransportation().isEmpty()) {
                 for (int i = helicopter.getAnimalsInTransportation().size() - 1; i >= 0; i--) {
                     depot.getStoredAnimal().add(helicopter.getAnimalsInTransportation().get(i));
-                    if (helicopter.getProductsInTransportation().get(i) instanceof Egg) {
+                    if (helicopter.getProductsInTransportation().get(i) instanceof Egg&&true) {
                         money -= Utils.BUY_COST_FOR_EGG;
                     }
                     if (helicopter.getProductsInTransportation().get(i) instanceof Milk) {
@@ -579,7 +670,7 @@ public class FarmController {
         }
     }
 
-    public void addGrassAction(int xOfGrass, int yOfGrass) {
+    private void addGrassAction(int xOfGrass, int yOfGrass) {
         Well well = Well.getWell();
         Cell[][] cells = map.getCells();
         if (well.getStorage() >= 18) {
@@ -601,13 +692,13 @@ public class FarmController {
 
     }
 
-    public void addWaterAction() {
+    private void addWaterAction() {
         Well well = Well.getWell();
         well.addWater();
         System.out.println(well.getStorage());
     }
 
-    public void pickUpAction(int x, int y) {
+    private void pickUpAction(int x, int y) {
         Cell[][] cells = map.getCells();
         Depot depot = Depot.getDepot();
         if (!cells[x][y].getCellProducts().isEmpty()) {
@@ -631,8 +722,8 @@ public class FarmController {
             }
     }
 
-    public Map load() {
-        File f = new File("OURFARM.json");
+    public Map load(String path) {
+        File f = new File(path);
         InputStream stream = null;
         try {
             stream = new FileInputStream(f);
@@ -663,14 +754,14 @@ public class FarmController {
         return new YaGson().fromJson(json.toString(), Map.class);
     }
 
-    public void save() {
+    public void save(String path) {
         YaGson yaGson = new YaGson();
         String objToString = yaGson.toJson(map);
 
         //  parseSTRING.ourFarm
         BufferedWriter writer = null;
         try {
-            writer = new BufferedWriter(new FileWriter("OURFARM.json"));
+            writer = new BufferedWriter(new FileWriter(path));
         } catch (IOException e) {
             e.printStackTrace();
         }

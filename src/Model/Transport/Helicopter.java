@@ -1,4 +1,4 @@
-package Model;
+package Model.Transport;
 
 public class Helicopter extends Transportation{
     private int capacity = 100 ;

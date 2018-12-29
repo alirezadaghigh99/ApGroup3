@@ -1,6 +1,7 @@
-package Model;
+package Model.OnMaps;
 
 import Model.Animals.Animal;
+import Model.Products.Product;
 
 import java.util.ArrayList;
 
@@ -8,12 +9,6 @@ public class Cell {
    private ArrayList<Animal> cellAnimals = new ArrayList<>();
    private ArrayList<Product> cellProducts = new ArrayList<>();
    private Grass grass = new Grass();
-   private Well well = Well.getWell();
-
-   public Well getWell() {
-      return well;
-   }
-
    public ArrayList<Animal> getCellAnimals() {
       return cellAnimals;
    }

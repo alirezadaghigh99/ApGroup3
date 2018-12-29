@@ -1,4 +1,4 @@
-package Model;
+package Model.OnMaps;
 
 public class Grass extends Entity {
     private boolean isGrass = false;

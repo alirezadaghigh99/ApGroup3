@@ -1,4 +1,4 @@
-package Model;
+package Model.OnMaps;
 
 public class Entity {
     protected int x ;
