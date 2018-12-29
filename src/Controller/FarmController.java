@@ -26,9 +26,11 @@ public class FarmController {
     private OurFarm ourFarm = OurFarm.getOurFarm();
     private CheckGoal checkGoal = new CheckGoal();
     private Map map = ourFarm.getMap();
+    private WorkShop workShopcu = new Costum();
     private View view = new View();
     private int Money;
     private int levelOfGame ;
+
     public int getMoney() {
         return money;
     }
@@ -55,6 +57,19 @@ public class FarmController {
                     try {
                         addAnimalAction(((AddAnimalRequest) request).getAnimalName());
                     } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                }
+                if (request instanceof CustomRequest)
+                {
+                    try
+                    {
+                    this.workShopcu  = startCustom(((CustomRequest) request).getPath()) ;
+                        map.getWorkShops().add(workShopcu);
+
+                    }
+                    catch (Exception e)
+                    {
                         System.out.println(e.getMessage());
                     }
                 }
@@ -90,6 +105,7 @@ public class FarmController {
                 }
                 if (request instanceof LoadRequest) {
                     this.map = load(((LoadRequest) request).getPath());
+                    ourFarm.setMap(this.map);
                 }
                 if (request instanceof SaveRequest) {
                     try {
@@ -164,6 +180,39 @@ public class FarmController {
                 System.out.println(e.getMessage());
             }
         }
+    }
+
+    private Costum startCustom(String path) {
+
+        File F = new File(path);
+        InputStream stream = null;
+        try {
+            stream = new FileInputStream(F);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        StringBuilder json = new StringBuilder();
+        int byteCode = 0;
+        try {
+            byteCode = stream.read();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        while (byteCode != -1) {
+            json.append((char) byteCode);
+            try {
+                byteCode = stream.read();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        try {
+            stream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return new YaGson().fromJson(json.toString(), Costum.class);
     }
 
     private void pickToDepot(String productName, String workShopName) {
@@ -521,8 +570,82 @@ public class FarmController {
         }
         if (transName.equals("helicopter")) {
             Helicopter helicopter = Helicopter.getHelicopter();
-            for (int i = 0; i < count; i++) {
+            if (produtName.equals("egg")) {
+                while (!helicopter.ifFullHelicopter()) {
+                    for (int i = 0; i < count; i++) {
+                        if (depot.getStoredProducts().get(i) instanceof Egg)
+                            helicopter.getProductsInTransportation().add(depot.getStoredProducts().get(i));
+                        helicopter.setStored(helicopter.getStored() + Utils.DEPOT_SIZE_FOR_EGG);
+                    }
+                }
+            }
+            if (produtName.equals("milk")) {
+                while (!helicopter.ifFullHelicopter()) {
+                    for (int i = 0; i < count; i++) {
+                        if (depot.getStoredProducts().get(i) instanceof Milk)
+                            helicopter.getProductsInTransportation().add(depot.getStoredProducts().get(i));
+                        helicopter.setStored(helicopter.getStored() + Utils.DEPOT_SIZE_FOR_MILK);
+                    }
+                }
+            }
+            if (produtName.equals("wool")) {
+                while (!helicopter.ifFullHelicopter()) {
+                    for (int i = 0; i < count; i++) {
+                        if (depot.getStoredProducts().get(i) instanceof Wool)
+                            helicopter.getProductsInTransportation().add(depot.getStoredProducts().get(i));
+                        helicopter.setStored(helicopter.getStored() + Utils.DEPOT_SIZE_FOR_WOOL);
+                    }
+                }
+            }
+            if (produtName.equals("flour")) {
+                while (!helicopter.ifFullHelicopter()) {
+                    for (int i = 0; i < count; i++) {
+                        if (depot.getStoredProducts().get(i) instanceof Flour)
+                            helicopter.getProductsInTransportation().add(depot.getStoredProducts().get(i));
+                        helicopter.setStored((int) (helicopter.getStored() + Utils.DEPOT_SIZE_FOR_FLOUR));
 
+                    }
+                }
+            }
+            if (produtName.equals("cake")) {
+                while (!helicopter.ifFullHelicopter()) {
+                    for (int i = 0; i < count; i++) {
+                        if (depot.getStoredProducts().get(i) instanceof Cake)
+                            helicopter.getProductsInTransportation().add(depot.getStoredProducts().get(i));
+                        helicopter.setStored(helicopter.getStored() + Utils.DEPOT_SIZE_FOR_CAKE);
+
+                    }
+                }
+            }
+            if (produtName.equals("cookie")) {
+                while (!helicopter.ifFullHelicopter()) {
+                    for (int i = 0; i < count; i++) {
+                        if (depot.getStoredProducts().get(i) instanceof Cookie)
+                            helicopter.getProductsInTransportation().add(depot.getStoredProducts().get(i));
+                        helicopter.setStored(helicopter.getStored() + Utils.DEPOT_SIZE_FOR_FLOURY_CAKE);
+
+                    }
+                }
+            }
+            if (produtName.equals("fabric")) {
+                while (!helicopter.ifFullHelicopter()) {
+                    for (int i = 0; i < count; i++) {
+                        if (depot.getStoredProducts().get(i) instanceof Fabric)
+                            helicopter.getProductsInTransportation().add(depot.getStoredProducts().get(i));
+                        helicopter.setStored(helicopter.getStored() + Utils.DEPOT_SIZE_FOR_FABRIC);
+
+                    }
+                }
+            }
+            if (produtName.equals("sewing")) {
+                while (!helicopter.ifFullHelicopter()) {
+                    for (int i = 0; i < count; i++) {
+                        if (depot.getStoredProducts().get(i) instanceof Sewing)
+                            helicopter.getProductsInTransportation().add(depot.getStoredProducts().get(i));
+                        helicopter.setStored(helicopter.getStored() + Utils.DEPOT_SIZE_FOR_SEWING);
+
+                    }
+                }
             }
 
         }

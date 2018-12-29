@@ -9,18 +9,40 @@ import Model.Workshop.Building;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class OurFarm implements java.io.Serializable{
-    private ArrayList<Animal> animals = new ArrayList<>();
-    private ArrayList <Product> products = new ArrayList<>();
-    private ArrayList <Building> buildings = new ArrayList<>();
+public class OurFarm implements java.io.Serializable {
     private static OurFarm ourFarm = new OurFarm();
     Map map = new Map();
+    Cell[][] cells = map.getCells();
+    private ArrayList<Animal> animals = new ArrayList<>();
+    private ArrayList<Product> products = new ArrayList<>();
+    private ArrayList<Building> buildings = new ArrayList<>();
+    private ArrayList<Product> inPutsOfCakeBakery = new ArrayList<>();
+    private ArrayList<Product> outPutsOfCakeBakery = new ArrayList<>();
+    private ArrayList<Product> inPutsOfCookieBakery = new ArrayList<>();
+    private ArrayList<Product> outPutsOfCookieBakery = new ArrayList<>();
+    private ArrayList<Product> inPutsOfSpinnery = new ArrayList<>();
+    private ArrayList<Product> outPutsOfSpinnery = new ArrayList<>();
+    private ArrayList<Product> inPutsOfWeavingFactory = new ArrayList<>();
+    private ArrayList<Product> outPutsOfWeavingFactory = new ArrayList<>();
+    private ArrayList<Product> inPutsOfSewingFactory = new ArrayList<>();
+    private ArrayList<Product> outPutsOfSewingFactory = new ArrayList<>();
+    private ArrayList<Product> inPutsOfEggPowderPlantWorkshop = new ArrayList<>();
+    private ArrayList<Product> outPutsOfEggPowderPlantWorkshop = new ArrayList<>();
+    private OurFarm() {
+        this.ourFarm = ourFarm;
+    }
+
+    public static OurFarm getOurFarm() {
+        return ourFarm;
+    }
 
     public Map getMap() {
         return map;
     }
 
-    Cell[][] cells = map.getCells();
+    public void setMap(Map map) {
+        this.map = map;
+    }
 
     @Override
     public String toString() {
@@ -31,15 +53,6 @@ public class OurFarm implements java.io.Serializable{
                 ", map=" + map +
                 ", cells=" + Arrays.toString(cells) +
                 '}';
-    }
-
-
-    private OurFarm() {
-        this.ourFarm = ourFarm;
-    }
-
-    public static OurFarm getOurFarm(){
-        return ourFarm ;
     }
 
     public ArrayList<Animal> getAnimals() {
@@ -53,18 +66,6 @@ public class OurFarm implements java.io.Serializable{
     public ArrayList<Building> getBuildings() {
         return buildings;
     }
-    private ArrayList<Product>inPutsOfCakeBakery = new ArrayList<>();
-    private ArrayList<Product>outPutsOfCakeBakery = new ArrayList<>();
-    private ArrayList<Product>inPutsOfCookieBakery = new ArrayList<>();
-    private ArrayList<Product>outPutsOfCookieBakery = new ArrayList<>();
-    private ArrayList<Product>inPutsOfSpinnery = new ArrayList<>();
-    private ArrayList<Product>outPutsOfSpinnery = new ArrayList<>();
-    private ArrayList<Product>inPutsOfWeavingFactory = new ArrayList<>();
-    private ArrayList<Product>outPutsOfWeavingFactory = new ArrayList<>();
-    private ArrayList<Product>inPutsOfSewingFactory = new ArrayList<>();
-    private ArrayList<Product>outPutsOfSewingFactory = new ArrayList<>();
-    private ArrayList<Product>inPutsOfEggPowderPlantWorkshop = new ArrayList<>();
-    private ArrayList<Product>outPutsOfEggPowderPlantWorkshop = new ArrayList<>();
 
     public ArrayList<Product> getInPutsOfCakeBakery() {
         return inPutsOfCakeBakery;

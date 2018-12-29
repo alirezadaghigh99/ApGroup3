@@ -1,6 +1,8 @@
 package Model.Workshop;
 
+import Model.OnMaps.Depot;
 import Model.OurFarm;
+import Model.Products.Egg;
 import Model.Products.Product;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -11,47 +13,39 @@ import java.util.ArrayList;
 
 public class Costum extends WorkShop {
     OurFarm ourFarm = OurFarm.getOurFarm();
-    private ArrayList<Product>inputs = new ArrayList<>();
-    private String output;
+    private Product input = new Product();
+    private Product output;
     private String path;
+    private Depot depot = Depot.getDepot();
 
-    public Costum(String path) {
-        this.path = path;
-    }
-
+    public void makeOutPut()
     {
-        File f = new File(path);
-        InputStream stream = null;
         try {
-            stream = new FileInputStream(f);
-        } catch (FileNotFoundException e) {
+            input = (Product) Class.forName(input.getName()).newInstance();
+            output = (Product) Class.forName(output.getName()).newInstance();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
             e.printStackTrace();
         }
-        StringBuilder json = new StringBuilder();
-        int byteCode = 0;
-        try {
-            byteCode = stream.read();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        while (byteCode != -1 && byteCode > -3) {
-            json.append((char) byteCode);
-            try {
-                byteCode = stream.read();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        try {
-            stream.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        JsonParser parser = new JsonParser();
-        Object object = parser.parse(json.toString());
-        JsonObject jsonObject = (JsonObject) object;
+        for (int i = 0 ; i<depot.getStoredProducts().size() ; i--)
+        {
+            Class<? extends Product> aClass = input.getClass();
+            if (aClass.equals(depot.getStoredProducts().get(i).getClass())) {
+                depot.getStoredProducts().remove(i);
+                depot.getStoredProducts().add(output);
 
+
+           }
+
+        }
     }
+
+
+
+
 }
 
 
