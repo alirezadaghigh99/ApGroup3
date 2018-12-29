@@ -828,7 +828,11 @@ public class FarmController {
 
     private void addWaterAction() {
         Well well = Well.getWell();
-        well.addWater();
+        if (money>=Utils.ADDWATRCOST) {
+            well.addWater();
+            money -= Utils.ADDWATRCOST;
+        }
+        else System.out.println("nemishavad ke nemishavad");
         System.out.println(well.getStorage());
     }
 

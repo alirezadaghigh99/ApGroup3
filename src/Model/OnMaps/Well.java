@@ -46,6 +46,7 @@ public class Well extends Building implements Upgradable {
     public void addWater()
     {
         if (well.getCapacity() != well.getStorage()) {
+
             well.setStorage(well.getCapacity());
         }
     }
