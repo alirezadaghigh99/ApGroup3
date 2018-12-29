@@ -1,15 +1,16 @@
 package Model.Transport;
 
+import Model.Upgradable;
 import sun.plugin2.liveconnect.JSExceptions;
 
-public class Helicopter extends Transportation implements Upgradable{
+public class Helicopter extends Transportation implements Upgradable {
     private int capacity = 100 ;
     private int speed = 5 ;
     private static Helicopter helicopter = new Helicopter();
     private int stored = 0 ;
     private int upgradeCost = 100 ;
     private int level = 1 ;
-    private int maxLevel = 4 ; // Alaki meqdaar dadim
+    private int maxLevel = 4 ;
 
     public int getSpeed() {
         return speed;

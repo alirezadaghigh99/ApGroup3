@@ -4,5 +4,4 @@ import Model.OnMaps.Entity;
 
 public class Product extends Entity {
 
-
 }
