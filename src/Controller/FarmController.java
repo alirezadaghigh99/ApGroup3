@@ -17,15 +17,18 @@ import View.View;
 import com.gilecode.yagson.YaGson;
 
 
+
 import java.io.*;
 import java.util.ArrayList;
 
 public class FarmController {
     CommandAnalyzer commandAnalyzer = new CommandAnalyzer();
     private OurFarm ourFarm = OurFarm.getOurFarm();
+    private CheckGoal checkGoal = new CheckGoal();
     private Map map = ourFarm.getMap();
     private View view = new View();
     private int Money;
+    private int levelOfGame ;
     public int getMoney() {
         return money;
     }
@@ -834,6 +837,14 @@ public class FarmController {
 
     private void passTurn(int numberOfTurns) {
         while (numberOfTurns != 0) {
+            if (checkGoal.checkLevel1())
+                levelOfGame = 1 ;
+            if (checkGoal.checkLevel2())
+                levelOfGame = 2;
+            if (checkGoal.checkLevel3())
+                levelOfGame = 3;
+            if (checkGoal.checkLevel4())
+                levelOfGame = 4;
             Cell[][] cells = map.getCells();
             ourFarm.getAnimals().clear();
             for (int i = 0; i < Utils.mapSize; i++) {
