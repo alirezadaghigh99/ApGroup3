@@ -86,12 +86,10 @@ public class Depot extends Building implements Upgradable {
         for (int i = 0 ; i<storedProducts.size() ; i++) {
             if (storedProducts.get(i) instanceof Egg) {
                 depotStorage += Utils.DEPOT_SIZE_FOR_EGG;
-//<<<<<<< Updated upstream
             if (storedProducts.get(i) instanceof Milk)
                 depotStorage+=Utils.DEPOT_SIZE_FOR_MILK;
             if (storedProducts.get(i) instanceof Wool)
                 depotStorage+=Utils.DEPOT_SIZE_FOR_WOOL ;
-//=======
             }
             if (storedProducts.get(i) instanceof Flour) {
                 depotStorage += Utils.DEPOT_SIZE_FOR_FLOUR;
@@ -111,7 +109,6 @@ public class Depot extends Building implements Upgradable {
             if (storedProducts.get(i) instanceof Clothe) {
                 depotStorage += Utils.DEPOT_SIZE_FOR_CARNIVAL_DRESS;
             }
-//>>>>>>> Stashed changes
         }
         return depotStorage ;
     }

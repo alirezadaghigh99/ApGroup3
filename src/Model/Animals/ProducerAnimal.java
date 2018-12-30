@@ -124,6 +124,7 @@ public class ProducerAnimal extends DomesticAnimal {
             this.randomWalk();
             if (this.energy == Utils.LOW_ENERGY_AMOUNT + 1) {
                 cells[x][y].getCellProducts().add(this.produced());
+                ourFarm.getProducts().add(this.produced());
             }
         } else if (isWeak()) {
             if (cells[x][y].getGrass().isGrass()) {

@@ -46,9 +46,6 @@ public class Utils {
     public static final int DEPOT_SIZE_FOR_CURD = 6;
     public static final int BUY_COST_FOR_CURD = 4000;
     public static final int SALE_COST_FOR_CURD = 2000;
-    public static final int DEPOT_SIZE_FOR_ = 3;
-    public static final int BUY_COST_FOR_ = 300;
-    public static final int SALE_COST_FOR_ = 150;
     public static final int DEPOT_SIZE_FOR_CHEESE = 5;
     public static final int BUY_COST_FOR_CHEESE = 5000;
     public static final int SALE_COST_FOR_CHEESE = 2500;
@@ -103,4 +100,9 @@ public class Utils {
     public static final int DEPOT_SIZE_FOR_CAGED_WHITE_BEAR = 20;
     public static final int BUY_COST_FOR_CAGED_WHITE_BEAR = 100;
     public static final int SALE_COST_FOR_CAGED_WHITE_BEAR = 100;
+    public static final int HEN_PRICE = 30;
+    public static final int SHEEP_PRICE = 60;
+    public static final int COW_PRICE = 90;
+    public static final int DOG_PRICE = 70;
+    public static final int CAT_PRICE = 70;
 }

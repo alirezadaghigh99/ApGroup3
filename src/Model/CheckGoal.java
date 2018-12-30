@@ -10,253 +10,96 @@ import Model.Products.Milk;
 import Model.Products.Wool;
 
 public class CheckGoal {
-    private int requirmentOfCow ;
-    private int requirmentOfEgg ;
-    private int requirmentOfwool ;
-    private int requirmentOfMilk ;
-    private int requirmentOfGold ;
-    private int requirmentOfHen ;
-    private int requirmentOfSheep ;
-    private int requirmentOfWorkshopLevel ;
-    OurFarm ourFarm = OurFarm.getOurFarm();
-    public boolean checkLevel1()
-    {
-        for (int i = 0 ; i<ourFarm.getAnimals().size() ; i++)
-        {
-            requirmentOfCow=0;
-            requirmentOfSheep=0;
-            requirmentOfHen=0;
-            requirmentOfEgg=0;
-            requirmentOfMilk = 0;
-            requirmentOfwool=0;
-            if (ourFarm.getAnimals().get(i) instanceof Hen)
-            {
-             requirmentOfHen++;
-            }
-            if (ourFarm.getAnimals().get(i) instanceof Cow)
-            {
-                requirmentOfCow++;
-            }
-            if (ourFarm.getAnimals().get(i) instanceof Sheep)
-            {
-                requirmentOfSheep++;
-            }
+    private int requirementOfCow;
+    private int requirementOfEgg;
+    private int requirementOfWool;
+    private int requirementOfMilk;
+    private int requirementOfGold;
+    private int requirementOfHen;
+    private int requirementOfSheep;
+    private int requirementOfWorkshopLevel;
+    private int level = 1;
+
+    public void setConditions() {
+        if (level == 1) {
+            requirementOfCow = 0;
+            requirementOfEgg = 1;
+            requirementOfGold = 0;
+            requirementOfHen = 4;
+            requirementOfMilk = 0;
+            requirementOfSheep = 0;
+            requirementOfWool = 0;
+            requirementOfWorkshopLevel = 0;
         }
-        for (int j = 0 ; j<ourFarm.getProducts().size() ; j++)
-        {
-            if (ourFarm.getProducts().get(j) instanceof Egg)
-            {
-                requirmentOfEgg++;
-            }
-            if (ourFarm.getProducts().get(j) instanceof Wool)
-            {
-                requirmentOfwool++;
-            }
-            if (ourFarm.getProducts().get(j) instanceof Milk)
-            {
-                requirmentOfMilk++;
-            }
-
+        if (level == 2) {
+            requirementOfCow = 0;
+            requirementOfEgg = 3;
+            requirementOfGold = 40;
+            requirementOfHen = 4;
+            requirementOfMilk = 0;
+            requirementOfSheep = 1;
+            requirementOfWool = 0;
+            requirementOfWorkshopLevel = 0;
         }
-        if (requirmentOfMilk==0&&requirmentOfEgg==1&&requirmentOfwool==0&&requirmentOfSheep==1&&requirmentOfHen==3&&requirmentOfCow==1)
-            return true ;
-        else
-            return false;
-    }
-    public boolean checkLevel2()
-    {
-        for (int i = 0 ; i<ourFarm.getAnimals().size() ; i++)
-        {
-            requirmentOfCow=0;
-            requirmentOfSheep=0;
-            requirmentOfHen=0;
-            requirmentOfEgg=0;
-            requirmentOfMilk = 0;
-            requirmentOfwool=0;
-            if (ourFarm.getAnimals().get(i) instanceof Hen)
-            {
-                requirmentOfHen++;
-            }
-            if (ourFarm.getAnimals().get(i) instanceof Cow)
-            {
-                requirmentOfCow++;
-            }
-            if (ourFarm.getAnimals().get(i) instanceof Sheep)
-            {
-                requirmentOfSheep++;
-            }
+        if (level == 3) {
+            requirementOfCow = 0;
+            requirementOfEgg = 2;
+            requirementOfGold = 80;
+            requirementOfHen = 6;
+            requirementOfMilk = 0;
+            requirementOfSheep = 1;
+            requirementOfWool = 0;
+            requirementOfWorkshopLevel = 0;
         }
-        for (int j = 0 ; j<ourFarm.getProducts().size() ; j++)
-        {
-            if (ourFarm.getProducts().get(j) instanceof Egg)
-            {
-                requirmentOfEgg++;
-            }
-            if (ourFarm.getProducts().get(j) instanceof Wool)
-            {
-                requirmentOfwool++;
-            }
-            if (ourFarm.getProducts().get(j) instanceof Milk)
-            {
-                requirmentOfMilk++;
-            }
-
+        if (level == 4) {
+            requirementOfCow = 0;
+            requirementOfEgg = 2;
+            requirementOfGold = 120;
+            requirementOfHen = 5;
+            requirementOfMilk = 0;
+            requirementOfSheep = 1;
+            requirementOfWool = 1;
+            requirementOfWorkshopLevel = 0;
         }
-        if (requirmentOfMilk==2&&requirmentOfEgg==4&&requirmentOfwool==0&&requirmentOfSheep==2&&requirmentOfHen==5&&requirmentOfCow==2)
-            return true ;
-        else
-            return false;
-    }
-    public boolean checkLevel3()
-    {
-        for (int i = 0 ; i<ourFarm.getAnimals().size() ; i++)
-        {
-            requirmentOfCow=0;
-            requirmentOfSheep=0;
-            requirmentOfHen=0;
-            requirmentOfEgg=0;
-            requirmentOfMilk = 0;
-            requirmentOfwool=0;
-            if (ourFarm.getAnimals().get(i) instanceof Hen)
-            {
-                requirmentOfHen++;
-            }
-            if (ourFarm.getAnimals().get(i) instanceof Cow)
-            {
-                requirmentOfCow++;
-            }
-            if (ourFarm.getAnimals().get(i) instanceof Sheep)
-            {
-                requirmentOfSheep++;
-            }
-        }
-        for (int j = 0 ; j<ourFarm.getProducts().size() ; j++)
-        {
-            if (ourFarm.getProducts().get(j) instanceof Egg)
-            {
-                requirmentOfEgg++;
-            }
-            if (ourFarm.getProducts().get(j) instanceof Wool)
-            {
-                requirmentOfwool++;
-            }
-            if (ourFarm.getProducts().get(j) instanceof Milk)
-            {
-                requirmentOfMilk++;
-            }
-
-        }
-        if (requirmentOfMilk==2&&requirmentOfEgg==5&&requirmentOfwool==1&&requirmentOfSheep==3&&requirmentOfHen==4&&requirmentOfCow==2)
-            return true ;
-        else
-            return false;
-    }
-    public boolean checkLevel4()
-    {
-        for (int i = 0 ; i<ourFarm.getAnimals().size() ; i++)
-        {
-            requirmentOfCow=0;
-            requirmentOfSheep=0;
-            requirmentOfHen=0;
-            requirmentOfEgg=0;
-            requirmentOfMilk = 0;
-            requirmentOfwool=0;
-            if (ourFarm.getAnimals().get(i) instanceof Hen)
-            {
-                requirmentOfHen++;
-            }
-            if (ourFarm.getAnimals().get(i) instanceof Cow)
-            {
-                requirmentOfCow++;
-            }
-            if (ourFarm.getAnimals().get(i) instanceof Sheep)
-            {
-                requirmentOfSheep++;
-            }
-        }
-        for (int j = 0 ; j<ourFarm.getProducts().size() ; j++)
-        {
-            if (ourFarm.getProducts().get(j) instanceof Egg)
-            {
-                requirmentOfEgg++;
-            }
-            if (ourFarm.getProducts().get(j) instanceof Wool)
-            {
-                requirmentOfwool++;
-            }
-            if (ourFarm.getProducts().get(j) instanceof Milk)
-            {
-                requirmentOfMilk++;
-            }
-
-        }
-        if (requirmentOfMilk==4&&requirmentOfEgg==9&&requirmentOfwool==5&&requirmentOfSheep==3&&requirmentOfHen==10&&requirmentOfCow==5)
-            return true ;
-        else
-            return false;
     }
 
-    public int getRequirmentOfCow() {
-        return requirmentOfCow;
+    public int getRequirementOfCow() {
+        return requirementOfCow;
     }
 
-    public void setRequirmentOfCow(int requirmentOfCow) {
-        this.requirmentOfCow = requirmentOfCow;
+    public int getRequirementOfEgg() {
+        return requirementOfEgg;
     }
 
-    public int getRequirmentOfEgg() {
-        return requirmentOfEgg;
+    public int getRequirementOfWool() {
+        return requirementOfWool;
     }
 
-    public void setRequirmentOfEgg(int requirmentOfEgg) {
-        this.requirmentOfEgg = requirmentOfEgg;
+    public int getRequirementOfMilk() {
+        return requirementOfMilk;
     }
 
-    public int getRequirmentOfwool() {
-        return requirmentOfwool;
+    public int getRequirementOfGold() {
+        return requirementOfGold;
     }
 
-    public void setRequirmentOfwool(int requirmentOfwool) {
-        this.requirmentOfwool = requirmentOfwool;
+    public int getRequirementOfHen() {
+        return requirementOfHen;
     }
 
-    public int getRequirmentOfMilk() {
-        return requirmentOfMilk;
+    public int getRequirementOfSheep() {
+        return requirementOfSheep;
     }
 
-    public void setRequirmentOfMilk(int requirmentOfMilk) {
-        this.requirmentOfMilk = requirmentOfMilk;
+    public int getRequirementOfWorkshopLevel() {
+        return requirementOfWorkshopLevel;
     }
 
-    public int getRequirmentOfGold() {
-        return requirmentOfGold;
+    public int getLevel() {
+        return level;
     }
 
-    public void setRequirmentOfGold(int requirmentOfGold) {
-        this.requirmentOfGold = requirmentOfGold;
-    }
-
-    public int getRequirmentOfHen() {
-        return requirmentOfHen;
-    }
-
-    public void setRequirmentOfHen(int requirmentOfHen) {
-        this.requirmentOfHen = requirmentOfHen;
-    }
-
-    public int getRequirmentOfSheep() {
-        return requirmentOfSheep;
-    }
-
-    public void setRequirmentOfSheep(int requirmentOfSheep) {
-        this.requirmentOfSheep = requirmentOfSheep;
-    }
-
-    public int getRequirmentOfWorkshopLevel() {
-        return requirmentOfWorkshopLevel;
-    }
-
-    public void setRequirmentOfWorkshopLevel(int requirmentOfWorkshopLevel) {
-        this.requirmentOfWorkshopLevel = requirmentOfWorkshopLevel;
+    public void setLevel(int level) {
+        this.level = level;
     }
 }

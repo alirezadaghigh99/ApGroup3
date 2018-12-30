@@ -24,6 +24,8 @@ public class CommandAnalyzer {
     private final String FROM_DEPOT_TO_WORKSHOP = "[a-z]+ add [a-z]+";
     private final String FROM_WORKSHOP_TO_DEPOT = "[a-z]+ out [a-z]+";
     private final String CUSTOM_WORKSHOP_START = "start [a-z].json";
+    private final String PRINT_INFO_REQUEST = "print info";
+
     public Request getRequest(String command) throws Exception {
         if (command.matches(ADD_Animal_REQUEST)) {
             String[] params = command.split(" ");
@@ -69,34 +71,25 @@ public class CommandAnalyzer {
             return new NextTurnRequest(Integer.parseInt(params[1]));
         } else if (command.matches(END_REQUEST)) {
             return new EndRequest();
-        }
-        if (command.matches(SAVE_REQUEST))
-        {
+        } else if (command.matches(SAVE_REQUEST)) {
             String[] params = command.split(" ");
             return new SaveRequest(params[2]);
-        }
-        if (command.matches(LOAD_REQUEST))
-        {
+        } else if (command.matches(LOAD_REQUEST)) {
             String[] params = command.split(" ");
-            return new LoadRequest(params[2]) ;
-        }
-        if (command.matches(FROM_DEPOT_TO_WORKSHOP))
-        {
+            return new LoadRequest(params[2]);
+        } else if (command.matches(FROM_DEPOT_TO_WORKSHOP)) {
             String[] params = command.split(" ");
-            return new FromWorkShopToDepot(params[3] , params[1]);
-        }
-        if (command.matches(FROM_WORKSHOP_TO_DEPOT))
-        {
+            return new FromWorkShopToDepot(params[3], params[1]);
+        } else if (command.matches(FROM_WORKSHOP_TO_DEPOT)) {
             String[] params = command.split(" ");
-            return new FromDepotToWorkShop(params[3] , params[1]);
+            return new FromDepotToWorkShop(params[3], params[1]);
 
-        }
-        if (command.matches(CUSTOM_WORKSHOP_START))
-        {
+        } else if (command.matches(PRINT_INFO_REQUEST)) {
+            return new PrintInfoRequest();
+        } else if (command.matches(CUSTOM_WORKSHOP_START)) {
             String[] params = command.split(" ");
             return new CustomRequest(params[1]);
-        }
-            else
+        } else
             throw new Exception("this command is not allowed");
     }
 }
