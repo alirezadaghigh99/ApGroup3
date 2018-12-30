@@ -135,6 +135,7 @@ public class ProducerAnimal extends DomesticAnimal {
             this.smartWalk();
         } else if (isDead()) {
             cells[x][y].getCellAnimals().remove(this);
+            ourFarm.getAnimals().remove(this);
         }
         setOnMap();
     }

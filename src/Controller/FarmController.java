@@ -26,6 +26,7 @@ public class FarmController {
     private Map map = ourFarm.getMap();
     private View view = new View();
     private int Money;
+
     public int getMoney() {
         return money;
     }
@@ -56,21 +57,17 @@ public class FarmController {
                     }
                 }
                 if (request instanceof FromWorkShopToDepot) {
-                    try{
-                        pickToDepot(((FromWorkShopToDepot) request).getProductName() , ((FromWorkShopToDepot) request).getWorkShopName());
-                    }
-                    catch (Exception e)
-                    {
+                    try {
+                        pickToDepot(((FromWorkShopToDepot) request).getProductName(), ((FromWorkShopToDepot) request).getWorkShopName());
+                    } catch (Exception e) {
                         System.out.println(e.getMessage());
                     }
 
                 }
                 if (request instanceof FromDepotToWorkShop) {
-                    try{
-                        pickToWorkShop(((FromDepotToWorkShop) request).getProductName() , ((FromDepotToWorkShop) request).getWorkShopName());
-                    }
-                    catch (Exception e)
-                    {
+                    try {
+                        pickToWorkShop(((FromDepotToWorkShop) request).getProductName(), ((FromDepotToWorkShop) request).getWorkShopName());
+                    } catch (Exception e) {
                         System.out.println(e.getMessage());
                     }
 
@@ -149,8 +146,13 @@ public class FarmController {
                     }
                 }
                 if (request instanceof NextTurnRequest) {
-                    passTurn(((NextTurnRequest) request).getNumberOfTurn());
+                    try {
+                        passTurn(((NextTurnRequest) request).getNumberOfTurn());
+                    } catch (Exception e) {
+
+                    }
                 }
+
                 if (request instanceof UpgradeRequest) {
                     upgradeRequest(((UpgradeRequest) request).getThingWeWantUpgrade());
                 }
@@ -165,58 +167,46 @@ public class FarmController {
 
     private void pickToDepot(String productName, String workShopName) {
         Depot depot = Depot.getDepot();
-        if (workShopName.equals("cakeBakery"))
-        {
-         CakeBakery cakeBakery = CakeBakery.getCakeBakery();
-         for (int i= ourFarm.getOutPutsOfCakeBakery().size()-1 ; i>=0 ; i--)
-         {
-            depot.addStoredProducts(ourFarm.getInPutsOfCakeBakery().get(i));
-         }
-         ourFarm.getOutPutsOfCakeBakery().clear();
+        if (workShopName.equals("cakeBakery")) {
+            CakeBakery cakeBakery = CakeBakery.getCakeBakery();
+            for (int i = ourFarm.getOutPutsOfCakeBakery().size() - 1; i >= 0; i--) {
+                depot.addStoredProducts(ourFarm.getInPutsOfCakeBakery().get(i));
+            }
+            ourFarm.getOutPutsOfCakeBakery().clear();
 
         }
-        if (workShopName.equals("cookieBakery"))
-        {
+        if (workShopName.equals("cookieBakery")) {
             CookieBakery cookieBakery = CookieBakery.getCookieBakery();
-            for (int i= ourFarm.getOutPutsOfCookieBakery().size()-1 ; i>=0 ; i--)
-            {
+            for (int i = ourFarm.getOutPutsOfCookieBakery().size() - 1; i >= 0; i--) {
                 depot.addStoredProducts(ourFarm.getInPutsOfCookieBakery().get(i));
             }
             ourFarm.getOutPutsOfCookieBakery().clear();
 
         }
-        if (workShopName.equals("spinneryFactory"))
-        {
+        if (workShopName.equals("spinneryFactory")) {
             SpinneryFactory spinneryFactory = SpinneryFactory.getSpinneryFactory();
-            for (int i= ourFarm.getOutPutsOfSpinnery().size()-1 ; i>=0 ; i--)
-            {
+            for (int i = ourFarm.getOutPutsOfSpinnery().size() - 1; i >= 0; i--) {
                 depot.addStoredProducts(ourFarm.getInPutsOfSpinnery().get(i));
             }
             ourFarm.getOutPutsOfSpinnery().clear();
         }
-        if (workShopName.equals("sewingFactory"))
-        {
+        if (workShopName.equals("sewingFactory")) {
             SewingFactory sewingFactory = SewingFactory.getSewingFactory();
-            for (int i= ourFarm.getOutPutsOfSewingFactory().size()-1 ; i>=0 ; i--)
-            {
+            for (int i = ourFarm.getOutPutsOfSewingFactory().size() - 1; i >= 0; i--) {
                 depot.addStoredProducts(ourFarm.getInPutsOfSewingFactory().get(i));
             }
             ourFarm.getOutPutsOfSewingFactory().clear();
         }
-        if (workShopName.equals("weavingFactory"))
-        {
+        if (workShopName.equals("weavingFactory")) {
             WeavingFactory weavingFactory = WeavingFactory.getWeavingFactory();
-            for (int i= ourFarm.getOutPutsOfWeavingFactory().size()-1 ; i>=0 ; i--)
-            {
+            for (int i = ourFarm.getOutPutsOfWeavingFactory().size() - 1; i >= 0; i--) {
                 depot.addStoredProducts(ourFarm.getInPutsOfWeavingFactory().get(i));
             }
             ourFarm.getOutPutsOfWeavingFactory().clear();
         }
-        if (workShopName.equals("eggPowderPlantWorkShop"))
-        {
+        if (workShopName.equals("eggPowderPlantWorkShop")) {
             EggPowderPlantWorkShop eggPowderPlantWorkShop = EggPowderPlantWorkShop.getEggPowderPlantWorkShop();
-            for (int i= ourFarm.getOutPutsOfEggPowderPlantWorkshop().size()-1 ; i>=0 ; i--)
-            {
+            for (int i = ourFarm.getOutPutsOfEggPowderPlantWorkshop().size() - 1; i >= 0; i--) {
                 depot.addStoredProducts(ourFarm.getInPutsOfEggPowderPlantWorkshop().get(i));
             }
             ourFarm.getOutPutsOfEggPowderPlantWorkshop().clear();
@@ -225,72 +215,54 @@ public class FarmController {
 
     private void pickToWorkShop(String productName, String workShopName) {
         Depot depot = Depot.getDepot();
-        if (workShopName.equals("cakeBakery")&&true)
-        {
-            for (int i = depot.getStoredProducts().size()-1 ; i>=0  ;i--)
-            {
-                if (depot.getStoredProducts().get(i) instanceof Egg ||depot.getStoredProducts().get(i) instanceof Flour)
-                {
+        if (workShopName.equals("cakeBakery") && true) {
+            for (int i = depot.getStoredProducts().size() - 1; i >= 0; i--) {
+                if (depot.getStoredProducts().get(i) instanceof Egg || depot.getStoredProducts().get(i) instanceof Flour) {
                     ourFarm.getInPutsOfCakeBakery().add(depot.getStoredProducts().get(i));
                     depot.getStoredProducts().remove(i);
 
                 }
             }
         }
-        if (workShopName.equals("cookieBakery"))
-        {
-            for (int i = depot.getStoredProducts().size()-1 ; i>=0  ;i--)
-            {
-                if (depot.getStoredProducts().get(i) instanceof EggPowder)
-                {
+        if (workShopName.equals("cookieBakery")) {
+            for (int i = depot.getStoredProducts().size() - 1; i >= 0; i--) {
+                if (depot.getStoredProducts().get(i) instanceof EggPowder) {
                     ourFarm.getInPutsOfCookieBakery().add(depot.getStoredProducts().get(i));
                     depot.getStoredProducts().remove(i);
 
                 }
             }
         }
-        if (workShopName.equals("spinneryFactory"))
-        {
-            for (int i = depot.getStoredProducts().size()-1 ; i>=0  ;i--)
-            {
-                if (depot.getStoredProducts().get(i) instanceof Wool)
-                {
+        if (workShopName.equals("spinneryFactory")) {
+            for (int i = depot.getStoredProducts().size() - 1; i >= 0; i--) {
+                if (depot.getStoredProducts().get(i) instanceof Wool) {
                     ourFarm.getInPutsOfSpinnery().add(depot.getStoredProducts().get(i));
                     depot.getStoredProducts().remove(i);
 
                 }
             }
         }
-        if (workShopName.equals("sewingFactory"))
-        {
-            for (int i = depot.getStoredProducts().size()-1 ; i>=0  ;i--)
-            {
-                if (depot.getStoredProducts().get(i) instanceof Fabric)
-                {
+        if (workShopName.equals("sewingFactory")) {
+            for (int i = depot.getStoredProducts().size() - 1; i >= 0; i--) {
+                if (depot.getStoredProducts().get(i) instanceof Fabric) {
                     ourFarm.getInPutsOfSewingFactory().add(depot.getStoredProducts().get(i));
                     depot.getStoredProducts().remove(i);
 
                 }
             }
         }
-        if (workShopName.equals("weavingFactory"))
-        {
-            for (int i = depot.getStoredProducts().size()-1 ; i>=0  ;i--)
-            {
-                if (depot.getStoredProducts().get(i) instanceof Sewing)
-                {
+        if (workShopName.equals("weavingFactory")) {
+            for (int i = depot.getStoredProducts().size() - 1; i >= 0; i--) {
+                if (depot.getStoredProducts().get(i) instanceof Sewing) {
                     ourFarm.getInPutsOfSewingFactory().add(depot.getStoredProducts().get(i));
                     depot.getStoredProducts().remove(i);
 
                 }
             }
         }
-        if (workShopName.equals("eggPowderPlantWorkShop"))
-        {
-            for (int i = depot.getStoredProducts().size()-1 ; i>=0  ;i--)
-            {
-                if (depot.getStoredProducts().get(i) instanceof Egg )
-                {
+        if (workShopName.equals("eggPowderPlantWorkShop")) {
+            for (int i = depot.getStoredProducts().size() - 1; i >= 0; i--) {
+                if (depot.getStoredProducts().get(i) instanceof Egg) {
                     ourFarm.getInPutsOfEggPowderPlantWorkshop().add(depot.getStoredProducts().get(i));
                     depot.getStoredProducts().remove(i);
                 }
@@ -339,7 +311,7 @@ public class FarmController {
         if (transName.equals("truck")) {
             Truck truck = Truck.getTruck();
             for (int i = truck.getProductsInTransportation().size() - 1; i >= 0; i--) {
-                if (truck.getProductsInTransportation().get(i) instanceof Egg&&true) {
+                if (truck.getProductsInTransportation().get(i) instanceof Egg && true) {
                     money += Utils.SALE_COST_FOR_EGG;
                 }
                 if (truck.getProductsInTransportation().get(i) instanceof Milk) {
@@ -420,7 +392,7 @@ public class FarmController {
                 }
             }
             for (int i = 0; i < helicopter.getAnimalsInTransportation().size(); i++) {
-                if (helicopter.getAnimalsInTransportation().get(i) instanceof Lion&&true) {
+                if (helicopter.getAnimalsInTransportation().get(i) instanceof Lion && true) {
                     money += Utils.SALE_COST_FOR_CAGED_LION;
                     helicopter.getAnimalsInTransportation().remove(i);
 
@@ -631,10 +603,10 @@ public class FarmController {
         }
         if (type.equals("helicopter")) {
             Helicopter helicopter = Helicopter.getHelicopter();
-            while (!depot.isFull() &&!helicopter.getProductsInTransportation().isEmpty() &&  !helicopter.getAnimalsInTransportation().isEmpty()) {
+            while (!depot.isFull() && !helicopter.getProductsInTransportation().isEmpty() && !helicopter.getAnimalsInTransportation().isEmpty()) {
                 for (int i = helicopter.getAnimalsInTransportation().size() - 1; i >= 0; i--) {
                     depot.getStoredAnimal().add(helicopter.getAnimalsInTransportation().get(i));
-                    if (helicopter.getProductsInTransportation().get(i) instanceof Egg&&true) {
+                    if (helicopter.getProductsInTransportation().get(i) instanceof Egg && true) {
                         money -= Utils.BUY_COST_FOR_EGG;
                     }
                     if (helicopter.getProductsInTransportation().get(i) instanceof Milk) {
@@ -713,18 +685,6 @@ public class FarmController {
             }
         }
         cells[x][y].getCellProducts().clear();
-    }
-
-    public void test() {
-        Cell[][] cells = map.getCells();
-        for (int i = 0; i < 30; i++)
-            for (int j = 0; j < 30; j++) {
-                ArrayList<Animal> animals = cells[i][j].getCellAnimals();
-                for (Animal animal : animals) {
-                    System.out.printf("%d %d\n", i, j);
-
-                }
-            }
     }
 
     public Map load(String path) {
@@ -832,7 +792,7 @@ public class FarmController {
     }
 
 
-    private void passTurn(int numberOfTurns) {
+    private void passTurn(int numberOfTurns) throws NullPointerException {
         while (numberOfTurns != 0) {
             Cell[][] cells = map.getCells();
             ourFarm.getAnimals().clear();
@@ -845,13 +805,13 @@ public class FarmController {
                     cells[i][j].getCellAnimals().clear();
                 }
             }
-            for (Animal animal : ourFarm.getAnimals()) {
-                animal.nextTurn();
-                int x = animal.getX();
-                int y = animal.getY();
-
-                cells[x][y].getCellAnimals().add(animal);
-            }
+            if (!ourFarm.getAnimals().isEmpty())
+                for (Animal animal : ourFarm.getAnimals()) {
+                    animal.nextTurn();
+                    int x = animal.getX();
+                    int y = animal.getY();
+                    cells[x][y].getCellAnimals().add(animal);
+                }
             collision();
             time++;
             numberOfTurns--;

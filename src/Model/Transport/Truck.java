@@ -1,6 +1,8 @@
 package Model.Transport;
 
-public class Truck extends Transportation implements Upgradable{
+import Model.Upgradable;
+
+public class Truck extends Transportation implements Upgradable {
     private int capacity = 50 ;
     private int speed  = 2 ;
     private int stored = 0;

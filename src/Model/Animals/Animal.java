@@ -52,11 +52,11 @@ public class Animal extends Entity {
     public void setOnMap() {
         if (this.x < 0)
             this.x = 0;
-        if (this.x > Utils.mapSize)
+        if (this.x >= Utils.mapSize)
             this.x = Utils.mapSize - 1;
         if (this.y < 0)
             this.y = 0;
-        if (this.y > Utils.mapSize)
+        if (this.y >= Utils.mapSize)
             this.y = Utils.mapSize - 1;
     }
 }
