@@ -8,6 +8,7 @@ import Model.Utils;
 public class Animal extends Entity {
     protected Cell cell;
 
+
     public void randomWalk() {
         double rand = Math.random() * 8;
         int random = (int) rand;

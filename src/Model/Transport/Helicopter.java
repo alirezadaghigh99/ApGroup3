@@ -1,7 +1,11 @@
 package Model.Transport;
 
 import Model.Upgradable;
+import javafx.scene.image.Image;
 import sun.plugin2.liveconnect.JSExceptions;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 public class Helicopter extends Transportation implements Upgradable {
     private int capacity = 100 ;
@@ -11,6 +15,46 @@ public class Helicopter extends Transportation implements Upgradable {
     private int upgradeCost = 100 ;
     private int level = 1 ;
     private int maxLevel = 4 ;
+    Image heliImage1;
+
+    {
+        try {
+            heliImage1 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Helicopter"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    Image heliImage2;
+
+    {
+        try {
+            heliImage2 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Helicopter"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    Image heliImage3;
+
+    {
+        try {
+            heliImage3 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Helicopter"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    Image heliImage4;
+
+    {
+        try {
+            heliImage4 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Helicopter"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public int getSpeed() {
         return speed;

@@ -1,8 +1,53 @@
 package Model.Transport;
 
 import Model.Upgradable;
+import javafx.scene.image.Image;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 public class Truck extends Transportation implements Upgradable {
+    Image imageOfTruck1;
+
+    {
+        try {
+            imageOfTruck1 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Truck"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    Image imageOfTruck2;
+
+    {
+        try {
+            imageOfTruck2 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Truck"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    Image imageOfTruck3;
+
+    {
+        try {
+            imageOfTruck3 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Truck"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    Image imageOfTruck4;
+
+    {
+        try {
+            imageOfTruck4 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Truck"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     private int capacity = 50 ;
     private int speed  = 2 ;
     private int stored = 0;

@@ -7,7 +7,11 @@ import Model.Products.*;
 import Model.Upgradable;
 import Model.Utils;
 import Model.Workshop.Building;
+import javafx.scene.image.Image;
 
+import java.awt.*;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class Depot extends Building implements Upgradable {
@@ -15,6 +19,46 @@ public class Depot extends Building implements Upgradable {
     private int depotStorage ;
     private int maxLevel;
     private static Depot depot = new Depot();
+  Image image1;
+
+    {
+        try {
+            image1 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Depot"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    Image image2;
+
+    {
+        try {
+            image2 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Depot"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    Image image3;
+
+    {
+        try {
+            image3 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Depot"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    Image image14;
+
+    {
+        try {
+            image14 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Depot"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public int getCapacity() {
         return capacity;
