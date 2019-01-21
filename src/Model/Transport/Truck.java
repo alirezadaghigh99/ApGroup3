@@ -2,6 +2,7 @@ package Model.Transport;
 
 import Model.Upgradable;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -11,7 +12,7 @@ public class Truck extends Transportation implements Upgradable {
 
     {
         try {
-            imageOfTruck1 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Truck"));
+            imageOfTruck1 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Truck\\01.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -21,7 +22,7 @@ public class Truck extends Transportation implements Upgradable {
 
     {
         try {
-            imageOfTruck2 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Truck"));
+            imageOfTruck2 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Truck\\02.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -31,7 +32,7 @@ public class Truck extends Transportation implements Upgradable {
 
     {
         try {
-            imageOfTruck3 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Truck"));
+            imageOfTruck3 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Truck\\03.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -41,11 +42,15 @@ public class Truck extends Transportation implements Upgradable {
 
     {
         try {
-            imageOfTruck4 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Truck"));
+            imageOfTruck4 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Truck\\04.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }
+    ImageView imageView1 = new ImageView(imageOfTruck1);
+    ImageView imageView2 = new ImageView(imageOfTruck2);
+    ImageView imageView3 = new ImageView(imageOfTruck3);
+    ImageView imageView4 = new ImageView(imageOfTruck4);
 
 
     private int capacity = 50 ;

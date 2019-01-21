@@ -2,6 +2,7 @@ package Model.Transport;
 
 import Model.Upgradable;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import sun.plugin2.liveconnect.JSExceptions;
 
 import java.io.FileInputStream;
@@ -19,7 +20,7 @@ public class Helicopter extends Transportation implements Upgradable {
 
     {
         try {
-            heliImage1 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Helicopter"));
+            heliImage1 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Helicopter\\01.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -29,7 +30,7 @@ public class Helicopter extends Transportation implements Upgradable {
 
     {
         try {
-            heliImage2 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Helicopter"));
+            heliImage2 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Helicopter\\02.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -39,7 +40,7 @@ public class Helicopter extends Transportation implements Upgradable {
 
     {
         try {
-            heliImage3 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Helicopter"));
+            heliImage3 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Helicopter\\03.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -49,11 +50,16 @@ public class Helicopter extends Transportation implements Upgradable {
 
     {
         try {
-            heliImage4 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Helicopter"));
+            heliImage4 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Helicopter\\04.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }
+    ImageView imageView1 = new ImageView(heliImage1);
+    ImageView imageView2 = new ImageView(heliImage2);
+    ImageView imageView3 = new ImageView(heliImage3);
+    ImageView imageView4 = new ImageView(heliImage4);
+
 
 
     public int getSpeed() {

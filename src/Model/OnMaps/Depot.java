@@ -8,6 +8,7 @@ import Model.Upgradable;
 import Model.Utils;
 import Model.Workshop.Building;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import java.awt.*;
 import java.io.FileInputStream;
@@ -23,7 +24,7 @@ public class Depot extends Building implements Upgradable {
 
     {
         try {
-            image1 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Depot"));
+            image1 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Depot\\01.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -33,7 +34,7 @@ public class Depot extends Building implements Upgradable {
 
     {
         try {
-            image2 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Depot"));
+            image2 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Depot\\02.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -43,7 +44,7 @@ public class Depot extends Building implements Upgradable {
 
     {
         try {
-            image3 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Depot"));
+            image3 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Depot\\03.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -53,11 +54,15 @@ public class Depot extends Building implements Upgradable {
 
     {
         try {
-            image14 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Depot"));
+            image14 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Depot\\04.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }
+    ImageView imageView1 = new ImageView(image1);
+    ImageView imageView2 = new ImageView(image2);
+    ImageView imageView3  = new ImageView(image3);
+    ImageView imageView4 = new ImageView(image14);
 
 
     public int getCapacity() {

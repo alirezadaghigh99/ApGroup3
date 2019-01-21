@@ -19,8 +19,8 @@ public class SpriteAnimation extends Transition {
 
     private int lastIndex;
 
-    public SpriteAnimation(ImageView imageView, int count, int columns, int offsetX, int offsetY, int width, int height ,
-                           Duration duration
+    public SpriteAnimation(ImageView imageView, Duration count, int columns, int offsetX, int offsetY, int width, int height ,
+                           int duration
                            ) {
         this.imageView = imageView;
         this.count = count;

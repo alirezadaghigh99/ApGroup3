@@ -3,14 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="01b63a35-30c5-49b6-ac69-7b516bfe5fbf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Animals/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Animals/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/Cat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Animals/Cow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/Cow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Animals/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/Dog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Animals/Hen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/Hen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Animals/Lion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/Lion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/OnMaps/Grass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/OnMaps/Grass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/OnMaps/Well.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/OnMaps/Well.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/OnMaps/Depot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/OnMaps/Depot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/SpriteAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/SpriteAnimation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Transport/Helicopter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Transport/Helicopter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Transport/Truck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Transport/Truck.java" afterDir="false" />
     </list>
@@ -36,25 +32,25 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="33" />
+          <entry key="java" value="35" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="33" />
+          <entry key="JAVA" value="35" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2401" />
+          <entry key="java" value="3299" />
           <entry key="txt" value="36" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2401" />
+          <entry key="JAVA" value="3299" />
           <entry key="PLAIN_TEXT" value="36" />
         </counts>
       </usages-collector>
@@ -71,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Model/Transport/Truck.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+            <state relative-caret-position="345">
+              <caret line="52" column="56" selection-start-line="52" selection-start-column="56" selection-end-line="52" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,32 +79,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/Transport/Helicopter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
+            <state relative-caret-position="186">
+              <caret line="57" column="50" selection-start-line="57" selection-start-column="50" selection-end-line="57" selection-end-column="50" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Animals/Lion.java">
+        <entry file="file://$PROJECT_DIR$/src/Model/OnMaps/Depot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Animals/Cat.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="345">
+              <caret line="56" column="116" selection-start-line="56" selection-start-column="116" selection-end-line="56" selection-end-column="116" />
             </state>
           </provider>
         </entry>
@@ -118,6 +102,22 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="161">
               <caret line="9" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Animals/Hen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="86" column="79" selection-start-line="86" selection-start-column="79" selection-end-line="86" selection-end-column="79" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4209#4210#0" expanded="true" />
+                <element signature="e#4243#4244#0" expanded="true" />
+                <element signature="e#4366#4367#0" expanded="true" />
+                <element signature="e#4398#4399#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -134,8 +134,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/Animals/Cow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="14" column="43" lean-forward="true" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+            <state relative-caret-position="276">
+              <caret line="76" column="52" selection-start-line="76" selection-start-column="52" selection-end-line="76" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -190,16 +190,17 @@
         <option value="$PROJECT_DIR$/src/Model/Utils.java" />
         <option value="$PROJECT_DIR$/src/Controller/FarmController.java" />
         <option value="$PROJECT_DIR$/src/Model/SpriteAnimation.java" />
-        <option value="$PROJECT_DIR$/src/Model/Animals/Hen.java" />
         <option value="$PROJECT_DIR$/src/Model/Animals/Lion.java" />
         <option value="$PROJECT_DIR$/src/Model/Animals/Cat.java" />
         <option value="$PROJECT_DIR$/src/Model/Animals/Animal.java" />
-        <option value="$PROJECT_DIR$/src/Model/Animals/Cow.java" />
         <option value="$PROJECT_DIR$/src/Model/Animals/Dog.java" />
         <option value="$PROJECT_DIR$/src/Model/OnMaps/Grass.java" />
         <option value="$PROJECT_DIR$/src/Model/OnMaps/Well.java" />
-        <option value="$PROJECT_DIR$/src/Model/Transport/Truck.java" />
+        <option value="$PROJECT_DIR$/src/Model/Animals/Hen.java" />
+        <option value="$PROJECT_DIR$/src/Model/Animals/Cow.java" />
+        <option value="$PROJECT_DIR$/src/Model/OnMaps/Depot.java" />
         <option value="$PROJECT_DIR$/src/Model/Transport/Helicopter.java" />
+        <option value="$PROJECT_DIR$/src/Model/Transport/Truck.java" />
       </list>
     </option>
   </component>
@@ -249,7 +250,14 @@
               <item name="Approject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="Transport" type="462c0819:PsiDirectoryNode" />
+              <item name="Animals" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Approject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Approject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="OnMaps" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Approject" type="b2602c69:ProjectViewProjectNode" />
@@ -310,7 +318,7 @@
       <workItem from="1546093341227" duration="657000" />
       <workItem from="1546095418578" duration="1617000" />
       <workItem from="1546240078948" duration="45000" />
-      <workItem from="1548074473691" duration="2788000" />
+      <workItem from="1548074473691" duration="5802000" />
     </task>
     <task id="LOCAL-00001" summary="akharin taqirat">
       <created>1546083511055</created>
@@ -340,11 +348,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548074988585</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="animesprite">
+      <created>1548078210865</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1548078210865</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10816000" />
+    <option name="totallyTimeSpent" value="13830000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -545,16 +560,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Animals/Hen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="57" selection-start-line="57" selection-end-line="66" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Animals/Lion.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -572,27 +577,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Animals/Animal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Animals/Bear.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Animals/Cow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="14" column="43" lean-forward="true" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -620,20 +608,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Transport/Truck.java">
+    <entry file="file://$PROJECT_DIR$/src/Model/Animals/Animal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+        <state relative-caret-position="161">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Animals/Hen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="86" column="79" selection-start-line="86" selection-start-column="79" selection-end-line="86" selection-end-column="79" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4209#4210#0" expanded="true" />
+            <element signature="e#4243#4244#0" expanded="true" />
+            <element signature="e#4366#4367#0" expanded="true" />
+            <element signature="e#4398#4399#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Animals/Cow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="76" column="52" selection-start-line="76" selection-start-column="52" selection-end-line="76" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/OnMaps/Depot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="56" column="116" selection-start-line="56" selection-start-column="116" selection-end-line="56" selection-end-column="116" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Transport/Helicopter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
+        <state relative-caret-position="186">
+          <caret line="57" column="50" selection-start-line="57" selection-start-column="50" selection-end-line="57" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Transport/Truck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="52" column="56" selection-start-line="52" selection-start-column="56" selection-end-line="52" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
