@@ -28,16 +28,16 @@ public class GUI extends Application {
 
     {
         try {
-            FileInputStream bg = new FileInputStream("pictures\\bg.jpg");
+            FileInputStream bg = new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\src\\View\\pictures\\bg.jpg");
             Image image = new Image(bg);
             background = new ImageView(image);
-            FileInputStream menu = new FileInputStream("pictures\\index.jpg");
+            FileInputStream menu = new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\src\\View\\pictures\\index.jpg");
             Image image1 = new Image(menu);
             firstMenu = new ImageView(image1);
-            FileInputStream buttonOfMenu = new FileInputStream("pictures\\aquabutton.jpg");
+            FileInputStream buttonOfMenu = new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\src\\View\\pictures\\aquabutton.jpg");
             Image image2 = new Image(buttonOfMenu);
             newGameButton = new ImageView(image2);
-            FileInputStream loadGame = new FileInputStream("pictures\\load.jpg");
+            FileInputStream loadGame = new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\src\\View\\pictures\\load.jpg");
             Image lPic = new Image(loadGame);
             loadGameButton = new ImageView(lPic);
         } catch (Exception e) {
@@ -85,7 +85,7 @@ public class GUI extends Application {
 
     public void newGameCall(ImageView menu, ImageView newGameButton, ImageView loadGameButton) throws Exception {
         group.getChildren().removeAll(menu, newGameButton, loadGameButton);
-        FileInputStream f = new FileInputStream("pictures\\secondMenu.jpg");
+        FileInputStream f = new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\src\\View\\pictures\\secondMenu.jpg");
         Image newGameImg = new Image(f);
         ImageView newGameMenu = new ImageView(newGameImg);
         newGameMenu.setX(150);
@@ -93,7 +93,7 @@ public class GUI extends Application {
         newGameMenu.setFitHeight(650);
         newGameMenu.setFitWidth(700);
         group.getChildren().add(newGameMenu);
-        FileInputStream back = new FileInputStream("pictures\\backbutton2.png");
+        FileInputStream back = new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\src\\View\\pictures\\backbutton2.png");
         Image image = new Image(back);
         ImageView backButton = new ImageView(image);
         backButton.setX(200);
@@ -136,7 +136,7 @@ public class GUI extends Application {
                 }
             }
         });
-        FileInputStream playFile = new FileInputStream("pictures\\play.png");
+        FileInputStream playFile = new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\src\\View\\pictures\\play.png");
         Image playIMG = new Image(playFile);
         ImageView playButton = new ImageView(playIMG);
         playButton.setX(400);
@@ -144,7 +144,7 @@ public class GUI extends Application {
         playButton.setFitWidth(200);
         playButton.setFitHeight(100);
         group.getChildren().addAll(playButton);
-        FileInputStream showFile = new FileInputStream("pictures\\show.png");
+        FileInputStream showFile = new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\src\\View\\pictures\\show.png");
         Image showIMG = new Image(showFile);
         ImageView showPlayersButton = new ImageView(showIMG);
         showPlayersButton.setX(650);
@@ -172,7 +172,7 @@ public class GUI extends Application {
 
     public void loadGameCall(ImageView menu, ImageView newGameButton, ImageView loadGameButton) throws Exception {
         group.getChildren().removeAll(menu, newGameButton, loadGameButton);
-        FileInputStream f = new FileInputStream("pictures\\secondMenu.jpg");
+        FileInputStream f = new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\src\\View\\pictures\\secondMenu.jpg");
         Image newGameImg = new Image(f);
         ImageView loadGameMenu = new ImageView(newGameImg);
         loadGameMenu.setX(150);
@@ -183,7 +183,7 @@ public class GUI extends Application {
     }
 
     public void showPlayers() throws Exception {
-        FileInputStream f = new FileInputStream("pictures\\secondMenu.jpg");
+        FileInputStream f = new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\src\\View\\pictures\\secondMenu.jpg");
         Image playersIMG = new Image(f);
         ImageView playersInGame = new ImageView(playersIMG);
         playersInGame.setX(150);

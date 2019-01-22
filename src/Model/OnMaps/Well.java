@@ -1,8 +1,12 @@
 package Model.OnMaps;
 
+import Model.SpriteAnimation;
 import Model.Upgradable;
 import Model.Workshop.Building;
+import javafx.animation.Animation;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.util.Duration;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -11,6 +15,7 @@ public class Well extends Building implements Upgradable {
     private int capacity = 50 ;
     private int storage = 50 ;
     private int level ;
+    private ImageView imageView ;
     Image imageOfWell1;
 
     {
@@ -50,6 +55,20 @@ public class Well extends Building implements Upgradable {
             e.printStackTrace();
         }
     }
+
+    {
+        if (level==1)
+            imageView.setImage(imageOfWell1);
+        else if (level==2)
+            imageView.setImage(imageOfWell2);
+        else if (level==3)
+            imageView.setImage(imageOfWell3);
+        else if (level == 4)
+            imageView.setImage(imageOfWell4);
+    }
+
+    Animation animation1 = new SpriteAnimation(imageView , Duration.millis(1000) , 16 , 4 , 0 , 0 ,
+            600 , 544);
 
 
     public int getLevel() {

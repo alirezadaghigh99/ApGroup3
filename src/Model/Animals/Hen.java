@@ -12,6 +12,8 @@ import java.io.FileNotFoundException;
 public class Hen extends ProducerAnimal {
     Image henImagesOfDeath ;
     Image henImageOfDown;
+    private ImageView imageView = new ImageView();
+    private SpriteAnimation spriteAnimation ;
 
     {
         try {
@@ -84,53 +86,20 @@ public class Hen extends ProducerAnimal {
     ImageView DownLeftView = new ImageView(henImageOfDownLeft);
     ImageView LeftView =  new ImageView(henImageOfLeft);
 
-    final Animation animation = new SpriteAnimation(DeathView , Duration.millis(2000) ,13 , 13 , 0 , 0 ,
+
+    final Animation henAnimationOfDeath = new SpriteAnimation(DeathView , Duration.millis(2000) ,13 , 13 , 0 , 0 ,
     64 , 66);
+//    final Animation henAnimationOfLeft = new SpriteAnimation();
+//    final Animation henAnimationOfDown = new SpriteAnimation();
+//    final Animation henAnimationToEat = new SpriteAnimation();
+//    final Animation henUpToLeft = new SpriteAnimation();
+//    final Animation henAnimationToUp = new SpriteAnimation();
 
 
 
-    {
-        try {
-            henImagesOfDeath = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Animals\\Africa\\GuineaFowl"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-    {
-        try {
-            henImagesOfDeath = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Animals\\Africa\\GuineaFowl"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-    {
-        try {
-            henImagesOfDeath = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Animals\\Africa\\GuineaFowl"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-    {
-        try {
-            henImagesOfDeath = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Animals\\Africa\\GuineaFowl"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-    {
-        try {
-            henImagesOfDeath = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Animals\\Africa\\GuineaFowl"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-    {
-        try {
-            henImagesOfDeath = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Animals\\Africa\\GuineaFowl"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
+
+
+
 
 
     @Override

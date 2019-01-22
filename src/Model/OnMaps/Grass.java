@@ -1,12 +1,15 @@
 package Model.OnMaps;
 
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 public class Grass extends Entity {
     Image imageGrass1;
+
+
 
     {
         try {
@@ -45,6 +48,7 @@ public class Grass extends Entity {
             e.printStackTrace();
         }
     }
+    ImageView imageView = new ImageView(imageGrass1);
 
     private boolean isGrass = false;
 

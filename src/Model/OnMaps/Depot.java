@@ -17,6 +17,16 @@ import java.util.ArrayList;
 
 public class Depot extends Building implements Upgradable {
     private int capacity;
+    private int level = 1 ;
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
     private int depotStorage ;
     private int maxLevel;
     private static Depot depot = new Depot();
@@ -59,10 +69,18 @@ public class Depot extends Building implements Upgradable {
             e.printStackTrace();
         }
     }
-    ImageView imageView1 = new ImageView(image1);
-    ImageView imageView2 = new ImageView(image2);
-    ImageView imageView3  = new ImageView(image3);
-    ImageView imageView4 = new ImageView(image14);
+   private ImageView imageView ;
+    {
+        if (level==1)
+            imageView.setImage(image1);
+        if (level==2)
+            imageView.setImage(image2);
+        if (level ==3)
+            imageView.setImage(image3);
+        else if (level==4)
+            imageView.setImage(image14);
+    }
+
 
 
     public int getCapacity() {
@@ -92,6 +110,8 @@ public class Depot extends Building implements Upgradable {
     @Override
     public void upgrade() {
         depot.setCapacity(depot.getCapacity()+20);
+        level++;
+
     }
 
     private boolean isFull = true;

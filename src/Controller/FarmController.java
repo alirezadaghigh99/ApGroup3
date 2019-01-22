@@ -833,8 +833,8 @@ public class FarmController {
             well.addWater();
             money -= Utils.ADDWATRCOST;
         }
-        else System.out.println("nemishavad ke nemishavad");
-        System.out.println(well.getStorage());
+//        else System.out.println("nemishavad ke nemishavad");
+//        System.out.println(well.getStorage());
     }
 
     private void pickUpAction(int x, int y) {
@@ -1060,7 +1060,7 @@ public class FarmController {
                 } else if (cell[i][j].getGrass().isGrass()
                         && cell[i][j].getCellProducts().isEmpty()
                         && cell[i][j].getCellAnimals().isEmpty())
-                    System.out.print(1);
+                   System.out.print(1);
                 else if (cell[i][j].getGrass().isGrass()
                         && !cell[i][j].getCellProducts().isEmpty()
                         && cell[i][j].getCellAnimals().isEmpty())

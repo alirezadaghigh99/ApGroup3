@@ -1,8 +1,11 @@
 package Model.Transport;
 
+import Model.SpriteAnimation;
 import Model.Upgradable;
+import javafx.animation.Animation;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.util.Duration;
 import sun.plugin2.liveconnect.JSExceptions;
 
 import java.io.FileInputStream;
@@ -55,10 +58,18 @@ public class Helicopter extends Transportation implements Upgradable {
             e.printStackTrace();
         }
     }
-    ImageView imageView1 = new ImageView(heliImage1);
-    ImageView imageView2 = new ImageView(heliImage2);
-    ImageView imageView3 = new ImageView(heliImage3);
-    ImageView imageView4 = new ImageView(heliImage4);
+    private ImageView imageView ;
+    {
+        if (level==1)
+            imageView.setImage(heliImage1);
+        if (level==2)
+            imageView.setImage(heliImage2);
+        if (level==3)
+            imageView.setImage(heliImage3);
+        if (level==3)
+            imageView.setImage(heliImage4);
+
+    }
 
 
 
