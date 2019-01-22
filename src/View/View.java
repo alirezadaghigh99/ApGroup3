@@ -10,7 +10,7 @@ public class View {
     }
 
     public void logViewMoney(int money) {
-        System.out.println(money);
+        System.out.println("money: " + money);
     }
 
     public void logBadCommand() {
@@ -38,7 +38,7 @@ public class View {
     }
 
     public void logSeeTime(long time) {
-        System.out.println(time);
+        System.out.println("time: " + time);
     }
 
     public void logSeeDomesticAnimals(int numberOfHen, int numberOfCow, int numberOfSheep) {

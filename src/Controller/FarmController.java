@@ -64,6 +64,7 @@ public class FarmController {
         isFinished = false;
         this.setMoney();
         while (!isFinished) {
+            checkGoal.setConditions();
             String command = view.getCommand().trim();
             try {
                 Request request = commandAnalyzer.getRequest(command);
