@@ -365,6 +365,8 @@ public class GUI extends Application {
     {
 
     }
+    public void updateee()
+    {}
     public void showWeavingFactory()
     {
 
