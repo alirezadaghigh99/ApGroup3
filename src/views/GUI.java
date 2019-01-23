@@ -1,8 +1,11 @@
 package views;
 
 import Model.OnMaps.Depot;
+import Model.OnMaps.Well;
+import javafx.animation.Animation;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -262,6 +265,7 @@ public class GUI extends Application {
     public void playGame() throws Exception {
         group.getChildren().addAll(background);
         showDepot();
+        showWell();
         showCakeBakery();
         showCakeBakery();
         showspinneryFactory();
@@ -341,7 +345,17 @@ public class GUI extends Application {
     }
     public void showWell()
     {
-
+        ImageView wellView = Well.getWell().getImageView1();
+        wellView.setX(500);
+        wellView.setY(50);
+        group.getChildren().add(wellView);
+        wellView.setViewport(new Rectangle2D(0 , 0 ,600 , 544));
+        Well.getWell().wellAnimation().setCycleCount(Animation.INDEFINITE);
+        Well.getWell().wellAnimation().play();
+        wellView.setOnMouseClicked(event -> {
+            Well.getWell().wellAnimation().setCycleCount(Animation.INDEFINITE);
+            Well.getWell().wellAnimation().play();
+        });
     }
     public void showCakeBakery()
     {

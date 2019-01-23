@@ -1,6 +1,5 @@
 package Model;
 
-import javafx.animation.Animation;
 import javafx.animation.Interpolator;
 import javafx.animation.Transition;
 import javafx.geometry.Rectangle2D;
@@ -9,7 +8,6 @@ import javafx.util.Duration;
 
 public class SpriteAnimation extends Transition {
     private final ImageView imageView;
-    Animation animation ;
     private final int count;
     private final int columns;
     private final int offsetX;
@@ -19,8 +17,12 @@ public class SpriteAnimation extends Transition {
 
     private int lastIndex;
 
-    public SpriteAnimation(ImageView imageView, Duration duration,int count , int columns, int offsetX, int offsetY
-            , int width, int height) {
+    public SpriteAnimation(
+            ImageView imageView,
+            Duration duration,
+            int count, int columns,
+            int offsetX, int offsetY,
+            int width, int height) {
         this.imageView = imageView;
         this.count = count;
         this.columns = columns;
@@ -30,12 +32,11 @@ public class SpriteAnimation extends Transition {
         this.height = height;
         setCycleDuration(duration);
         setInterpolator(Interpolator.LINEAR);
-
     }
 
     @Override
-    protected void interpolate(double frac) {
-        final int index = Math.min((int) Math.floor(frac * count), count - 1);
+    protected void interpolate(double k) {
+        final int index = Math.min((int) Math.floor(k * count), count - 1);
         if (index != lastIndex) {
             final int x = (index % columns) * width + offsetX;
             final int y = (index / columns) * height + offsetY;
