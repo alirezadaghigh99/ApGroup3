@@ -131,8 +131,12 @@ public class GUI extends Application {
                         wasInPlayers = false;
                     }
                     for (Text player : players) {
-                        if (player.getText().equals(name)) {
+                        if (player.getText().toLowerCase().equals(name.toLowerCase())) {
                             wasInPlayers = true;
+                            players.remove(player);
+                            Text newPlayer = new Text();
+                            newPlayer.setText(name);
+                            players.add(newPlayer);
                             break;
                         }
                     }
@@ -196,6 +200,18 @@ public class GUI extends Application {
         loadGameMenu.setFitHeight(650);
         loadGameMenu.setFitWidth(700);
         group.getChildren().add(loadGameMenu);
+        FileInputStream back = new FileInputStream("pictures/backbutton2.png");
+        Image image = new Image(back);
+        ImageView backButton = new ImageView(image);
+        backButton.setX(200);
+        backButton.setY(600);
+        backButton.setFitWidth(100);
+        backButton.setFitHeight(80);
+        group.getChildren().add(backButton);
+        backButton.setOnMouseClicked(event -> {
+            group.getChildren().removeAll(group.getChildren());
+            initialize(background, firstMenu, newGameButton, loadGameButton);
+        });
     }
 
     public void showPlayers() throws Exception {
@@ -246,13 +262,13 @@ public class GUI extends Application {
         FileInputStream timerFile = new FileInputStream("pictures/timer.png");
         Image timerIMG = new Image(timerFile);
         ImageView timerButton = new ImageView(timerIMG);
-        timerButton.setX(820);
+        timerButton.setX(800);
         timerButton.setY(625);
-        timerButton.setFitWidth(195);
+        timerButton.setFitWidth(215);
         timerButton.setFitHeight(140);
         group.getChildren().add(timerButton);
         Label timer = new Label("0");
-        timer.relocate(850, 675);
+        timer.relocate(830, 675);
         timer.setTextFill(Color.YELLOWGREEN);
         timer.setFont(Font.font("cooper black", FontWeight.BOLD, 30));
         group.getChildren().add(timer);
@@ -270,10 +286,10 @@ public class GUI extends Application {
                 if (now > lastTime + second / 10) {
                     lastTime = now;
                     time++;
-                    if (time / 10 < 10) {
-                        timer.setText("Time : 0" + time / 10);
+                    if ((time / 10)%60 < 10) {
+                        timer.setText("Time : " + time / 600+".0"+(time/10)%600);
                     } else {
-                        timer.setText("Time : " + time / 10);
+                        timer.setText("Time : " + time / 600+"."+(time/10)%600);
                     }
                 }
             }
