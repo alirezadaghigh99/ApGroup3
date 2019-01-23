@@ -3,6 +3,7 @@ package views;
 import Controller.FarmController;
 import Model.OnMaps.Depot;
 import Model.OnMaps.Well;
+import Model.Utils;
 import Model.Workshop.CakeBakery;
 import Model.Workshop.EggPowderPlantWorkShop;
 import Model.Workshop.SewingFactory;
@@ -353,9 +354,10 @@ public class GUI extends Application {
 
 
     }
-    public void showUpMap()
-    {
+
+    public void showUpMap() {
         try {
+            Image imageOfBack = new Image(new FileInputStream("C:\\Users\\10\\IdeaProjects\\finalProject\\pictures\\timer.png"));
             Image imageOfHen = new Image(new FileInputStream("UI\\Icons\\Products\\guinea_fowl.png"));
             Image imageOfCow = new Image(new FileInputStream("UI\\Icons\\Products\\brown_cow.png"));
             Image imageOfSheep = new Image(new FileInputStream("UI\\Icons\\Products\\sheep.png"));
@@ -366,14 +368,27 @@ public class GUI extends Application {
             ImageView viewOfCow = new ImageView(imageOfCow);
             ImageView viewOfSheep = new ImageView(imageOfSheep);
             ImageView viewOfHelicopter = new ImageView(imageOfHelicopter);
-            viewOfHen.setFitHeight(40);
-            viewOfHen.setFitWidth(40);
-            viewOfCow.setFitHeight(40);
-            viewOfCow.setFitWidth(40);
-            viewOfCow.setX(50);
-            viewOfSheep.setFitHeight(40);
-            viewOfSheep.setFitWidth(40);
-            viewOfSheep.setX(90);
+            ImageView area1 = new ImageView(imageOfBack);
+            ImageView area2 = new ImageView(imageOfBack);
+            ImageView area3 = new ImageView(imageOfBack);
+            area1.relocate(0, -60);
+            area1.setFitWidth(80);
+            area1.setFitHeight(280);
+            area2.relocate(80, -60);
+            area2.setFitWidth(80);
+            area2.setFitHeight(280);
+            area3.relocate(160, -60);
+            area3.setFitWidth(80);
+            area3.setFitHeight(280);
+            viewOfHen.setFitHeight(60);
+            viewOfHen.setFitWidth(60);
+            viewOfHen.relocate(10, 10);
+            viewOfCow.setFitHeight(60);
+            viewOfCow.setFitWidth(60);
+            viewOfCow.relocate(170, 10);
+            viewOfSheep.setFitHeight(60);
+            viewOfSheep.setFitWidth(60);
+            viewOfSheep.relocate(90, 10);
             viewOfTruck.setFitHeight(220);
             viewOfTruck.setFitWidth(200);
             viewOfTruck.setX(200);
@@ -382,7 +397,21 @@ public class GUI extends Application {
             viewOfHelicopter.setFitWidth(200);
             viewOfHelicopter.setX(600);
             viewOfHelicopter.setY(530);
-            group.getChildren().addAll(viewOfHen , viewOfCow , viewOfSheep , viewOfTruck , viewOfHelicopter);
+            Label henPrice = new Label("" + Utils.HEN_PRICE);
+            henPrice.setFont(Font.font("cooper black", 30));
+            henPrice.setTextFill(Color.YELLOW);
+            henPrice.relocate(30, 80);
+            Label sheepPrice = new Label("" + Utils.SHEEP_PRICE);
+            sheepPrice.setFont(Font.font("cooper black", 30));
+            sheepPrice.setTextFill(Color.YELLOW);
+            sheepPrice.relocate(110, 80);
+            Label cowPrice = new Label("" + Utils.COW_PRICE);
+            cowPrice.setFont(Font.font("cooper black", 30));
+            cowPrice.setTextFill(Color.YELLOW);
+            cowPrice.relocate(190, 80);
+            group.getChildren().addAll(area1, area2, area3);
+            group.getChildren().addAll(viewOfHen, viewOfCow, viewOfSheep, viewOfTruck, viewOfHelicopter);
+            group.getChildren().addAll(henPrice, sheepPrice, cowPrice);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -405,10 +434,10 @@ public class GUI extends Application {
     }
 
     public void showCakeBakery() {
-    ImageView viewCakeBakery = CakeBakery.getCakeBakery().getViewOfCakeBakery();
-    viewCakeBakery.setX(100);
-    viewCakeBakery.setY(200);
-    group.getChildren().add(viewCakeBakery);
+        ImageView viewCakeBakery = CakeBakery.getCakeBakery().getViewOfCakeBakery();
+        viewCakeBakery.setX(100);
+        viewCakeBakery.setY(200);
+        group.getChildren().add(viewCakeBakery);
         viewCakeBakery.setViewport(new Rectangle2D(0, 0, 536, 568));
         CakeBakery.getCakeBakery().CakeAnimation().setCycleCount(Animation.INDEFINITE);
         CakeBakery.getCakeBakery().CakeAnimation().play();
@@ -458,7 +487,7 @@ public class GUI extends Application {
         group.getChildren().add(viewOfSpinnery);
         viewOfSpinnery.setViewport(new Rectangle2D(0, 0, 520, 424));
         SpinneryFactory.getSpinneryFactory().spinneryAnimation().setCycleCount(Animation.INDEFINITE);
-       SpinneryFactory.getSpinneryFactory().spinneryAnimation().play();
+        SpinneryFactory.getSpinneryFactory().spinneryAnimation().play();
         viewOfSpinnery.setOnMouseClicked(event -> {
             SpinneryFactory.getSpinneryFactory().spinneryAnimation().setCycleCount(Animation.INDEFINITE);
             SpinneryFactory.getSpinneryFactory().spinneryAnimation().play();
