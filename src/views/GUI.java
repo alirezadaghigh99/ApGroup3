@@ -3,6 +3,8 @@ package views;
 import Controller.FarmController;
 import Model.OnMaps.Depot;
 import Model.OnMaps.Well;
+import Model.Workshop.CakeBakery;
+import Model.Workshop.SpinneryFactory;
 import javafx.animation.Animation;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
@@ -270,9 +272,9 @@ public class GUI extends Application {
         group.getChildren().addAll(background);
         FarmController.getInstance().listenForCommand();
         showCoins();
+        showUpMap();
         showDepot();
         showWell();
-        showCakeBakery();
         showCakeBakery();
         showspinneryFactory();
         showSewingFactory();
@@ -349,6 +351,41 @@ public class GUI extends Application {
 
 
     }
+    public void showUpMap()
+    {
+        try {
+            Image imageOfHen = new Image(new FileInputStream("UI\\Icons\\Products\\guinea_fowl.png"));
+            Image imageOfCow = new Image(new FileInputStream("UI\\Icons\\Products\\brown_cow.png"));
+            Image imageOfSheep = new Image(new FileInputStream("UI\\Icons\\Products\\sheep.png"));
+            Image imageOfTruck = new Image(new FileInputStream("UI\\Truck\\01.png"));
+            Image imageOfHelicopter = new Image(new FileInputStream("UI\\Helicopter\\01.png"));
+            ImageView viewOfTruck = new ImageView(imageOfTruck);
+            ImageView viewOfHen = new ImageView(imageOfHen);
+            ImageView viewOfCow = new ImageView(imageOfCow);
+            ImageView viewOfSheep = new ImageView(imageOfSheep);
+            ImageView viewOfHelicopter = new ImageView(imageOfHelicopter);
+            viewOfHen.setFitHeight(40);
+            viewOfHen.setFitWidth(40);
+            viewOfCow.setFitHeight(40);
+            viewOfCow.setFitWidth(40);
+            viewOfCow.setX(50);
+            viewOfSheep.setFitHeight(40);
+            viewOfSheep.setFitWidth(40);
+            viewOfSheep.setX(90);
+            viewOfTruck.setFitHeight(220);
+            viewOfTruck.setFitWidth(200);
+            viewOfTruck.setX(200);
+            viewOfTruck.setY(530);
+            viewOfHelicopter.setFitHeight(220);
+            viewOfHelicopter.setFitWidth(200);
+            viewOfHelicopter.setX(600);
+            viewOfHelicopter.setY(530);
+            group.getChildren().addAll(viewOfHen , viewOfCow , viewOfSheep , viewOfTruck , viewOfHelicopter);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+    }
 
     public void showWell() {
         ImageView wellView = Well.getWell().getImageView1();
@@ -365,7 +402,17 @@ public class GUI extends Application {
     }
 
     public void showCakeBakery() {
-
+    ImageView viewCakeBakery = CakeBakery.getCakeBakery().getViewOfCakeBakery();
+    viewCakeBakery.setX(100);
+    viewCakeBakery.setY(200);
+    group.getChildren().add(viewCakeBakery);
+        viewCakeBakery.setViewport(new Rectangle2D(0, 0, 536, 568));
+        CakeBakery.getCakeBakery().CakeAnimation().setCycleCount(Animation.INDEFINITE);
+        CakeBakery.getCakeBakery().CakeAnimation().play();
+        viewCakeBakery.setOnMouseClicked(event -> {
+            CakeBakery.getCakeBakery().CakeAnimation().setCycleCount(Animation.INDEFINITE);
+            CakeBakery.getCakeBakery().CakeAnimation().play();
+        });
     }
 
     public void showSewingFactory() {
@@ -381,6 +428,17 @@ public class GUI extends Application {
     }
 
     public void showspinneryFactory() {
+        ImageView viewOfSpinnery = SpinneryFactory.getSpinneryFactory().getViewOfSpinnery();
+        viewOfSpinnery.setY(200);
+        viewOfSpinnery.setX(800);
+        group.getChildren().add(viewOfSpinnery);
+        viewOfSpinnery.setViewport(new Rectangle2D(0, 0, 520, 424));
+        SpinneryFactory.getSpinneryFactory().spinneryAnimation().setCycleCount(Animation.INDEFINITE);
+       SpinneryFactory.getSpinneryFactory().spinneryAnimation().play();
+        viewOfSpinnery.setOnMouseClicked(event -> {
+            SpinneryFactory.getSpinneryFactory().spinneryAnimation().setCycleCount(Animation.INDEFINITE);
+            SpinneryFactory.getSpinneryFactory().spinneryAnimation().play();
+        });
 
     }
 
