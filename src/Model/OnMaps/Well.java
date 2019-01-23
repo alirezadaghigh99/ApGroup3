@@ -123,6 +123,13 @@ public class Well extends Building implements Upgradable {
         }
 
     }
+    public boolean isfull()
+    {
+        if (storage==capacity)
+            return true
+            ;
+        else return false;
+    }
 
 
 

@@ -8,8 +8,7 @@ import Model.Workshop.CakeBakery;
 import Model.Workshop.EggPowderPlantWorkShop;
 import Model.Workshop.SewingFactory;
 import Model.Workshop.SpinneryFactory;
-import javafx.animation.Animation;
-import javafx.animation.AnimationTimer;
+import javafx.animation.*;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.geometry.Rectangle2D;
@@ -29,6 +28,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -42,6 +42,10 @@ public class GUI extends Application {
     private ImageView firstMenu;
     private ImageView newGameButton;
     private ImageView loadGameButton;
+    Label fullLabel = new Label("its full mashti" );
+
+
+
     private ArrayList<Text> players = new ArrayList<>();
     Media music = new Media(new File("music/pirates.mp3").toURI().toString());
     MediaPlayer player = new MediaPlayer(music);
@@ -357,7 +361,7 @@ public class GUI extends Application {
 
     public void showUpMap() {
         try {
-            Image imageOfBack = new Image(new FileInputStream("C:\\Users\\10\\IdeaProjects\\finalProject\\pictures\\timer.png"));
+            Image imageOfBack = new Image(new FileInputStream("pictures\\timer.png"));
             Image imageOfHen = new Image(new FileInputStream("UI\\Icons\\Products\\guinea_fowl.png"));
             Image imageOfCow = new Image(new FileInputStream("UI\\Icons\\Products\\brown_cow.png"));
             Image imageOfSheep = new Image(new FileInputStream("UI\\Icons\\Products\\sheep.png"));
@@ -430,6 +434,25 @@ public class GUI extends Application {
             Well.getWell().wellAnimation().setCycleCount(Animation.INDEFINITE);
             Well.getWell().wellAnimation().play();
             FarmController.getInstance().addWaterAction();
+            if (Well.getWell().isfull())
+            {
+                try {
+                    Image image = new Image(new FileInputStream("pictures\\Full.jpg"));
+                    ImageView viewOfFull = new ImageView(image);
+                    viewOfFull.setY(80);
+                    viewOfFull.setX(500);
+                    viewOfFull.setFitWidth(50);
+                    viewOfFull.setFitHeight(50);
+                    Timeline timeline = new Timeline(
+                            new KeyFrame(Duration.ZERO , new KeyValue(viewOfFull.imageProperty(),image)),
+                    new KeyFrame(Duration.seconds(2), new KeyValue(viewOfFull.imageProperty(), null))
+                    );
+                    timeline.play();
+                    group.getChildren().add(viewOfFull);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
         });
     }
 
