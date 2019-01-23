@@ -56,18 +56,19 @@ public class Well extends Building implements Upgradable {
         }
     }
 
-    {
-        if (level==1)
-            imageView.setImage(imageOfWell1);
-        else if (level==2)
-            imageView.setImage(imageOfWell2);
-        else if (level==3)
-            imageView.setImage(imageOfWell3);
-        else if (level == 4)
-            imageView.setImage(imageOfWell4);
-    }
+//    {
+//        if (level==1)
+//            imageView.setImage(imageOfWell1);
+//        else if (level==2)
+//            imageView.setImage(imageOfWell2);
+//        else if (level==3)
+//            imageView.setImage(imageOfWell3);
+//        else if (level == 4)
+//            imageView.setImage(imageOfWell4);
+//    }
+    ImageView imageView1 = new ImageView(imageOfWell1);
 
-    Animation animation1 = new SpriteAnimation(imageView , Duration.millis(1000) , 16 , 4 , 0 , 0 ,
+    Animation animation1 = new SpriteAnimation(imageView1 , Duration.millis(1000) , 16 , 4 , 0 , 0 ,
             600 , 544);
 
 

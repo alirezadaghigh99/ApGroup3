@@ -69,19 +69,26 @@ public class Depot extends Building implements Upgradable {
             e.printStackTrace();
         }
     }
-   private ImageView imageView ;
-    {
-        if (level==1)
-            imageView.setImage(image1);
-        if (level==2)
-            imageView.setImage(image2);
-        if (level ==3)
-            imageView.setImage(image3);
-        else if (level==4)
-            imageView.setImage(image14);
+  // private ImageView imageView ;
+//    {
+//        if (level==1)
+//            imageView.setImage(image1);
+//        if (level==2)
+//            imageView.setImage(image2);
+//        if (level ==3)
+//            imageView.setImage(image3);
+//        else if (level==4)
+//            imageView.setImage(image14);
+//    }
+    ImageView imageView = new ImageView(image1);
+
+    public ImageView getImageView() {
+        return imageView;
     }
 
-
+    public void setImageView(ImageView imageView) {
+        this.imageView = imageView;
+    }
 
     public int getCapacity() {
         return capacity;
