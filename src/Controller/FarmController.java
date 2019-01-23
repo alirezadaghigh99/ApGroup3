@@ -710,7 +710,7 @@ public class FarmController {
 
     }
 
-    private void addWaterAction() {
+    public void addWaterAction() {
         Well well = Well.getWell();
         if (money >= Utils.ADDWATRCOST) {
             well.addWater();

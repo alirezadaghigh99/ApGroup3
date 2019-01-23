@@ -121,6 +121,7 @@ public class Well extends Building implements Upgradable {
 
             well.setStorage(well.getCapacity());
         }
+
     }
 
 

@@ -4,6 +4,8 @@ import Controller.FarmController;
 import Model.OnMaps.Depot;
 import Model.OnMaps.Well;
 import Model.Workshop.CakeBakery;
+import Model.Workshop.EggPowderPlantWorkShop;
+import Model.Workshop.SewingFactory;
 import Model.Workshop.SpinneryFactory;
 import javafx.animation.Animation;
 import javafx.animation.AnimationTimer;
@@ -398,6 +400,7 @@ public class GUI extends Application {
         wellView.setOnMouseClicked(event -> {
             Well.getWell().wellAnimation().setCycleCount(Animation.INDEFINITE);
             Well.getWell().wellAnimation().play();
+            FarmController.getInstance().addWaterAction();
         });
     }
 
@@ -416,6 +419,17 @@ public class GUI extends Application {
     }
 
     public void showSewingFactory() {
+    ImageView viewOfSewingFactory = SewingFactory.getSewingFactory().getViewOfSewing();
+    viewOfSewingFactory.setX(30);
+    viewOfSewingFactory.setY(360);
+    group.getChildren().add(viewOfSewingFactory);
+        viewOfSewingFactory.setViewport(new Rectangle2D(0, 0, 680, 520));
+        SewingFactory.getSewingFactory().sewingAnimation().setCycleCount(Animation.INDEFINITE);
+        SewingFactory.getSewingFactory().sewingAnimation().play();
+        viewOfSewingFactory.setOnMouseClicked(event -> {
+            SewingFactory.getSewingFactory().sewingAnimation().setCycleCount(Animation.INDEFINITE);
+            SewingFactory.getSewingFactory().sewingAnimation().play();
+        });
 
     }
 
@@ -424,7 +438,17 @@ public class GUI extends Application {
     }
 
     public void showEggPowderPlant() {
-
+    ImageView eggView = EggPowderPlantWorkShop.getEggPowderPlantWorkShop().getImageView1();
+    eggView.setX(760);
+    eggView.setY(400);
+    group.getChildren().add(eggView);
+        eggView.setViewport(new Rectangle2D(0, 0, 512, 456));
+        EggPowderPlantWorkShop.getEggPowderPlantWorkShop().eggPowderAnimation().setCycleCount(Animation.INDEFINITE);
+        EggPowderPlantWorkShop.getEggPowderPlantWorkShop().eggPowderAnimation().play();
+        eggView.setOnMouseClicked(event -> {
+            EggPowderPlantWorkShop.getEggPowderPlantWorkShop().eggPowderAnimation().setCycleCount(Animation.INDEFINITE);
+            EggPowderPlantWorkShop.getEggPowderPlantWorkShop().eggPowderAnimation().play();
+        });
     }
 
     public void showspinneryFactory() {
