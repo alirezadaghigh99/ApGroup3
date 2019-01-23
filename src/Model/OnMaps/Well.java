@@ -20,7 +20,7 @@ public class Well extends Building implements Upgradable {
 
     {
         try {
-            imageOfWell1 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Well\\01.png"));
+            imageOfWell1 = new Image(new FileInputStream("Service\\Well\\01.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -30,7 +30,7 @@ public class Well extends Building implements Upgradable {
 
     {
         try {
-            imageOfWell2 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Well\\02.png"));
+            imageOfWell2 = new Image(new FileInputStream("Service\\Well\\02.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -40,7 +40,7 @@ public class Well extends Building implements Upgradable {
 
     {
         try {
-            imageOfWell3 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Well\\03.png"));
+            imageOfWell3 = new Image(new FileInputStream("Service\\Well\\03.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -50,7 +50,7 @@ public class Well extends Building implements Upgradable {
 
     {
         try {
-            imageOfWell4 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Well\\01.png"));
+            imageOfWell4 = new Image(new FileInputStream("Service\\Well\\01.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

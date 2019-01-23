@@ -34,7 +34,7 @@ public class Depot extends Building implements Upgradable {
 
     {
         try {
-            image1 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Depot\\01.png"));
+            image1 = new Image(new FileInputStream("Service\\Depot\\01.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -44,7 +44,7 @@ public class Depot extends Building implements Upgradable {
 
     {
         try {
-            image2 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Depot\\02.png"));
+            image2 = new Image(new FileInputStream("Service\\Depot\\02.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -54,7 +54,7 @@ public class Depot extends Building implements Upgradable {
 
     {
         try {
-            image3 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Depot\\03.png"));
+            image3 = new Image(new FileInputStream("Service\\Depot\\03.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -64,7 +64,7 @@ public class Depot extends Building implements Upgradable {
 
     {
         try {
-            image14 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Depot\\04.png"));
+            image14 = new Image(new FileInputStream("Service\\Depot\\04.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -73,7 +73,7 @@ public class Depot extends Building implements Upgradable {
 
     {
         try {
-            behindImage = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\FarmFranzy\\pictures\\secondMenu.jpg"));
+            behindImage = new Image(new FileInputStream("pictures\\secondMenu.jpg"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -83,7 +83,7 @@ public class Depot extends Building implements Upgradable {
 
     {
         try {
-            backImage = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\FarmFranzy\\pictures\\backbutton2.png"));
+            backImage = new Image(new FileInputStream("pictures\\backbutton2.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
