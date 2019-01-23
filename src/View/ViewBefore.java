@@ -1,8 +1,8 @@
-package View;
+package views;
 
 import java.util.Scanner;
 
-public class View {
+public class ViewBefore {
     Scanner scanner = new Scanner(System.in);
 
     public String getCommand() {

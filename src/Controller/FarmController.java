@@ -13,7 +13,6 @@ import Model.Requests.SaveRequest;
 import Model.Transport.Helicopter;
 import Model.Transport.Truck;
 import Model.Workshop.*;
-import View.View;
 import com.gilecode.yagson.YaGson;
 
 
@@ -26,7 +25,7 @@ public class FarmController {
     private CheckGoal checkGoal = new CheckGoal();
     private Map map = ourFarm.getMap();
     private WorkShop workShopcu = new Costum();
-    private View view = new View();
+    private views.ViewBefore viewBefore = new views.ViewBefore();
     private int Money;
     private int levelOfGame;
     private boolean isFinished = false;
@@ -65,7 +64,7 @@ public class FarmController {
         this.setMoney();
         while (!isFinished) {
             checkGoal.setConditions();
-            String command = view.getCommand().trim();
+            String command = viewBefore.getCommand().trim();
             try {
                 Request request = commandAnalyzer.getRequest(command);
                 if (request instanceof AddAnimalRequest) {
@@ -367,10 +366,10 @@ public class FarmController {
     }
 
     public void printInfoAction() {
-        view.logSeeDomesticAnimals(hens, cows, sheeps);
-        view.logViewMoney(money);
-        view.logSeeTime(time);
-        view.logSeeLevel(checkGoal.getLevel());
+        viewBefore.logSeeDomesticAnimals(hens, cows, sheeps);
+        viewBefore.logViewMoney(money);
+        viewBefore.logSeeTime(time);
+        viewBefore.logSeeLevel(checkGoal.getLevel());
     }
 
     private void goAction(String transName) {
@@ -650,7 +649,7 @@ public class FarmController {
                 cells[x][y].getCellAnimals().add(hen);
                 money -= Utils.HEN_PRICE;
             } else
-                view.logNotEnoughMoney();
+                viewBefore.logNotEnoughMoney();
         } else if (input.equals("sheep")) {
             if (money >= Utils.SHEEP_PRICE) {
                 Sheep sheep = new Sheep();
@@ -662,7 +661,7 @@ public class FarmController {
                 cells[x][y].getCellAnimals().add(sheep);
                 money -= Utils.SHEEP_PRICE;
             } else
-                view.logNotEnoughMoney();
+                viewBefore.logNotEnoughMoney();
         } else if (input.equals("cow")) {
             if (money >= Utils.COW_PRICE) {
                 Cow cow = new Cow();
@@ -674,7 +673,7 @@ public class FarmController {
                 cells[x][y].getCellAnimals().add(cow);
                 money -= Utils.COW_PRICE;
             } else
-                view.logNotEnoughMoney();
+                viewBefore.logNotEnoughMoney();
         } else if (input.equals("cat")) {
             if (money >= Utils.CAT_PRICE) {
                 Cat cat = new Cat();
@@ -686,7 +685,7 @@ public class FarmController {
                 cells[x][y].getCellAnimals().add(cat);
                 money -= Utils.CAT_PRICE;
             } else
-                view.logNotEnoughMoney();
+                viewBefore.logNotEnoughMoney();
         } else if (input.equals("dog")) {
             if (money >= Utils.DOG_PRICE) {
                 Dog dog = new Dog();
@@ -698,7 +697,7 @@ public class FarmController {
                 cells[x][y].getCellAnimals().add(dog);
                 money -= Utils.DOG_PRICE;
             } else
-                view.logNotEnoughMoney();
+                viewBefore.logNotEnoughMoney();
         } else
             throw new Exception("buy exception");
     }

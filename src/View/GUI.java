@@ -1,14 +1,12 @@
-package View;
+package views;
 
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -25,19 +23,18 @@ public class GUI extends Application {
     private ImageView newGameButton;
     private ImageView loadGameButton;
     private ArrayList<Text> players = new ArrayList<>();
-
     {
         try {
-            FileInputStream bg = new FileInputStream("pictures\\bg.jpg");
+            FileInputStream bg = new FileInputStream("pictures/bg.jpg");
             Image image = new Image(bg);
             background = new ImageView(image);
-            FileInputStream menu = new FileInputStream("pictures\\index.jpg");
+            FileInputStream menu = new FileInputStream("pictures/index.jpg");
             Image image1 = new Image(menu);
             firstMenu = new ImageView(image1);
-            FileInputStream buttonOfMenu = new FileInputStream("pictures\\aquabutton.jpg");
+            FileInputStream buttonOfMenu = new FileInputStream("pictures/aquabutton.jpg");
             Image image2 = new Image(buttonOfMenu);
             newGameButton = new ImageView(image2);
-            FileInputStream loadGame = new FileInputStream("pictures\\load.jpg");
+            FileInputStream loadGame = new FileInputStream("pictures/load.jpg");
             Image lPic = new Image(loadGame);
             loadGameButton = new ImageView(lPic);
         } catch (Exception e) {
@@ -75,9 +72,8 @@ public class GUI extends Application {
         });
         loadGameButton.setOnMouseClicked(event -> {
             try {
-                loadGameCall(firstMenu,newGameButton,loadGameButton);
-            }
-            catch (Exception e){
+                loadGameCall(firstMenu, newGameButton, loadGameButton);
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         });
@@ -85,7 +81,7 @@ public class GUI extends Application {
 
     public void newGameCall(ImageView menu, ImageView newGameButton, ImageView loadGameButton) throws Exception {
         group.getChildren().removeAll(menu, newGameButton, loadGameButton);
-        FileInputStream f = new FileInputStream("pictures\\secondMenu.jpg");
+        FileInputStream f = new FileInputStream("pictures/secondMenu.jpg");
         Image newGameImg = new Image(f);
         ImageView newGameMenu = new ImageView(newGameImg);
         newGameMenu.setX(150);
@@ -93,7 +89,7 @@ public class GUI extends Application {
         newGameMenu.setFitHeight(650);
         newGameMenu.setFitWidth(700);
         group.getChildren().add(newGameMenu);
-        FileInputStream back = new FileInputStream("pictures\\backbutton2.png");
+        FileInputStream back = new FileInputStream("pictures/backbutton2.png");
         Image image = new Image(back);
         ImageView backButton = new ImageView(image);
         backButton.setX(200);
@@ -136,7 +132,7 @@ public class GUI extends Application {
                 }
             }
         });
-        FileInputStream playFile = new FileInputStream("pictures\\play.png");
+        FileInputStream playFile = new FileInputStream("pictures/play.png");
         Image playIMG = new Image(playFile);
         ImageView playButton = new ImageView(playIMG);
         playButton.setX(400);
@@ -144,7 +140,7 @@ public class GUI extends Application {
         playButton.setFitWidth(200);
         playButton.setFitHeight(100);
         group.getChildren().addAll(playButton);
-        FileInputStream showFile = new FileInputStream("pictures\\show.png");
+        FileInputStream showFile = new FileInputStream("pictures/show.png");
         Image showIMG = new Image(showFile);
         ImageView showPlayersButton = new ImageView(showIMG);
         showPlayersButton.setX(650);
@@ -172,7 +168,7 @@ public class GUI extends Application {
 
     public void loadGameCall(ImageView menu, ImageView newGameButton, ImageView loadGameButton) throws Exception {
         group.getChildren().removeAll(menu, newGameButton, loadGameButton);
-        FileInputStream f = new FileInputStream("pictures\\secondMenu.jpg");
+        FileInputStream f = new FileInputStream("pictures/secondMenu.jpg");
         Image newGameImg = new Image(f);
         ImageView loadGameMenu = new ImageView(newGameImg);
         loadGameMenu.setX(150);
@@ -183,7 +179,7 @@ public class GUI extends Application {
     }
 
     public void showPlayers() throws Exception {
-        FileInputStream f = new FileInputStream("pictures\\secondMenu.jpg");
+        FileInputStream f = new FileInputStream("pictures/secondMenu.jpg");
         Image playersIMG = new Image(f);
         ImageView playersInGame = new ImageView(playersIMG);
         playersInGame.setX(150);
@@ -196,11 +192,10 @@ public class GUI extends Application {
         for (int i = players.size() - 1; i >= players.size() - (players.size() < 20 ? players.size() : 20); i--) {
             texts[count - 1] = new Text();
             texts[count - 1].setText(count + "- " + players.get(i).getText());
-            if(count<=10) {
+            if (count <= 10) {
                 texts[count - 1].relocate(200, 50 + (count) * 50);
-            }
-            else{
-                texts[count - 1].relocate(500, 50 + (count-10) * 50);
+            } else {
+                texts[count - 1].relocate(500, 50 + (count - 10) * 50);
             }
             texts[count - 1].setFont(Font.font("comic sans ms", 30));
             count++;
