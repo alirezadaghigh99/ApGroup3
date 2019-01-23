@@ -9,11 +9,14 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 
@@ -25,6 +28,8 @@ public class GUI extends Application {
     private ImageView newGameButton;
     private ImageView loadGameButton;
     private ArrayList<Text> players = new ArrayList<>();
+    Media music = new Media(new File("music/pirates.mp3").toURI().toString());
+    MediaPlayer player = new MediaPlayer(music);
 
     {
         try {
@@ -66,6 +71,9 @@ public class GUI extends Application {
         loadGameButton.setFitWidth(200);
         loadGameButton.setFitHeight(100);
         group.getChildren().add(loadGameButton);
+        Media music = new Media(new File("music/pirates.mp3").toURI().toString());
+        MediaPlayer player = new MediaPlayer(music);
+        player.play();
         newGameButton.setOnMouseClicked(event -> {
             try {
                 newGameCall(firstMenu, newGameButton, loadGameButton);
@@ -241,6 +249,21 @@ public class GUI extends Application {
         primaryStage.setTitle("Farm Frenzy");
         initialize(background, firstMenu, newGameButton, loadGameButton);
         primaryStage.setScene(scene);
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true){
+                    player.play();
+                    try {
+                        Thread.sleep(50);
+                    }
+                    catch (Exception e){
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+        thread.start();
         primaryStage.show();
     }
 }
