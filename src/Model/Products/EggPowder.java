@@ -11,7 +11,7 @@ public class EggPowder extends Product {
 
     {
         try {
-            image = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Textures\\Products\\EggPowder.png"));
+            image = new Image(new FileInputStream("Products\\EggPowder.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

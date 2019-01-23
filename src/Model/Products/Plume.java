@@ -11,7 +11,7 @@ public class Plume extends Product {
 
     {
         try {
-            image = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Textures\\Products\\Flour.png"));
+            image = new Image(new FileInputStream("Products\\Flour.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

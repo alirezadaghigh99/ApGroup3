@@ -12,7 +12,7 @@ public class Truck extends Transportation implements Upgradable {
 
     {
         try {
-            imageOfTruck1 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Truck\\01.png"));
+            imageOfTruck1 = new Image(new FileInputStream("Service\\Truck\\01.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -22,7 +22,7 @@ public class Truck extends Transportation implements Upgradable {
 
     {
         try {
-            imageOfTruck2 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Truck\\02.png"));
+            imageOfTruck2 = new Image(new FileInputStream("Service\\Truck\\02.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -32,7 +32,7 @@ public class Truck extends Transportation implements Upgradable {
 
     {
         try {
-            imageOfTruck3 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Truck\\03.png"));
+            imageOfTruck3 = new Image(new FileInputStream("Service\\Truck\\03.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -42,7 +42,7 @@ public class Truck extends Transportation implements Upgradable {
 
     {
         try {
-            imageOfTruck4 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Truck\\04.png"));
+            imageOfTruck4 = new Image(new FileInputStream("Service\\Truck\\04.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

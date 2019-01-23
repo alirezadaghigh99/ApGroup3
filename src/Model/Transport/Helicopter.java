@@ -23,7 +23,7 @@ public class Helicopter extends Transportation implements Upgradable {
 
     {
         try {
-            heliImage1 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Helicopter\\01.png"));
+            heliImage1 = new Image(new FileInputStream("Service\\Helicopter\\01.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -33,7 +33,7 @@ public class Helicopter extends Transportation implements Upgradable {
 
     {
         try {
-            heliImage2 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Helicopter\\02.png"));
+            heliImage2 = new Image(new FileInputStream("Service\\Helicopter\\02.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -43,7 +43,7 @@ public class Helicopter extends Transportation implements Upgradable {
 
     {
         try {
-            heliImage3 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Helicopter\\03.png"));
+            heliImage3 = new Image(new FileInputStream("Service\\Helicopter\\03.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -53,7 +53,7 @@ public class Helicopter extends Transportation implements Upgradable {
 
     {
         try {
-            heliImage4 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Helicopter\\04.png"));
+            heliImage4 = new Image(new FileInputStream("Service\\Helicopter\\04.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

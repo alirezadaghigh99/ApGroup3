@@ -11,7 +11,7 @@ public class Lion extends WildAnimal {
 
     {
         try {
-            LionToCage = new Image(new FileInputStream("Animals\\Africa\\Lion"));
+            LionToCage = new Image(new FileInputStream("Animals\\Africa\\Lion\\caged.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -21,7 +21,7 @@ public class Lion extends WildAnimal {
 
     {
         try {
-            LionToUp = new Image(new FileInputStream("Animals\\Africa\\Lion"));
+            LionToUp = new Image(new FileInputStream("Animals\\Africa\\Lion\\up.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -31,7 +31,7 @@ public class Lion extends WildAnimal {
 
     {
         try {
-            LionToDown = new Image(new FileInputStream("Animals\\Africa\\Lion"));
+            LionToDown = new Image(new FileInputStream("Animals\\Africa\\Lion\\down.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -41,7 +41,7 @@ public class Lion extends WildAnimal {
 
     {
         try {
-            LionToDownLeft = new Image(new FileInputStream("Animals\\Africa\\Lion"));
+            LionToDownLeft = new Image(new FileInputStream("Animals\\Africa\\Lion\\down_left.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -51,7 +51,7 @@ public class Lion extends WildAnimal {
 
     {
         try {
-            LionToLeft = new Image(new FileInputStream("Animals\\Africa\\Lion"));
+            LionToLeft = new Image(new FileInputStream("Animals\\Africa\\Lion\\left.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -61,7 +61,7 @@ public class Lion extends WildAnimal {
 
     {
         try {
-            LionToUpLeft = new Image(new FileInputStream("Animals\\Africa\\Lion"));
+            LionToUpLeft = new Image(new FileInputStream("Animals\\Africa\\Lion\\up_left.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

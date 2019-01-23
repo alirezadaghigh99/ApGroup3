@@ -13,41 +13,13 @@ public class Grass extends Entity {
 
     {
         try {
-            imageGrass1 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Grass"));
+            imageGrass1 = new Image(new FileInputStream("Grass\\grass1.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }
 
-    Image imageGrass2;
 
-    {
-        try {
-            imageGrass2 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Grass"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    Image imageGrass3;
-
-    {
-        try {
-            imageGrass3 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Grass"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    Image imageGrass4;
-
-    {
-        try {
-            imageGrass4 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Grass"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
     ImageView imageView = new ImageView(imageGrass1);
 
     private boolean isGrass = false;
