@@ -69,7 +69,28 @@ public class Depot extends Building implements Upgradable {
             e.printStackTrace();
         }
     }
-  // private ImageView imageView ;
+    Image behindImage;
+
+    {
+        try {
+            behindImage = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\FarmFranzy\\pictures\\secondMenu.jpg"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    Image backImage;
+
+    {
+        try {
+            backImage = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\FarmFranzy\\pictures\\backbutton2.png"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    // private ImageView imageView ;
 //    {
 //        if (level==1)
 //            imageView.setImage(image1);
@@ -81,6 +102,24 @@ public class Depot extends Building implements Upgradable {
 //            imageView.setImage(image14);
 //    }
     ImageView imageView = new ImageView(image1);
+    ImageView backView  = new ImageView(backImage);
+    ImageView behindView = new ImageView(behindImage);
+
+    public ImageView getBackView() {
+        return backView;
+    }
+
+    public void setBackView(ImageView backView) {
+        this.backView = backView;
+    }
+
+    public ImageView getBehindView() {
+        return behindView;
+    }
+
+    public void setBehindView(ImageView behindView) {
+        this.behindView = behindView;
+    }
 
     public ImageView getImageView() {
         return imageView;

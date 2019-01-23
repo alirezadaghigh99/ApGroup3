@@ -1,5 +1,6 @@
 package views;
 
+import Model.OnMaps.Depot;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -19,6 +20,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class GUI extends Application {
@@ -259,6 +261,13 @@ public class GUI extends Application {
 
     public void playGame() throws Exception {
         group.getChildren().addAll(background);
+        showDepot();
+        showCakeBakery();
+        showCakeBakery();
+        showspinneryFactory();
+        showSewingFactory();
+        showWeavingFactory();
+        showEggPowderPlant();
         FileInputStream timerFile = new FileInputStream("pictures/timer.png");
         Image timerIMG = new Image(timerFile);
         ImageView timerButton = new ImageView(timerIMG);
@@ -296,6 +305,69 @@ public class GUI extends Application {
         };
         animationTimer.start();
     }
+    public void showDepot()
+    {
+        ImageView depotView = Depot.getDepot().getImageView();
+        depotView.setFitWidth(200);
+        depotView.setFitHeight(200);
+        depotView.setX(400);
+        depotView.setY(530);
+        group.getChildren().add(depotView);
+       ImageView behindView = Depot.getDepot().getBehindView();
+       ImageView backView = Depot.getDepot().getBackView();
+       backView.setX(700);
+       backView.setY(100);
+       behindView.setX(400);
+       backView.setY(300);
+       backView.setFitHeight(50);
+       backView.setFitWidth(80);
+       behindView.setFitWidth(400);
+       behindView.setFitHeight(400);
+       depotView.setOnMouseClicked(event -> {
+           group.getChildren().add(behindView);
+           group.getChildren().add(backView);
+       });
+       if (group.getChildren().contains(backView))
+       {
+           backView.setOnMouseClicked(event -> {
+               group.getChildren().removeAll(backView , behindView);
+           });
+       }
+
+
+
+
+
+    }
+    public void showWell()
+    {
+
+    }
+    public void showCakeBakery()
+    {
+
+    }
+    public void showSewingFactory()
+    {
+
+    }
+    public void showWeavingFactory()
+    {
+
+    }
+    public void showEggPowderPlant()
+    {
+
+    }
+    public void showspinneryFactory()
+    {
+
+    }
+    public void CookieBakery()
+    {
+
+    }
+
 
     @Override
     public void start(Stage primaryStage) throws Exception {
