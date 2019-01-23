@@ -1,12 +1,14 @@
 package views;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -23,6 +25,7 @@ public class GUI extends Application {
     private ImageView newGameButton;
     private ImageView loadGameButton;
     private ArrayList<Text> players = new ArrayList<>();
+
     {
         try {
             FileInputStream bg = new FileInputStream("pictures/bg.jpg");
@@ -163,6 +166,14 @@ public class GUI extends Application {
             group.getChildren().removeAll(group.getChildren());
             initialize(background, firstMenu, newGameButton, loadGameButton);
         });
+        playButton.setOnMouseClicked(event -> {
+            group.getChildren().removeAll(group.getChildren());
+            try {
+                playGame();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
     }
 
 
@@ -200,7 +211,29 @@ public class GUI extends Application {
             texts[count - 1].setFont(Font.font("comic sans ms", 30));
             count++;
         }
+        FileInputStream back = new FileInputStream("pictures/backbutton2.png");
+        Image image = new Image(back);
+        ImageView backButton = new ImageView(image);
+        backButton.setX(200);
+        backButton.setY(600);
+        backButton.setFitWidth(100);
+        backButton.setFitHeight(80);
+        group.getChildren().add(backButton);
         group.getChildren().addAll(texts);
+        backButton.setOnMouseClicked(event -> {
+            group.getChildren().removeAll(group.getChildren());
+            initialize(background, firstMenu, newGameButton, loadGameButton);
+
+            try {
+                newGameCall(firstMenu, newGameButton, loadGameButton);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    public void playGame() throws Exception {
+        group.getChildren().addAll(background);
     }
 
     @Override
