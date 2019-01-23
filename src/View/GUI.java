@@ -1,12 +1,14 @@
 package View;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -68,6 +70,14 @@ public class GUI extends Application {
             try {
                 newGameCall(firstMenu, newGameButton, loadGameButton);
             } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        loadGameButton.setOnMouseClicked(event -> {
+            try {
+                loadGameCall(firstMenu,newGameButton,loadGameButton);
+            }
+            catch (Exception e){
                 e.printStackTrace();
             }
         });
@@ -137,10 +147,10 @@ public class GUI extends Application {
         FileInputStream showFile = new FileInputStream("pictures\\show.png");
         Image showIMG = new Image(showFile);
         ImageView showPlayersButton = new ImageView(showIMG);
-        showPlayersButton.setX(700);
-        showPlayersButton.setY(600);
-        showPlayersButton.setFitWidth(150);
-        showPlayersButton.setFitHeight(100);
+        showPlayersButton.setX(650);
+        showPlayersButton.setY(580);
+        showPlayersButton.setFitWidth(180);
+        showPlayersButton.setFitHeight(80);
         group.getChildren().addAll(showPlayersButton);
         playButton.setOnMouseClicked(event -> {
 
@@ -164,12 +174,12 @@ public class GUI extends Application {
         group.getChildren().removeAll(menu, newGameButton, loadGameButton);
         FileInputStream f = new FileInputStream("pictures\\secondMenu.jpg");
         Image newGameImg = new Image(f);
-        ImageView newGameMenu = new ImageView(newGameImg);
-        newGameMenu.setX(150);
-        newGameMenu.setY(50);
-        newGameMenu.setFitHeight(650);
-        newGameMenu.setFitWidth(700);
-        group.getChildren().add(newGameMenu);
+        ImageView loadGameMenu = new ImageView(newGameImg);
+        loadGameMenu.setX(150);
+        loadGameMenu.setY(50);
+        loadGameMenu.setFitHeight(650);
+        loadGameMenu.setFitWidth(700);
+        group.getChildren().add(loadGameMenu);
     }
 
     public void showPlayers() throws Exception {
@@ -186,7 +196,12 @@ public class GUI extends Application {
         for (int i = players.size() - 1; i >= players.size() - (players.size() < 20 ? players.size() : 20); i--) {
             texts[count - 1] = new Text();
             texts[count - 1].setText(count + "- " + players.get(i).getText());
-            texts[count - 1].relocate(200, 50 + count * 50);
+            if(count<=10) {
+                texts[count - 1].relocate(200, 50 + (count) * 50);
+            }
+            else{
+                texts[count - 1].relocate(500, 50 + (count-10) * 50);
+            }
             texts[count - 1].setFont(Font.font("comic sans ms", 30));
             count++;
         }
