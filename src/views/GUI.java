@@ -1,18 +1,19 @@
 package views;
 
+import javafx.animation.AnimationTimer;
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -242,6 +243,42 @@ public class GUI extends Application {
 
     public void playGame() throws Exception {
         group.getChildren().addAll(background);
+        FileInputStream timerFile = new FileInputStream("pictures/timer.png");
+        Image timerIMG = new Image(timerFile);
+        ImageView timerButton = new ImageView(timerIMG);
+        timerButton.setX(820);
+        timerButton.setY(625);
+        timerButton.setFitWidth(195);
+        timerButton.setFitHeight(140);
+        group.getChildren().add(timerButton);
+        Label timer = new Label("0");
+        timer.relocate(850, 675);
+        timer.setTextFill(Color.YELLOWGREEN);
+        timer.setFont(Font.font("cooper black", FontWeight.BOLD, 30));
+        group.getChildren().add(timer);
+        AnimationTimer animationTimer = new AnimationTimer() {
+            private long lastTime = 0;
+            private long second = 1000000000;
+            private long time = 0;
+
+            @Override
+
+            public void handle(long now) {
+                if (lastTime == 0) {
+                    lastTime = now;
+                }
+                if (now > lastTime + second / 10) {
+                    lastTime = now;
+                    time++;
+                    if (time / 10 < 10) {
+                        timer.setText("Time : 0" + time / 10);
+                    } else {
+                        timer.setText("Time : " + time / 10);
+                    }
+                }
+            }
+        };
+        animationTimer.start();
     }
 
     @Override
@@ -249,17 +286,13 @@ public class GUI extends Application {
         primaryStage.setTitle("Farm Frenzy");
         initialize(background, firstMenu, newGameButton, loadGameButton);
         primaryStage.setScene(scene);
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (true){
-                    player.play();
-                    try {
-                        Thread.sleep(50);
-                    }
-                    catch (Exception e){
-                        e.printStackTrace();
-                    }
+        Thread thread = new Thread(() -> {
+            while (true) {
+                player.play();
+                try {
+                    Thread.sleep(50);
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
             }
         });
