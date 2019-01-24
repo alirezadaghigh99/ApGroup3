@@ -14,7 +14,7 @@ import java.io.FileNotFoundException;
 
 public class Well extends Building implements Upgradable {
     private int capacity = 50 ;
-    private int storage = 50 ;
+    private int storage = 0 ;
     private int level = 1;
     private ImageView imageView ;
     Image imageOfWell1;
@@ -181,6 +181,6 @@ ImageView ourview = new ImageView(imageOfWell1);
     public void upgrade() {
         Well.getWell().setLevel(level+1);
         System.out.println("mamad");
-        capacity = capacity + 10 ;
+        setCapacity(getCapacity()+10);
     }
 }

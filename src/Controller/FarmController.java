@@ -927,6 +927,11 @@ public class FarmController {
             depot.upgrade();
 
         }
+        if (type.equals("spinneryfactory"))
+        {
+            SpinneryFactory spinneryFactory = SpinneryFactory.getSpinneryFactory();
+            spinneryFactory.upgradeSpinnery();
+        }
 
     }
 
