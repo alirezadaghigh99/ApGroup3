@@ -4,7 +4,6 @@
     <list default="true" id="c64801da-0b49-48e1-b1f4-71066c99b6ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Animals/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/Cat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/GUI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -304,8 +303,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Model/Animals/Cat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="63" column="26" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
+            <state relative-caret-position="310">
+              <caret line="62" column="5" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -523,7 +522,7 @@
     <property name="SearchEverywhereHistoryKey" value="pri&#9;PSI&#9;JAVA://Controller.FarmController#printInfoAction&#10;pass&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;passT&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;money&#9;PSI&#9;JAVA://Controller.FarmController#money&#10;addW&#9;PSI&#9;JAVA://Controller.FarmController#addWaterAction&#10;add&#9;PSI&#9;JAVA://Controller.FarmController#addAnimalAction&#10;tur&#9;PSI&#9;JAVA://Model.Animals.Animal#nextTurn&#10;load&#9;PSI&#9;JAVA://Controller.FarmController#load&#10;akba&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/Approject/akbar.json&#10;Map&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/Approject/src/Model/OnMaps/Map.java&#10;map&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/Approject/maps.json&#10;save&#9;PSI&#9;JAVA://Controller.FarmController#save&#10;go&#9;PSI&#9;JAVA://Controller.FarmController#goAction&#10;sale&#9;PSI&#9;JAVA://Controller.FarmController#saleAction&#10;tart&#9;PSI&#9;JAVA://Controller.FarmController#startAction&#10;turn&#9;PSI&#9;JAVA://Model.Animals.Animal#nextTurn&#10;clea&#9;PSI&#9;JAVA://Controller.FarmController#clearAction&#10;clear&#9;PSI&#9;JAVA://Controller.FarmController#clearAction&#10;saveRe&#9;PSI&#9;JAVA://Model.Requests.SaveRequest&#10;cleara&#9;PSI&#9;JAVA://Controller.FarmController#clearAction&#10;goactio&#9;PSI&#9;JAVA://Controller.FarmController#goAction&#10;goAction&#9;PSI&#9;JAVA://Controller.FarmController#goAction&#10;goActio&#9;PSI&#9;JAVA://Controller.FarmController#goAction&#10;stored&#9;PSI&#9;JAVA://Model.Depot#storedAnimal" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548359872768" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548360833655" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../git-tuturial/src" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -1094,11 +1093,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548342364215</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="finally controller ^_^">
+      <created>1548360174559</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1548360174559</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="195259000" />
+    <option name="totallyTimeSpent" value="195919000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1524,8 +1530,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Animals/Cat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="63" column="26" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
+        <state relative-caret-position="310">
+          <caret line="62" column="5" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
         </state>
       </provider>
     </entry>
