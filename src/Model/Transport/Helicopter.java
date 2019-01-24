@@ -59,18 +59,6 @@ public class Helicopter extends Transportation implements Upgradable {
         }
     }
     private ImageView imageView ;
-    {
-        if (level==1)
-            imageView.setImage(heliImage1);
-        if (level==2)
-            imageView.setImage(heliImage2);
-        if (level==3)
-            imageView.setImage(heliImage3);
-        if (level==3)
-            imageView.setImage(heliImage4);
-
-    }
-
 
 
     public int getSpeed() {

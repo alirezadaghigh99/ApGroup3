@@ -1,10 +1,12 @@
 package views;
 
+import Controller.FarmController;
 import Model.OnMaps.Depot;
 import Model.OnMaps.Well;
 import javafx.animation.Animation;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -13,9 +15,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
@@ -264,6 +268,8 @@ public class GUI extends Application {
 
     public void playGame() throws Exception {
         group.getChildren().addAll(background);
+        FarmController.getInstance().listenForCommand();
+        showCoins();
         showDepot();
         showWell();
         showCakeBakery();
@@ -299,57 +305,53 @@ public class GUI extends Application {
                 if (now > lastTime + second / 10) {
                     lastTime = now;
                     time++;
-                    if ((time / 10)%60 < 10) {
-                        timer.setText("Time : " + time / 600+".0"+(time/10)%600);
+                    if ((time / 10) % 60 < 10) {
+                        timer.setText("Time : " + time / 600 + ".0" + (time / 10) % 60);
                     } else {
-                        timer.setText("Time : " + time / 600+"."+(time/10)%600);
+                        timer.setText("Time : " + time / 600 + "." + (time / 10) % 60);
                     }
                 }
             }
         };
         animationTimer.start();
     }
-    public void showDepot()
-    {
+
+    public void showDepot() {
         ImageView depotView = Depot.getDepot().getImageView();
         depotView.setFitWidth(200);
         depotView.setFitHeight(200);
         depotView.setX(400);
         depotView.setY(530);
         group.getChildren().add(depotView);
-       ImageView behindView = Depot.getDepot().getBehindView();
-       ImageView backView = Depot.getDepot().getBackView();
-       backView.setX(700);
-       backView.setY(100);
-       behindView.setX(400);
-       backView.setY(300);
-       backView.setFitHeight(50);
-       backView.setFitWidth(80);
-       behindView.setFitWidth(400);
-       behindView.setFitHeight(400);
-       depotView.setOnMouseClicked(event -> {
-           group.getChildren().add(behindView);
-           group.getChildren().add(backView);
-       });
-       if (group.getChildren().contains(backView))
-       {
-           backView.setOnMouseClicked(event -> {
-               group.getChildren().removeAll(backView , behindView);
-           });
-       }
+        depotView.setOnMouseClicked(event -> {
+            ImageView behindView = Depot.getDepot().getBehindView();
+            ImageView backView = Depot.getDepot().getBackView();
+            backView.setX(700);
+            backView.setY(100);
+            behindView.setX(400);
+            backView.setY(300);
+            backView.setFitHeight(50);
+            backView.setFitWidth(80);
+            behindView.setFitWidth(400);
+            behindView.setFitHeight(400);
+            group.getChildren().add(behindView);
+            group.getChildren().add(backView);
+            backView.setOnMouseClicked(event1 -> {
+                group.getChildren().removeAll(behindView);
+                group.getChildren().remove(group.getChildren().get(group.getChildren().size()-1));
+            });
 
-
-
+        });
 
 
     }
-    public void showWell()
-    {
+
+    public void showWell() {
         ImageView wellView = Well.getWell().getImageView1();
         wellView.setX(500);
         wellView.setY(50);
         group.getChildren().add(wellView);
-        wellView.setViewport(new Rectangle2D(0 , 0 ,600 , 544));
+        wellView.setViewport(new Rectangle2D(0, 0, 600, 544));
         Well.getWell().wellAnimation().setCycleCount(Animation.INDEFINITE);
         Well.getWell().wellAnimation().play();
         wellView.setOnMouseClicked(event -> {
@@ -357,33 +359,50 @@ public class GUI extends Application {
             Well.getWell().wellAnimation().play();
         });
     }
-    public void showCakeBakery()
-    {
 
-    }
-    public void showSewingFactory()
-    {
-
-    }
-    public void updateee()
-    {}
-    public void showWeavingFactory()
-    {
-
-    }
-    public void showEggPowderPlant()
-    {
-
-    }
-    public void showspinneryFactory()
-    {
-
-    }
-    public void CookieBakery()
-    {
+    public void showCakeBakery() {
 
     }
 
+    public void showSewingFactory() {
+
+    }
+
+    public void showWeavingFactory() {
+
+    }
+
+    public void showEggPowderPlant() {
+
+    }
+
+    public void showspinneryFactory() {
+
+    }
+
+    public void CookieBakery() {
+
+    }
+    private void showCoins() throws Exception {
+        Rectangle coinField = new Rectangle(170,100);
+        coinField.relocate(670,5);
+        coinField.setArcWidth(50);
+        coinField.setArcHeight(50);
+        coinField.setFill(Color.rgb(20,50,250,0.8));
+        group.getChildren().addAll(coinField);
+        FileInputStream coinFile = new FileInputStream("pictures/coin.png");
+        Image coinImg = new Image(coinFile);
+        ImageView coinButton = new ImageView(coinImg);
+        coinButton.relocate(735,10);
+        coinButton.setFitWidth(40);
+        coinButton.setFitHeight(40);
+        group.getChildren().add(coinButton);
+        Label coin = new Label(""+ FarmController.getInstance().getMoney());
+        coin.relocate(725,60);
+        coin.setFont(Font.font("cooper black",30));
+        coin.setTextFill(Color.YELLOW);
+        group.getChildren().add(coin);
+    }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -393,11 +412,6 @@ public class GUI extends Application {
         Thread thread = new Thread(() -> {
             while (true) {
                 player.play();
-                try {
-                    Thread.sleep(50);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
             }
         });
         thread.start();
