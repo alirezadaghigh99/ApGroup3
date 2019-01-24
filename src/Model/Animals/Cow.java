@@ -13,7 +13,7 @@ public class Cow extends ProducerAnimal {
 
     {
         try {
-            CowToDown = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Animals\\Africa\\Buffalo\\down.png"));
+            CowToDown = new Image(new FileInputStream("Animals\\Africa\\Buffalo\\down.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -33,7 +33,7 @@ public class Cow extends ProducerAnimal {
 
     {
         try {
-            CowToUp = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Animals\\Africa\\Buffalo\\up.png"));
+            CowToUp = new Image(new FileInputStream("Animals\\Africa\\Buffalo\\up.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -43,7 +43,7 @@ public class Cow extends ProducerAnimal {
 
     {
         try {
-            CowToUpLeft = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Animals\\Africa\\Buffalo\\up_left.png"));
+            CowToUpLeft = new Image(new FileInputStream("Animals\\Africa\\Buffalo\\up_left.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -53,7 +53,7 @@ public class Cow extends ProducerAnimal {
 
     {
         try {
-            CowToEat = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Animals\\Africa\\Buffalo\\eat.png"));
+            CowToEat = new Image(new FileInputStream("Animals\\Africa\\Buffalo\\eat.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -63,7 +63,7 @@ public class Cow extends ProducerAnimal {
 
     {
         try {
-            CowToLeft = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Animals\\Africa\\Buffalo\\up_left.png"));
+            CowToLeft = new Image(new FileInputStream("Animals\\Africa\\Buffalo\\up_left.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

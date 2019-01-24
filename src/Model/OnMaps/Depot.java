@@ -34,7 +34,7 @@ public class Depot extends Building implements Upgradable {
 
     {
         try {
-            image1 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Depot\\01.png"));
+            image1 = new Image(new FileInputStream("Service\\Depot\\01.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -44,7 +44,7 @@ public class Depot extends Building implements Upgradable {
 
     {
         try {
-            image2 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Depot\\02.png"));
+            image2 = new Image(new FileInputStream("Service\\Depot\\02.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -54,7 +54,7 @@ public class Depot extends Building implements Upgradable {
 
     {
         try {
-            image3 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Depot\\03.png"));
+            image3 = new Image(new FileInputStream("Service\\Depot\\03.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -64,24 +64,70 @@ public class Depot extends Building implements Upgradable {
 
     {
         try {
-            image14 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Depot\\04.png"));
+            image14 = new Image(new FileInputStream("Service\\Depot\\04.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }
-   private ImageView imageView ;
+    Image behindImage;
+
     {
-        if (level==1)
-            imageView.setImage(image1);
-        if (level==2)
-            imageView.setImage(image2);
-        if (level ==3)
-            imageView.setImage(image3);
-        else if (level==4)
-            imageView.setImage(image14);
+        try {
+            behindImage = new Image(new FileInputStream("pictures\\secondMenu.jpg"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    Image backImage;
+
+    {
+        try {
+            backImage = new Image(new FileInputStream("pictures\\backbutton2.png"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
 
+    // private ImageView imageView ;
+//    {
+//        if (level==1)
+//            imageView.setImage(image1);
+//        if (level==2)
+//            imageView.setImage(image2);
+//        if (level ==3)
+//            imageView.setImage(image3);
+//        else if (level==4)
+//            imageView.setImage(image14);
+//    }
+    ImageView imageView = new ImageView(image1);
+    ImageView backView  = new ImageView(backImage);
+    ImageView behindView = new ImageView(behindImage);
+
+    public ImageView getBackView() {
+        return backView;
+    }
+
+    public void setBackView(ImageView backView) {
+        this.backView = backView;
+    }
+
+    public ImageView getBehindView() {
+        return behindView;
+    }
+
+    public void setBehindView(ImageView behindView) {
+        this.behindView = behindView;
+    }
+
+    public ImageView getImageView() {
+        return imageView;
+    }
+
+    public void setImageView(ImageView imageView) {
+        this.imageView = imageView;
+    }
 
     public int getCapacity() {
         return capacity;

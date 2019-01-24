@@ -10,11 +10,11 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 public class Dog extends Animal {
-    Image DogToLeft = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Animals\\Africa\\Dog"));
-    Image DogToDown = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Animals\\Africa\\Dog"));
-    Image DogToDownLeft = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Animals\\Africa\\Dog"));
-    Image DogToUp = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Animals\\Africa\\Dog"));
-    Image DogToUpLeft = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Animals\\Africa\\Dog"));
+    Image DogToLeft = new Image(new FileInputStream("Animals\\Africa\\Dog"));
+    Image DogToDown = new Image(new FileInputStream("Animals\\Africa\\Dog"));
+    Image DogToDownLeft = new Image(new FileInputStream("Animals\\Africa\\Dog"));
+    Image DogToUp = new Image(new FileInputStream("Africa\\Dog"));
+    Image DogToUpLeft = new Image(new FileInputStream("Africa\\Dog"));
 
     public Dog() throws FileNotFoundException {
     }

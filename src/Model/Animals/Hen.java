@@ -17,7 +17,7 @@ public class Hen extends ProducerAnimal {
 
     {
         try {
-            henImageOfDown = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Animals\\Africa\\GuineaFowl\\down.png"));
+            henImageOfDown = new Image(new FileInputStream("Animals\\Africa\\GuineaFowl\\down.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -27,7 +27,7 @@ public class Hen extends ProducerAnimal {
 
     {
         try {
-            henImageOfDownLeft = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Animals\\Africa\\GuineaFowl\\down_left"));
+            henImageOfDownLeft = new Image(new FileInputStream("Animals\\Africa\\GuineaFowl\\down_left"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -37,7 +37,7 @@ public class Hen extends ProducerAnimal {
 
     {
         try {
-            henImageOfEat = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Animals\\Africa\\GuineaFowl\\eat.png"));
+            henImageOfEat = new Image(new FileInputStream("Animals\\Africa\\GuineaFowl\\eat.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -47,7 +47,7 @@ public class Hen extends ProducerAnimal {
 
     {
         try {
-            henImageOfLeft = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Animals\\Africa\\GuineaFowl\\left.png"));
+            henImageOfLeft = new Image(new FileInputStream("Animals\\Africa\\GuineaFowl\\left.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -57,7 +57,7 @@ public class Hen extends ProducerAnimal {
 
     {
         try {
-            henImageOfUp = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Animals\\Africa\\GuineaFowl\\up.png"));
+            henImageOfUp = new Image(new FileInputStream("Animals\\Africa\\GuineaFowl\\up.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -68,12 +68,12 @@ public class Hen extends ProducerAnimal {
 
     {
         try {
-            henImageOfUpLeft = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Animals\\Africa\\GuineaFowl\\up_left.png"));
+            henImageOfUpLeft = new Image(new FileInputStream("Animals\\Africa\\GuineaFowl\\up_left.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
         try {
-            henImagesOfDeath = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Animals\\Africa\\GuineaFowl\\death.png"));
+            henImagesOfDeath = new Image(new FileInputStream("Animals\\Africa\\GuineaFowl\\death.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

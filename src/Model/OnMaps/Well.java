@@ -20,7 +20,7 @@ public class Well extends Building implements Upgradable {
 
     {
         try {
-            imageOfWell1 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Well"));
+            imageOfWell1 = new Image(new FileInputStream("Service\\Well\\01.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -30,7 +30,7 @@ public class Well extends Building implements Upgradable {
 
     {
         try {
-            imageOfWell2 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Well"));
+            imageOfWell2 = new Image(new FileInputStream("Service\\Well\\02.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -40,7 +40,7 @@ public class Well extends Building implements Upgradable {
 
     {
         try {
-            imageOfWell3 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Well"));
+            imageOfWell3 = new Image(new FileInputStream("Service\\Well\\03.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -50,26 +50,27 @@ public class Well extends Building implements Upgradable {
 
     {
         try {
-            imageOfWell4 = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Service\\Well"));
+            imageOfWell4 = new Image(new FileInputStream("Service\\Well\\01.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }
 
-    {
-        if (level==1)
-            imageView.setImage(imageOfWell1);
-        else if (level==2)
-            imageView.setImage(imageOfWell2);
-        else if (level==3)
-            imageView.setImage(imageOfWell3);
-        else if (level == 4)
-            imageView.setImage(imageOfWell4);
+//    {
+//        if (level==1)
+//            imageView.setImage(imageOfWell1);
+//        else if (level==2)
+//            imageView.setImage(imageOfWell2);
+//        else if (level==3)
+//            imageView.setImage(imageOfWell3);
+//        else if (level == 4)
+//            imageView.setImage(imageOfWell4);
+//    }
+    ImageView imageView1 = new ImageView(imageOfWell1);
+    public Animation wellAnimation() {
+        return new SpriteAnimation(imageView1, Duration.millis(1000), 16, 4, 0, 0,
+                150, 136);
     }
-
-    Animation animation1 = new SpriteAnimation(imageView , Duration.millis(1000) , 16 , 4 , 0 , 0 ,
-            600 , 544);
-
 
     public int getLevel() {
         return level;
@@ -81,6 +82,14 @@ public class Well extends Building implements Upgradable {
 
     private static Well well  = new Well();
     private Well() {
+    }
+
+    public ImageView getImageView1() {
+        return imageView1;
+    }
+
+    public void setImageView1(ImageView imageView1) {
+        this.imageView1 = imageView1;
     }
 
     public static Well getWell() {
