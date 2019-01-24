@@ -47,10 +47,8 @@ public class Truck extends Transportation implements Upgradable {
             e.printStackTrace();
         }
     }
-    ImageView imageView1 = new ImageView(imageOfTruck1);
-    ImageView imageView2 = new ImageView(imageOfTruck2);
-    ImageView imageView3 = new ImageView(imageOfTruck3);
-    ImageView imageView4 = new ImageView(imageOfTruck4);
+ImageView imageView = new ImageView();
+
 
 
     private int capacity = 50 ;
@@ -59,6 +57,32 @@ public class Truck extends Transportation implements Upgradable {
     private int level = 1 ;
     private int maxLevel = 4 ; //Alaki meqdaaar dadim
     private int upgradeCost = 50 ;
+    {
+        if (level == 1)
+        {
+            imageView.setImage(imageOfTruck1);
+        }
+        else if (level ==2)
+        {
+            imageView.setImage(imageOfTruck2);
+        }
+        else if (level == 3)
+        {
+            imageView.setImage(imageOfTruck3);
+        }
+        else
+        {
+            imageView.setImage(imageOfTruck4);
+        }
+    }
+
+    public ImageView getImageView() {
+        return imageView;
+    }
+
+    public void setImageView(ImageView imageView) {
+        this.imageView = imageView;
+    }
 
     public int getSpeed() {
         return speed;

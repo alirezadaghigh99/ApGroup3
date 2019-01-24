@@ -47,6 +47,8 @@ public class GUI extends Application {
     private ImageView firstMenu;
     private ImageView newGameButton;
     private ImageView loadGameButton;
+    ImageView wellView = Well.getWell().getImageView1();
+
     private boolean sure;
 
     private ArrayList<Text> players = new ArrayList<>();
@@ -460,16 +462,24 @@ public class GUI extends Application {
     }
 
     public void showWell() {
-        ImageView wellView = Well.getWell().getImageView1();
-        wellView.setX(500);
-        wellView.setY(50);
-        group.getChildren().add(wellView);
-        wellView.setViewport(new Rectangle2D(0, 0, 600, 544));
-        Well.getWell().wellAnimation(wellView).setCycleCount(Animation.INDEFINITE);
-        Well.getWell().wellAnimation(wellView).play();
-        wellView.setOnMouseClicked(event -> {
-            Well.getWell().wellAnimation(wellView).setCycleCount(Animation.INDEFINITE);
-            Well.getWell().wellAnimation(wellView).play();
+        //if (Well.getWell().getLevel()==1)
+        Well.getWell().checkLevel();
+        Well.getWell().getImageView1().setX(500);
+        Well.getWell().getImageView1().setY(50);
+        group.getChildren().add(Well.getWell().getImageView1());
+        if (Well.getWell().getLevel()==1)
+            Well.getWell().getImageView1().setViewport(new Rectangle2D(0, 0, 600, 544));
+        if (Well.getWell().getLevel()==2)
+            Well.getWell().getImageView1().setViewport(new Rectangle2D(0, 0, 592, 600));
+        if (Well.getWell().getLevel()==3)
+            Well.getWell().getImageView1().setViewport(new Rectangle2D(0, 0, 576, 632));
+        if (Well.getWell().getLevel()==4)
+            Well.getWell().getImageView1().setViewport(new Rectangle2D(0, 0, 592, 536));
+        Well.getWell().wellAnimation(Well.getWell().getImageView1()).setCycleCount(Animation.INDEFINITE);
+        Well.getWell().wellAnimation(Well.getWell().getImageView1()).play();
+        Well.getWell().getImageView1().setOnMouseClicked(event -> {
+            Well.getWell().wellAnimation(Well.getWell().getImageView1()).setCycleCount(Animation.INDEFINITE);
+            Well.getWell().wellAnimation(Well.getWell().getImageView1()).play();
             FarmController.getInstance().addWaterAction();
             if (Well.getWell().isfull()) {
                 try {
@@ -491,6 +501,8 @@ public class GUI extends Application {
             }
         });
     }
+
+
 
     public void showCakeBakery() {
         ImageView viewCakeBakery = CakeBakery.getCakeBakery().getViewOfCakeBakery();
@@ -599,8 +611,8 @@ public class GUI extends Application {
         upgradeWell.setX(50);
         upgradeWell.setY(50);
         upgradeWell.setViewport(new Rectangle2D(0, 0, 600, 544));
-        Well.getWell().wellAnimation(upgradeWell).setCycleCount(Animation.INDEFINITE);
-        Well.getWell().wellAnimation(upgradeWell).play();
+        Well.getWell().wellBoardAnimation(upgradeWell ,1).setCycleCount(Animation.INDEFINITE);
+        Well.getWell().wellBoardAnimation(upgradeWell , 1).play();
         group.getChildren().add(upgradeWell);
         Label wellPrice = new Label("" + Utils.UPGRADE_WELL_COST);
         wellPrice.relocate(200, 109);
@@ -670,7 +682,17 @@ public class GUI extends Application {
             label.setVisible(false);
             yesButton.setVisible(false);
             noButton.setVisible(false);
+//            if (toUpgrade.toLowerCase().equals("well")) {
+//                group.getChildren().remove(Well.getWell().getImageView1());
+//            }
             FarmController.getInstance().upgradeRequest(toUpgrade.toLowerCase());
+            if (toUpgrade.toLowerCase().equals("well")) {
+                Well.getWell().checkLevel();
+                Well.getWell().wellAnimation(Well.getWell().getImageView1()).setCycleCount(Animation.INDEFINITE);
+                Well.getWell().wellAnimation(Well.getWell().getImageView1()).play();
+                //group.getChildren().add(Well.getWell().getImageView1());
+            }
+
         });
     }
 

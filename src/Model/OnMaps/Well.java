@@ -1,3 +1,4 @@
+
 package Model.OnMaps;
 
 import Model.SpriteAnimation;
@@ -14,9 +15,9 @@ import java.io.FileNotFoundException;
 public class Well extends Building implements Upgradable {
     private int capacity = 50 ;
     private int storage = 50 ;
-    private int level ;
+    private int level = 1;
     private ImageView imageView ;
-    private Image imageOfWell1;
+    Image imageOfWell1;
 
     {
         try {
@@ -50,7 +51,7 @@ public class Well extends Building implements Upgradable {
 
     {
         try {
-            imageOfWell4 = new Image(new FileInputStream("Service\\Well\\01.png"));
+            imageOfWell4 = new Image(new FileInputStream("Service\\Well\\04.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -66,10 +67,53 @@ public class Well extends Building implements Upgradable {
 //        else if (level == 4)
 //            imageView.setImage(imageOfWell4);
 //    }
-    ImageView imageView1 = new ImageView(imageOfWell1);
-    public Animation wellAnimation(ImageView imageView) {
-        return new SpriteAnimation(imageView, Duration.millis(1000), 16, 4, 0, 0,
-                150, 136);
+
+    ImageView imageView1 = new ImageView() ;
+public void checkLevel()
+    {
+        if (getLevel() == 1) {
+            imageView1.setImage(imageOfWell1);
+
+        }
+        else if (getLevel() == 2) {
+            System.out.println("lebas");
+            imageView1.setImage(imageOfWell2);
+        }
+        else if (getLevel() == 3)
+            imageView1.setImage(imageOfWell3);
+        else if (getLevel() == 4)
+            imageView1.setImage(imageOfWell4);
+    }
+//ImageView imageView2 = new ImageView(imageOfWell2) ;
+//    ImageView imageView3 = new ImageView(imageOfWell3) ;
+   // ImageView imageView4 = new ImageView(imageOfWell4) ;
+
+ImageView ourview = new ImageView(imageOfWell1);
+
+    public Image getImageOfWell1() {
+        return imageOfWell1;
+    }
+
+    public void setImageOfWell1(Image imageOfWell1) {
+        this.imageOfWell1 = imageOfWell1;
+    }
+
+    public Animation wellAnimation(ImageView imageViewOfFuck) {
+        if (getLevel()==1)
+            return new SpriteAnimation(imageView1, Duration.millis(1000), 16, 4, 0, 0,
+                    150, 136);
+        else if (getLevel()==2)
+            return new SpriteAnimation(imageView1 , Duration.millis(1000) , 16 , 4 , 0 ,0 , 592/4 , 600/4);
+        else if (getLevel()==3)
+            return new SpriteAnimation(imageView1 , Duration.millis(1000) , 16  ,4 ,0 , 0 , 576/4 , 632/4);
+        else
+            return new SpriteAnimation(imageView1 , Duration.millis(1000) , 16  ,4 ,0 , 0 , 592/4 , 536/4);
+
+    }
+    public Animation wellBoardAnimation(ImageView imageViewa , int a)
+    {
+        return new SpriteAnimation(imageViewa , Duration.millis(1000) , 16 , 4 , 0 ,0 , 592/4 , 600/4);
+
     }
 
     public int getLevel() {
@@ -127,17 +171,16 @@ public class Well extends Building implements Upgradable {
     {
         if (storage==capacity)
             return true
-            ;
+                    ;
         else return false;
     }
 
-    public Image getImageOfWell1() {
-        return imageOfWell1;
-    }
+
 
     @Override
     public void upgrade() {
-        level = level + 1 ;
+        Well.getWell().setLevel(level+1);
+        System.out.println("mamad");
         capacity = capacity + 10 ;
     }
 }
