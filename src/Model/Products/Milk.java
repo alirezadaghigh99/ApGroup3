@@ -11,7 +11,7 @@ public class Milk extends Product {
 
     {
         try {
-            image = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Textures\\Products\\Milk.png"));
+            image = new Image(new FileInputStream("Products\\Milk.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

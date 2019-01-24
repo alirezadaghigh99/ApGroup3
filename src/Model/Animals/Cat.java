@@ -11,12 +11,12 @@ import java.io.FileNotFoundException;
 public class Cat extends DomesticAnimal implements Upgradable {
     private int level = 1;
     private int upgradeCost = 125;
-    Image CatToDown = new Image(new FileInputStream("Animals\\Africa\\Cat"));
-    Image CatToUp = new Image(new FileInputStream("Animals\\Africa\\Cat"));
+    Image CatToDown = new Image(new FileInputStream("Animals\\Africa\\Cat\\down.png"));
+    Image CatToUp = new Image(new FileInputStream("Animals\\Africa\\Cat\\up.png"));
 
-    Image CatToDownLeft = new Image(new FileInputStream("Animals\\Africa\\Cat"));
-    Image CatToUpLeft = new Image(new FileInputStream("Animals\\Africa\\Cat"));
-    Image CatToleft = new Image(new FileInputStream("Animals\\Africa\\Cat"));
+    Image CatToDownLeft = new Image(new FileInputStream("Animals\\Africa\\Cat\\down_left.png"));
+    Image CatToUpLeft = new Image(new FileInputStream("Animals\\Africa\\Cat\\up_left.png"));
+    Image CatToleft = new Image(new FileInputStream("Animals\\Africa\\Cat\\left.png"));
 
     public Cat() throws FileNotFoundException {
     }

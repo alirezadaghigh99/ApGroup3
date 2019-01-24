@@ -10,14 +10,56 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 public class Dog extends Animal {
-    Image DogToLeft = new Image(new FileInputStream("Animals\\Africa\\Dog"));
-    Image DogToDown = new Image(new FileInputStream("Animals\\Africa\\Dog"));
-    Image DogToDownLeft = new Image(new FileInputStream("Animals\\Africa\\Dog"));
-    Image DogToUp = new Image(new FileInputStream("Africa\\Dog"));
-    Image DogToUpLeft = new Image(new FileInputStream("Africa\\Dog"));
+    Image DogToLeft;
 
-    public Dog() throws FileNotFoundException {
+    {
+        try {
+            DogToLeft = new Image(new FileInputStream("Animals\\Africa\\Dog\\left.png"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
+
+    Image DogToDown;
+
+    {
+        try {
+            DogToDown = new Image(new FileInputStream("Animals\\Africa\\Dog\\down.png"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    Image DogToDownLeft;
+
+    {
+        try {
+            DogToDownLeft = new Image(new FileInputStream("Animals\\Africa\\Dog\\down_left.png"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    Image DogToUp;
+
+    {
+        try {
+            DogToUp = new Image(new FileInputStream("Animal\\Africa\\Dog\\up.png"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    Image DogToUpLeft;
+
+    {
+        try {
+            DogToUpLeft = new Image(new FileInputStream("Animal\\Africa\\Dog\\up_left.png"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     @Override
     public void smartWalk() {

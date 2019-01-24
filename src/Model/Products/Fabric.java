@@ -11,7 +11,7 @@ public class Fabric extends Product {
 
     {
         try {
-            image = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Textures\\Products\\Fabric.png"));
+            image = new Image(new FileInputStream("Products\\Fabric.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

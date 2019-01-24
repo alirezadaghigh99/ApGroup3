@@ -12,7 +12,7 @@ public class Cake extends Product {
 
     {
         try {
-            image = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Textures\\Products\\Cake.png"));
+            image = new Image(new FileInputStream("Products\\Cake.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

@@ -11,7 +11,7 @@ public class Sewing extends Product {
 
     {
         try {
-            image = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Textures\\Products\\Sewing.png"));
+            image = new Image(new FileInputStream("Products\\Sewing.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
