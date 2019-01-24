@@ -61,4 +61,5 @@ public class Cat extends DomesticAnimal implements Upgradable {
     public void setOnMap() {
         super.setOnMap();
     }
+    public void kossher(){}
 }

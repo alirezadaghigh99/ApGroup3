@@ -327,20 +327,24 @@ public class GUI extends Application {
             ImageView behindView = Depot.getDepot().getBehindView();
             ImageView backView = Depot.getDepot().getBackView();
             backView.setX(700);
-            backView.setY(100);
-            behindView.setX(400);
+            backView.setY(600);
+            behindView.setX(200);
+            behindView.setY(100);
             backView.setY(300);
             backView.setFitHeight(50);
             backView.setFitWidth(80);
-            behindView.setFitWidth(400);
-            behindView.setFitHeight(400);
-            group.getChildren().add(behindView);
-            group.getChildren().add(backView);
+            behindView.setFitWidth(600);
+            behindView.setFitHeight(550);
+            behindView.setVisible(true);
+            if (!group.getChildren().contains(behindView))
+                group.getChildren().add(behindView);
+            backView.setVisible(true);
+            if (!group.getChildren().contains(backView))
+                group.getChildren().add(backView);
             backView.setOnMouseClicked(event1 -> {
-                group.getChildren().removeAll(behindView);
-                group.getChildren().remove(group.getChildren().get(group.getChildren().size()-1));
+                behindView.setVisible(false);
+                backView.setVisible(false);
             });
-
         });
 
 
@@ -383,23 +387,24 @@ public class GUI extends Application {
     public void CookieBakery() {
 
     }
+
     private void showCoins() throws Exception {
-        Rectangle coinField = new Rectangle(170,100);
-        coinField.relocate(670,5);
+        Rectangle coinField = new Rectangle(170, 100);
+        coinField.relocate(670, 5);
         coinField.setArcWidth(50);
         coinField.setArcHeight(50);
-        coinField.setFill(Color.rgb(20,50,250,0.8));
+        coinField.setFill(Color.rgb(20, 50, 250, 0.8));
         group.getChildren().addAll(coinField);
         FileInputStream coinFile = new FileInputStream("pictures/coin.png");
         Image coinImg = new Image(coinFile);
         ImageView coinButton = new ImageView(coinImg);
-        coinButton.relocate(735,10);
+        coinButton.relocate(735, 10);
         coinButton.setFitWidth(40);
         coinButton.setFitHeight(40);
         group.getChildren().add(coinButton);
-        Label coin = new Label(""+ FarmController.getInstance().getMoney());
-        coin.relocate(725,60);
-        coin.setFont(Font.font("cooper black",30));
+        Label coin = new Label("" + FarmController.getInstance().getMoney());
+        coin.relocate(725, 60);
+        coin.setFont(Font.font("cooper black", 30));
         coin.setTextFill(Color.YELLOW);
         group.getChildren().add(coin);
     }
