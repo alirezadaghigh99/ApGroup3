@@ -1,7 +1,9 @@
 package views;
 
+import Controller.FarmController;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
+import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -12,6 +14,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
@@ -272,6 +275,8 @@ public class GUI extends Application {
         timer.setTextFill(Color.YELLOWGREEN);
         timer.setFont(Font.font("cooper black", FontWeight.BOLD, 30));
         group.getChildren().add(timer);
+        FarmController.getInstance().listenForCommand();
+        showCoins();
         AnimationTimer animationTimer = new AnimationTimer() {
             private long lastTime = 0;
             private long second = 1000000000;
@@ -286,15 +291,36 @@ public class GUI extends Application {
                 if (now > lastTime + second / 10) {
                     lastTime = now;
                     time++;
-                    if ((time / 10)%60 < 10) {
-                        timer.setText("Time : " + time / 600+".0"+(time/10)%600);
+                    if ((time / 10) % 60 < 10) {
+                        timer.setText("Time : " + time / 600 + ".0" + (time / 10) % 600);
                     } else {
-                        timer.setText("Time : " + time / 600+"."+(time/10)%600);
+                        timer.setText("Time : " + time / 600 + "." + (time / 10) % 600);
                     }
                 }
             }
         };
         animationTimer.start();
+    }
+
+    private void showCoins() throws Exception {
+        Rectangle coinField = new Rectangle(170,100);
+        coinField.relocate(670,5);
+        coinField.setArcWidth(50);
+        coinField.setArcHeight(50);
+        coinField.setFill(Color.rgb(20,50,250,0.8));
+        group.getChildren().addAll(coinField);
+        FileInputStream coinFile = new FileInputStream("pictures/coin.png");
+        Image coinImg = new Image(coinFile);
+        ImageView coinButton = new ImageView(coinImg);
+        coinButton.relocate(735,10);
+        coinButton.setFitWidth(40);
+        coinButton.setFitHeight(40);
+        group.getChildren().add(coinButton);
+        Label coin = new Label(""+FarmController.getInstance().getMoney());
+        coin.relocate(725,60);
+        coin.setFont(Font.font("cooper black",30));
+        coin.setTextFill(Color.YELLOW);
+        group.getChildren().add(coin);
     }
 
     @Override

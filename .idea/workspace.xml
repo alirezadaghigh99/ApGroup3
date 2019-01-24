@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c64801da-0b49-48e1-b1f4-71066c99b6ad" name="Default Changelist" comment="">
+    <list default="true" id="c64801da-0b49-48e1-b1f4-71066c99b6ad" name="Default Changelist" comment="players name updated!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pictures/button.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pictures/load - Copy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/FarmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FarmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/GUI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -180,39 +180,64 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="10" />
+          <entry key="ico" value="1" />
+          <entry key="java" value="14" />
           <entry key="jpg" value="6" />
           <entry key="png" value="6" />
+          <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Image" value="12" />
-          <entry key="JAVA" value="10" />
+          <entry key="Image" value="13" />
+          <entry key="JAVA" value="14" />
+          <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="6" />
-          <entry key="java" value="977" />
-          <entry key="txt" value="42" />
+          <entry key="java" value="1607" />
+          <entry key="txt" value="63" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="977" />
-          <entry key="PLAIN_TEXT" value="48" />
+          <entry key="JAVA" value="1607" />
+          <entry key="PLAIN_TEXT" value="69" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/FarmController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="28" column="22" lean-forward="true" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+              <folding>
+                <element signature="e#1151#1152#0" expanded="true" />
+                <element signature="e#1182#1183#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/views/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="291" column="63" lean-forward="true" selection-start-line="291" selection-start-column="63" selection-end-line="291" selection-end-column="63" />
+            <state relative-caret-position="2318">
+              <caret line="332" selection-start-line="332" selection-end-line="332" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -221,18 +246,30 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pictures/timer.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pictures/load.jpg">
-          <provider selected="true" editor-type-id="images" />
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/scene/paint/Color.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="261">
+              <caret line="1886" selection-start-line="1886" selection-end-line="1886" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pictures/show.png">
           <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/CheckGoal.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+              <folding>
+                <element signature="e#2659#2660#0" expanded="true" />
+                <element signature="e#2693#2694#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -247,16 +284,6 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pictures/play.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pictures/backbutton2.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pictures/bg.jpg">
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
@@ -303,7 +330,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Model/ProducerAnimal.java" />
         <option value="$PROJECT_DIR$/src/Model/WildAnimal.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Model/Requests/NextTurnRequest.java" />
@@ -350,10 +376,11 @@
         <option value="$PROJECT_DIR$/src/Model/Requests/PrintInfoRequest.java" />
         <option value="$PROJECT_DIR$/src/Controller/CommandAnalyzer.java" />
         <option value="$PROJECT_DIR$/src/View/View.java" />
-        <option value="$PROJECT_DIR$/src/Controller/FarmController.java" />
         <option value="$PROJECT_DIR$/src/View/GUI.java" />
         <option value="$USER_HOME$/AppData/Local/Temp/Rar$DIa0.139/Main.java" />
         <option value="$PROJECT_DIR$/src/views/GUI.java" />
+        <option value="$PROJECT_DIR$/src/Controller/FarmController.java" />
+        <option value="$PROJECT_DIR$/src/views/Main.java" />
       </list>
     </option>
   </component>
@@ -393,17 +420,18 @@
             <path>
               <item name="finalProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="finalProject" type="462c0819:PsiDirectoryNode" />
-              <item name="music" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="finalProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="finalProject" type="462c0819:PsiDirectoryNode" />
               <item name="pictures" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="finalProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="finalProject" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="finalProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="finalProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="finalProject" type="b2602c69:ProjectViewProjectNode" />
@@ -431,7 +459,7 @@
     <property name="SearchEverywhereHistoryKey" value="pri&#9;PSI&#9;JAVA://Controller.FarmController#printInfoAction&#10;pass&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;passT&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;money&#9;PSI&#9;JAVA://Controller.FarmController#money&#10;addW&#9;PSI&#9;JAVA://Controller.FarmController#addWaterAction&#10;add&#9;PSI&#9;JAVA://Controller.FarmController#addAnimalAction&#10;tur&#9;PSI&#9;JAVA://Model.Animals.Animal#nextTurn&#10;load&#9;PSI&#9;JAVA://Controller.FarmController#load&#10;akba&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/Approject/akbar.json&#10;Map&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/Approject/src/Model/OnMaps/Map.java&#10;map&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/Approject/maps.json&#10;save&#9;PSI&#9;JAVA://Controller.FarmController#save&#10;go&#9;PSI&#9;JAVA://Controller.FarmController#goAction&#10;sale&#9;PSI&#9;JAVA://Controller.FarmController#saleAction&#10;tart&#9;PSI&#9;JAVA://Controller.FarmController#startAction&#10;turn&#9;PSI&#9;JAVA://Model.Animals.Animal#nextTurn&#10;clea&#9;PSI&#9;JAVA://Controller.FarmController#clearAction&#10;clear&#9;PSI&#9;JAVA://Controller.FarmController#clearAction&#10;saveRe&#9;PSI&#9;JAVA://Model.Requests.SaveRequest&#10;cleara&#9;PSI&#9;JAVA://Controller.FarmController#clearAction&#10;goactio&#9;PSI&#9;JAVA://Controller.FarmController#goAction&#10;goAction&#9;PSI&#9;JAVA://Controller.FarmController#goAction&#10;goActio&#9;PSI&#9;JAVA://Controller.FarmController#goAction&#10;stored&#9;PSI&#9;JAVA://Model.Depot#storedAnimal" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548272323449" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548327286014" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Project_In_Console" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -619,7 +647,7 @@
       </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="MAIN_CLASS_NAME" value="views.Main" />
       <module name="Approject" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -663,8 +691,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.GUI (1)" />
-        <item itemvalue="Application.GUI" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.GUI" />
       </list>
     </recent_temporary>
   </component>
@@ -966,11 +994,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548271074567</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="players name updated!">
+      <created>1548272411975</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1548272411975</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="183288000" />
+    <option name="totallyTimeSpent" value="188825000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -994,7 +1029,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32984293" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30600291" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30161053" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39726028" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1058,7 +1093,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="&#10;animal mashtti shod" />
     <MESSAGE value="Dog and Cat added" />
     <MESSAGE value="Producer animals and it's extensions added" />
     <MESSAGE value="nothing" />
@@ -1083,7 +1117,8 @@
     <MESSAGE value="play started!" />
     <MESSAGE value="music" />
     <MESSAGE value="timer added" />
-    <option name="LAST_COMMIT_MESSAGE" value="timer added" />
+    <MESSAGE value="players name updated!" />
+    <option name="LAST_COMMIT_MESSAGE" value="players name updated!" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -1093,15 +1128,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/custom.json" />
-    <entry file="file://$PROJECT_DIR$/src/Model/Requests/SaveRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/maps.json" />
     <entry file="file://$PROJECT_DIR$/akbar.json" />
     <entry file="file://$PROJECT_DIR$/src/Model/OnMaps/Map.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1173,13 +1199,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Workshop/Costum.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
@@ -1223,13 +1242,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ReadMap.java" />
-    <entry file="file://$PROJECT_DIR$/src/Controller/FarmController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4573">
-          <caret line="291" column="17" lean-forward="true" selection-start-line="291" selection-start-column="17" selection-end-line="291" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/OnMaps/Depot.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1237,16 +1249,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2811#2812#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/CheckGoal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="101" column="37" selection-start-line="101" selection-start-column="37" selection-end-line="101" selection-end-column="37" />
-          <folding>
-            <element signature="e#2693#2694#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1379,9 +1381,6 @@
     <entry file="file://$PROJECT_DIR$/pictures/load - Copy.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/pictures/load.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/pictures/show.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1394,10 +1393,59 @@
     <entry file="file://$PROJECT_DIR$/pictures/play.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-13">
+          <caret line="7" column="42" lean-forward="true" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pictures/load.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/CheckGoal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+          <folding>
+            <element signature="e#2659#2660#0" expanded="true" />
+            <element signature="e#2693#2694#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/javafx-src.zip!/javafx/scene/paint/Color.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="1886" selection-start-line="1886" selection-end-line="1886" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pictures/coin.ico">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/FarmController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="28" column="22" lean-forward="true" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+          <folding>
+            <element signature="e#1151#1152#0" expanded="true" />
+            <element signature="e#1182#1183#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="291" column="63" lean-forward="true" selection-start-line="291" selection-start-column="63" selection-end-line="291" selection-end-column="63" />
+        <state relative-caret-position="2318">
+          <caret line="332" selection-start-line="332" selection-end-line="332" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

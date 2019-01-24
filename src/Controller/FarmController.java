@@ -35,7 +35,14 @@ public class FarmController {
     private int eggs;
     private int milk;
     private int wool;
+    private static FarmController instance = new FarmController();
 
+    private FarmController() {
+    }
+
+    public static FarmController getInstance() {
+        return instance;
+    }
 
     public int getMoney() {
         return money;
@@ -52,7 +59,7 @@ public class FarmController {
             this.money = 300;
     }
 
-    private int money;
+    private static int money;
     private long time = 0;
 
     public boolean isGameFinished() {
@@ -828,7 +835,7 @@ public class FarmController {
 
     private void addWaterAction() {
         Well well = Well.getWell();
-        if (money>=Utils.ADDWATRCOST) {
+        if (money >= Utils.ADDWATRCOST) {
             well.addWater();
             money -= Utils.ADDWATRCOST;
         }
@@ -1059,7 +1066,7 @@ public class FarmController {
                 } else if (cell[i][j].getGrass().isGrass()
                         && cell[i][j].getCellProducts().isEmpty()
                         && cell[i][j].getCellAnimals().isEmpty())
-                   System.out.print(1);
+                    System.out.print(1);
                 else if (cell[i][j].getGrass().isGrass()
                         && !cell[i][j].getCellProducts().isEmpty()
                         && cell[i][j].getCellAnimals().isEmpty())
