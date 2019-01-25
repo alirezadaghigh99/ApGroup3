@@ -3,6 +3,7 @@ package Model.Animals;
 import Model.OnMaps.Cell;
 import Model.OnMaps.Entity;
 import Model.Utils;
+import javafx.scene.image.Image;
 
 
 public class Animal extends Entity {
@@ -47,6 +48,51 @@ public class Animal extends Entity {
     }
 
     public void nextTurn() {
+
+    }
+    protected Image toLeft  ;
+    protected Image toDownLeft  ;
+    protected Image toDown  ;
+    protected Image toUp ;
+    protected Image toUpLeft ;
+
+    public Image getToLeft() {
+        return toLeft;
+    }
+
+    public Image getToDownLeft() {
+        return toDownLeft;
+    }
+
+    public Image getToDown() {
+        return toDown;
+    }
+
+    public Image getToUp() {
+        return toUp;
+    }
+
+    public Image getToUpLeft() {
+        return toUpLeft;
+    }
+
+    public void setToLeft() {
+
+    }
+
+    public void setToDownLeft() {
+
+    }
+
+    public void setToDown() {
+
+    }
+
+    public void setToUp() {
+
+    }
+
+    public void setToUpLeft() {
 
     }
 

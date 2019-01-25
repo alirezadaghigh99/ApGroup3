@@ -67,6 +67,52 @@ public class Lion extends WildAnimal {
         }
     }
 
+    @Override
+    public void setToLeft() {
+        this.toLeft = LionToLeft;
+    }
+
+    @Override
+    public void setToDownLeft() {
+        this.toDownLeft = LionToDownLeft;
+    }
+
+    @Override
+    public void setToDown() {
+        this.toDown = LionToDown;
+    }
+
+    @Override
+    public void setToUp() {
+this.toUp = LionToUp;    }
+
+    @Override
+    public void setToUpLeft() {
+this.toUpLeft = LionToUpLeft;
+    }
+    @Override
+    public Image getToLeft() {
+        return this.toLeft;
+    }
+
+    @Override
+    public Image getToDownLeft() {
+        return this.toDownLeft;
+    }
+
+    @Override
+    public Image getToDown() {
+        return this.toDown;    }
+
+    @Override
+    public Image getToUp() {
+        return this.toUp;
+    }
+
+    @Override
+    public Image getToUpLeft() {
+        return this.toUpLeft;
+    }
 
     @Override
     public void randomWalk() {

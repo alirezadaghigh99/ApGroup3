@@ -78,6 +78,116 @@ public class Hen extends ProducerAnimal {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void setToUp() {
+        this.toUp = henImageOfUp;
+    }
+
+    @Override
+    public void setToUpLeft() {
+        this.toUpLeft = henImageOfUpLeft;
+    }
+
+    @Override
+    public void setToLeft() {
+        this.toLeft = henImageOfLeft;
+    }
+
+    @Override
+    public void setToDownLeft() {
+        this.toDownLeft = henImageOfDownLeft;
+    }
+
+    @Override
+    public void setToDown() {
+        this.toDown = henImageOfDown;
+    }
+
+    @Override
+    public Image getToLeft() {
+        return this.toLeft;
+    }
+
+    @Override
+    public Image getToDownLeft() {
+        return this.toDownLeft;
+    }
+
+    @Override
+    public Image getToDown() {
+        return this.toDown;    }
+
+    @Override
+    public Image getToUp() {
+        return this.toUp;
+    }
+
+    @Override
+    public Image getToUpLeft() {
+        return this.toUpLeft;
+    }
+
+    public Image getHenImagesOfDeath() {
+        return henImagesOfDeath;
+    }
+
+    public Image getHenImageOfDown() {
+        return henImageOfDown;
+    }
+
+    public ImageView getImageView() {
+        return imageView;
+    }
+
+    public ImageView getDeathView() {
+        return DeathView;
+    }
+
+    public ImageView getUpView() {
+        return UpView;
+    }
+
+    public ImageView getEatView() {
+        return eatView;
+    }
+
+    public ImageView getUpLeftView() {
+        return UpLeftView;
+    }
+
+    public ImageView getDownView() {
+        return DownView;
+    }
+
+    public ImageView getDownLeftView() {
+        return DownLeftView;
+    }
+
+    public ImageView getLeftView() {
+        return LeftView;
+    }
+
+    public Image getHenImageOfDownLeft() {
+        return henImageOfDownLeft;
+    }
+
+    public Image getHenImageOfEat() {
+        return henImageOfEat;
+    }
+
+    public Image getHenImageOfLeft() {
+        return henImageOfLeft;
+    }
+
+    public Image getHenImageOfUp() {
+        return henImageOfUp;
+    }
+
+    public Image getHenImageOfUpLeft() {
+        return henImageOfUpLeft;
+    }
+
     ImageView DeathView = new ImageView(henImagesOfDeath);
     ImageView UpView = new ImageView(henImageOfUp);
     ImageView eatView = new ImageView(henImageOfEat);
@@ -87,8 +197,14 @@ public class Hen extends ProducerAnimal {
     ImageView LeftView =  new ImageView(henImageOfLeft);
 
 
+
+
     final Animation henAnimationOfDeath = new SpriteAnimation(DeathView , Duration.millis(2000) ,13 , 13 , 0 , 0 ,
     64 , 66);
+    public Animation henEatAnimation()
+    {
+        return new SpriteAnimation(eatView , Duration.millis(2000) , 25 , 5 , 0 , 0 , 370/4 , 320/4);
+    }
 //    final Animation henAnimationOfLeft = new SpriteAnimation();
 //    final Animation henAnimationOfDown = new SpriteAnimation();
 //    final Animation henAnimationToEat = new SpriteAnimation();
@@ -98,9 +214,11 @@ public class Hen extends ProducerAnimal {
 
 
 
+private static Hen instance = new Hen();
 
-
-
+    public static Hen getInstance() {
+        return instance;
+    }
 
     @Override
     public void randomWalk() {
