@@ -50,7 +50,7 @@ public class FarmController {
 
     public void setMoney() {
         if (checkGoal.getLevel() == 1)
-            this.money = 10000;
+            this.money = 9900;
         if (checkGoal.getLevel() == 2)
             this.money = 150;
         if (checkGoal.getLevel() == 3)

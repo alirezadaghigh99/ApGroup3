@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c64801da-0b49-48e1-b1f4-71066c99b6ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/FarmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FarmController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -193,13 +194,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="6" />
-          <entry key="java" value="2509" />
+          <entry key="java" value="2514" />
           <entry key="txt" value="88" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2509" />
+          <entry key="JAVA" value="2514" />
           <entry key="PLAIN_TEXT" value="94" />
         </counts>
       </usages-collector>
@@ -259,11 +260,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/FarmController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="922" column="43" selection-start-line="922" selection-start-column="43" selection-end-line="922" selection-end-column="43" />
+            <state relative-caret-position="340">
+              <caret line="52" column="29" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
               <folding>
                 <element signature="e#1151#1152#0" expanded="true" />
                 <element signature="e#1182#1183#0" expanded="true" />
@@ -272,10 +273,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="557">
+            <state relative-caret-position="1917">
               <caret line="660" column="25" selection-start-line="660" selection-start-column="25" selection-end-line="660" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -378,6 +379,7 @@
       <find>play()</find>
       <find>showCo</find>
       <find>playG</find>
+      <find>showC</find>
     </findStrings>
     <replaceStrings>
       <replace>length</replace>
@@ -444,8 +446,8 @@
         <option value="$PROJECT_DIR$/src/Model/Workshop/SpinneryFactory.java" />
         <option value="$PROJECT_DIR$/src/Model/Utils.java" />
         <option value="$PROJECT_DIR$/src/Model/OnMaps/Well.java" />
-        <option value="$PROJECT_DIR$/src/Controller/FarmController.java" />
         <option value="$PROJECT_DIR$/src/views/GUI.java" />
+        <option value="$PROJECT_DIR$/src/Controller/FarmController.java" />
       </list>
     </option>
   </component>
@@ -530,7 +532,7 @@
     <property name="SearchEverywhereHistoryKey" value="pri&#9;PSI&#9;JAVA://Controller.FarmController#printInfoAction&#10;pass&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;passT&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;money&#9;PSI&#9;JAVA://Controller.FarmController#money&#10;addW&#9;PSI&#9;JAVA://Controller.FarmController#addWaterAction&#10;add&#9;PSI&#9;JAVA://Controller.FarmController#addAnimalAction&#10;tur&#9;PSI&#9;JAVA://Model.Animals.Animal#nextTurn&#10;load&#9;PSI&#9;JAVA://Controller.FarmController#load&#10;akba&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/Approject/akbar.json&#10;Map&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/Approject/src/Model/OnMaps/Map.java&#10;map&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/Approject/maps.json&#10;save&#9;PSI&#9;JAVA://Controller.FarmController#save&#10;go&#9;PSI&#9;JAVA://Controller.FarmController#goAction&#10;sale&#9;PSI&#9;JAVA://Controller.FarmController#saleAction&#10;tart&#9;PSI&#9;JAVA://Controller.FarmController#startAction&#10;turn&#9;PSI&#9;JAVA://Model.Animals.Animal#nextTurn&#10;clea&#9;PSI&#9;JAVA://Controller.FarmController#clearAction&#10;clear&#9;PSI&#9;JAVA://Controller.FarmController#clearAction&#10;saveRe&#9;PSI&#9;JAVA://Model.Requests.SaveRequest&#10;cleara&#9;PSI&#9;JAVA://Controller.FarmController#clearAction&#10;goactio&#9;PSI&#9;JAVA://Controller.FarmController#goAction&#10;goAction&#9;PSI&#9;JAVA://Controller.FarmController#goAction&#10;goActio&#9;PSI&#9;JAVA://Controller.FarmController#goAction&#10;stored&#9;PSI&#9;JAVA://Model.Depot#storedAnimal" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548417081205" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548417301295" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../git-tuturial/src" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -1007,11 +1009,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548416328564</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="upgrade menu initialized">
+      <created>1548417304341</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1548417304341</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208975000" />
+    <option name="totallyTimeSpent" value="209618000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1026,7 +1035,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21581769" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21581769" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1035,7 +1044,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32984293" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29575402" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29575402" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3967789" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1369,23 +1378,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/FarmController.java">
+    <entry file="file://$PROJECT_DIR$/src/views/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="922" column="43" selection-start-line="922" selection-start-column="43" selection-end-line="922" selection-end-column="43" />
+        <state relative-caret-position="1917">
+          <caret line="660" column="25" selection-start-line="660" selection-start-column="25" selection-end-line="660" selection-end-column="25" />
           <folding>
-            <element signature="e#1151#1152#0" expanded="true" />
-            <element signature="e#1182#1183#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/GUI.java">
+    <entry file="file://$PROJECT_DIR$/src/Controller/FarmController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="660" column="25" selection-start-line="660" selection-start-column="25" selection-end-line="660" selection-end-column="25" />
+        <state relative-caret-position="340">
+          <caret line="52" column="29" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1151#1152#0" expanded="true" />
+            <element signature="e#1182#1183#0" expanded="true" />
           </folding>
         </state>
       </provider>
