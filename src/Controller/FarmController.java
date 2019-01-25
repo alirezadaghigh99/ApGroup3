@@ -50,7 +50,7 @@ public class FarmController {
 
     public void setMoney() {
         if (checkGoal.getLevel() == 1)
-            this.money = 100;
+            this.money = 10000;
         if (checkGoal.getLevel() == 2)
             this.money = 150;
         if (checkGoal.getLevel() == 3)
@@ -712,12 +712,10 @@ public class FarmController {
 
     public void addWaterAction() {
         Well well = Well.getWell();
-        if (money >= Utils.ADDWATRCOST) {
+        if (money >= Utils.ADDWATERCOST) {
             well.addWater();
-            money -= Utils.ADDWATRCOST;
+            money -= Utils.ADDWATERCOST;
         }
-//        else System.out.println("nemishavad ke nemishavad");
-//        System.out.println(well.getStorage());
     }
 
     private void pickUpAction(int x, int y) {
@@ -922,6 +920,7 @@ public class FarmController {
         if (type.equals("well")) {
             Well well = Well.getWell();
             well.upgrade();
+            money-=Utils.UPGRADE_WELL_COST;
         }
         if (type.equals("depot")) {
             Depot depot = Depot.getDepot();

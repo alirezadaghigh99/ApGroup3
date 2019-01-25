@@ -16,7 +16,7 @@ public class Well extends Building implements Upgradable {
     private int storage = 50 ;
     private int level ;
     private ImageView imageView ;
-    Image imageOfWell1;
+    private Image imageOfWell1;
 
     {
         try {
@@ -67,8 +67,8 @@ public class Well extends Building implements Upgradable {
 //            imageView.setImage(imageOfWell4);
 //    }
     ImageView imageView1 = new ImageView(imageOfWell1);
-    public Animation wellAnimation() {
-        return new SpriteAnimation(imageView1, Duration.millis(1000), 16, 4, 0, 0,
+    public Animation wellAnimation(ImageView imageView) {
+        return new SpriteAnimation(imageView, Duration.millis(1000), 16, 4, 0, 0,
                 150, 136);
     }
 
@@ -131,7 +131,9 @@ public class Well extends Building implements Upgradable {
         else return false;
     }
 
-
+    public Image getImageOfWell1() {
+        return imageOfWell1;
+    }
 
     @Override
     public void upgrade() {

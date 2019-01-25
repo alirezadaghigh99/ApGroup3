@@ -3,6 +3,7 @@ package views;
 import Controller.FarmController;
 import Model.OnMaps.Depot;
 import Model.OnMaps.Well;
+import Model.Products.Wool;
 import Model.Utils;
 import Model.Workshop.CakeBakery;
 import Model.Workshop.EggPowderPlantWorkShop;
@@ -42,8 +43,7 @@ public class GUI extends Application {
     private ImageView firstMenu;
     private ImageView newGameButton;
     private ImageView loadGameButton;
-    Label fullLabel = new Label("its full mashti");
-
+    private boolean sure;
 
     private ArrayList<Text> players = new ArrayList<>();
     Media music = new Media(new File("music/pirates.mp3").toURI().toString());
@@ -66,6 +66,11 @@ public class GUI extends Application {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public Label getCoin() {
+        Label coin = new Label("" + FarmController.getInstance().getMoney());
+        return coin;
     }
 
     public void initialize(ImageView background, ImageView firstMenu, ImageView newGameButton, ImageView loadGameButton) {
@@ -428,11 +433,11 @@ public class GUI extends Application {
         wellView.setY(50);
         group.getChildren().add(wellView);
         wellView.setViewport(new Rectangle2D(0, 0, 600, 544));
-        Well.getWell().wellAnimation().setCycleCount(Animation.INDEFINITE);
-        Well.getWell().wellAnimation().play();
+        Well.getWell().wellAnimation(wellView).setCycleCount(Animation.INDEFINITE);
+        Well.getWell().wellAnimation(wellView).play();
         wellView.setOnMouseClicked(event -> {
-            Well.getWell().wellAnimation().setCycleCount(Animation.INDEFINITE);
-            Well.getWell().wellAnimation().play();
+            Well.getWell().wellAnimation(wellView).setCycleCount(Animation.INDEFINITE);
+            Well.getWell().wellAnimation(wellView).play();
             FarmController.getInstance().addWaterAction();
             if (Well.getWell().isfull()) {
                 try {
@@ -553,13 +558,87 @@ public class GUI extends Application {
         backButton.setFitHeight(60);
         upgradeBackground.setVisible(true);
         backButton.setVisible(true);
-        if(!group.getChildren().contains(upgradeBackground))
+        if (!group.getChildren().contains(upgradeBackground))
             group.getChildren().add(upgradeBackground);
-        if(!group.getChildren().contains(backButton))
+        if (!group.getChildren().contains(backButton))
             group.getChildren().add(backButton);
+        Image well = Well.getWell().getImageOfWell1();
+        ImageView upgradeWell = new ImageView(well);
+        upgradeWell.setX(50);
+        upgradeWell.setY(50);
+        upgradeWell.setViewport(new Rectangle2D(0, 0, 600, 544));
+        Well.getWell().wellAnimation(upgradeWell).setCycleCount(Animation.INDEFINITE);
+        Well.getWell().wellAnimation(upgradeWell).play();
+        group.getChildren().add(upgradeWell);
+        Label wellPrice = new Label("" + Utils.UPGRADE_WELL_COST);
+        wellPrice.relocate(200, 110);
+        wellPrice.setTextFill(Color.YELLOW);
+        wellPrice.setFont(Font.font("cooper black", 30));
+        group.getChildren().add(wellPrice);
         backButton.setOnMouseClicked(event -> {
             backButton.setVisible(false);
             upgradeBackground.setVisible(false);
+            upgradeWell.setVisible(false);
+            wellPrice.setVisible(false);
+            try {
+                showCoins();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        upgradeWell.setOnMouseClicked(event -> {
+            try {
+                areYouSure("Well");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    private void areYouSure(String toUpgrade) throws Exception {
+        Image back = new Image(new FileInputStream("pictures/timer.png"));
+        ImageView bg = new ImageView(back);
+        bg.relocate(50, 100);
+        bg.setFitHeight(600);
+        bg.setFitWidth(950);
+        bg.setVisible(true);
+        if (!group.getChildren().contains(bg))
+            group.getChildren().add(bg);
+        Label label = new Label("Are you sure about upgrading " + toUpgrade + " ?");
+        label.relocate(200, 300);
+        label.setFont(Font.font("cooper black", 34));
+        label.setTextFill(Color.YELLOW);
+        label.setVisible(true);
+        if (!group.getChildren().contains(label))
+            group.getChildren().add(label);
+        Image yesIMG = new Image(new FileInputStream("pictures/yesButton.png"));
+        ImageView yesButton = new ImageView(yesIMG);
+        yesButton.relocate(290, 380);
+        yesButton.setFitWidth(200);
+        yesButton.setFitHeight(100);
+        yesButton.setVisible(true);
+        if (!group.getChildren().contains(yesButton))
+            group.getChildren().add(yesButton);
+        Image noIMG = new Image(new FileInputStream("pictures/noButton.png"));
+        ImageView noButton = new ImageView(noIMG);
+        noButton.relocate(510, 380);
+        noButton.setFitWidth(200);
+        noButton.setFitHeight(100);
+        noButton.setVisible(true);
+        if (!group.getChildren().contains(noButton))
+            group.getChildren().add(noButton);
+        noButton.setOnMouseClicked(event -> {
+            bg.setVisible(false);
+            label.setVisible(false);
+            yesButton.setVisible(false);
+            noButton.setVisible(false);
+        });
+        yesButton.setOnMouseClicked(event -> {
+            bg.setVisible(false);
+            label.setVisible(false);
+            yesButton.setVisible(false);
+            noButton.setVisible(false);
+            FarmController.getInstance().upgradeRequest(toUpgrade.toLowerCase());
         });
     }
 
@@ -577,8 +656,9 @@ public class GUI extends Application {
         coinButton.setFitWidth(40);
         coinButton.setFitHeight(40);
         group.getChildren().add(coinButton);
-        Label coin = new Label("" + FarmController.getInstance().getMoney());
-        coin.relocate(725, 60);
+        group.getChildren().remove(getCoin());
+        Label coin = getCoin();
+        coin.relocate(710, 60);
         coin.setFont(Font.font("cooper black", 30));
         coin.setTextFill(Color.YELLOW);
         group.getChildren().add(coin);

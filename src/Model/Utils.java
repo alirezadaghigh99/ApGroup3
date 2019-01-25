@@ -3,7 +3,8 @@ package Model;
 public class Utils {
     private Utils() {
     }
-    public static final int ADDWATRCOST = 50;
+
+    public static final int ADDWATERCOST = 50;
     public static final int mapSize = 30;
     public static final int LOW_ENERGY_AMOUNT = 3;
     public static final int FULL_ENERGY_AMOUNT = 10;
@@ -105,4 +106,5 @@ public class Utils {
     public static final int COW_PRICE = 90;
     public static final int DOG_PRICE = 70;
     public static final int CAT_PRICE = 70;
+    public static final int UPGRADE_WELL_COST = 80;
 }
