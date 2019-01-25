@@ -521,8 +521,8 @@ public class FarmController {
     }
 
 
-    private void addAnimalAction(String input) throws Exception {
-        if (input.equals("hen")) {
+    public <E extends Animal> void addAnimalAction(E input) throws Exception {
+        if (input instanceof Hen) {
             if (money >= Utils.HEN_PRICE) {
                 Hen hen = new Hen();
                 int x = (int) (Math.random() * 30);
@@ -534,7 +534,7 @@ public class FarmController {
                 money -= Utils.HEN_PRICE;
             } else
                 viewBefore.logNotEnoughMoney();
-        } else if (input.equals("sheep")) {
+        } else if (input instanceof Sheep) {
             if (money >= Utils.SHEEP_PRICE) {
                 Sheep sheep = new Sheep();
                 int x = (int) (Math.random() * 30);
@@ -546,7 +546,7 @@ public class FarmController {
                 money -= Utils.SHEEP_PRICE;
             } else
                 viewBefore.logNotEnoughMoney();
-        } else if (input.equals("cow")) {
+        } else if (input instanceof Cow) {
             if (money >= Utils.COW_PRICE) {
                 Cow cow = new Cow();
                 int x = (int) (Math.random() * 30);
@@ -558,7 +558,7 @@ public class FarmController {
                 money -= Utils.COW_PRICE;
             } else
                 viewBefore.logNotEnoughMoney();
-        } else if (input.equals("cat")) {
+        } else if (input instanceof Cat) {
             if (money >= Utils.CAT_PRICE) {
                 Cat cat = new Cat();
                 int x = (int) (Math.random() * 30);
@@ -570,7 +570,7 @@ public class FarmController {
                 money -= Utils.CAT_PRICE;
             } else
                 viewBefore.logNotEnoughMoney();
-        } else if (input.equals("dog")) {
+        } else if (input instanceof Dog) {
             if (money >= Utils.DOG_PRICE) {
                 Dog dog = new Dog();
                 int x = (int) (Math.random() * 30);
@@ -920,7 +920,7 @@ public class FarmController {
         if (type.equals("well")) {
             Well well = Well.getWell();
             well.upgrade();
-            money-=Utils.UPGRADE_WELL_COST;
+            money -= Utils.UPGRADE_WELL_COST;
         }
         if (type.equals("depot")) {
             Depot depot = Depot.getDepot();

@@ -1,6 +1,10 @@
 package views;
 
 import Controller.FarmController;
+import Model.Animals.Cow;
+import Model.Animals.Dog;
+import Model.Animals.Hen;
+import Model.Animals.Sheep;
 import Model.OnMaps.Depot;
 import Model.OnMaps.Well;
 import Model.Products.Wool;
@@ -392,12 +396,40 @@ public class GUI extends Application {
             viewOfHen.setFitHeight(60);
             viewOfHen.setFitWidth(60);
             viewOfHen.relocate(10, 10);
+            viewOfHen.setOnMouseClicked(event -> {
+                try {
+                    Hen hen = new Hen();
+                    FarmController.getInstance().addAnimalAction(hen);
+                    showCoins();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
             viewOfCow.setFitHeight(60);
             viewOfCow.setFitWidth(60);
             viewOfCow.relocate(170, 10);
+            viewOfCow.setOnMouseClicked(event -> {
+                try {
+                    Cow cow = new Cow();
+                    FarmController.getInstance().addAnimalAction(cow);
+                    showCoins();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
             viewOfSheep.setFitHeight(60);
             viewOfSheep.setFitWidth(60);
             viewOfSheep.relocate(90, 10);
+            viewOfSheep.setOnMouseClicked(event -> {
+                try{
+                    Sheep sheep = new Sheep();
+                    FarmController.getInstance().addAnimalAction(sheep);
+                    showCoins();
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
+            });
             viewOfTruck.setFitHeight(220);
             viewOfTruck.setFitWidth(200);
             viewOfTruck.setX(200);

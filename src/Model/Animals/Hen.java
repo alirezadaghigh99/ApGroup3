@@ -27,7 +27,7 @@ public class Hen extends ProducerAnimal {
 
     {
         try {
-            henImageOfDownLeft = new Image(new FileInputStream("Animals\\Africa\\GuineaFowl\\down_left"));
+            henImageOfDownLeft = new Image(new FileInputStream("Animals\\Africa\\GuineaFowl\\down_left.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
