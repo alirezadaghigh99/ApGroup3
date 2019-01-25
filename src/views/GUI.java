@@ -571,7 +571,7 @@ public class GUI extends Application {
         Well.getWell().wellAnimation(upgradeWell).play();
         group.getChildren().add(upgradeWell);
         Label wellPrice = new Label("" + Utils.UPGRADE_WELL_COST);
-        wellPrice.relocate(200, 110);
+        wellPrice.relocate(200, 109);
         wellPrice.setTextFill(Color.YELLOW);
         wellPrice.setFont(Font.font("cooper black", 30));
         group.getChildren().add(wellPrice);
