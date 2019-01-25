@@ -42,8 +42,7 @@ public class GUI extends Application {
     private ImageView firstMenu;
     private ImageView newGameButton;
     private ImageView loadGameButton;
-    Label fullLabel = new Label("its full mashti" );
-
+    Label fullLabel = new Label("its full mashti");
 
 
     private ArrayList<Text> players = new ArrayList<>();
@@ -287,6 +286,7 @@ public class GUI extends Application {
         showSewingFactory();
         showWeavingFactory();
         showEggPowderPlant();
+        showUpgradables();
         FileInputStream timerFile = new FileInputStream("pictures/timer.png");
         Image timerIMG = new Image(timerFile);
         ImageView timerButton = new ImageView(timerIMG);
@@ -434,8 +434,7 @@ public class GUI extends Application {
             Well.getWell().wellAnimation().setCycleCount(Animation.INDEFINITE);
             Well.getWell().wellAnimation().play();
             FarmController.getInstance().addWaterAction();
-            if (Well.getWell().isfull())
-            {
+            if (Well.getWell().isfull()) {
                 try {
                     Image image = new Image(new FileInputStream("pictures\\Full.jpg"));
                     ImageView viewOfFull = new ImageView(image);
@@ -444,8 +443,8 @@ public class GUI extends Application {
                     viewOfFull.setFitWidth(50);
                     viewOfFull.setFitHeight(50);
                     Timeline timeline = new Timeline(
-                            new KeyFrame(Duration.ZERO , new KeyValue(viewOfFull.imageProperty(),image)),
-                    new KeyFrame(Duration.seconds(2), new KeyValue(viewOfFull.imageProperty(), null))
+                            new KeyFrame(Duration.ZERO, new KeyValue(viewOfFull.imageProperty(), image)),
+                            new KeyFrame(Duration.seconds(2), new KeyValue(viewOfFull.imageProperty(), null))
                     );
                     timeline.play();
                     group.getChildren().add(viewOfFull);
@@ -471,10 +470,10 @@ public class GUI extends Application {
     }
 
     public void showSewingFactory() {
-    ImageView viewOfSewingFactory = SewingFactory.getSewingFactory().getViewOfSewing();
-    viewOfSewingFactory.setX(30);
-    viewOfSewingFactory.setY(360);
-    group.getChildren().add(viewOfSewingFactory);
+        ImageView viewOfSewingFactory = SewingFactory.getSewingFactory().getViewOfSewing();
+        viewOfSewingFactory.setX(30);
+        viewOfSewingFactory.setY(360);
+        group.getChildren().add(viewOfSewingFactory);
         viewOfSewingFactory.setViewport(new Rectangle2D(0, 0, 680, 520));
         SewingFactory.getSewingFactory().sewingAnimation().setCycleCount(Animation.INDEFINITE);
         SewingFactory.getSewingFactory().sewingAnimation().play();
@@ -490,10 +489,10 @@ public class GUI extends Application {
     }
 
     public void showEggPowderPlant() {
-    ImageView eggView = EggPowderPlantWorkShop.getEggPowderPlantWorkShop().getImageView1();
-    eggView.setX(760);
-    eggView.setY(400);
-    group.getChildren().add(eggView);
+        ImageView eggView = EggPowderPlantWorkShop.getEggPowderPlantWorkShop().getImageView1();
+        eggView.setX(760);
+        eggView.setY(400);
+        group.getChildren().add(eggView);
         eggView.setViewport(new Rectangle2D(0, 0, 512, 456));
         EggPowderPlantWorkShop.getEggPowderPlantWorkShop().eggPowderAnimation().setCycleCount(Animation.INDEFINITE);
         EggPowderPlantWorkShop.getEggPowderPlantWorkShop().eggPowderAnimation().play();
@@ -520,6 +519,48 @@ public class GUI extends Application {
 
     public void CookieBakery() {
 
+    }
+
+    private void showUpgradables() throws Exception {
+        Image upgradeIMG = new Image(new FileInputStream("pictures/upgrade.png"));
+        ImageView upgradeButton = new ImageView(upgradeIMG);
+        upgradeButton.relocate(0, 650);
+        upgradeButton.setFitWidth(170);
+        upgradeButton.setFitHeight(130);
+        group.getChildren().add(upgradeButton);
+        upgradeButton.setOnMouseClicked(event -> {
+            try {
+                showUpgradeMenu();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    private void showUpgradeMenu() throws Exception {
+        Image upgradeIMG = new Image(new FileInputStream("pictures/upgradeBack.png"));
+        ImageView upgradeBackground = new ImageView(upgradeIMG);
+        upgradeBackground.relocate(0, 0);
+        upgradeBackground.setFitWidth(scene.getWidth());
+        upgradeBackground.setFitHeight(scene.getHeight());
+        group.getChildren().add(upgradeBackground);
+        FileInputStream back = new FileInputStream("pictures/backbutton2.png");
+        Image image = new Image(back);
+        ImageView backButton = new ImageView(image);
+        backButton.setX(0);
+        backButton.setY(-10);
+        backButton.setFitWidth(90);
+        backButton.setFitHeight(60);
+        upgradeBackground.setVisible(true);
+        backButton.setVisible(true);
+        if(!group.getChildren().contains(upgradeBackground))
+            group.getChildren().add(upgradeBackground);
+        if(!group.getChildren().contains(backButton))
+            group.getChildren().add(backButton);
+        backButton.setOnMouseClicked(event -> {
+            backButton.setVisible(false);
+            upgradeBackground.setVisible(false);
+        });
     }
 
     private void showCoins() throws Exception {
