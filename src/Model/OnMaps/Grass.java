@@ -26,8 +26,8 @@ public class Grass extends Entity {
     ImageView imageView = new ImageView(imageGrass1);
 
     public Animation grassAnimation() {
-        return new SpriteAnimation(imageView, Duration.millis(1000), 10, 4, 0, 0,
-                150, 136);
+        return new SpriteAnimation(imageView, Duration.millis(1000), 16, 4, 0, 0,
+                192/4, 192/4);
     }
 
     private boolean isGrass = false;

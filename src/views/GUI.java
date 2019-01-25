@@ -345,9 +345,9 @@ public class GUI extends Application {
             for (int j = 0; j < Utils.mapSize; j++) {
                 grassView[i][j] = new ImageView(grassIMG);
                 grassView[i][j].relocate(Utils.START_Y + i * Utils.CELL_WIDTH, Utils.START_X + j * Utils.CELL_HEIGHT);
-                grassView[i][j].setFitWidth(Utils.CELL_WIDTH * 3);
-                grassView[i][j].setFitHeight(Utils.CELL_HEIGHT * 3);
-                grassView[i][j].setViewport(new Rectangle2D(0, 0, 600, 544));
+                grassView[i][j].setFitWidth(Utils.CELL_WIDTH );
+                grassView[i][j].setFitHeight(Utils.CELL_HEIGHT );
+                grassView[i][j].setViewport(new Rectangle2D(0, 0, 192, 192));
                 Grass.getInstance().grassAnimation().setCycleCount(Animation.INDEFINITE);
                 Grass.getInstance().grassAnimation().play();
                 if (FarmController.getInstance().getMap().getCells()[i][j].getGrass().isGrass())

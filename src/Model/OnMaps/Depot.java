@@ -89,6 +89,112 @@ public class Depot extends Building implements Upgradable {
             e.printStackTrace();
         }
     }
+    Image eggImageIcon;
+
+    {
+        try {
+            eggImageIcon = new Image(new FileInputStream("Products\\Egg\\normal.png"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    Image plumeImageIcon;
+
+    {
+        try {
+            plumeImageIcon = new Image(new FileInputStream("Products\\Plume\\normal.png"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    Image woolImageIcon;
+
+    {
+        try {
+            woolImageIcon = new Image(new FileInputStream("Products\\Wool\\normal.png"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    Image cakeImageIcon;
+
+    {
+        try {
+            cakeImageIcon = new Image(new FileInputStream("Products\\Cake.png"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    Image eggPowderImageIcon;
+
+    {
+        try {
+            eggPowderImageIcon = new Image(new FileInputStream("Products\\EggPowder.png"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    Image flouryCakeImageIcon;
+
+    {
+        try {
+            flouryCakeImageIcon = new Image(new FileInputStream("Products\\FlouryCake.png"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    Image carnivalDressIcon;
+
+    {
+        try {
+            carnivalDressIcon = new Image(new FileInputStream("Products\\CarnivalDress.png"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    Image fabricImageIcon;
+
+    {
+        try {
+            fabricImageIcon = new Image(new FileInputStream("Products\\Fabric.png"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    Image milKImageIcon;
+
+    {
+        try {
+            milKImageIcon = new Image(new FileInputStream("Products\\Milk.png"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    Image sewingIconImage;
+
+    {
+        try {
+            sewingIconImage = new Image(new FileInputStream("Products\\Sewing.png"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    Image flourImageIcon;
+
+    {
+        try {
+            flourImageIcon = new Image(new FileInputStream("Products\\Flour.png"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     ImageView imageView = new ImageView();
@@ -105,6 +211,47 @@ public void checkDepotLevel()
     }
     ImageView backView  = new ImageView(backImage);
     ImageView behindView = new ImageView(behindImage);
+    ImageView EggView = new ImageView(eggImageIcon);
+    ImageView FlourView = new ImageView(flourImageIcon);
+
+    ImageView fabricView = new ImageView(fabricImageIcon);
+    ImageView cakeView = new ImageView(cakeImageIcon);
+    ImageView EggPowderView = new ImageView(eggPowderImageIcon);
+    ImageView flouryCakeView = new ImageView(flouryCakeImageIcon);
+    ImageView sewingView = new ImageView(sewingIconImage);
+    ImageView carnivalView = new ImageView(carnivalDressIcon);
+
+    public ImageView getEggView() {
+        return EggView;
+    }
+
+    public ImageView getFlourView() {
+        return FlourView;
+    }
+
+    public ImageView getFabricView() {
+        return fabricView;
+    }
+
+    public ImageView getCakeView() {
+        return cakeView;
+    }
+
+    public ImageView getEggPowderView() {
+        return EggPowderView;
+    }
+
+    public ImageView getFlouryCakeView() {
+        return flouryCakeView;
+    }
+
+    public ImageView getSewingView() {
+        return sewingView;
+    }
+
+    public ImageView getCarnivalView() {
+        return carnivalView;
+    }
 
     public ImageView getBackView() {
         return backView;
