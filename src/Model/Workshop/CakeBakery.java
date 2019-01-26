@@ -1,5 +1,6 @@
 package Model.Workshop;
 
+import Model.OnMaps.Depot;
 import Model.Products.Cake;
 import Model.Products.Egg;
 import Model.Products.Flour;
@@ -47,18 +48,32 @@ Image cakeBakeryImage;
         return new SpriteAnimation(viewOfCakeBakery, Duration.millis(1000), 16, 4, 0, 0,
                 536/4, 568/4);
     }
+    Image StartImage;
+
+    {
+        try {
+            StartImage = new Image(new FileInputStream("pictures\\go.jpg"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    ImageView startView = new ImageView(StartImage);
+
+    public ImageView getStartView() {
+        return startView;
+    }
 
     public void makeCake() {
-        if (ourFarm.getInPutsOfCakeBakery().isEmpty()) {
+        if (Depot.getDepot().getStoredProducts().isEmpty()) {
             System.out.println("there is nothing to create");
         } else {
             for (int k = ourFarm.getInPutsOfCakeBakery().size() - 1; k >= 0; k--) {
-                if (ourFarm.getInPutsOfCakeBakery().get(k) instanceof Egg)
+                if (Depot.getDepot().getStoredProducts().get(k) instanceof Egg)
                     count1 = true;
-                if (ourFarm.getInPutsOfCakeBakery().get(k) instanceof Flour)
+                if (Depot.getDepot().getStoredProducts().get(k) instanceof Flour)
                     count2 = true;
                 if (count1 && count2)
-                    ourFarm.getOutPutsOfCakeBakery().add(new Cake());
+                    Depot.getDepot().getStoredProducts().add(new Cake());
 
             }
 

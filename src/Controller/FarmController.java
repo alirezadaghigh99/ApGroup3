@@ -8,8 +8,6 @@ import Model.OnMaps.Depot;
 import Model.OnMaps.Map;
 import Model.OnMaps.Well;
 import Model.Products.*;
-import Model.Requests.*;
-import Model.Requests.SaveRequest;
 import Model.Transport.Helicopter;
 import Model.Transport.Truck;
 import Model.Workshop.*;
@@ -38,6 +36,17 @@ public class FarmController {
     private static FarmController instance = new FarmController();
 
     private FarmController() {
+    }
+
+
+    public ArrayList<Product> ourProducts() {
+        ArrayList<Product> products = new ArrayList<>();
+        for (int i = 0; i < Utils.mapSize; i++) {
+            for (int j = 0; j < Utils.mapSize; j++) {
+                products.addAll(map.getCells()[i][j].getCellProducts());
+            }
+        }
+        return products;
     }
 
     public static FarmController getInstance() {
@@ -425,6 +434,7 @@ public class FarmController {
                     }
                 }
             }
+
             if (produtName.equals("sewing")) {
                 while (!truck.isFullTruck()) {
                     for (int i = 0; i < count; i++) {
@@ -844,14 +854,15 @@ public class FarmController {
     }
 
 
-    private void passTurn(int numberOfTurns) {
+    public void passTurn(int numberOfTurns) {
+        numberOfTurns = 1 ;
         while (numberOfTurns != 0) {
-            hens = 0;
-            sheeps = 0;
-            cows = 0;
-            eggs = 0;
-            milk = 0;
-            wool = 0;
+//            hens = 0;
+//            sheeps = 0;
+//            cows = 0;
+//            eggs = 0;
+//            milk = 0;
+//            wool = 0;
             Cell[][] cells = map.getCells();
             if (time % Utils.mapSize == 8) {
                 Lion lion = new Lion();
@@ -897,13 +908,13 @@ public class FarmController {
                 if (product instanceof Milk)
                     milk++;
             }
-            if (checkGoal.getRequirementOfCow() <= cows && checkGoal.getRequirementOfSheep() <= sheeps
-                    && checkGoal.getRequirementOfHen() <= hens && checkGoal.getRequirementOfEgg() <= eggs
-                    && checkGoal.getRequirementOfWool() <= wool && checkGoal.getRequirementOfMilk() <= milk
-                    && checkGoal.getRequirementOfGold() <= money) {
-                checkGoal.setLevel(checkGoal.getLevel() + 1);
-                this.setMoney();
-            }
+//            if (checkGoal.getRequirementOfCow() <= cows && checkGoal.getRequirementOfSheep() <= sheeps
+//                    && checkGoal.getRequirementOfHen() <= hens && checkGoal.getRequirementOfEgg() <= eggs
+//                    && checkGoal.getRequirementOfWool() <= wool && checkGoal.getRequirementOfMilk() <= milk
+//                    && checkGoal.getRequirementOfGold() <= money) {
+//                checkGoal.setLevel(checkGoal.getLevel() + 1);
+//                this.setMoney();
+//            }
             collision();
             time++;
             numberOfTurns--;

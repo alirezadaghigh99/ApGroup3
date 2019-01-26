@@ -1,5 +1,6 @@
 package Model.Animals;
 
+import Model.SpriteAnimalAnimation;
 import Model.SpriteAnimation;
 import javafx.animation.Animation;
 import javafx.scene.image.Image;
@@ -197,8 +198,21 @@ public class Hen extends ProducerAnimal {
     ImageView LeftView =  new ImageView(henImageOfLeft);
 
 
+    @Override
+    public boolean isMoving() {
+        if (cells[x][y].getGrass().isGrass())
+        return false;
+        return true;
+    }
 
-
+//    public Animation animationOfHen()
+//    {
+//     //   return new SpriteAnimalAnimation(Hen.getInstance() , 5);
+//    }
+    public Animation henAnimation()
+    {
+        return new SpriteAnimalAnimation(Hen.getInstance() , 3);
+    }
     final Animation henAnimationOfDeath = new SpriteAnimation(DeathView , Duration.millis(2000) ,13 , 13 , 0 , 0 ,
     64 , 66);
     public Animation henEatAnimation()

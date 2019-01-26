@@ -1,15 +1,10 @@
 package views;
 
 import Controller.FarmController;
-import Model.Animals.Cow;
-import Model.Animals.Dog;
-import Model.Animals.Hen;
-import Model.Animals.Sheep;
-import Model.OnMaps.Depot;
-import Model.OnMaps.Grass;
-import Model.OnMaps.Map;
-import Model.OnMaps.Well;
-import Model.Products.Wool;
+import Model.Animals.*;
+import Model.OnMaps.*;
+import Model.OurFarm;
+import Model.Products.*;
 import Model.Utils;
 import Model.Workshop.CakeBakery;
 import Model.Workshop.EggPowderPlantWorkShop;
@@ -306,6 +301,7 @@ public class GUI extends Application {
         showWeavingFactory();
         showEggPowderPlant();
         showUpgradables();
+        FarmController.getInstance().passTurn(1);
         FileInputStream timerFile = new FileInputStream("pictures/timer.png");
         Image timerIMG = new Image(timerFile);
         ImageView timerButton = new ImageView(timerIMG);
@@ -320,9 +316,11 @@ public class GUI extends Application {
         timer.setFont(Font.font("cooper black", FontWeight.BOLD, 30));
         group.getChildren().add(timer);
         AnimationTimer animationTimer = new AnimationTimer() {
+
             private long lastTime = 0;
             private long second = 1000000000;
             private long time = 0;
+            
 
             @Override
 
@@ -332,6 +330,38 @@ public class GUI extends Application {
                 }
                 if (now > lastTime + second / 10) {
                     lastTime = now;
+                    Cell[][] cells = FarmController.getInstance().getMap().getCells();
+                    if ((time%100 == 8)) {
+                        Lion lion = new Lion();
+                        lion.setX((int) (Math.random() * Utils.mapSize));
+                        lion.setY((int) (Math.random() * Utils.mapSize));
+                        cells[lion.getX()][lion.getY()].addCellAnimals(lion);
+                    }
+                    if (time%1200 == 108) {
+                        Bear bear = new Bear();
+                        bear.setX((int) (Math.random() * Utils.mapSize));
+                        bear.setY((int) (Math.random() * Utils.mapSize));
+                        cells[bear.getX()][bear.getY()].addCellAnimals(bear);
+                    }
+                    OurFarm.getOurFarm().getAnimals().clear();
+                    for (int i = 0; i < Utils.mapSize; i++) {
+                        for (int j = 0; j < Utils.mapSize; j++) {
+                            ArrayList<Animal> animals = cells[i][j].getCellAnimals();
+                            for (Animal animal : animals) {
+                                OurFarm.getOurFarm().getAnimals().add(animal);
+                            }
+                            cells[i][j].getCellAnimals().clear();
+                        }
+                    }
+                    for (Animal animal : OurFarm.getOurFarm().getAnimals()) {
+                        animal.nextTurn();
+                        int x = animal.getX();
+                        int y = animal.getY();
+                        cells[x][y].getCellAnimals().add(animal);
+
+                    }
+                    FarmController.getInstance().collision();
+
                     time++;
                     if ((time / 10) % 60 < 10) {
                         timer.setText("Time : " + time / 600 + ".0" + (time / 10) % 60);
@@ -344,7 +374,55 @@ public class GUI extends Application {
         animationTimer.start();
     }
     private ImageView[][] cowView = new ImageView[Utils.mapSize][Utils.mapSize];
+    private ImageView[][] eggs = new ImageView[Utils.mapSize][Utils.mapSize];
+    private ImageView[][] wools = new ImageView[Utils.mapSize][Utils.mapSize];
+    private ImageView[][] milks = new ImageView[Utils.mapSize][Utils.mapSize];
 
+
+
+
+
+    private void showProducts(ArrayList<Product> products) throws Exception {
+        Image eggIMG = new Image(new FileInputStream("Products/Egg/normal.png"));
+        Image woolIMG = new Image(new FileInputStream("Products/Wool/normal.png"));
+        Image milkIMG = new Image(new FileInputStream("Products/Milk.png"));
+        for (int i = 0; i < Utils.mapSize; i++) {
+            for (int j = 0; j < Utils.mapSize; j++) {
+                eggs[i][j] = new ImageView(eggIMG);
+                eggs[i][j].relocate(Utils.START_Y + i * Utils.CELL_WIDTH, Utils.START_X + j * Utils.CELL_HEIGHT);
+                eggs[i][j].setFitWidth(Utils.CELL_WIDTH);
+                eggs[i][j].setFitHeight(Utils.CELL_HEIGHT);
+                wools[i][j] = new ImageView(woolIMG);
+                wools[i][j].relocate(Utils.START_Y + i * Utils.CELL_WIDTH, Utils.START_X + j * Utils.CELL_HEIGHT);
+                wools[i][j].setFitWidth(Utils.CELL_WIDTH);
+                wools[i][j].setFitHeight(Utils.CELL_HEIGHT);
+                milks[i][j] = new ImageView(milkIMG);
+                milks[i][j].relocate(Utils.START_Y + i * Utils.CELL_WIDTH, Utils.START_X + j * Utils.CELL_HEIGHT);
+                milks[i][j].setFitWidth(Utils.CELL_WIDTH);
+                milks[i][j].setFitHeight(Utils.CELL_HEIGHT);
+                eggs[i][j].setVisible(false);
+                milks[i][j].setVisible(false);
+                wools[i][j].setVisible(false);
+                group.getChildren().addAll(wools[i][j], eggs[i][j], milks[i][j]);
+            }
+        }
+        for (int i = 0; i < Utils.mapSize; i++) {
+            for (int j = 0; j < Utils.mapSize; j++) {
+                for (Product product : products) {
+                    if (product instanceof Egg) {
+                        eggs[product.getX()][product.getY()].setVisible(true);
+                    }
+                    if (product instanceof Wool) {
+                        wools[product.getX()][product.getY()].setVisible(true);
+                    }
+                    if (product instanceof Milk) {
+                        milks[product.getX()][product.getY()].setVisible(true);
+                    }
+                }
+            }
+        }
+
+    }
     private void showCow() {
         for (int i = 0  ; i< Utils.mapSize ; i++)
         {
@@ -357,13 +435,17 @@ public class GUI extends Application {
                         if (FarmController.getInstance().getMap().getCells()[i][j].getCellAnimals().get(k) instanceof Cow)
                         {
 
-                            cowView[i][j] = (Cow.getInstance().getEatView());
+                            try {
+                                cowView[i][j] = new ImageView(new Image(new FileInputStream("Animals\\Africa\\Buffalo\\eat.png")));
+                            } catch (FileNotFoundException e) {
+                                e.printStackTrace();
+                            }
                             cowView[i][j].setX(200);
                             cowView[i][j].setY(200);
                             group.getChildren().add(cowView[i][j]);
                             cowView[i][j].setViewport(new Rectangle2D(0, 0, 960, 488));
-                            Cow.getInstance().eatAnimationOfCow().setCycleCount(Animation.INDEFINITE);
-                            Cow.getInstance().eatAnimationOfCow().play();
+                            Cow.getInstance().eatAnimationOfCow(cowView[i][j]).setCycleCount(Animation.INDEFINITE);
+                            Cow.getInstance().eatAnimationOfCow(cowView[i][j]).play();
 
 
                         }
@@ -385,8 +467,6 @@ public class GUI extends Application {
             for (int j = 0; j < Utils.mapSize; j++) {
                 grassView[i][j] = new ImageView(grassIMG);
                 grassView[i][j].relocate(Utils.START_Y + i * Utils.CELL_WIDTH, Utils.START_X + j * Utils.CELL_HEIGHT);
-//                grassView[i][j].setFitWidth(Utils.CELL_WIDTH );
-//                grassView[i][j].setFitHeight(Utils.CELL_HEIGHT );
                 grassView[i][j].setViewport(new Rectangle2D(0, 0, 192, 192));
                 Grass.getInstance().grassAnimation().setCycleCount(Animation.INDEFINITE);
                 Grass.getInstance().grassAnimation().play();
@@ -558,9 +638,11 @@ public class GUI extends Application {
                             henView[i][j].setX(400);
                             henView[i][j].setY(500);
                             group.getChildren().add(henView[i][j]);
-                            henView[i][j].setViewport(new Rectangle2D(0, 0, 370, 320));
-                          Hen.getInstance().henEatAnimation().setCycleCount(Animation.INDEFINITE);
-                            Hen.getInstance().henEatAnimation().play();
+                           // henView[i][j].setViewport(new Rectangle2D(0, 0, 370, 320));
+                        //  Hen.getInstance().henEatAnimation().setCycleCount(Animation.INDEFINITE);
+//                            Hen.getInstance().henEatAnimation().play();
+                            Hen.getInstance().henAnimation().setCycleCount(Animation.INDEFINITE);
+                            Hen.getInstance().henAnimation().play();
 
 
                         }
@@ -619,16 +701,37 @@ public class GUI extends Application {
 
     public void showCakeBakery() {
         ImageView viewCakeBakery = CakeBakery.getCakeBakery().getViewOfCakeBakery();
+       ImageView startView = CakeBakery.getCakeBakery().getStartView();
+        startView.setX(110);
+        startView.setY(210);
+
+
         viewCakeBakery.setX(100);
         viewCakeBakery.setY(200);
+        startView.setFitWidth(50);
+        startView.setFitHeight(90);
         group.getChildren().add(viewCakeBakery);
+
+
+
         viewCakeBakery.setViewport(new Rectangle2D(0, 0, 536, 568));
         CakeBakery.getCakeBakery().CakeAnimation().setCycleCount(Animation.INDEFINITE);
         CakeBakery.getCakeBakery().CakeAnimation().play();
         viewCakeBakery.setOnMouseClicked(event -> {
             CakeBakery.getCakeBakery().CakeAnimation().setCycleCount(Animation.INDEFINITE);
             CakeBakery.getCakeBakery().CakeAnimation().play();
+            if (!group.getChildren().contains(startView)) {
+
+                group.getChildren().add(startView);
+            }
+            else startView.setVisible(true);
         });
+        startView.setOnMouseClicked(event -> {
+            startView.setVisible(false);
+            CakeBakery.getCakeBakery().makeCake();
+        });
+        int c =0 ;
+
     }
 
     public void showSewingFactory() {

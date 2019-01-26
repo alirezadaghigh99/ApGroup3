@@ -16,6 +16,11 @@ public class DomesticAnimal extends Animal {
     }
 
     @Override
+    public boolean isMoving() {
+        return false;
+    }
+
+    @Override
     public void setOnMap() {
         super.setOnMap();
     }

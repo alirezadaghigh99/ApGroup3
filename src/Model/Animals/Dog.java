@@ -99,6 +99,11 @@ public class Dog extends Animal {
     }
 
     @Override
+    public boolean isMoving() {
+        return false;
+    }
+
+    @Override
     public void setOnMap() {
         super.setOnMap();
     }

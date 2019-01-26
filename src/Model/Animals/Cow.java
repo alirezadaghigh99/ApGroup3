@@ -1,6 +1,9 @@
 package Model.Animals;
 
+import Controller.FarmController;
+import Model.OnMaps.Cell;
 import Model.Products.Milk;
+import Model.SpriteAnimalAnimation;
 import Model.SpriteAnimation;
 import javafx.animation.Animation;
 import javafx.scene.image.Image;
@@ -12,6 +15,18 @@ import java.io.FileNotFoundException;
 
 public class Cow extends ProducerAnimal {
     private Milk milk;
+
+    @Override
+    public boolean isMoving() {
+        if (cells[x][y].getGrass().isGrass())
+            return false ;
+        else  return true ;
+    }
+    public Animation cowAnimation()
+    {
+        return new SpriteAnimalAnimation(Cow.getInstance() , 3);
+    }
+
     Image CowToDown;
 
     {
@@ -107,9 +122,9 @@ private static Cow instance = new Cow();
     public ImageView getUpleftView() {
         return upleftView;
     }
-    public Animation eatAnimationOfCow()
+    public Animation eatAnimationOfCow(ImageView imageView)
     {
-        return new SpriteAnimation(eatView , Duration.millis(2000) , 24 , 6,0,0,960/6 , 488/4);
+        return new SpriteAnimation(imageView , Duration.millis(2000) , 22 , 6,0,0,960/6, 488/4);
     }
     @Override
     public Image getToLeft() {
