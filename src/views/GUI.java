@@ -514,14 +514,6 @@ public class GUI extends Application {
         Well.getWell().wellAnimation(Well.getWell().getImageView1()).setCycleCount(Animation.INDEFINITE);
         Well.getWell().wellAnimation(Well.getWell().getImageView1()).play();
         Well.getWell().getImageView1().setOnMouseClicked(event -> {
-            Well.getWell().wellAnimation(Well.getWell().getImageView1()).setCycleCount(Animation.INDEFINITE);
-            Well.getWell().wellAnimation(Well.getWell().getImageView1()).play();
-            FarmController.getInstance().addWaterAction();
-            try {
-                showCoins();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
             if (Well.getWell().isfull()) {
                 try {
                     Image image = new Image(new FileInputStream("pictures\\Full.jpg"));
@@ -539,6 +531,15 @@ public class GUI extends Application {
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
+            } else {
+                FarmController.getInstance().addWaterAction();
+                Well.getWell().wellAnimation(Well.getWell().getImageView1()).setCycleCount(Animation.INDEFINITE);
+                Well.getWell().wellAnimation(Well.getWell().getImageView1()).play();
+            }
+            try {
+                showCoins();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         });
     }
@@ -666,24 +667,25 @@ public class GUI extends Application {
         upgradeWell.setViewport(new Rectangle2D(0, 0, 600, 544));
         Well.getWell().wellBoardAnimation(upgradeWell, 1).setCycleCount(Animation.INDEFINITE);
         Well.getWell().wellBoardAnimation(upgradeWell, 1).play();
-        group.getChildren().addAll(upgradeWell , viewOfSpinnery , viewUpgradeDepot);
+        group.getChildren().addAll(upgradeWell, viewOfSpinnery, viewUpgradeDepot);
         Label wellPrice = new Label("" + Utils.UPGRADE_WELL_COST);
         wellPrice.relocate(200, 109);
         wellPrice.setTextFill(Color.YELLOW);
         wellPrice.setFont(Font.font("cooper black", 30));
-        Label spinneryPrice = new Label(""+ 100);
+        Label spinneryPrice = new Label("" + 100);
         Label depotPrice = new Label("" + 100);
         wellPrice.relocate(200, 109);
         wellPrice.setTextFill(Color.YELLOW);
         wellPrice.setFont(Font.font("cooper black", 30));
-        spinneryPrice.relocate(200 , 159);
+        spinneryPrice.relocate(200, 159);
         spinneryPrice.setTextFill(Color.ORANGE);
-        spinneryPrice.setFont(Font.font("cooper black" , 30));
-        depotPrice.relocate(200 , 209);
+        spinneryPrice.setFont(Font.font("cooper black", 30));
+        depotPrice.relocate(200, 209);
         depotPrice.setTextFill(Color.BLUE);
-        depotPrice.setFont(Font.font("cooper black" , 30));
+        depotPrice.setFont(Font.font("cooper black", 30));
 
-        group.getChildren().addAll(wellPrice , spinneryPrice , depotPrice);        backButton.setOnMouseClicked(event -> {
+        group.getChildren().addAll(wellPrice, spinneryPrice, depotPrice);
+        backButton.setOnMouseClicked(event -> {
             backButton.setVisible(false);
             upgradeBackground.setVisible(false);
             upgradeWell.setVisible(false);
@@ -708,9 +710,7 @@ public class GUI extends Application {
         viewOfSpinnery.setOnMouseClicked(event -> {
             try {
                 areYouSure("SpinneryFactory");
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         });
@@ -776,13 +776,11 @@ public class GUI extends Application {
                 Well.getWell().wellAnimation(Well.getWell().getImageView1()).play();
                 //group.getChildren().add(Well.getWell().getImageView1());
             }
-            if (toUpgrade.toLowerCase().equals("depot"))
-            {
+            if (toUpgrade.toLowerCase().equals("depot")) {
                 Depot.getDepot().checkDepotLevel();
 
             }
-            if (toUpgrade.toLowerCase().equals("spinneryfactory"))
-            {
+            if (toUpgrade.toLowerCase().equals("spinneryfactory")) {
                 SpinneryFactory.getSpinneryFactory().checkLevelOfSpinnery();
                 SpinneryFactory.getSpinneryFactory().spinneryAnimation().setCycleCount(Animation.INDEFINITE);
                 SpinneryFactory.getSpinneryFactory().spinneryAnimation().play();
