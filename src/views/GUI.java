@@ -364,8 +364,7 @@ public class GUI extends Application {
                 FarmController.getInstance().addGrassAction(i, j);
             try {
                 showGrass();
-            }
-            catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         });
@@ -518,6 +517,11 @@ public class GUI extends Application {
             Well.getWell().wellAnimation(Well.getWell().getImageView1()).setCycleCount(Animation.INDEFINITE);
             Well.getWell().wellAnimation(Well.getWell().getImageView1()).play();
             FarmController.getInstance().addWaterAction();
+            try {
+                showCoins();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             if (Well.getWell().isfull()) {
                 try {
                     Image image = new Image(new FileInputStream("pictures\\Full.jpg"));

@@ -702,7 +702,6 @@ public class FarmController {
                         }
                     } catch (Exception e) {
                         System.out.println(e.getMessage());
-                        break outer;
                     }
                 }
             }
@@ -927,8 +926,7 @@ public class FarmController {
             depot.upgrade();
 
         }
-        if (type.equals("spinneryfactory"))
-        {
+        if (type.equals("spinneryfactory")) {
             SpinneryFactory spinneryFactory = SpinneryFactory.getSpinneryFactory();
             spinneryFactory.upgradeSpinnery();
         }

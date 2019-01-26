@@ -13,10 +13,10 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 public class Well extends Building implements Upgradable {
-    private int capacity = 50 ;
-    private int storage = 0 ;
+    private int capacity = 50;
+    private int storage = 0;
     private int level = 1;
-    private ImageView imageView ;
+    private ImageView imageView;
     Image imageOfWell1;
 
     {
@@ -68,27 +68,25 @@ public class Well extends Building implements Upgradable {
 //            imageView.setImage(imageOfWell4);
 //    }
 
-    ImageView imageView1 = new ImageView() ;
-public void checkLevel()
-    {
+    ImageView imageView1 = new ImageView();
+
+    public void checkLevel() {
         if (getLevel() == 1) {
             imageView1.setImage(imageOfWell1);
 
-        }
-        else if (getLevel() == 2) {
+        } else if (getLevel() == 2) {
             System.out.println("lebas");
             imageView1.setImage(imageOfWell2);
-        }
-        else if (getLevel() == 3)
+        } else if (getLevel() == 3)
             imageView1.setImage(imageOfWell3);
         else if (getLevel() == 4)
             imageView1.setImage(imageOfWell4);
     }
 //ImageView imageView2 = new ImageView(imageOfWell2) ;
 //    ImageView imageView3 = new ImageView(imageOfWell3) ;
-   // ImageView imageView4 = new ImageView(imageOfWell4) ;
+    // ImageView imageView4 = new ImageView(imageOfWell4) ;
 
-ImageView ourview = new ImageView(imageOfWell1);
+    ImageView ourview = new ImageView(imageOfWell1);
 
     public Image getImageOfWell1() {
         return imageOfWell1;
@@ -99,20 +97,20 @@ ImageView ourview = new ImageView(imageOfWell1);
     }
 
     public Animation wellAnimation(ImageView imageViewOfFuck) {
-        if (getLevel()==1)
+        if (getLevel() == 1)
             return new SpriteAnimation(imageView1, Duration.millis(1000), 16, 4, 0, 0,
                     150, 136);
-        else if (getLevel()==2)
-            return new SpriteAnimation(imageView1 , Duration.millis(1000) , 16 , 4 , 0 ,0 , 592/4 , 600/4);
-        else if (getLevel()==3)
-            return new SpriteAnimation(imageView1 , Duration.millis(1000) , 16  ,4 ,0 , 0 , 576/4 , 632/4);
+        else if (getLevel() == 2)
+            return new SpriteAnimation(imageView1, Duration.millis(1000), 16, 4, 0, 0, 592 / 4, 600 / 4);
+        else if (getLevel() == 3)
+            return new SpriteAnimation(imageView1, Duration.millis(1000), 16, 4, 0, 0, 576 / 4, 632 / 4);
         else
-            return new SpriteAnimation(imageView1 , Duration.millis(1000) , 16  ,4 ,0 , 0 , 592/4 , 536/4);
+            return new SpriteAnimation(imageView1, Duration.millis(1000), 16, 4, 0, 0, 592 / 4, 536 / 4);
 
     }
-    public Animation wellBoardAnimation(ImageView imageViewa , int a)
-    {
-        return new SpriteAnimation(imageViewa , Duration.millis(1000) , 16 , 4 , 0 ,0 , 592/4 , 600/4);
+
+    public Animation wellBoardAnimation(ImageView imageViewa, int a) {
+        return new SpriteAnimation(imageViewa, Duration.millis(1000), 16, 4, 0, 0, 592 / 4, 600 / 4);
 
     }
 
@@ -124,7 +122,8 @@ ImageView ourview = new ImageView(imageOfWell1);
         this.level = level;
     }
 
-    private static Well well  = new Well();
+    private static Well well = new Well();
+
     private Well() {
     }
 
@@ -156,31 +155,29 @@ ImageView ourview = new ImageView(imageOfWell1);
         this.storage = storage;
     }
 
-    public void pickUpWater(int litre){
-        well.setStorage(well.getStorage()-litre);
+    public void pickUpWater(int litre) {
+        well.setStorage(well.getStorage() - litre);
     }
-    public void addWater()
-    {
+
+    public void addWater() {
         if (well.getCapacity() != well.getStorage()) {
 
             well.setStorage(well.getCapacity());
         }
 
     }
-    public boolean isfull()
-    {
-        if (storage==capacity)
-            return true
-                    ;
+
+    public boolean isfull() {
+        if (storage == capacity)
+            return true;
         else return false;
     }
 
 
-
     @Override
     public void upgrade() {
-        Well.getWell().setLevel(level+1);
+        Well.getWell().setLevel(level + 1);
         System.out.println("mamad");
-        setCapacity(getCapacity()+10);
+        setCapacity(getCapacity() + 10);
     }
 }
