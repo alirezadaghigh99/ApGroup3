@@ -56,7 +56,7 @@ public class FarmController {
         if (checkGoal.getLevel() == 3)
             this.money = 190;
         if (checkGoal.getLevel() == 4)
-            this.money = 300;
+            this.money = 800;
     }
 
     private static int money;
@@ -525,8 +525,8 @@ public class FarmController {
         if (input instanceof Hen) {
             if (money >= Utils.HEN_PRICE) {
                 Hen hen = new Hen();
-                int x = (int) (Math.random() * 30);
-                int y = (int) (Math.random() * 30);
+                int x = (int) (Math.random() * Utils.mapSize);
+                int y = (int) (Math.random() * Utils.mapSize);
                 hen.setX(x);
                 hen.setY(y);
                 Cell[][] cells = map.getCells();
@@ -537,8 +537,8 @@ public class FarmController {
         } else if (input instanceof Sheep) {
             if (money >= Utils.SHEEP_PRICE) {
                 Sheep sheep = new Sheep();
-                int x = (int) (Math.random() * 30);
-                int y = (int) (Math.random() * 30);
+                int x = (int) (Math.random() * Utils.mapSize);
+                int y = (int) (Math.random() * Utils.mapSize);
                 sheep.setX(x);
                 sheep.setY(y);
                 Cell[][] cells = map.getCells();
@@ -549,8 +549,8 @@ public class FarmController {
         } else if (input instanceof Cow) {
             if (money >= Utils.COW_PRICE) {
                 Cow cow = new Cow();
-                int x = (int) (Math.random() * 30);
-                int y = (int) (Math.random() * 30);
+                int x = (int) (Math.random() * Utils.mapSize);
+                int y = (int) (Math.random() * Utils.mapSize);
                 cow.setX(x);
                 cow.setY(y);
                 Cell[][] cells = map.getCells();
@@ -561,8 +561,8 @@ public class FarmController {
         } else if (input instanceof Cat) {
             if (money >= Utils.CAT_PRICE) {
                 Cat cat = new Cat();
-                int x = (int) (Math.random() * 30);
-                int y = (int) (Math.random() * 30);
+                int x = (int) (Math.random() * Utils.mapSize);
+                int y = (int) (Math.random() * Utils.mapSize);
                 cat.setX(x);
                 cat.setY(y);
                 Cell[][] cells = map.getCells();
@@ -573,8 +573,8 @@ public class FarmController {
         } else if (input instanceof Dog) {
             if (money >= Utils.DOG_PRICE) {
                 Dog dog = new Dog();
-                int x = (int) (Math.random() * 30);
-                int y = (int) (Math.random() * 30);
+                int x = (int) (Math.random() * Utils.mapSize);
+                int y = (int) (Math.random() * Utils.mapSize);
                 dog.setX(x);
                 dog.setY(y);
                 Cell[][] cells = map.getCells();
@@ -731,8 +731,8 @@ public class FarmController {
 
     public void test() {
         Cell[][] cells = map.getCells();
-        for (int i = 0; i < 30; i++)
-            for (int j = 0; j < 30; j++) {
+        for (int i = 0; i < Utils.mapSize; i++)
+            for (int j = 0; j < Utils.mapSize; j++) {
                 ArrayList<Animal> animals = cells[i][j].getCellAnimals();
                 for (Animal animal : animals) {
                     System.out.printf("%d %d\n", i, j);
@@ -854,16 +854,16 @@ public class FarmController {
             milk = 0;
             wool = 0;
             Cell[][] cells = map.getCells();
-            if (time % 30 == 8) {
+            if (time % Utils.mapSize == 8) {
                 Lion lion = new Lion();
-                lion.setX((int) (Math.random() * 30));
-                lion.setY((int) (Math.random() * 30));
+                lion.setX((int) (Math.random() * Utils.mapSize));
+                lion.setY((int) (Math.random() * Utils.mapSize));
                 cells[lion.getX()][lion.getY()].addCellAnimals(lion);
             }
             if (time % 120 == 108) {
                 Bear bear = new Bear();
-                bear.setX((int) (Math.random() * 30));
-                bear.setY((int) (Math.random() * 30));
+                bear.setX((int) (Math.random() * Utils.mapSize));
+                bear.setY((int) (Math.random() * Utils.mapSize));
                 cells[bear.getX()][bear.getY()].addCellAnimals(bear);
             }
             ourFarm.getAnimals().clear();
@@ -937,8 +937,8 @@ public class FarmController {
 
     public void printMapAction() {
         Cell[][] cell = map.getCells();
-        for (int i = 0; i < 30; i++) {
-            for (int j = 0; j < 30; j++) {
+        for (int i = 0; i < Utils.mapSize; i++) {
+            for (int j = 0; j < Utils.mapSize; j++) {
                 if ((cell[i][j].getGrass() == null
                         || !cell[i][j].getGrass().isGrass())
                         && cell[i][j].getCellProducts().isEmpty()

@@ -5,7 +5,7 @@ public class Utils {
     }
 
     public static final int ADDWATERCOST = 50;
-    public static final int mapSize = 30;
+    public static final int mapSize = 10;
     public static final int LOW_ENERGY_AMOUNT = 3;
     public static final int FULL_ENERGY_AMOUNT = 10;
     public static final int DEPOT_SIZE_FOR_EGG = 1;
@@ -107,4 +107,8 @@ public class Utils {
     public static final int DOG_PRICE = 70;
     public static final int CAT_PRICE = 70;
     public static final int UPGRADE_WELL_COST = 80;
+    public static final int START_X = 240;
+    public static final int START_Y = 240;
+    public static final int CELL_HEIGHT = 30;
+    public static final int CELL_WIDTH = 54;
 }
