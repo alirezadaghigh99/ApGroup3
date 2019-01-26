@@ -337,6 +337,7 @@ public class GUI extends Application {
         };
         animationTimer.start();
     }
+
     public void showGrass() throws Exception {
         Image grassIMG = (new Grass()).getImageGrass1();
         ImageView[][] grassView = new ImageView[Utils.mapSize][Utils.mapSize];
@@ -349,7 +350,10 @@ public class GUI extends Application {
                 grassView[i][j].setViewport(new Rectangle2D(0, 0, 600, 544));
                 Grass.getInstance().grassAnimation().setCycleCount(Animation.INDEFINITE);
                 Grass.getInstance().grassAnimation().play();
-                grassView[i][j].setVisible(false);
+                if (FarmController.getInstance().getMap().getCells()[i][j].getGrass().isGrass())
+                    grassView[i][j].setVisible(true);
+                else
+                    grassView[i][j].setVisible(false);
                 group.getChildren().add(grassView[i][j]);
             }
         }
@@ -357,8 +361,15 @@ public class GUI extends Application {
             int i = (int) (event.getX() - Utils.START_Y) / Utils.CELL_WIDTH;
             int j = (int) (event.getY() - Utils.START_Y) / Utils.CELL_HEIGHT;
             if (i >= 0 && j >= 0 && i < Utils.mapSize && j < Utils.mapSize)
-                grassView[i][j].setVisible(true);
+                FarmController.getInstance().addGrassAction(i, j);
+            try {
+                showGrass();
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
         });
+
 
     }
 
@@ -450,12 +461,11 @@ public class GUI extends Application {
             viewOfSheep.setFitWidth(60);
             viewOfSheep.relocate(90, 10);
             viewOfSheep.setOnMouseClicked(event -> {
-                try{
+                try {
                     Sheep sheep = new Sheep();
                     FarmController.getInstance().addAnimalAction(sheep);
                     showCoins();
-                }
-                catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             });
@@ -494,13 +504,13 @@ public class GUI extends Application {
         Well.getWell().getImageView1().setX(500);
         Well.getWell().getImageView1().setY(50);
         group.getChildren().add(Well.getWell().getImageView1());
-        if (Well.getWell().getLevel()==1)
+        if (Well.getWell().getLevel() == 1)
             Well.getWell().getImageView1().setViewport(new Rectangle2D(0, 0, 600, 544));
-        if (Well.getWell().getLevel()==2)
+        if (Well.getWell().getLevel() == 2)
             Well.getWell().getImageView1().setViewport(new Rectangle2D(0, 0, 592, 600));
-        if (Well.getWell().getLevel()==3)
+        if (Well.getWell().getLevel() == 3)
             Well.getWell().getImageView1().setViewport(new Rectangle2D(0, 0, 576, 632));
-        if (Well.getWell().getLevel()==4)
+        if (Well.getWell().getLevel() == 4)
             Well.getWell().getImageView1().setViewport(new Rectangle2D(0, 0, 592, 536));
         Well.getWell().wellAnimation(Well.getWell().getImageView1()).setCycleCount(Animation.INDEFINITE);
         Well.getWell().wellAnimation(Well.getWell().getImageView1()).play();
@@ -528,7 +538,6 @@ public class GUI extends Application {
             }
         });
     }
-
 
 
     public void showCakeBakery() {
@@ -638,8 +647,8 @@ public class GUI extends Application {
         upgradeWell.setX(50);
         upgradeWell.setY(50);
         upgradeWell.setViewport(new Rectangle2D(0, 0, 600, 544));
-        Well.getWell().wellBoardAnimation(upgradeWell ,1).setCycleCount(Animation.INDEFINITE);
-        Well.getWell().wellBoardAnimation(upgradeWell , 1).play();
+        Well.getWell().wellBoardAnimation(upgradeWell, 1).setCycleCount(Animation.INDEFINITE);
+        Well.getWell().wellBoardAnimation(upgradeWell, 1).play();
         group.getChildren().add(upgradeWell);
         Label wellPrice = new Label("" + Utils.UPGRADE_WELL_COST);
         wellPrice.relocate(200, 109);

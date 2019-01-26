@@ -688,7 +688,7 @@ public class FarmController {
         }
     }
 
-    private void addGrassAction(int xOfGrass, int yOfGrass) {
+    public void addGrassAction(int xOfGrass, int yOfGrass) {
         Well well = Well.getWell();
         Cell[][] cells = map.getCells();
         if (well.getStorage() >= 18) {
@@ -979,5 +979,9 @@ public class FarmController {
                 cell[x][y].getCellAnimals().remove(j);
             }
         }
+    }
+
+    public Map getMap() {
+        return map;
     }
 }
