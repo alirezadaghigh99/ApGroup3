@@ -5,7 +5,7 @@ public class Utils {
     }
 
     public static final int ADDWATERCOST = 50;
-    public static final int mapSize = 30;
+    public static final int mapSize = 10;
     public static final int LOW_ENERGY_AMOUNT = 3;
     public static final int FULL_ENERGY_AMOUNT = 10;
     public static final int DEPOT_SIZE_FOR_EGG = 1;
@@ -111,4 +111,55 @@ public class Utils {
     public static final int START_Y = 240;
     public static final int CELL_HEIGHT = 30;
     public static final int CELL_WIDTH = 54;
+    public static final int COUNT_OF_ALL = 24;
+
+    public static final int COLUMNS_OF_DEATH_COW = 3 ;
+    public static final int COLUMNS_OF_HEN =5;
+    public static final int COLUMNS_OF_DEATH_SHEEP =4;
+    public static final int COLUMNS_OF_LEFT_DOWN_COW=3;
+    public static final int COLUMNS_LEFT_DOWN_OF_SHEEP =4;
+    public static final int COLUMNS_LEFT_DOWN_OF_DOG = 5;
+    public static final int COLUMNS_LEFT_DOWN_OF_CAT=6;
+    public static final int COLUMNS_LEFT_DOWN_OF_LION = 4;
+    public static final int COLUMNS_LEFT_DOWN_OF_BEAR = 4;
+    public static final int COLUMNS_COLUMNS_LEFT_OF_COW=3 ;
+    public static final int COLUMNS_LEFT_OF_SHEEP = 4;
+    public static final int COLUMNS_LEFT_OF_DOG = 6;
+    public static final int COLUMNS_LEFT_OF_CAT =  4 ;
+    public static final int COLUMNS_LEFT_OF_LION = 3;
+    public static final int COLUMNS_LEFT_OF_BEAR = 4;
+    public static final int COLUMNS_DOWN_OF_COW = 3;
+    public static final int COLUMNS_DOWN_OF_SHEEP =4;
+    public static final int COLUMNS_DOWN_OF_DOG = 6;
+    public static final int COLUMNS_DOWN_OF_LION = 5;
+    public static final int COLUMNS_DOWN_OF_BEAR = 4 ;
+    public static final int COLUMNS_DOWN_OF_CAT = 6;
+    public static final int COLUMNS_UP_OF_COW = 4;
+    public static final int COLUMNS_UP_OF_SHEEP =5;
+    public static final int COLUMNS_UP_OF_CAT = 6;
+    public static final int COLUMNS_UP_OF_DOG = 6;
+    public static final int COLUMNS_UP_OF_LION = 6;
+    public static final int COLUMNS_UP_OF_BEAR = 4;
+    public static final int COLUMNS_UP_LEFT_OF_SHEEP = 5;
+    public static final int COLUMNS_UP_LEFT_OF_COW =3;
+    public static final int COLUMNS_UP_LEFT_OF_DOG = 5;
+    public static final int COLUMNS_UP_LEFT_OF_CAT = 6;
+    public static final int COLUMNS_UP_LEFT_OF_BEAR = 3;
+    public static final int COLUMNS_UP_LEFT_OF_LION = 4 ;
+    public static final int COLUMNS_EAT_COW = 4 ;
+    public static final int COLUMNS_EAT_SHEEP =4;
+    public static final int COLUMNS_CAGE_LION = 6;
+    public static final int COLUMNS_CAGE_BEAR = 6;
+
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -1,6 +1,7 @@
 package Model.Animals;
 
-import Model.SpriteAnimalAnimation;
+import Controller.FarmController;
+import Model.OnMaps.Cell;
 import Model.SpriteAnimation;
 import javafx.animation.Animation;
 import javafx.scene.image.Image;
@@ -196,7 +197,8 @@ public class Hen extends ProducerAnimal {
     ImageView DownView = new ImageView(henImageOfDown);
     ImageView DownLeftView = new ImageView(henImageOfDownLeft);
     ImageView LeftView =  new ImageView(henImageOfLeft);
-
+    private int state1;
+    private int state2;
 
     @Override
     public boolean isMoving() {
@@ -209,21 +211,67 @@ public class Hen extends ProducerAnimal {
 //    {
 //     //   return new SpriteAnimalAnimation(Hen.getInstance() , 5);
 //    }
-    public Animation henAnimation()
-    {
-        return new SpriteAnimalAnimation(Hen.getInstance() , 3);
-    }
+    ImageView imageView1 = new ImageView();
+
     final Animation henAnimationOfDeath = new SpriteAnimation(DeathView , Duration.millis(2000) ,13 , 13 , 0 , 0 ,
     64 , 66);
-    public Animation henEatAnimation()
+    Cell[][] cells = FarmController.getInstance().getMap().getCells();
+    public ImageView checkState()
     {
-        return new SpriteAnimation(eatView , Duration.millis(2000) , 25 , 5 , 0 , 0 , 370/4 , 320/4);
+       if (isMoving())
+       {
+           if (xDirection==-1&&yDirection==-1)
+               imageView1.setImage(henImageOfUpLeft);
+           if (xDirection==-1&&yDirection==0)
+               imageView1.setImage(henImageOfDown);
+//           if (xDirection==-1&&yDirection==1)
+//               imageView1.setImage(henImageOfUpRight);
+           if (xDirection==0&&yDirection==-1)
+               imageView1.setImage(henImageOfLeft);
+         if (xDirection==0&&yDirection==1)
+              imageView1.setImage(henImageOfLeft);
+//           if (xDirection==1&&yDirection==1)
+//              imageView1.setImage(henImageOfDownRight);
+//           if (xDirection==1&&yDirection==0)
+//               imageView1.setImage(henImageOfUp);
+//          if (xDirection==1&&yDirection==-1)
+//               imageView1.setImage(henImageOfUpRight);
+       }
+       else if (cells[x][y].getGrass().isGrass())
+           imageView1.setImage(henImageOfEat);
+       else imageView1.setImage(henImagesOfDeath);
+       return imageView1;
     }
+
 //    final Animation henAnimationOfLeft = new SpriteAnimation();
 //    final Animation henAnimationOfDown = new SpriteAnimation();
 //    final Animation henAnimationToEat = new SpriteAnimation();
 //    final Animation henUpToLeft = new SpriteAnimation();
 //    final Animation henAnimationToUp = new SpriteAnimation();
+    public Animation henAnimation(int State1 , double State2 , double State3)
+    {
+        if (State1==1&&State2==1&&State3==-1)
+            return new SpriteAnimation(imageView1 , Duration.millis(2000) , 25 , 5 , 0 , 0 , 350/4 , 360/4);//downlef
+        if (State1==1&&State2==1&&State3==-1)
+            return new SpriteAnimation(imageView1 , Duration.millis(2000) , 25 , 5 , 0 , 0 , 350/4 , 360/4);//downleft
+        if (State1==1&&State2==1&&State3==0)
+            return new SpriteAnimation(imageView1 , Duration.millis(2000) , 25 , 5 , 0 , 0 , 330/4 , 360/4);//down
+        if (State1==1&&State2==0&&State3==-1)
+            return new SpriteAnimation(imageView1 , Duration.millis(2000) , 25 , 5 , 0 , 0 , 400/4 , 370/4);//left
+
+        if (State1==1&&State2==-1&&State3==0)
+            return new SpriteAnimation(imageView1 , Duration.millis(2000) , 25 , 5 , 0 , 0 , 320/4 , 420/4);//up
+        if (State1==1&&State2==-1&&State3==-1)
+            return new SpriteAnimation(imageView1 , Duration.millis(2000) , 25 , 5 , 0 , 0 , 340/4 , 400/4);//upleft
+        if (State1==1&&State2==0&&State3==1)
+            return new SpriteAnimation(imageView1 , Duration.millis(2000) , 25 , 5 , 0 , 0 , 350/4 , 360/4);//right
+        if (State1==1&&State2==-1&&State3==1)
+            return new SpriteAnimation(imageView1 , Duration.millis(2000) , 25 , 5 , 0 , 0 , 350/4 , 360/4);//rightup
+        if (State1==2)
+            return new SpriteAnimation(imageView1 , Duration.millis(2000) , 25 , 5 , 0 , 0 , 370/4 , 320/4);//eat
+       else
+            return new SpriteAnimation(imageView1 , Duration.millis(2000) , 25 , 5 , 0 , 0 , 390/4 , 350/4);//death
+    }
 
 
 

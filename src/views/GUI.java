@@ -5,6 +5,7 @@ import Model.Animals.*;
 import Model.OnMaps.*;
 import Model.OurFarm;
 import Model.Products.*;
+import Model.SpriteAnimalAnimation;
 import Model.Utils;
 import Model.Workshop.CakeBakery;
 import Model.Workshop.EggPowderPlantWorkShop;
@@ -37,12 +38,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class GUI extends Application {
     private Group group = new Group();
     private Scene scene = new Scene(group, 1018.5, 745.5);
     private ImageView background;
-    ImageView[][] henView = new ImageView[Utils.mapSize][Utils.mapSize];
 
     private ImageView firstMenu;
     private ImageView newGameButton;
@@ -284,13 +285,16 @@ public class GUI extends Application {
             }
         });
     }
+    int X ;
+    int Y;
 
     public void playGame() throws Exception {
+        group.getChildren().removeAll(group);
         group.getChildren().addAll(background);
         FarmController.getInstance().listenForCommand();
         showGrass();
-        showHen();
-        showCow();
+       // showHen();
+       // showCow();
         showCoins();
         showUpMap();
         showDepot();
@@ -320,6 +324,7 @@ public class GUI extends Application {
             private long lastTime = 0;
             private long second = 1000000000;
             private long time = 0;
+
             
 
             @Override
@@ -331,35 +336,75 @@ public class GUI extends Application {
                 if (now > lastTime + second / 10) {
                     lastTime = now;
                     Cell[][] cells = FarmController.getInstance().getMap().getCells();
-                    if ((time%100 == 8)) {
+                    if ((time%10000 == 80)) {
                         Lion lion = new Lion();
                         lion.setX((int) (Math.random() * Utils.mapSize));
                         lion.setY((int) (Math.random() * Utils.mapSize));
                         cells[lion.getX()][lion.getY()].addCellAnimals(lion);
                     }
-                    if (time%1200 == 108) {
+                    if (time%120000 == 108) {
                         Bear bear = new Bear();
                         bear.setX((int) (Math.random() * Utils.mapSize));
                         bear.setY((int) (Math.random() * Utils.mapSize));
                         cells[bear.getX()][bear.getY()].addCellAnimals(bear);
                     }
+                    for (int i = 0  ; i<Utils.mapSize ; i++)
+                    {
+                        for (int j = 0 ; j<Utils.mapSize ; j++) {
+                            Iterator<Animal> animalincell = FarmController.getInstance().getMap().getCells()[i][j].getCellAnimals().iterator();
+                            while (animalincell.hasNext())
+                            {
+                                Animal animal = animalincell.next();
+                                X = animal.getX();
+                                Y = animal.getY();
+                                animal.nextTurn();
+
+                            }
+                        }
+                    }
+
+
                     OurFarm.getOurFarm().getAnimals().clear();
                     for (int i = 0; i < Utils.mapSize; i++) {
                         for (int j = 0; j < Utils.mapSize; j++) {
                             ArrayList<Animal> animals = cells[i][j].getCellAnimals();
                             for (Animal animal : animals) {
+                               // animal.nextTurn();
                                 OurFarm.getOurFarm().getAnimals().add(animal);
                             }
-                            cells[i][j].getCellAnimals().clear();
+                          //  cells[i][j].getCellAnimals().clear();
                         }
                     }
-                    for (Animal animal : OurFarm.getOurFarm().getAnimals()) {
-                        animal.nextTurn();
-                        int x = animal.getX();
-                        int y = animal.getY();
-                        cells[x][y].getCellAnimals().add(animal);
 
+
+//                    for (Animal animal : OurFarm.getOurFarm().getAnimals()) {
+//                        animal.nextTurn();
+//                        int x = animal.getX();
+//                        int y = animal.getY();
+//                        cells[x][y].getCellAnimals().add(animal);
+//
+//                    }
+                    for (int i = 0 ; i<Utils.mapSize ; i++)
+                    {
+                        for (int j =0 ; j<Utils.mapSize ; j++)
+                        {
+                            ArrayList<Animation>animations = new ArrayList<>();
+                            ArrayList<Animal> animals = FarmController.getInstance().getMap().getCells()[i][j].getCellAnimals();
+                            for (Animal animal:animals)
+                            {
+                              //  System.out.println("mamad");
+                                SpriteAnimalAnimation animation  = new SpriteAnimalAnimation(animal , 1000 , group);
+
+                               animation.setCycleCount(Animation.INDEFINITE);
+                                animations.add(animation);
+                            }
+                            for (Animation animation : animations)
+                                animation.play();
+
+                        }
                     }
+
+
                     FarmController.getInstance().collision();
 
                     time++;
@@ -423,37 +468,37 @@ public class GUI extends Application {
         }
 
     }
-    private void showCow() {
-        for (int i = 0  ; i< Utils.mapSize ; i++)
-        {
-            for (int j = 0 ; j< Utils.mapSize ; j++)
-            {
-                if (FarmController.getInstance().getMap().getCells()[i][j].getCellAnimals().size()!=0)
-                {
-
-                    for (int k =0 ; k<FarmController.getInstance().getMap().getCells()[i][j].getCellAnimals().size() ;k++ )
-                        if (FarmController.getInstance().getMap().getCells()[i][j].getCellAnimals().get(k) instanceof Cow)
-                        {
-
-                            try {
-                                cowView[i][j] = new ImageView(new Image(new FileInputStream("Animals\\Africa\\Buffalo\\eat.png")));
-                            } catch (FileNotFoundException e) {
-                                e.printStackTrace();
-                            }
-                            cowView[i][j].setX(200);
-                            cowView[i][j].setY(200);
-                            group.getChildren().add(cowView[i][j]);
-                            cowView[i][j].setViewport(new Rectangle2D(0, 0, 960, 488));
-                            Cow.getInstance().eatAnimationOfCow(cowView[i][j]).setCycleCount(Animation.INDEFINITE);
-                            Cow.getInstance().eatAnimationOfCow(cowView[i][j]).play();
-
-
-                        }
-                }
-            }
-        }
-
-    }
+//    private void showCow() {
+//        for (int i = 0  ; i< Utils.mapSize ; i++)
+//        {
+//            for (int j = 0 ; j< Utils.mapSize ; j++)
+//            {
+//                if (FarmController.getInstance().getMap().getCells()[i][j].getCellAnimals().size()!=0)
+//                {
+//
+//                    for (int k =0 ; k<FarmController.getInstance().getMap().getCells()[i][j].getCellAnimals().size() ;k++ )
+//                        if (FarmController.getInstance().getMap().getCells()[i][j].getCellAnimals().get(k) instanceof Cow)
+//                        {
+//
+//                            try {
+//                                cowView[i][j] = new ImageView(new Image(new FileInputStream("Animals\\Africa\\Buffalo\\eat.png")));
+//                            } catch (FileNotFoundException e) {
+//                                e.printStackTrace();
+//                            }
+//                            cowView[i][j].setX(200);
+//                            cowView[i][j].setY(200);
+//                            group.getChildren().add(cowView[i][j]);
+//                            cowView[i][j].setViewport(new Rectangle2D(0, 0, 960, 488));
+//                            Cow.getInstance().eatAnimationOfCow(cowView[i][j]).setCycleCount(Animation.INDEFINITE);
+//                            Cow.getInstance().eatAnimationOfCow(cowView[i][j]).play();
+//
+//
+//                        }
+//                }
+//            }
+//        }
+//
+//    }
 
     public void showDomestic()
     {
@@ -560,7 +605,7 @@ public class GUI extends Application {
                     Hen hen = new Hen();
                     FarmController.getInstance().addAnimalAction(hen);
                     showCoins();
-                    showHen();
+                   // showHen();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -572,7 +617,7 @@ public class GUI extends Application {
                 try {
                     Cow cow = new Cow();
                     FarmController.getInstance().addAnimalAction(cow);
-                    showCow();
+                    //showCow();
                     showCoins();
 
                 } catch (Exception e) {
@@ -622,34 +667,39 @@ public class GUI extends Application {
 
     }
 
-    private void showHen() {
-        for (int i = 0  ; i< Utils.mapSize ; i++)
-        {
-            for (int j = 0 ; j< Utils.mapSize ; j++)
-            {
-                if (FarmController.getInstance().getMap().getCells()[i][j].getCellAnimals().size()!=0)
-                {
-
-                    for (int k =0 ; k<FarmController.getInstance().getMap().getCells()[i][j].getCellAnimals().size() ;k++ )
-                        if (FarmController.getInstance().getMap().getCells()[i][j].getCellAnimals().get(k) instanceof Hen)
-                        {
-
-                            henView[i][j] = (Hen.getInstance().getEatView());
-                            henView[i][j].setX(400);
-                            henView[i][j].setY(500);
-                            group.getChildren().add(henView[i][j]);
-                           // henView[i][j].setViewport(new Rectangle2D(0, 0, 370, 320));
-                        //  Hen.getInstance().henEatAnimation().setCycleCount(Animation.INDEFINITE);
-//                            Hen.getInstance().henEatAnimation().play();
-                            Hen.getInstance().henAnimation().setCycleCount(Animation.INDEFINITE);
-                            Hen.getInstance().henAnimation().play();
-
-
-                        }
-                }
-            }
-        }
-    }
+//    private void showHen() {
+//        ImageView[][] henView = new ImageView[Utils.mapSize][Utils.mapSize];
+//
+//        for (int i = 0  ; i< Utils.mapSize ; i++)
+//        {
+//            for (int j = 0 ; j< Utils.mapSize ; j++)
+//            {
+//                if (FarmController.getInstance().getMap().getCells()[i][j].getCellAnimals().size()!=0)
+//                {
+//
+//                    for (int k =0 ; k<FarmController.getInstance().getMap().getCells()[i][j].getCellAnimals().size() ;k++ )
+//                        if (FarmController.getInstance().getMap().getCells()[i][j].getCellAnimals().get(k) instanceof Hen)
+//                        {
+//
+//                            henView[i][j] = Hen.getInstance().checkState();
+//                            henView[i][j].setX(400);
+//                            henView[i][j].setY(500);
+//
+//                            //group.getChildren().add(henView[i][j]);
+//                            if (!FarmController.getInstance().getMap().getCells()[i][j].getCellAnimals().get(k).isMoving()) {
+//                                ((Hen) FarmController.getInstance().getMap().getCells()[i][j].getCellAnimals().get(k)).henAnimation(2, 1 , 1).setCycleCount(Animation.INDEFINITE);
+//                                ((Hen) FarmController.getInstance().getMap().getCells()[i][j].getCellAnimals().get(k)).henAnimation(2,1 , 1).play();
+//                            }
+//                            else ((Hen) FarmController.getInstance().getMap().getCells()[i][j].getCellAnimals().get(k)).henAnimation(1 ,FarmController.getInstance().getMap().getCells()[i][j].getCellAnimals().get(k).getxDirection(),
+//                                    FarmController.getInstance().getMap().getCells()[i][j].getCellAnimals().get(k).getyDirection());
+//
+//
+//
+//                        }
+//                }
+//            }
+//        }
+   // }
 
     public void showWell() {
         //if (Well.getWell().getLevel()==1)
@@ -757,6 +807,11 @@ public class GUI extends Application {
         ImageView eggView = EggPowderPlantWorkShop.getEggPowderPlantWorkShop().getImageView1();
         eggView.setX(760);
         eggView.setY(400);
+        ImageView startView = CakeBakery.getCakeBakery().getStartView();
+        startView.setX(750);
+        startView.setY(410);
+        startView.setFitHeight(50);
+        startView.setFitWidth(60);
         group.getChildren().add(eggView);
         eggView.setViewport(new Rectangle2D(0, 0, 512, 456));
         EggPowderPlantWorkShop.getEggPowderPlantWorkShop().eggPowderAnimation().setCycleCount(Animation.INDEFINITE);
@@ -764,6 +819,13 @@ public class GUI extends Application {
         eggView.setOnMouseClicked(event -> {
             EggPowderPlantWorkShop.getEggPowderPlantWorkShop().eggPowderAnimation().setCycleCount(Animation.INDEFINITE);
             EggPowderPlantWorkShop.getEggPowderPlantWorkShop().eggPowderAnimation().play();
+            if (group.getChildren().contains(startView))
+                startView.setVisible(true);
+            else group.getChildren().add(startView);
+        });
+        startView.setOnMouseClicked(event -> {
+            startView.setVisible(false);
+            EggPowderPlantWorkShop.getEggPowderPlantWorkShop().makeEggPowder();
         });
     }
 

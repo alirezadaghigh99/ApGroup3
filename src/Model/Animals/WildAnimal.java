@@ -59,14 +59,15 @@ public class WildAnimal extends Animal {
             this.randomWalk();
         } else {
             this.setEnergy(this.getEnergy() - 1);
-            this.smartWalk();
+            this.randomWalk();
+           // this.smartWalk();
         }
         setOnMap();
     }
 
     @Override
     public boolean isMoving() {
-        return false;
+        return true ;
     }
 
     @Override

@@ -22,10 +22,10 @@ public class Cow extends ProducerAnimal {
             return false ;
         else  return true ;
     }
-    public Animation cowAnimation()
-    {
-        return new SpriteAnimalAnimation(Cow.getInstance() , 3);
-    }
+//    public Animation cowAnimation()
+//    {
+//        return new SpriteAnimalAnimation(Cow.getInstance() , 3);
+//    }
 
     Image CowToDown;
 
@@ -188,9 +188,60 @@ private static Cow instance = new Cow();
     public void nextTurn() {
         super.nextTurn();
     }
+    ImageView imageView1 = new ImageView();
+//    public ImageView checkCowState()
+//    {
+//        if (isMoving())
+//        {
+//            if (xDirection==-1&&yDirection==-1)
+//                imageView1.setImage(CowToUpLeft);
+//            if (xDirection==-1&&yDirection==0)
+//                imageView1.setImage(CowToDown);
+////           if (xDirection==-1&&yDirection==1)
+////               imageView1.setImage(henImageOfUpRight);
+//            if (xDirection==0&&yDirection==-1)
+//                imageView1.setImage(toLeft);
+//            if (xDirection==0&&yDirection==1)
+//                imageView1.setImage(CowToRight);
+//            if (xDirection==1&&yDirection==1)
+//                imageView1.setImage(CowToDownRight);
+//            if (xDirection==1&&yDirection==0)
+//                imageView1.setImage(CowToUp);
+//            if (xDirection==1&&yDirection==-1)
+//                imageView1.setImage(CowToUpLeft);
+//        }
+//        else if (cells[x][y].getGrass().isGrass())
+//            imageView1.setImage(CowToEat);
+//        else imageView1.setImage(Cow);
+//        return imageView1;
+//    }
 
     @Override
     public void setOnMap() {
         super.setOnMap();
     }
+//    public Animation CowAnimation(int State1 , double State2 , double State3)
+//    {
+//        if (State1==1&&State2==1&&State3==-1)
+//            return new SpriteAnimation(imageView1 , Duration.millis(2000) , 25 , 5 , 0 , 0 , 350/4 , 360/4);//downlef
+//        if (State1==1&&State2==1&&State3==-1)
+//            return new SpriteAnimation(imageView1 , Duration.millis(2000) , 25 , 5 , 0 , 0 , 350/4 , 360/4);//downleft
+//        if (State1==1&&State2==1&&State3==0)
+//            return new SpriteAnimation(imageView1 , Duration.millis(2000) , 25 , 5 , 0 , 0 , 330/4 , 360/4);//down
+//        if (State1==1&&State2==0&&State3==-1)
+//            return new SpriteAnimation(imageView1 , Duration.millis(2000) , 25 , 5 , 0 , 0 , 400/4 , 370/4);//left
+//
+//        if (State1==1&&State2==-1&&State3==0)
+//            return new SpriteAnimation(imageView1 , Duration.millis(2000) , 25 , 5 , 0 , 0 , 320/4 , 420/4);//up
+//        if (State1==1&&State2==-1&&State3==-1)
+//            return new SpriteAnimation(imageView1 , Duration.millis(2000) , 25 , 5 , 0 , 0 , 340/4 , 400/4);//upleft
+//        if (State1==1&&State2==0&&State3==1)
+//            return new SpriteAnimation(imageView1 , Duration.millis(2000) , 25 , 5 , 0 , 0 , 350/4 , 360/4);//right
+//        if (State1==1&&State2==-1&&State3==1)
+//            return new SpriteAnimation(imageView1 , Duration.millis(2000) , 25 , 5 , 0 , 0 , 350/4 , 360/4);//rightup
+//        if (State1==2)
+//            return new SpriteAnimation(imageView1 , Duration.millis(2000) , 25 , 5 , 0 , 0 , 370/4 , 320/4);//eat
+//        else
+//            return new SpriteAnimation(imageView1 , Duration.millis(2000) , 25 , 5 , 0 , 0 , 390/4 , 350/4);//death
+//    }
 }

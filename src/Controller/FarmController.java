@@ -540,7 +540,9 @@ public class FarmController {
                 hen.setX(x);
                 hen.setY(y);
                 Cell[][] cells = map.getCells();
-                cells[x][y].getCellAnimals().add(hen);
+                synchronized (cells[x][y].getCellAnimals()) {
+                    cells[x][y].getCellAnimals().add(hen);
+                }
                 money -= Utils.HEN_PRICE;
             } else
                 viewBefore.logNotEnoughMoney();
@@ -552,7 +554,9 @@ public class FarmController {
                 sheep.setX(x);
                 sheep.setY(y);
                 Cell[][] cells = map.getCells();
-                cells[x][y].getCellAnimals().add(sheep);
+                synchronized (cells[x][y].getCellAnimals()) {
+                    cells[x][y].getCellAnimals().add(sheep);
+                }
                 money -= Utils.SHEEP_PRICE;
             } else
                 viewBefore.logNotEnoughMoney();
@@ -564,7 +568,9 @@ public class FarmController {
                 cow.setX(x);
                 cow.setY(y);
                 Cell[][] cells = map.getCells();
-                cells[x][y].getCellAnimals().add(cow);
+                synchronized (cells[x][y].getCellAnimals()) {
+                    cells[x][y].getCellAnimals().add(cow);
+                }
                 money -= Utils.COW_PRICE;
             } else
                 viewBefore.logNotEnoughMoney();
@@ -819,20 +825,24 @@ public class FarmController {
                                 if (animals.get(l) instanceof Dog) {
                                     animals.remove(animals.get(k));
                                     animals.remove(animals.get(l));
+                                    continue;
                                 }
                                 if (animals.get(l) instanceof DomesticAnimal) {
                                     animals.remove(animals.get(l));
+                                    continue;
                                 }
                             }
                             if (animals.get(k) instanceof Dog) {
                                 if (animals.get(l) instanceof WildAnimal) {
                                     animals.remove(animals.get(k));
                                     animals.remove(animals.get(l));
+                                    continue;
                                 }
                             }
                             if (animals.get(k) instanceof DomesticAnimal) {
                                 if (animals.get(l) instanceof WildAnimal) {
                                     animals.remove(animals.get(k));
+                                    continue;
                                 }
                             }
                         }

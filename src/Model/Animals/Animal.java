@@ -9,24 +9,10 @@ import javafx.scene.image.Image;
 
 public abstract class Animal extends Entity {
     protected Cell cell;
-    double xDirection;
-    double yDirection ;
+    double xDirection = 1;
+    double yDirection = -1 ;
 
-    public double getxDirection() {
-        return xDirection;
-    }
 
-    public void setxDirection(double xDirection) {
-        this.xDirection = xDirection;
-    }
-
-    public double getyDirection() {
-        return yDirection;
-    }
-
-    public void setyDirection(double yDirection) {
-        this.yDirection = yDirection;
-    }
 
     public void randomWalk() {
         double rand = Math.random() * 8;
@@ -79,6 +65,22 @@ public abstract class Animal extends Entity {
         }
         setOnMap();
     }
+    public double getxDirection() {
+        return xDirection;
+    }
+
+    public void setxDirection(double xDirection) {
+        this.xDirection = xDirection;
+    }
+
+    public double getyDirection() {
+        return yDirection;
+    }
+
+    public void setyDirection(double yDirection) {
+        this.yDirection = yDirection;
+    }
+
 
     public void smartWalk() {
     }

@@ -50,15 +50,15 @@ public class EggPowderPlantWorkShop extends WorkShop {
     }
 
     public void makeEggPowder(){
-        if (ourFarm.getInPutsOfEggPowderPlantWorkshop().isEmpty())
+        if (Depot.getDepot().getStoredProducts().isEmpty())
             System.out.println("there is nothing to create");
         else
         {
-            for (int i = ourFarm.getInPutsOfEggPowderPlantWorkshop().size()-1 ; i>=0 ; i--)
+            for (int i = Depot.getDepot().getStoredProducts().size()-1 ; i>=0 ; i--)
             {
-                if (ourFarm.getInPutsOfEggPowderPlantWorkshop().get(i) instanceof Egg) {
-                    ourFarm.getOutPutsOfEggPowderPlantWorkshop().add(new EggPowder());
-                    ourFarm.getInPutsOfEggPowderPlantWorkshop().remove(i);
+                if (Depot.getDepot().getStoredProducts().get(i) instanceof Egg) {
+                    Depot.getDepot().getStoredProducts().add(new EggPowder());
+                    Depot.getDepot().getStoredProducts().remove(i);
                 }
             }
         }
