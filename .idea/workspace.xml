@@ -3,14 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c64801da-0b49-48e1-b1f4-71066c99b6ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/FarmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FarmController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Animals/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Animals/Cow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/Cow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Animals/Hen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/Hen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Animals/WildAnimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/WildAnimal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/OnMaps/Well.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/OnMaps/Well.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Workshop/EggPowderPlantWorkShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Workshop/EggPowderPlantWorkShop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/GUI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -242,35 +239,36 @@
         <counts>
           <entry key="project.closed" value="2" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.34" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="10714" />
-          <entry key="txt" value="24" />
+          <entry key="java" value="11748" />
+          <entry key="txt" value="31" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="10714" />
-          <entry key="PLAIN_TEXT" value="24" />
+          <entry key="JAVA" value="11748" />
+          <entry key="PLAIN_TEXT" value="31" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="37" />
+          <entry key="java" value="41" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="37" />
+          <entry key="JAVA" value="41" />
         </counts>
       </usages-collector>
     </session>
@@ -280,8 +278,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="120" column="64" selection-start-line="120" selection-start-column="64" selection-end-line="120" selection-end-column="64" />
+            <state relative-caret-position="2599">
+              <caret line="129" column="31" selection-start-line="129" selection-start-column="31" selection-end-line="129" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -292,8 +290,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3381">
-              <caret line="147" column="57" selection-start-line="147" selection-start-column="57" selection-end-line="147" selection-end-column="57" />
+            <state relative-caret-position="3542">
+              <caret line="154" column="59" selection-start-line="154" selection-start-column="59" selection-end-line="154" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -301,8 +299,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/Animals/Animal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+            <state relative-caret-position="1212">
+              <caret line="91" column="20" selection-start-line="91" selection-start-column="20" selection-end-line="91" selection-end-column="20" />
+              <folding>
+                <element signature="e#1888#1889#0" expanded="true" />
+                <element signature="e#1914#1915#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -329,8 +331,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/Animals/WildAnimal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1196">
-              <caret line="61" column="30" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
+            <state relative-caret-position="759">
+              <caret line="42" column="39" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -338,38 +340,51 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1243">
-              <caret line="291" column="45" selection-start-line="291" selection-start-column="45" selection-end-line="291" selection-end-column="45" />
+            <state relative-caret-position="191">
+              <caret line="345" selection-start-line="345" selection-end-line="345" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1689#1690#0" expanded="true" />
+                <element signature="e#1723#1724#0" expanded="true" />
+                <element signature="e#1791#1792#0" expanded="true" />
+                <element signature="e#1837#1838#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/FarmController.java">
+        <entry file="file://$PROJECT_DIR$/src/Model/OnMaps/Depot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16951">
-              <caret line="758" column="15" selection-start-line="758" selection-start-column="15" selection-end-line="758" selection-end-column="15" />
+            <state relative-caret-position="204">
+              <caret line="223" column="35" selection-start-line="223" selection-start-column="35" selection-end-line="223" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#5557#5558#0" expanded="true" />
+                <element signature="e#5596#5597#0" expanded="true" />
+                <element signature="e#5628#5629#0" expanded="true" />
+                <element signature="e#5668#5669#0" expanded="true" />
+                <element signature="e#5701#5702#0" expanded="true" />
+                <element signature="e#5739#5740#0" expanded="true" />
+                <element signature="e#5770#5771#0" expanded="true" />
+                <element signature="e#5813#5814#0" expanded="true" />
+                <element signature="e#5849#5850#0" expanded="true" />
+                <element signature="e#5893#5894#0" expanded="true" />
+                <element signature="e#5930#5931#0" expanded="true" />
+                <element signature="e#5970#5971#0" expanded="true" />
+                <element signature="e#6003#6004#0" expanded="true" />
+                <element signature="e#6045#6046#0" expanded="true" />
+                <element signature="e#6080#6081#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/animation/AnimationTimer.java">
+        <entry file="file://$PROJECT_DIR$/src/Model/OnMaps/Well.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="713">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/security/AccessController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7935">
-              <caret line="370" column="31" selection-start-line="370" selection-start-column="31" selection-end-line="370" selection-end-column="31" />
+            <state relative-caret-position="112">
+              <caret line="101" column="71" selection-start-line="101" selection-start-column="71" selection-end-line="101" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -377,8 +392,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/io/FileInputStream.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3910">
-              <caret line="194" selection-start-line="194" selection-end-line="194" />
+            <state relative-caret-position="1564">
+              <caret line="92" selection-start-line="92" selection-end-line="92" />
             </state>
           </provider>
         </entry>
@@ -466,7 +481,6 @@
         <option value="$PROJECT_DIR$/src/Model/Animals/Cat.java" />
         <option value="$PROJECT_DIR$/src/Model/Workshop/SpinneryFactory.java" />
         <option value="$PROJECT_DIR$/src/Model/OnMaps/Depot.java" />
-        <option value="$PROJECT_DIR$/src/Model/OnMaps/Well.java" />
         <option value="$PROJECT_DIR$/src/Model/OnMaps/Grass.java" />
         <option value="$PROJECT_DIR$/src/Model/Animals/Lion.java" />
         <option value="$PROJECT_DIR$/src/Model/Animals/Sheep.java" />
@@ -477,11 +491,12 @@
         <option value="$PROJECT_DIR$/src/Model/Workshop/EggPowderPlantWorkShop.java" />
         <option value="$PROJECT_DIR$/src/Model/Animals/Hen.java" />
         <option value="$PROJECT_DIR$/src/Model/Animals/Cow.java" />
-        <option value="$PROJECT_DIR$/src/Model/Animals/WildAnimal.java" />
         <option value="$PROJECT_DIR$/src/Controller/FarmController.java" />
-        <option value="$PROJECT_DIR$/src/Model/Animals/Animal.java" />
+        <option value="$PROJECT_DIR$/src/Model/Animals/WildAnimal.java" />
         <option value="$PROJECT_DIR$/src/Model/Utils.java" />
+        <option value="$PROJECT_DIR$/src/Model/OnMaps/Well.java" />
         <option value="$PROJECT_DIR$/src/views/GUI.java" />
+        <option value="$PROJECT_DIR$/src/Model/Animals/Animal.java" />
         <option value="$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java" />
       </list>
     </option>
@@ -512,7 +527,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -598,6 +612,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -606,10 +621,10 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="playgame&#9;PSI&#9;JAVA://views.GUI#playGame&#10;playGame&#9;PSI&#9;JAVA://views.GUI#playGame&#10;load&#9;PSI&#9;JAVA://Controller.FarmController#load&#10;save&#9;PSI&#9;JAVA://Controller.FarmController#save&#10;farmcont&#9;PSI&#9;JAVA://Controller.FarmController&#10;upMap&#9;PSI&#9;JAVA://views.GUI#showUpMap&#10;showCow&#9;PSI&#9;JAVA://views.GUI#showCow&#10;showHen&#9;PSI&#9;JAVA://views.GUI#showHen&#10;collision&#9;PSI&#9;JAVA://Controller.FarmController#collision&#10;showhen&#9;PSI&#9;JAVA://views.GUI#showHen&#10;showWell&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showDe&#9;PSI&#9;JAVA://views.GUI#showDepot&#10;showdepot&#9;null&#9;null&#10;eggPow&#9;PSI&#9;JAVA://views.GUI#showEggPowderPlant&#10;showCa&#9;PSI&#9;JAVA://views.GUI#showCakeBakery&#10;showCake&#9;PSI&#9;JAVA://views.GUI#showCakeBakery&#10;play&#9;PSI&#9;JAVA://views.GUI#playGame&#10;passtur&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;showW&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showGrass&#9;PSI&#9;JAVA://views.GUI#showGrass&#10;showGras&#9;PSI&#9;JAVA://views.GUI#showGrass&#10;henVie&#9;PSI&#9;JAVA://views.GUI#henView&#10;showhe&#9;PSI&#9;JAVA://views.GUI#showHen&#10;Turn&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;next&#9;PSI&#9;JAVA://Model.Animals.Animal#nextTurn&#10;showUpMa&#9;PSI&#9;JAVA://views.GUI#showUpMap&#10;showco&#9;PSI&#9;JAVA://views.GUI#showCow&#10;showwell&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showgrass&#9;PSI&#9;JAVA://views.GUI#showGrass&#10;pri&#9;PSI&#9;JAVA://Controller.FarmController#printInfoAction&#10;pass&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;passT&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;money&#9;PSI&#9;JAVA://Controller.FarmController#money&#10;addW&#9;PSI&#9;JAVA://Controller.FarmController#addWaterAction&#10;add&#9;PSI&#9;JAVA://Controller.FarmController#addAnimalAction&#10;tur&#9;PSI&#9;JAVA://Model.Animals.Animal#nextTurn&#10;akba&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/Approject/akbar.json&#10;Map&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/Approject/src/Model/OnMaps/Map.java&#10;map&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/Approject/maps.json&#10;go&#9;PSI&#9;JAVA://Controller.FarmController#goAction&#10;sale&#9;PSI&#9;JAVA://Controller.FarmController#saleAction&#10;tart&#9;PSI&#9;JAVA://Controller.FarmController#startAction&#10;turn&#9;PSI&#9;JAVA://Model.Animals.Animal#nextTurn&#10;clea&#9;PSI&#9;JAVA://Controller.FarmController#clearAction&#10;clear&#9;PSI&#9;JAVA://Controller.FarmController#clearAction&#10;saveRe&#9;PSI&#9;JAVA://Model.Requests.SaveRequest&#10;cleara&#9;PSI&#9;JAVA://Controller.FarmController#clearAction&#10;goactio&#9;PSI&#9;JAVA://Controller.FarmController#goAction&#10;goAction&#9;PSI&#9;JAVA://Controller.FarmController#goAction&#10;goActio&#9;PSI&#9;JAVA://Controller.FarmController#goAction" />
+    <property name="SearchEverywhereHistoryKey" value="showWell&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showdep&#9;PSI&#9;JAVA://views.GUI#showDepot&#10;playgame&#9;PSI&#9;JAVA://views.GUI#playGame&#10;playGame&#9;PSI&#9;JAVA://views.GUI#playGame&#10;load&#9;PSI&#9;JAVA://Controller.FarmController#load&#10;save&#9;PSI&#9;JAVA://Controller.FarmController#save&#10;farmcont&#9;PSI&#9;JAVA://Controller.FarmController&#10;upMap&#9;PSI&#9;JAVA://views.GUI#showUpMap&#10;showCow&#9;PSI&#9;JAVA://views.GUI#showCow&#10;showHen&#9;PSI&#9;JAVA://views.GUI#showHen&#10;collision&#9;PSI&#9;JAVA://Controller.FarmController#collision&#10;showhen&#9;PSI&#9;JAVA://views.GUI#showHen&#10;showDe&#9;PSI&#9;JAVA://views.GUI#showDepot&#10;showdepot&#9;null&#9;null&#10;eggPow&#9;PSI&#9;JAVA://views.GUI#showEggPowderPlant&#10;showCa&#9;PSI&#9;JAVA://views.GUI#showCakeBakery&#10;showCake&#9;PSI&#9;JAVA://views.GUI#showCakeBakery&#10;play&#9;PSI&#9;JAVA://views.GUI#playGame&#10;passtur&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;showW&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showGrass&#9;PSI&#9;JAVA://views.GUI#showGrass&#10;showGras&#9;PSI&#9;JAVA://views.GUI#showGrass&#10;henVie&#9;PSI&#9;JAVA://views.GUI#henView&#10;showhe&#9;PSI&#9;JAVA://views.GUI#showHen&#10;Turn&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;next&#9;PSI&#9;JAVA://Model.Animals.Animal#nextTurn&#10;showUpMa&#9;PSI&#9;JAVA://views.GUI#showUpMap&#10;showco&#9;PSI&#9;JAVA://views.GUI#showCow&#10;showwell&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showgrass&#9;PSI&#9;JAVA://views.GUI#showGrass&#10;pri&#9;PSI&#9;JAVA://Controller.FarmController#printInfoAction&#10;pass&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;passT&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;money&#9;PSI&#9;JAVA://Controller.FarmController#money&#10;addW&#9;PSI&#9;JAVA://Controller.FarmController#addWaterAction&#10;add&#9;PSI&#9;JAVA://Controller.FarmController#addAnimalAction&#10;tur&#9;PSI&#9;JAVA://Model.Animals.Animal#nextTurn&#10;akba&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/Approject/akbar.json&#10;Map&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/Approject/src/Model/OnMaps/Map.java&#10;map&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/Approject/maps.json&#10;go&#9;PSI&#9;JAVA://Controller.FarmController#goAction&#10;sale&#9;PSI&#9;JAVA://Controller.FarmController#saleAction&#10;tart&#9;PSI&#9;JAVA://Controller.FarmController#startAction&#10;turn&#9;PSI&#9;JAVA://Model.Animals.Animal#nextTurn&#10;clea&#9;PSI&#9;JAVA://Controller.FarmController#clearAction&#10;clear&#9;PSI&#9;JAVA://Controller.FarmController#clearAction&#10;saveRe&#9;PSI&#9;JAVA://Model.Requests.SaveRequest&#10;cleara&#9;PSI&#9;JAVA://Controller.FarmController#clearAction&#10;goactio&#9;PSI&#9;JAVA://Controller.FarmController#goAction&#10;goAction&#9;PSI&#9;JAVA://Controller.FarmController#goAction" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548695979587" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548706629212" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -775,14 +790,8 @@
       <workItem from="1548574125822" duration="20076000" />
       <workItem from="1548614014325" duration="6879000" />
       <workItem from="1548622481879" duration="9240000" />
-      <workItem from="1548693175589" duration="2568000" />
-    </task>
-    <task id="LOCAL-00005" summary="&#10;animal mashtti shod">
-      <created>1544735269061</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1544735269061</updated>
+      <workItem from="1548693175589" duration="8288000" />
+      <workItem from="1548741470854" duration="4671000" />
     </task>
     <task id="LOCAL-00006" summary="Dog and Cat added">
       <created>1544735638685</created>
@@ -1120,11 +1129,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548533030869</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="sfdadsf">
+      <created>1548696022123</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1548696022125</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="288552000" />
+    <option name="totallyTimeSpent" value="298943000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1139,7 +1155,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24357034" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2473525" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1212,7 +1228,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="well and plant" />
     <MESSAGE value="pickUpAction" />
     <MESSAGE value="print map complete" />
     <MESSAGE value="cage complete" />
@@ -1237,7 +1252,8 @@
     <MESSAGE value="n" />
     <MESSAGE value="depot and spinnery" />
     <MESSAGE value="xfb" />
-    <option name="LAST_COMMIT_MESSAGE" value="xfb" />
+    <MESSAGE value="sfdadsf" />
+    <option name="LAST_COMMIT_MESSAGE" value="sfdadsf" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -1247,7 +1263,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../Connect/src/sample/Main.java" />
     <entry file="file://$PROJECT_DIR$/../Connect/src/sample/Controller.java" />
     <entry file="file://$PROJECT_DIR$/pictures/timer.png">
       <provider selected="true" editor-type-id="images" />
@@ -1266,13 +1281,6 @@
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/pictures/button.jpg" />
-    <entry file="file://$PROJECT_DIR$/src/Model/SpriteAnimation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Animals/Bear.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-120">
@@ -1353,13 +1361,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/OnMaps/Well.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2277">
-          <caret line="112" column="72" selection-start-line="112" selection-start-column="72" selection-end-line="112" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Animals/Sheep.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -1371,6 +1372,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
           <caret line="102" column="8" selection-start-line="102" selection-start-column="8" selection-end-line="102" selection-end-column="21" />
+          <folding>
+            <element signature="e#2786#2787#0" expanded="true" />
+            <element signature="e#2814#2815#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1386,13 +1391,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="851">
           <caret line="54" column="68" selection-start-line="54" selection-start-column="68" selection-end-line="54" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/OnMaps/Depot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4738">
-          <caret line="223" column="35" selection-start-line="223" selection-start-column="35" selection-end-line="223" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -1464,17 +1462,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Utils.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/animation/AnimationTimer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3381">
-          <caret line="147" column="57" selection-start-line="147" selection-start-column="57" selection-end-line="147" selection-end-column="57" />
+        <state relative-caret-position="713">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Animals/Animal.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/security/AccessController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        <state relative-caret-position="7935">
+          <caret line="370" column="31" selection-start-line="370" selection-start-column="31" selection-end-line="370" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/FarmController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="758" column="15" selection-start-line="758" selection-start-column="15" selection-end-line="758" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/SpriteAnimation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3542">
+          <caret line="154" column="59" selection-start-line="154" selection-start-column="59" selection-end-line="154" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -1497,53 +1516,86 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Animals/WildAnimal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1196">
-          <caret line="61" column="30" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/FarmController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16951">
-          <caret line="758" column="15" selection-start-line="758" selection-start-column="15" selection-end-line="758" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/animation/AnimationTimer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/security/AccessController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7935">
-          <caret line="370" column="31" selection-start-line="370" selection-start-column="31" selection-end-line="370" selection-end-column="31" />
+        <state relative-caret-position="759">
+          <caret line="42" column="39" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/io/FileInputStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3910">
-          <caret line="194" selection-start-line="194" selection-end-line="194" />
+        <state relative-caret-position="1564">
+          <caret line="92" selection-start-line="92" selection-end-line="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/OnMaps/Depot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="223" column="35" selection-start-line="223" selection-start-column="35" selection-end-line="223" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5557#5558#0" expanded="true" />
+            <element signature="e#5596#5597#0" expanded="true" />
+            <element signature="e#5628#5629#0" expanded="true" />
+            <element signature="e#5668#5669#0" expanded="true" />
+            <element signature="e#5701#5702#0" expanded="true" />
+            <element signature="e#5739#5740#0" expanded="true" />
+            <element signature="e#5770#5771#0" expanded="true" />
+            <element signature="e#5813#5814#0" expanded="true" />
+            <element signature="e#5849#5850#0" expanded="true" />
+            <element signature="e#5893#5894#0" expanded="true" />
+            <element signature="e#5930#5931#0" expanded="true" />
+            <element signature="e#5970#5971#0" expanded="true" />
+            <element signature="e#6003#6004#0" expanded="true" />
+            <element signature="e#6045#6046#0" expanded="true" />
+            <element signature="e#6080#6081#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/OnMaps/Well.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="101" column="71" selection-start-line="101" selection-start-column="71" selection-end-line="101" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/scene/media/MediaPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="715" column="16" selection-start-line="715" selection-start-column="16" selection-end-line="715" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1243">
-          <caret line="291" column="45" selection-start-line="291" selection-start-column="45" selection-end-line="291" selection-end-column="45" />
+        <state relative-caret-position="191">
+          <caret line="345" selection-start-line="345" selection-end-line="345" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1689#1690#0" expanded="true" />
+            <element signature="e#1723#1724#0" expanded="true" />
+            <element signature="e#1791#1792#0" expanded="true" />
+            <element signature="e#1837#1838#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Animals/Animal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1212">
+          <caret line="91" column="20" selection-start-line="91" selection-start-column="20" selection-end-line="91" selection-end-column="20" />
+          <folding>
+            <element signature="e#1888#1889#0" expanded="true" />
+            <element signature="e#1914#1915#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="120" column="64" selection-start-line="120" selection-start-column="64" selection-end-line="120" selection-end-column="64" />
+        <state relative-caret-position="2599">
+          <caret line="129" column="31" selection-start-line="129" selection-start-column="31" selection-end-line="129" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

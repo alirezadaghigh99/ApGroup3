@@ -99,7 +99,7 @@ public class Well extends Building implements Upgradable {
     public Animation wellAnimation(ImageView imageViewOfFuck) {
         if (getLevel() == 1)
             return new SpriteAnimation(imageView1, Duration.millis(1000), 16, 4, 0, 0,
-                    150, 136);
+                    (int) (imageView1.getImage().getWidth()/4), (int) (imageView1.getImage().getHeight()/4));
         else if (getLevel() == 2)
             return new SpriteAnimation(imageView1, Duration.millis(1000), 16, 4, 0, 0, 592 / 4, 600 / 4);
         else if (getLevel() == 3)

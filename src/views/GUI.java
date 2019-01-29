@@ -49,6 +49,15 @@ public class GUI extends Application {
     private ImageView newGameButton;
     private ImageView loadGameButton;
     ImageView wellView = Well.getWell().getImageView1();
+    private ArrayList<ImageView>animalviews = new ArrayList<>();
+
+    public ArrayList<ImageView> getAnimalviews() {
+        return animalviews;
+    }
+
+    public void setAnimalviews(ArrayList<ImageView> animalviews) {
+        this.animalviews = animalviews;
+    }
 
     private boolean sure;
 
@@ -334,6 +343,7 @@ public class GUI extends Application {
                     lastTime = now;
                 }
                 if (now > lastTime + second / 10) {
+
                     lastTime = now;
                     Cell[][] cells = FarmController.getInstance().getMap().getCells();
                     if ((time%10000 == 80)) {
@@ -707,14 +717,6 @@ public class GUI extends Application {
         Well.getWell().getImageView1().setX(500);
         Well.getWell().getImageView1().setY(50);
         group.getChildren().add(Well.getWell().getImageView1());
-        if (Well.getWell().getLevel() == 1)
-            Well.getWell().getImageView1().setViewport(new Rectangle2D(0, 0, 600, 544));
-        if (Well.getWell().getLevel() == 2)
-            Well.getWell().getImageView1().setViewport(new Rectangle2D(0, 0, 592, 600));
-        if (Well.getWell().getLevel() == 3)
-            Well.getWell().getImageView1().setViewport(new Rectangle2D(0, 0, 576, 632));
-        if (Well.getWell().getLevel() == 4)
-            Well.getWell().getImageView1().setViewport(new Rectangle2D(0, 0, 592, 536));
         Well.getWell().wellAnimation(Well.getWell().getImageView1()).setCycleCount(Animation.INDEFINITE);
         Well.getWell().wellAnimation(Well.getWell().getImageView1()).play();
         Well.getWell().getImageView1().setOnMouseClicked(event -> {

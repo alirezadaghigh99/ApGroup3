@@ -34,13 +34,13 @@ public class WildAnimal extends Animal {
                         for (int z = 0; z < cells[i][j].getCellAnimals().size(); z++) {
                             if (cells[i][j].getCellAnimals().get(z) instanceof ProducerAnimal) {
                                 if (i > x)
-                                    x = x + 1;
+                                    x++;
                                 else if (i < x)
-                                    x = x - 1;
+                                    x--;
                                 if (j > y)
-                                    y = y + 1;
+                                    y++;
                                 else if (j < y)
-                                    y = y - 1;
+                                    y--;
                                 setOnMap();
                                 return;
                             }

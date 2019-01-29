@@ -1,6 +1,7 @@
 package Model;
 
 import Model.Animals.*;
+import com.sun.corba.se.impl.logging.UtilSystemException;
 import javafx.animation.Interpolator;
 import javafx.animation.Transition;
 import javafx.geometry.Rectangle2D;
@@ -83,6 +84,7 @@ public class SpriteAnimalAnimation extends Transition {
                     animal.getyDirection()).equals("nima") && !getDirectionString(animal.getxDirection(), animal.getyDirection()).equals("mehrdad")) {
                 finalPathToImage = pathToImage.concat(getDirectionString(animal.getxDirection(), animal.getyDirection()));
                 System.out.println("mamadnobari");
+                System.out.println(finalPathToImage);
             } else if (getDirectionString(animal.getxDirection(), animal.getyDirection()).equals("alireza")) {
                 finalPathRightsToImage = pathToImage.concat("down_left.png");
                 flag1 = 1;
@@ -110,20 +112,23 @@ public class SpriteAnimalAnimation extends Transition {
 
         ImageView animalView = new ImageView() ;
         try {
-            if (flag2!=1&&flag2!=1&&flag3!=1)
-            System.out.println(finalPathToImage);
-            System.out.println("farshad Pious");
+            if (flag2!=1&&flag1!=1&&flag3!=1) {
+                System.out.println(finalPathToImage);
+                System.out.println("farshad Pious");
 
-               animalView = new ImageView(new Image(new FileInputStream(finalPathToImage)));
+                animalView = new ImageView(new Image(new FileInputStream(finalPathToImage)));
+            }
 
             if (flag1==1||flag2==1||flag3==1)
             {
                 System.out.println(finalPathRightsToImage+ "alll");
+
                 animalView = new ImageView(new Image(new FileInputStream(finalPathRightsToImage)));
+                System.out.println("qolamreza");
                 animalView.setScaleX(-1);
             }
-          if (animal.isMoving()) {
-              if (animal.getxDirection() == 1 && animal.getyDirection() == 1) {
+          if (true) {//ismoving
+              if ((animal.getxDirection() == 1 && animal.getyDirection() == 1)) {//OK//ALANCHECKSHOD
                   if (animal instanceof Cow) {
                       this.height = (int) (animalView.getImage().getHeight() / (count / Utils.COLUMNS_OF_LEFT_DOWN_COW));
                       this.width = (int) (animalView.getImage().getWidth() / (Utils.COLUMNS_OF_LEFT_DOWN_COW));
@@ -155,14 +160,14 @@ public class SpriteAnimalAnimation extends Transition {
                   }
 
               }
-              if (animal.getxDirection() == 1 && animal.getyDirection() == -1) {
+              if ((animal.getxDirection() == 1 && animal.getyDirection() == -1)||(animal.getxDirection() == -1 && animal.getyDirection() == -1)) {
                   if (animal instanceof Cow) {
-                      this.height = (int) (animalView.getImage().getHeight() / (count / Utils.COLUMNS_OF_LEFT_DOWN_COW));
-                      this.width = (int) (animalView.getImage().getWidth() / (Utils.COLUMNS_OF_LEFT_DOWN_COW));
+                      this.height = (int) (animalView.getImage().getHeight() / (count / Utils.COLUMNS_UP_LEFT_OF_COW));
+                      this.width = (int) (animalView.getImage().getWidth() / (Utils.COLUMNS_UP_LEFT_OF_COW));
                   }
                   if (animal instanceof Sheep) {
-                      this.height = (int) (animalView.getImage().getHeight() / (count / Utils.COLUMNS_OF_LEFT_DOWN_COW));
-                      this.width = (int) (animalView.getImage().getWidth() / (Utils.COLUMNS_OF_LEFT_DOWN_COW));
+                      this.height = (int) (animalView.getImage().getHeight() / (count / Utils.COLUMNS_UP_LEFT_OF_SHEEP));
+                      this.width = (int) (animalView.getImage().getWidth() / (Utils.COLUMNS_UP_LEFT_OF_SHEEP));
 
                   }
                   if (animal instanceof Hen) {
@@ -170,271 +175,210 @@ public class SpriteAnimalAnimation extends Transition {
                       this.width = (int) (animalView.getImage().getWidth() / (Utils.COLUMNS_OF_HEN));
                   }
                   if (animal instanceof Lion) {
-                      this.height = (int) (animalView.getImage().getHeight() / (count / Utils.COLUMNS_LEFT_DOWN_OF_LION));
-                      this.width = (int) (animalView.getImage().getWidth() / (Utils.COLUMNS_LEFT_DOWN_OF_LION));
+                      this.height = (int) (animalView.getImage().getHeight() / (count / Utils.COLUMNS_UP_LEFT_OF_LION));
+                      this.width = (int) (animalView.getImage().getWidth() / (Utils.COLUMNS_UP_LEFT_OF_LION));
                   }
                   if (animal instanceof Bear) {
                       this.height = (int) (animalView.getImage().getHeight() / (count / Utils.COLUMNS_LEFT_DOWN_OF_BEAR));
                       this.width = (int) (animalView.getImage().getWidth() / (Utils.COLUMNS_LEFT_DOWN_OF_BEAR));
                   }
                   if (animal instanceof Dog) {
-                      this.height = (int) (animalView.getImage().getHeight() / (count / Utils.COLUMNS_LEFT_DOWN_OF_DOG));
-                      this.width = (int) (animalView.getImage().getWidth() / (Utils.COLUMNS_LEFT_DOWN_OF_DOG));
+                      this.height = (int) (animalView.getImage().getHeight() / (count / Utils.COLUMNS_UP_LEFT_OF_DOG));
+                      this.width = (int) (animalView.getImage().getWidth() / (Utils.COLUMNS_UP_LEFT_OF_DOG));
                   }
                   if (animal instanceof Cat) {
-                      this.height = (int) (animalView.getImage().getHeight() / (count / Utils.COLUMNS_LEFT_DOWN_OF_CAT));
-                      this.width = (int) (animalView.getImage().getWidth() / (Utils.COLUMNS_LEFT_DOWN_OF_CAT));
+                      this.height = (int) (animalView.getImage().getHeight() / (count / Utils.COLUMNS_UP_LEFT_OF_CAT));
+                      this.width = (int) (animalView.getImage().getWidth() / (Utils.COLUMNS_UP_LEFT_OF_CAT));
                   }
               }
-              if (animal.getxDirection() == 1 && animal.getyDirection() == 0) {
+              if (animal.getxDirection() == 1 && animal.getyDirection() == 0) {///OK ALANCHECKSHOD
                   if (animal instanceof Cow) {
-                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_DOWN_OF_COW);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_DOWN_OF_COW);
+                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_COLUMNS_LEFT_OF_COW);
+                      this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_COLUMNS_LEFT_OF_COW));
                   }
                   if (animal instanceof Sheep) {
-                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_DOWN_OF_SHEEP);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_DOWN_OF_SHEEP);
+                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_OF_SHEEP);
+                      this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_LEFT_OF_SHEEP));
                   }
                   if (animal instanceof Hen) {
                       this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_OF_HEN);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_OF_HEN);
+                      this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_OF_HEN));
                   }
                   if (animal instanceof Lion) {
-                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_DOWN_OF_LION);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_DOWN_OF_LION);
+                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_OF_LION);
+                      this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_LEFT_OF_LION));
                   }
                   if (animal instanceof Bear) {
-                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_DOWN_OF_BEAR);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_DOWN_OF_BEAR);
+                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_OF_BEAR);
+                      this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_LEFT_OF_BEAR));
                   }
                   if (animal instanceof Dog) {
-                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_DOWN_OF_DOG);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_DOWN_OF_DOG);
+                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_OF_DOG);
+                      this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_LEFT_OF_DOG));
                   }
                   if (animal instanceof Cat) {
-                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_DOWN_OF_CAT);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_DOWN_OF_CAT);
+                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_OF_CAT);
+                      this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_LEFT_OF_CAT));
                   }
 
               }
-              if (animal.getxDirection() == -1 && animal.getyDirection() == 1) {
+              if (animal.getxDirection() == -1 && animal.getyDirection() == 1) {//OKALANCHECKSHOD
+                  if (animal instanceof Cow) {
+                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_OF_LEFT_DOWN_COW);
+                      this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_OF_LEFT_DOWN_COW));
+                  }
+                  if (animal instanceof Sheep) {
+                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_DOWN_OF_SHEEP);
+                      this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_LEFT_DOWN_OF_SHEEP));
+                  }
+                  if (animal instanceof Hen) {
+                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_OF_HEN);
+                      this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_OF_HEN));
+                  }
+                  if (animal instanceof Lion) {
+                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_DOWN_OF_LION);
+                      this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_LEFT_DOWN_OF_LION));
+                  }
+                  if (animal instanceof Bear) {
+                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_DOWN_OF_BEAR);
+                      this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_LEFT_DOWN_OF_BEAR));
+                  }
+                  if (animal instanceof Dog) {
+                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_DOWN_OF_DOG);
+                      this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_LEFT_DOWN_OF_DOG));
+                  }
+                  if (animal instanceof Cat) {
+                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_DOWN_OF_CAT);
+                      this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_LEFT_DOWN_OF_CAT));
+                  }
+
+              }
+              if (animal.getxDirection() == -1 && animal.getyDirection() == -1) {//CURRENT//OK ALANCHECKSHOD
+
                   if (animal instanceof Cow) {
                       this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_UP_LEFT_OF_COW);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_UP_LEFT_OF_COW);
+                      this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_UP_LEFT_OF_COW));
                   }
                   if (animal instanceof Sheep) {
                       this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_UP_LEFT_OF_SHEEP);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_UP_LEFT_OF_SHEEP);
+                      this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_UP_LEFT_OF_SHEEP));
                   }
                   if (animal instanceof Hen) {
                       this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_OF_HEN);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_OF_HEN);
+                      this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_OF_HEN));
                   }
                   if (animal instanceof Lion) {
                       this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_UP_LEFT_OF_LION);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_UP_LEFT_OF_LION);
+                      this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_UP_LEFT_OF_LION));
                   }
                   if (animal instanceof Bear) {
                       this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_UP_LEFT_OF_BEAR);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_UP_LEFT_OF_BEAR);
+                      this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_UP_LEFT_OF_BEAR));
                   }
                   if (animal instanceof Dog) {
                       this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_UP_LEFT_OF_DOG);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_UP_LEFT_OF_DOG);
+                      this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_UP_LEFT_OF_DOG));
                   }
                   if (animal instanceof Cat) {
                       this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_UP_LEFT_OF_CAT);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_UP_LEFT_OF_COW);
+                      this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_UP_LEFT_OF_CAT));
                   }
 
               }
-              if (animal.getxDirection() == -1 && animal.getyDirection() == -1) {
-
-                  if (animal instanceof Cow) {
-                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_UP_LEFT_OF_COW);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_UP_LEFT_OF_COW);
-                  }
-                  if (animal instanceof Sheep) {
-                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_UP_LEFT_OF_SHEEP);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_UP_LEFT_OF_SHEEP);
-                  }
-                  if (animal instanceof Hen) {
-                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_OF_HEN);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_OF_HEN);
-                  }
-                  if (animal instanceof Lion) {
-                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_UP_LEFT_OF_LION);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_UP_LEFT_OF_LION);
-                  }
-                  if (animal instanceof Bear) {
-                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_UP_LEFT_OF_BEAR);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_UP_LEFT_OF_BEAR);
-                  }
-                  if (animal instanceof Dog) {
-                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_UP_LEFT_OF_DOG);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_UP_LEFT_OF_DOG);
-                  }
-                  if (animal instanceof Cat) {
-                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_UP_LEFT_OF_CAT);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_UP_LEFT_OF_CAT);
-                  }
-
-              }
-              if (animal.getxDirection() == -1 && animal.getyDirection() == 0) {
-                  if (animal instanceof Cow) {
-                      System.out.println("bala");
-                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_UP_OF_CAT);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_UP_LEFT_OF_CAT);
-                  }
-                  if (animal instanceof Sheep) {
-                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_UP_OF_CAT);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_UP_OF_CAT);
-                  }
-                  if (animal instanceof Hen) {
-                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_UP_OF_CAT);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_UP_OF_CAT);
-                  }
-                  if (animal instanceof Lion) {
-                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_UP_OF_CAT);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_UP_OF_CAT);
-                  }
-                  if (animal instanceof Bear) {
-                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_UP_OF_CAT);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_UP_OF_CAT);
-                  }
-                  if (animal instanceof Dog) {
-                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_UP_OF_CAT);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_UP_OF_CAT);
-                  }
-                  if (animal instanceof Cat) {
-                      this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_UP_OF_CAT);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_UP_OF_CAT);
-                  }
-
-              }
-              if (animal.getxDirection() == 0 && animal.getyDirection() == 1) {
+              if (animal.getxDirection() == -1 && animal.getyDirection() == 0) {//OK
                   if (animal instanceof Cow) {
                       System.out.println("bala");
 
                       this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_COLUMNS_LEFT_OF_COW);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_COLUMNS_LEFT_OF_COW);
+                      this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_COLUMNS_LEFT_OF_COW));
                   }
                   if (animal instanceof Sheep) {
                       this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_EAT_SHEEP);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_LEFT_OF_SHEEP);
+                      this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_LEFT_OF_SHEEP));
                   }
                   if (animal instanceof Hen) {
                       this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_OF_HEN);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_OF_HEN);
+                      this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_OF_HEN));
                   }
                   if (animal instanceof Lion) {
                       this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_OF_LION);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_LEFT_OF_LION);
+                      this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_LEFT_OF_LION));
                   }
                   if (animal instanceof Bear) {
                       this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_OF_BEAR);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_LEFT_OF_BEAR);
+                      this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_LEFT_OF_BEAR));
                   }
                   if (animal instanceof Dog) {
                       this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_OF_DOG);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_LEFT_OF_DOG);
+                      this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_LEFT_OF_DOG));
                   }
                   if (animal instanceof Cat) {
                       this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_OF_CAT);
-                      this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_LEFT_OF_CAT);
+                      this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_LEFT_OF_CAT));
                   }
-                  if (animal.getxDirection() == 0 && animal.getyDirection() == -1) {
+                  if (animal.getxDirection() == 0 && animal.getyDirection() == 1) {//OKALANCHEKCSHOD
                       if (animal instanceof Cow) {
                           System.out.println("bala");
 
-                          this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_COLUMNS_LEFT_OF_COW);
-                          this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_COLUMNS_LEFT_OF_COW);
+                          this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_DOWN_OF_COW);
+                          this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_DOWN_OF_COW));
                       }
                       if (animal instanceof Sheep) {
-                          this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_EAT_SHEEP);
-                          this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_LEFT_OF_SHEEP);
+                          this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_DOWN_OF_SHEEP);
+                          this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_DOWN_OF_SHEEP));
                       }
                       if (animal instanceof Hen) {
                           this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_OF_HEN);
-                          this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_OF_HEN);
+                          this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_OF_HEN));
                       }
                       if (animal instanceof Lion) {
-                          this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_OF_LION);
-                          this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_LEFT_OF_LION);
+                          this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_DOWN_OF_LION);
+                          this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_DOWN_OF_LION));
                       }
                       if (animal instanceof Bear) {
-                          this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_OF_BEAR);
-                          this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_LEFT_OF_BEAR);
+                          this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_DOWN_OF_BEAR);
+                          this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_DOWN_OF_BEAR));
                       }
                       if (animal instanceof Dog) {
-                          this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_OF_DOG);
-                          this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_LEFT_OF_DOG);
+                          this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_DOWN_OF_DOG);
+                          this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_DOWN_OF_DOG));
                       }
                       if (animal instanceof Cat) {
-                          this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_OF_CAT);
-                          this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_LEFT_OF_CAT);
+                          this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_DOWN_OF_CAT);
+                          this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_DOWN_OF_CAT));
                       }
 
                   }
-                  if (animal.getxDirection() == 0 && animal.getyDirection() == -1) {
+                  if (animal.getxDirection() == 0 && animal.getyDirection() == -1) {//OK//ALANCHECKSHOD
                       if (animal instanceof Cow) {
-                          this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_COLUMNS_LEFT_OF_COW);
-                          this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_COLUMNS_LEFT_OF_COW);
+                          this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_UP_OF_COW);
+                          this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_UP_OF_COW));
                       }
                       if (animal instanceof Sheep) {
-                          this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_EAT_SHEEP);
-                          this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_LEFT_OF_SHEEP);
+                          this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_UP_OF_SHEEP);
+                          this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_UP_OF_SHEEP));
                       }
                       if (animal instanceof Hen) {
                           this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_OF_HEN);
-                          this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_OF_HEN);
+                          this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_OF_HEN));
                       }
                       if (animal instanceof Lion) {
-                          this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_OF_LION);
-                          this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_LEFT_OF_LION);
+                          this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_UP_OF_LION);
+                          this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_UP_OF_LION));
                       }
                       if (animal instanceof Bear) {
-                          this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_OF_BEAR);
-                          this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_LEFT_OF_BEAR);
+                          this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_UP_OF_BEAR);
+                          this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_UP_OF_BEAR));
                       }
                       if (animal instanceof Dog) {
-                          this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_OF_DOG);
-                          this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_LEFT_OF_DOG);
+                          this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_UP_OF_DOG);
+                          this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_UP_OF_DOG));
                       }
                       if (animal instanceof Cat) {
-                          this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_OF_CAT);
-                          this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_LEFT_OF_CAT);
+                          this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_UP_OF_CAT);
+                          this.height = (int) (animalView.getImage().getWidth() / (count / Utils.COLUMNS_UP_OF_CAT));
                       }
-                      if (animal.getxDirection() == 0 && animal.getyDirection() == -1) {
-                          if (animal instanceof Cow) {
-                              this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_COLUMNS_LEFT_OF_COW);
-                              this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_COLUMNS_LEFT_OF_COW);
-                          }
-                          if (animal instanceof Sheep) {
-                              this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_EAT_SHEEP);
-                              this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_LEFT_OF_SHEEP);
-                          }
-                          if (animal instanceof Hen) {
-                              this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_OF_HEN);
-                              this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_OF_HEN);
-                          }
-                          if (animal instanceof Lion) {
-                              this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_OF_LION);
-                              this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_LEFT_OF_LION);
-                          }
-                          if (animal instanceof Bear) {
-                              this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_OF_BEAR);
-                              this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_LEFT_OF_BEAR);
-                          }
-                          if (animal instanceof Dog) {
-                              this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_OF_DOG);
-                              this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_LEFT_OF_DOG);
-                          }
-                          if (animal instanceof Cat) {
-                              this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_OF_CAT);
-                              this.height = (int) (animalView.getImage().getWidth() / count / Utils.COLUMNS_LEFT_OF_CAT);
-                          }
-                      }
+
                   }
               }
           }

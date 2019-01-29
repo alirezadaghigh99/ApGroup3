@@ -88,7 +88,9 @@ public abstract class Animal extends Entity {
     public void nextTurn() {
 
     }
-    public abstract boolean isMoving();
+    public  boolean isMoving(){
+        return true;
+    }
     protected Image toLeft  ;
     protected Image toDownLeft  ;
     protected Image toDown  ;

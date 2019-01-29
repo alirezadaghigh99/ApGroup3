@@ -150,6 +150,15 @@ public class Utils {
     public static final int COLUMNS_EAT_SHEEP =4;
     public static final int COLUMNS_CAGE_LION = 6;
     public static final int COLUMNS_CAGE_BEAR = 6;
+    public static final int COULUMNS_OF_UP_LEFT_COW = 3 ;
+    public static final int COULUMNS_OF_UP_LEFT_DOG = 5 ;
+    public static final int COULUMNS_OF_UP_LEFT_SHEEP = 5 ;
+    public static final int COULUMNS_OF_UP_LEFT_HEN = 5 ;
+    public static final int COULUMNS_OF_UP_LEFT_CAT= 6 ;
+    public static final int COULUMNS_OF_UP_LEFT_BEAR = 4 ;
+    public static final int COULUMNS_OF_UP_LEFT_LION = 6 ;
+
+
 
 
 
