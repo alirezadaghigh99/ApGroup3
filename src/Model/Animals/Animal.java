@@ -152,6 +152,6 @@ public abstract class Animal extends Entity {
 
 
     public int getSpeed() {
-        return 10;
+        return 1;
     }
 }

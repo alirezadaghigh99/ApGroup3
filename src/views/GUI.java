@@ -2,9 +2,15 @@ package views;
 
 import Controller.FarmController;
 import Model.Animals.*;
-import Model.OnMaps.*;
+import Model.OnMaps.Cell;
+import Model.OnMaps.Depot;
+import Model.OnMaps.Grass;
+import Model.OnMaps.Well;
 import Model.OurFarm;
-import Model.Products.*;
+import Model.Products.Egg;
+import Model.Products.Milk;
+import Model.Products.Product;
+import Model.Products.Wool;
 import Model.SpriteAnimalAnimation;
 import Model.Utils;
 import Model.Workshop.CakeBakery;
@@ -13,7 +19,6 @@ import Model.Workshop.SewingFactory;
 import Model.Workshop.SpinneryFactory;
 import javafx.animation.*;
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -22,7 +27,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
@@ -33,7 +37,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import javax.rmi.CORBA.Util;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -41,29 +44,24 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class GUI extends Application {
+    ImageView wellView = Well.getWell().getImageView1();
+    Media music = new Media(new File("music/pirates.mp3").toURI().toString());
+    MediaPlayer player = new MediaPlayer(music);
+    int X;
+    int Y;
     private Group group = new Group();
     private Scene scene = new Scene(group, 1018.5, 745.5);
     private ImageView background;
-
     private ImageView firstMenu;
     private ImageView newGameButton;
     private ImageView loadGameButton;
-    ImageView wellView = Well.getWell().getImageView1();
-    private ArrayList<ImageView>animalviews = new ArrayList<>();
-
-    public ArrayList<ImageView> getAnimalviews() {
-        return animalviews;
-    }
-
-    public void setAnimalviews(ArrayList<ImageView> animalviews) {
-        this.animalviews = animalviews;
-    }
-
+    private ArrayList<ImageView> animalviews = new ArrayList<>();
     private boolean sure;
-
     private ArrayList<Text> players = new ArrayList<>();
-    Media music = new Media(new File("music/pirates.mp3").toURI().toString());
-    MediaPlayer player = new MediaPlayer(music);
+    private ImageView[][] cowView = new ImageView[Utils.mapSize][Utils.mapSize];
+    private ImageView[][] eggs = new ImageView[Utils.mapSize][Utils.mapSize];
+    private ImageView[][] wools = new ImageView[Utils.mapSize][Utils.mapSize];
+    private ImageView[][] milks = new ImageView[Utils.mapSize][Utils.mapSize];
 
     {
         try {
@@ -82,6 +80,14 @@ public class GUI extends Application {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public ArrayList<ImageView> getAnimalviews() {
+        return animalviews;
+    }
+
+    public void setAnimalviews(ArrayList<ImageView> animalviews) {
+        this.animalviews = animalviews;
     }
 
     public Label getCoin() {
@@ -227,7 +233,6 @@ public class GUI extends Application {
         });
     }
 
-
     public void loadGameCall(ImageView menu, ImageView newGameButton, ImageView loadGameButton) throws Exception {
         group.getChildren().removeAll(menu, newGameButton, loadGameButton);
         FileInputStream f = new FileInputStream("pictures/secondMenu.jpg");
@@ -294,16 +299,14 @@ public class GUI extends Application {
             }
         });
     }
-    int X ;
-    int Y;
 
     public void playGame() throws Exception {
         group.getChildren().removeAll(group);
         group.getChildren().addAll(background);
         FarmController.getInstance().listenForCommand();
         showGrass();
-       // showHen();
-       // showCow();
+        // showHen();
+        // showCow();
         showCoins();
         showUpMap();
         showDepot();
@@ -334,7 +337,6 @@ public class GUI extends Application {
             private long second = 1000000000;
             private long time = 0;
 
-            
 
             @Override
 
@@ -343,27 +345,25 @@ public class GUI extends Application {
                     lastTime = now;
                 }
                 if (now > lastTime + second / 10) {
-
+                    animalviews.clear();
                     lastTime = now;
                     Cell[][] cells = FarmController.getInstance().getMap().getCells();
-                    if ((time%10000 == 80)) {
+                    if ((time % 10000 == 800)) {
                         Lion lion = new Lion();
                         lion.setX((int) (Math.random() * Utils.mapSize));
                         lion.setY((int) (Math.random() * Utils.mapSize));
                         cells[lion.getX()][lion.getY()].addCellAnimals(lion);
                     }
-                    if (time%120000 == 108) {
+                    if (time % 120000 == 1008) {
                         Bear bear = new Bear();
                         bear.setX((int) (Math.random() * Utils.mapSize));
                         bear.setY((int) (Math.random() * Utils.mapSize));
                         cells[bear.getX()][bear.getY()].addCellAnimals(bear);
                     }
-                    for (int i = 0  ; i<Utils.mapSize ; i++)
-                    {
-                        for (int j = 0 ; j<Utils.mapSize ; j++) {
+                    for (int i = 0; i < Utils.mapSize; i++) {
+                        for (int j = 0; j < Utils.mapSize; j++) {
                             Iterator<Animal> animalincell = FarmController.getInstance().getMap().getCells()[i][j].getCellAnimals().iterator();
-                            while (animalincell.hasNext())
-                            {
+                            while (animalincell.hasNext()) {
                                 Animal animal = animalincell.next();
                                 X = animal.getX();
                                 Y = animal.getY();
@@ -379,10 +379,10 @@ public class GUI extends Application {
                         for (int j = 0; j < Utils.mapSize; j++) {
                             ArrayList<Animal> animals = cells[i][j].getCellAnimals();
                             for (Animal animal : animals) {
-                               // animal.nextTurn();
+                                // animal.nextTurn();
                                 OurFarm.getOurFarm().getAnimals().add(animal);
                             }
-                          //  cells[i][j].getCellAnimals().clear();
+                            //  cells[i][j].getCellAnimals().clear();
                         }
                     }
 
@@ -394,20 +394,24 @@ public class GUI extends Application {
 //                        cells[x][y].getCellAnimals().add(animal);
 //
 //                    }
-                    for (int i = 0 ; i<Utils.mapSize ; i++)
-                    {
-                        for (int j =0 ; j<Utils.mapSize ; j++)
-                        {
-                            ArrayList<Animation>animations = new ArrayList<>();
-                            ArrayList<Animal> animals = FarmController.getInstance().getMap().getCells()[i][j].getCellAnimals();
-                            for (Animal animal:animals)
-                            {
-                              //  System.out.println("mamad");
-                                SpriteAnimalAnimation animation  = new SpriteAnimalAnimation(animal , 1000 , group);
+                    //group.getChildren().removeAll(animalviews);
+                    for (int i = 0; i < Utils.mapSize; i++) {
+                        for (int j = 0; j < Utils.mapSize; j++) {
+                            ArrayList<Animation> animations = new ArrayList<>();
 
-                               animation.setCycleCount(Animation.INDEFINITE);
+                            ArrayList<Animal> animals = FarmController.getInstance().getMap().getCells()[i][j].getCellAnimals();
+                            for (Animal animal : animals) {
+                                //  System.out.println("mamad");
+                                SpriteAnimalAnimation animation = new SpriteAnimalAnimation(animal, 1000, group);
+                              ImageView imageView1 = animation.getImageView();
+                              imageView1.setViewport(new Rectangle2D(0 , 0 , animation.getWidth() ,animation.getHeight() ));
+                                animation.setX(animal.getX());
+                                animation.setY(animal.getY());
+                                //animalviews.add(animation.getImageView());
+                                animation.setCycleCount(Animation.INDEFINITE);
                                 animations.add(animation);
                             }
+
                             for (Animation animation : animations)
                                 animation.play();
 
@@ -428,14 +432,6 @@ public class GUI extends Application {
         };
         animationTimer.start();
     }
-    private ImageView[][] cowView = new ImageView[Utils.mapSize][Utils.mapSize];
-    private ImageView[][] eggs = new ImageView[Utils.mapSize][Utils.mapSize];
-    private ImageView[][] wools = new ImageView[Utils.mapSize][Utils.mapSize];
-    private ImageView[][] milks = new ImageView[Utils.mapSize][Utils.mapSize];
-
-
-
-
 
     private void showProducts(ArrayList<Product> products) throws Exception {
         Image eggIMG = new Image(new FileInputStream("Products/Egg/normal.png"));
@@ -510,8 +506,7 @@ public class GUI extends Application {
 //
 //    }
 
-    public void showDomestic()
-    {
+    public void showDomestic() {
         ImageView[][] henView = new ImageView[Utils.mapSize][Utils.mapSize];
     }
 
@@ -522,7 +517,7 @@ public class GUI extends Application {
             for (int j = 0; j < Utils.mapSize; j++) {
                 grassView[i][j] = new ImageView(grassIMG);
                 grassView[i][j].relocate(Utils.START_Y + i * Utils.CELL_WIDTH, Utils.START_X + j * Utils.CELL_HEIGHT);
-                grassView[i][j].setViewport(new Rectangle2D(0, 0, 192, 192));
+                grassView[i][j].setViewport(new Rectangle2D(0, 0, Utils.CELL_WIDTH, Utils.CELL_HEIGHT));
                 Grass.getInstance().grassAnimation().setCycleCount(Animation.INDEFINITE);
                 Grass.getInstance().grassAnimation().play();
                 if (FarmController.getInstance().getMap().getCells()[i][j].getGrass().isGrass())
@@ -615,7 +610,7 @@ public class GUI extends Application {
                     Hen hen = new Hen();
                     FarmController.getInstance().addAnimalAction(hen);
                     showCoins();
-                   // showHen();
+                    // showHen();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -709,7 +704,7 @@ public class GUI extends Application {
 //                }
 //            }
 //        }
-   // }
+    // }
 
     public void showWell() {
         //if (Well.getWell().getLevel()==1)
@@ -753,7 +748,7 @@ public class GUI extends Application {
 
     public void showCakeBakery() {
         ImageView viewCakeBakery = CakeBakery.getCakeBakery().getViewOfCakeBakery();
-       ImageView startView = CakeBakery.getCakeBakery().getStartView();
+        ImageView startView = CakeBakery.getCakeBakery().getStartView();
         startView.setX(110);
         startView.setY(210);
 
@@ -765,7 +760,6 @@ public class GUI extends Application {
         group.getChildren().add(viewCakeBakery);
 
 
-
         viewCakeBakery.setViewport(new Rectangle2D(0, 0, 536, 568));
         CakeBakery.getCakeBakery().CakeAnimation().setCycleCount(Animation.INDEFINITE);
         CakeBakery.getCakeBakery().CakeAnimation().play();
@@ -775,14 +769,13 @@ public class GUI extends Application {
             if (!group.getChildren().contains(startView)) {
 
                 group.getChildren().add(startView);
-            }
-            else startView.setVisible(true);
+            } else startView.setVisible(true);
         });
         startView.setOnMouseClicked(event -> {
             startView.setVisible(false);
             CakeBakery.getCakeBakery().makeCake();
         });
-        int c =0 ;
+        int c = 0;
 
     }
 
