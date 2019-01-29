@@ -2,13 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c64801da-0b49-48e1-b1f4-71066c99b6ad" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Animals/Africa/Cow/death.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Animals/Africa/Cow/down.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Animals/Africa/Cow/down_left.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Animals/Africa/Cow/eat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Animals/Africa/Cow/left.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Animals/Africa/Cow/up.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Animals/Africa/Cow/up_left.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Animals/Africa/Grizzly/caged.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Animals/Africa/Grizzly/down.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Animals/Africa/Grizzly/down_left.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Animals/Africa/Grizzly/left.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Animals/Africa/Grizzly/up.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Animals/Africa/Grizzly/up_left.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Animals/Africa/Sheep/death.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Animals/Africa/Sheep/down.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Animals/Africa/Sheep/down_left.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Animals/Africa/Sheep/eat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Animals/Africa/Sheep/left.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Animals/Africa/Sheep/up.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Animals/Africa/Sheep/up_left.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Animals/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Animals/WildAnimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/WildAnimal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/OnMaps/Well.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/OnMaps/Well.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Animals/Cow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/Cow.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -252,37 +267,46 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="11748" />
-          <entry key="txt" value="31" />
+          <entry key="txt" value="36" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="11748" />
-          <entry key="PLAIN_TEXT" value="31" />
+          <entry key="PLAIN_TEXT" value="36" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="41" />
+          <entry key="java" value="42" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="41" />
+          <entry key="JAVA" value="42" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2599">
+            <state relative-caret-position="865">
               <caret line="129" column="31" selection-start-line="129" selection-start-column="31" selection-end-line="129" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Model/Animals/Cow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="43" column="59" selection-start-line="43" selection-start-column="59" selection-end-line="43" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -490,7 +514,6 @@
         <option value="$PROJECT_DIR$/src/Model/Workshop/CakeBakery.java" />
         <option value="$PROJECT_DIR$/src/Model/Workshop/EggPowderPlantWorkShop.java" />
         <option value="$PROJECT_DIR$/src/Model/Animals/Hen.java" />
-        <option value="$PROJECT_DIR$/src/Model/Animals/Cow.java" />
         <option value="$PROJECT_DIR$/src/Controller/FarmController.java" />
         <option value="$PROJECT_DIR$/src/Model/Animals/WildAnimal.java" />
         <option value="$PROJECT_DIR$/src/Model/Utils.java" />
@@ -498,6 +521,7 @@
         <option value="$PROJECT_DIR$/src/views/GUI.java" />
         <option value="$PROJECT_DIR$/src/Model/Animals/Animal.java" />
         <option value="$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java" />
+        <option value="$PROJECT_DIR$/src/Model/Animals/Cow.java" />
       </list>
     </option>
   </component>
@@ -550,7 +574,21 @@
               <item name="ApGroup3" type="462c0819:PsiDirectoryNode" />
               <item name="Animals" type="462c0819:PsiDirectoryNode" />
               <item name="Africa" type="462c0819:PsiDirectoryNode" />
-              <item name="Lion" type="462c0819:PsiDirectoryNode" />
+              <item name="Cow" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ApGroup3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ApGroup3" type="462c0819:PsiDirectoryNode" />
+              <item name="Animals" type="462c0819:PsiDirectoryNode" />
+              <item name="Africa" type="462c0819:PsiDirectoryNode" />
+              <item name="Grizzly" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ApGroup3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ApGroup3" type="462c0819:PsiDirectoryNode" />
+              <item name="Animals" type="462c0819:PsiDirectoryNode" />
+              <item name="Africa" type="462c0819:PsiDirectoryNode" />
+              <item name="Sheep" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ApGroup3" type="b2602c69:ProjectViewProjectNode" />
@@ -791,14 +829,7 @@
       <workItem from="1548614014325" duration="6879000" />
       <workItem from="1548622481879" duration="9240000" />
       <workItem from="1548693175589" duration="8288000" />
-      <workItem from="1548741470854" duration="4671000" />
-    </task>
-    <task id="LOCAL-00006" summary="Dog and Cat added">
-      <created>1544735638685</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1544735638685</updated>
+      <workItem from="1548741470854" duration="6192000" />
     </task>
     <task id="LOCAL-00007" summary="Producer animals and it's extensions added">
       <created>1544735904977</created>
@@ -1136,11 +1167,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548696022125</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="akbar">
+      <created>1548759112452</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1548759112453</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="298943000" />
+    <option name="totallyTimeSpent" value="300464000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1155,7 +1193,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2473525" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2473525" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1164,7 +1202,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32984293" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30136988" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30136988" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39554796" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1228,7 +1266,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="pickUpAction" />
     <MESSAGE value="print map complete" />
     <MESSAGE value="cage complete" />
     <MESSAGE value="cage and collision debugged" />
@@ -1253,7 +1290,8 @@
     <MESSAGE value="depot and spinnery" />
     <MESSAGE value="xfb" />
     <MESSAGE value="sfdadsf" />
-    <option name="LAST_COMMIT_MESSAGE" value="sfdadsf" />
+    <MESSAGE value="akbar" />
+    <option name="LAST_COMMIT_MESSAGE" value="akbar" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -1423,13 +1461,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Animals/Cow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="26" column="64" selection-start-line="26" selection-start-column="64" selection-end-line="26" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Workshop/EggPowderPlantWorkShop.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
@@ -1487,13 +1518,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3542">
-          <caret line="154" column="59" selection-start-line="154" selection-start-column="59" selection-end-line="154" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -1592,13 +1616,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3542">
+          <caret line="154" column="59" selection-start-line="154" selection-start-column="59" selection-end-line="154" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2599">
+        <state relative-caret-position="865">
           <caret line="129" column="31" selection-start-line="129" selection-start-column="31" selection-end-line="129" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Animals/Cow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="43" column="59" selection-start-line="43" selection-start-column="59" selection-end-line="43" selection-end-column="59" />
         </state>
       </provider>
     </entry>
