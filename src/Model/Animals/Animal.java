@@ -9,8 +9,8 @@ import javafx.scene.image.Image;
 
 public abstract class Animal extends Entity {
     protected Cell cell;
-    double xDirection = 1;
-    double yDirection = -1 ;
+    double xDirection;
+    double yDirection  ;
 
 
 

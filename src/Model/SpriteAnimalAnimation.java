@@ -152,7 +152,7 @@ public class SpriteAnimalAnimation extends Transition {
                 System.out.println("qolamreza");
                 animalView.setScaleX(-1);
             }
-            if (true) {//ismoving
+            if (animal.isMoving()) {//ismoving
                 if ((animal.getxDirection() == 1 && animal.getyDirection() == 1)) {//OK//ALANCHECKSHOD
                     if (animal instanceof Cow) {
                         this.height = (int) (animalView.getImage().getHeight() / (count / Utils.COLUMNS_OF_LEFT_DOWN_COW));
@@ -351,9 +351,9 @@ public class SpriteAnimalAnimation extends Transition {
                         this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_OF_CAT);
                         this.height = (int) (animalView.getImage().getHeight() / (count / Utils.COLUMNS_LEFT_OF_CAT));
                     }
+                }
                     if (animal.getxDirection() == 0 && animal.getyDirection() == 1) {//OKALANCHEKCSHOD
                         if (animal instanceof Cow) {
-                            System.out.println("bala");
 
                             this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_DOWN_OF_COW);
                             this.height = (int) (animalView.getImage().getHeight() / (count / Utils.COLUMNS_DOWN_OF_COW));
@@ -418,7 +418,7 @@ public class SpriteAnimalAnimation extends Transition {
                         }
 
                     }
-                }
+
             }
             if (animal.isMoving()) {
                 animalView.setX(Utils.START_X + cellSize * animal.getX() + animal.getxDirection() * animal.getSpeed());
