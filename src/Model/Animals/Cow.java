@@ -16,12 +16,7 @@ import java.io.FileNotFoundException;
 public class Cow extends ProducerAnimal {
     private Milk milk;
 
-    @Override
-    public boolean isMoving() {
-        if (cells[x][y].getGrass().isGrass())
-            return false ;
-        else  return true ;
-    }
+
 //    public Animation cowAnimation()
 //    {
 //        return new SpriteAnimalAnimation(Cow.getInstance() , 3);

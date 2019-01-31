@@ -2,9 +2,9 @@ package Model;
 
 public class Utils {
     public static final int ADDWATERCOST = 50;
-    public static final int mapSize = 10;
-    public static final int LOW_ENERGY_AMOUNT = 300;
-    public static final int FULL_ENERGY_AMOUNT = 500;
+    public static final int mapSize = 30;
+    public static final int LOW_ENERGY_AMOUNT = 30;
+    public static final int FULL_ENERGY_AMOUNT = 50;
     public static final int DEPOT_SIZE_FOR_EGG = 1;
     public static final int BUY_COST_FOR_EGG = 20;
     public static final int SALE_COST_FOR_EGG = 10;
@@ -106,8 +106,8 @@ public class Utils {
     public static final int UPGRADE_WELL_COST = 80;
     public static final int START_X = 240;
     public static final int START_Y = 240;
-    public static final int CELL_HEIGHT = 30;
-    public static final int CELL_WIDTH = 54;
+    public static final int CELL_HEIGHT = 10;
+    public static final int CELL_WIDTH = 18;
     public static final int COUNT_OF_ALL = 24;
     public static final int COLUMNS_OF_DEATH_COW = 3;
     public static final int COLUMNS_OF_HEN = 5;

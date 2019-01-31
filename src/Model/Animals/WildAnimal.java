@@ -7,6 +7,16 @@ import Model.Utils;
 
 public class WildAnimal extends Animal {
     OurFarm ourFarm =OurFarm.getOurFarm();
+    private boolean isCaged = false ;
+    @Override
+    public boolean isCaged() {
+        return isCaged;
+    }
+
+    public void setCaged(boolean caged) {
+        isCaged = caged;
+    }
+
     private int energy = Utils.FULL_ENERGY_AMOUNT;
 
     public int getEnergy() {
@@ -33,14 +43,16 @@ public class WildAnimal extends Animal {
                             !cells[i][j].getCellAnimals().isEmpty()) {
                         for (int z = 0; z < cells[i][j].getCellAnimals().size(); z++) {
                             if (cells[i][j].getCellAnimals().get(z) instanceof ProducerAnimal) {
-                                if (i > x)
-                                    x++;
-                                else if (i < x)
-                                    x--;
-                                if (j > y)
-                                    y++;
-                                else if (j < y)
-                                    y--;
+                                if (isMoved()) {
+                                    if (i > x)
+                                        x++;
+                                    else if (i < x)
+                                        x--;
+                                    if (j > y)
+                                        y++;
+                                    else if (j < y)
+                                        y--;
+                                }
                                 setOnMap();
                                 return;
                             }
@@ -67,7 +79,7 @@ public class WildAnimal extends Animal {
 
     @Override
     public boolean isMoving() {
-        return true ;
+        return isMoved();
     }
 
     @Override

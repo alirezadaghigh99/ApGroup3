@@ -21,6 +21,11 @@ public class DomesticAnimal extends Animal {
     }
 
     @Override
+    protected boolean isCaged() {
+        return false;
+    }
+
+    @Override
     public void setOnMap() {
         super.setOnMap();
     }

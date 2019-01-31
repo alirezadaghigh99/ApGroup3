@@ -18,52 +18,54 @@ public abstract class Animal extends Entity {
         double rand = Math.random() * 8;
 
         int random = (int) rand;
-        if (random == 0) {
-            this.x--;
-            xDirection = -1 ;
-            yDirection = 0;
-        }
-        if (random == 1) {
-            this.x--;
-            this.y++;
-            xDirection = -1 ;
-            yDirection = 1;
+        if (isMoving()) {
+            if (random == 0) {
+                this.x--;
+                xDirection = -1;
+                yDirection = 0;
+            }
+            if (random == 1) {
+                this.x--;
+                this.y++;
+                xDirection = -1;
+                yDirection = 1;
 
+            }
+            if (random == 2) {
+                this.y++;
+                xDirection = 0;
+                yDirection = 1;
+            }
+            if (random == 3) {
+                this.x++;
+                this.y++;
+                xDirection = 1;
+                yDirection = 1;
+            }
+            if (random == 4) {
+                this.x++;
+                xDirection = 1;
+                yDirection = 0;
+            }
+            if (random == 5) {
+                this.x++;
+                this.y--;
+                xDirection = 1;
+                yDirection = -1;
+            }
+            if (random == 6) {
+                this.y--;
+                xDirection = 0;
+                yDirection = -1;
+            }
+            if (random == 7) {
+                this.x--;
+                this.y--;
+                xDirection = -1;
+                yDirection = -1;
+            }
+            setOnMap();
         }
-        if (random == 2) {
-            this.y++;
-            xDirection = 0 ;
-            yDirection = 1;
-        }
-        if (random == 3) {
-            this.x++;
-            this.y++;
-            xDirection = 1 ;
-            yDirection = 1;
-        }
-        if (random == 4) {
-            this.x++;
-            xDirection = 1 ;
-            yDirection = 0;
-        }
-        if (random == 5) {
-            this.x++;
-            this.y--;
-            xDirection = 1 ;
-            yDirection = -1;
-        }
-        if (random == 6) {
-            this.y--;
-            xDirection = 0 ;
-            yDirection = -1;
-        }
-        if (random == 7) {
-            this.x--;
-            this.y--;
-            xDirection = -1 ;
-            yDirection = -1;
-        }
-        setOnMap();
     }
     public double getxDirection() {
         return xDirection;
@@ -88,16 +90,24 @@ public abstract class Animal extends Entity {
     public void nextTurn() {
 
     }
-    public  boolean isMoving(){
-        return true;
+    private boolean moved = true ;
+
+    public boolean isMoved() {
+        return moved;
     }
+
+    public void setMoved(boolean moved) {
+        this.moved = moved;
+    }
+
+    public abstract boolean isMoving();
     protected Image toLeft  ;
     protected Image toDownLeft  ;
     protected Image toDown  ;
     protected Image toUp ;
     protected Image toUpLeft ;
     Cell[][] cells = FarmController.getInstance().getMap().getCells();
-
+protected abstract boolean isCaged();
 
     public Image getToLeft() {
         return toLeft;
@@ -152,6 +162,6 @@ public abstract class Animal extends Entity {
 
 
     public int getSpeed() {
-        return 1;
+        return 5;
     }
 }

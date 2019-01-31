@@ -951,6 +951,10 @@ public class FarmController {
             SpinneryFactory spinneryFactory = SpinneryFactory.getSpinneryFactory();
             spinneryFactory.upgradeSpinnery();
         }
+        if (type.equals("sewingfactory"))
+        {
+            SewingFactory.getSewingFactory().upgrade();
+        }
 
     }
 

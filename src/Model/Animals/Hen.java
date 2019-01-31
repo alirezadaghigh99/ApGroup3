@@ -200,12 +200,7 @@ public class Hen extends ProducerAnimal {
     private int state1;
     private int state2;
 
-    @Override
-    public boolean isMoving() {
-        if (cells[x][y].getGrass().isGrass())
-        return false;
-        return true;
-    }
+
 
 //    public Animation animationOfHen()
 //    {

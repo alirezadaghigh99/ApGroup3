@@ -14,6 +14,15 @@ import java.io.FileNotFoundException;
 
 public class SewingFactory extends WorkShop {
     // fabric  --> clothe
+    private int level ;
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
 
     private static SewingFactory sewingFactory = new SewingFactory();
     Image sewingImage1;
@@ -25,15 +34,40 @@ public class SewingFactory extends WorkShop {
             e.printStackTrace();
         }
     }
+    Image sewingLevel2;
+
+    {
+        try {
+            sewingLevel2 = new Image(new FileInputStream("Workshops\\CarnivalDress (Sewing Factory)\\02.png"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    Image sewingLevel3;
+
+    {
+        try {
+            sewingLevel3 = new Image(new FileInputStream("Workshops\\CarnivalDress (Sewing Factory)\\03.png"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    Image sewingLevel4;
+
+    {
+        try {
+            sewingLevel4 = new Image(new FileInputStream("Workshops\\CarnivalDress (Sewing Factory)\\04.png"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
     ImageView viewOfSewing = new ImageView(sewingImage1);
 
     public ImageView getViewOfSewing() {
         return viewOfSewing;
     }
-    public Animation sewingAnimation() {
-        return new SpriteAnimation(viewOfSewing, Duration.millis(1000), 16, 4, 0, 0,
-                680/4, 520/4);
-    }
+
 
     public static SewingFactory getSewingFactory() {
         return sewingFactory;
@@ -41,7 +75,34 @@ public class SewingFactory extends WorkShop {
 
     public SewingFactory() {
     }
+    public void checkLevelOfSwewingFactory()
+    {
+        if (level==1)
+        {
+            viewOfSewing.setImage(sewingImage1);
+        }
+        else if (level==2)
+        {
+            viewOfSewing.setImage(sewingLevel2);
+        }
+        else if (level==3)
+        {
+            viewOfSewing.setImage(sewingLevel3);
+        }
+        else if (level == 4)
+        {
+            viewOfSewing.setImage(sewingLevel4);
+        }
+    }
 
+    public void setViewOfSewing(ImageView viewOfSewing) {
+        this.viewOfSewing = viewOfSewing;
+    }
+        public Animation sewingAnimation()
+        {
+            return new SpriteAnimation(viewOfSewing , Duration.millis(2000) , 16 , 4 , 0 , 0 ,
+                    (int)(viewOfSewing.getImage().getWidth()/4) , (int)(viewOfSewing.getImage().getHeight()/4));
+        }
     Depot depot = Depot.getDepot() ;
 
     Clothe clothe = new Clothe();
@@ -60,6 +121,10 @@ public class SewingFactory extends WorkShop {
                 }
             }
         }
+    }
+    public void upgrade()
+    {
+        level++;
     }
 
 }

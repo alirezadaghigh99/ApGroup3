@@ -104,6 +104,11 @@ public class Dog extends Animal {
     }
 
     @Override
+    protected boolean isCaged() {
+        return false;
+    }
+
+    @Override
     public void setOnMap() {
         super.setOnMap();
     }

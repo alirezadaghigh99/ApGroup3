@@ -1,5 +1,6 @@
 package Model.Animals;
 
+import Controller.FarmController;
 import Model.Animals.DomesticAnimal;
 import Model.Animals.Hen;
 import Model.Animals.Sheep;
@@ -19,6 +20,17 @@ public class ProducerAnimal extends DomesticAnimal {
     Map map = ourFarm.getMap();
 
     @Override
+    public boolean isMoving() {
+        if (FarmController.getInstance().getMap().getCells()[x][y].getGrass().isGrass())
+            return false;
+        if (isDead())
+            return false ;
+        if(dontShow())
+            return false;
+        else return true ;
+    }
+
+    @Override
     public void randomWalk() {
         super.randomWalk();
     }
@@ -33,14 +45,32 @@ public class ProducerAnimal extends DomesticAnimal {
                 for (int j = y - k; j < y + k; j++) {
                     if (i < Utils.mapSize && i >= 0 && j < Utils.mapSize && j >= 0
                             && cell[i][j].getGrass().isGrass()) {
-                        if (i > x)
+                        if (i > x) {
                             x = x + 1;
-                        else if (i < x)
+                            xDirection = 1;
+                        }
+                        else if (i < x) {
                             x = x - 1;
-                        if (j > y)
+                            xDirection = -1;
+                        }
+                        else if (i==x) {
+                            x = x + 0;
+                            xDirection = 0;
+
+                        }
+                        if (j > y) {
                             y = y + 1;
-                        else if (j < y)
+                            yDirection = 1 ;
+                        }
+                        else if (j < y) {
                             y = y - 1;
+                            yDirection = -1 ;
+                        }
+                        else if (j==y)
+                        {
+                            y  = y + 0;
+                            yDirection = 0 ;
+                        }
                         setOnMap();
                         return;
                     }
@@ -88,6 +118,10 @@ public class ProducerAnimal extends DomesticAnimal {
 
     public boolean isDead() {
         return this.energy == 0;
+    }
+    public boolean dontShow()
+    {
+        return this.energy==-1;
     }
 
     public Product produced() {
@@ -137,6 +171,7 @@ public class ProducerAnimal extends DomesticAnimal {
         } else if (isDead()) {
             cells[x][y].getCellAnimals().remove(this);
             ourFarm.getAnimals().remove(this);
+            this.setEnergy(this.getEnergy() - 1);
         }
         setOnMap();
     }
