@@ -20,17 +20,9 @@ public class SpriteAnimalAnimation extends Transition {
     int flag2 = 0;
     int flag3 = 0;
     Image image;
-
-    {
-        try {
-            image = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Textures\\Cages\\build01.png"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-    private ImageView cageView  = new ImageView(image);
-
     ImageView animalView = new ImageView();
+    Cage cage = new Cage();
+    private ImageView cageView = new ImageView(image);
     private Animal animal;
     private ImageView imageView;
     private int timeConstant;
@@ -40,11 +32,18 @@ public class SpriteAnimalAnimation extends Transition {
     private int offsetY = 0;
     private int width;
     private int height;
-    Cage cage = new Cage() ;
     private int lastIndex;
     private Group group;
     private int x;
     private int y;
+
+    {
+        try {
+            image = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Textures\\Cages\\build01.png"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
     public SpriteAnimalAnimation(Animal animal, int timeConstant, Group group) {
         this.animal = animal;
@@ -132,11 +131,24 @@ public class SpriteAnimalAnimation extends Transition {
 
             }
 
-        } else {
+        } else if (!animal.isMoving()) {
+            flag2 = 0;
+            flag1 = 0;
+            flag3 = 0;
             if (animal instanceof WildAnimal)
                 finalPathToImage = pathToImage.concat("caged.png");
-            else if (animal instanceof ProducerAnimal)
-                finalPathToImage = pathToImage.concat("eat.png");
+            else if (animal instanceof ProducerAnimal) {
+                if (!((ProducerAnimal) animal).isDead() && !((ProducerAnimal) animal).dontShow())
+                    finalPathToImage = pathToImage.concat("eat.png");
+                if (((ProducerAnimal) animal).isDead())
+                    finalPathToImage = pathToImage.concat("death.png");
+                if (((ProducerAnimal) animal).dontShow()) {
+                    if (group.getChildren().contains(imageView))
+                        group.getChildren().remove(imageView);
+                }
+
+
+            }
         }
 
 
@@ -146,6 +158,7 @@ public class SpriteAnimalAnimation extends Transition {
                 // animalView = new ImageView(new Image(new FileInputStream(finalPathToImage)));
                 if (group.getChildren().contains(this.imageView))
                     group.getChildren().remove(this.imageView);
+                System.out.println(finalPathToImage);
                 animalView.setImage(new Image(new FileInputStream(finalPathToImage)));
             }
 
@@ -154,14 +167,14 @@ public class SpriteAnimalAnimation extends Transition {
                 //  animalView = new ImageView(new Image(new FileInputStream(finalPathRightsToImage)));
                 animalView.setImage(new Image(new FileInputStream(finalPathRightsToImage)));
                 animalView.setScaleX(-1);
-            }if (animal instanceof WildAnimal)
-            {
+            }
+            if (animal instanceof WildAnimal) {
                 animalView.setOnMouseClicked(event -> {
                     animal.setMoved(false);
-                    cageView.setX(Utils.START_X  + cellSize*animal.getX()-40);
-                    cageView.setY(Utils.START_Y +  Utils.CELL_HEIGHT * animal.getY()-30);
+                    cageView.setX(Utils.START_X + cellSize * animal.getX() - 40);
+                    cageView.setY(Utils.START_Y + Utils.CELL_HEIGHT * animal.getY() - 30);
                     group.getChildren().add(cageView);
-                    cageView.setViewport(new Rectangle2D(0 , 0 , image.getWidth()/3 , image.getHeight()/3));
+                    cageView.setViewport(new Rectangle2D(0, 0, image.getWidth() / 3, image.getHeight() / 3));
                     cage.cageAnimation(cageView).setCycleCount(Animation.INDEFINITE);
                     cage.cageAnimation(cageView).play();
                 });
@@ -182,7 +195,7 @@ public class SpriteAnimalAnimation extends Transition {
                         this.width = (int) (animalView.getImage().getWidth() / (Utils.COLUMNS_OF_HEN));
                     }
                     if (animal instanceof Lion) {
-                        this.height = (int) (animalView.getImage().getHeight() / (count / Utils.COLUMNS_LEFT_DOWN_OF_LION+1));
+                        this.height = (int) (animalView.getImage().getHeight() / (count / Utils.COLUMNS_LEFT_DOWN_OF_LION + 1));
                         this.width = (int) (animalView.getImage().getWidth() / (Utils.COLUMNS_LEFT_DOWN_OF_LION));
                     }
                     if (animal instanceof Bear) {
@@ -215,7 +228,7 @@ public class SpriteAnimalAnimation extends Transition {
                     }
                     if (animal instanceof Lion) {
                         this.height = (int) (animalView.getImage().getHeight() / (count / Utils.COLUMNS_UP_LEFT_OF_LION));
-                        this.width = (int) (animalView.getImage().getWidth() / (Utils.COLUMNS_UP_LEFT_OF_LION+1));
+                        this.width = (int) (animalView.getImage().getWidth() / (Utils.COLUMNS_UP_LEFT_OF_LION + 1));
                     }
                     if (animal instanceof Bear) {
                         this.height = (int) (animalView.getImage().getHeight() / (count / Utils.COLUMNS_LEFT_DOWN_OF_BEAR));
@@ -246,7 +259,7 @@ public class SpriteAnimalAnimation extends Transition {
                     }
                     if (animal instanceof Lion) {
                         this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_OF_LION);
-                        this.height = (int) (animalView.getImage().getHeight() / (count / Utils.COLUMNS_LEFT_OF_LION+1));
+                        this.height = (int) (animalView.getImage().getHeight() / (count / Utils.COLUMNS_LEFT_OF_LION + 1));
                     }
                     if (animal instanceof Bear) {
                         this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_OF_BEAR);
@@ -311,7 +324,7 @@ public class SpriteAnimalAnimation extends Transition {
                     }
                     if (animal instanceof Lion) {
                         this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_UP_LEFT_OF_LION);
-                        this.height = (int) (animalView.getImage().getHeight() / (count / Utils.COLUMNS_UP_LEFT_OF_LION+1));
+                        this.height = (int) (animalView.getImage().getHeight() / (count / Utils.COLUMNS_UP_LEFT_OF_LION + 1));
                     }
                     if (animal instanceof Bear) {
                         this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_UP_LEFT_OF_BEAR);
@@ -345,7 +358,7 @@ public class SpriteAnimalAnimation extends Transition {
                     }
                     if (animal instanceof Lion) {
                         this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_OF_LION);
-                        this.height = (int) (animalView.getImage().getHeight() / (count / Utils.COLUMNS_LEFT_OF_LION+1));
+                        this.height = (int) (animalView.getImage().getHeight() / (count / Utils.COLUMNS_LEFT_OF_LION + 1));
                     }
                     if (animal instanceof Bear) {
                         this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_LEFT_OF_BEAR);
@@ -377,7 +390,7 @@ public class SpriteAnimalAnimation extends Transition {
                     }
                     if (animal instanceof Lion) {
                         this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_DOWN_OF_LION);
-                        this.height = (int) (animalView.getImage().getHeight() / (count / Utils.COLUMNS_DOWN_OF_LION+1));
+                        this.height = (int) (animalView.getImage().getHeight() / (count / Utils.COLUMNS_DOWN_OF_LION + 1));
                     }
                     if (animal instanceof Bear) {
                         this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_DOWN_OF_BEAR);
@@ -409,7 +422,7 @@ public class SpriteAnimalAnimation extends Transition {
                     }
                     if (animal instanceof Lion) {
                         this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_UP_OF_LION);
-                        this.height = (int) (animalView.getImage().getHeight() / (count / Utils.COLUMNS_UP_OF_LION+1));
+                        this.height = (int) (animalView.getImage().getHeight() / (count / Utils.COLUMNS_UP_OF_LION + 1));
                     }
                     if (animal instanceof Bear) {
                         this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_UP_OF_BEAR);
@@ -427,8 +440,6 @@ public class SpriteAnimalAnimation extends Transition {
                 }
 
 
-
-
             }
             if (!animal.isMoving()) {
                 if (animal instanceof WildAnimal) {
@@ -440,7 +451,6 @@ public class SpriteAnimalAnimation extends Transition {
                     }
                 } else if (animal instanceof ProducerAnimal) {
                     if (((ProducerAnimal) animal).isDead()) {
-                        System.out.println("shahhhrammmm");
                         if (animal instanceof Cow) {
                             this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_OF_HEN);
                             this.height = (int) (animalView.getImage().getHeight() / (24 / Utils.COLUMNS_OF_HEN));
@@ -448,34 +458,41 @@ public class SpriteAnimalAnimation extends Transition {
 
                         }
                         if (animal instanceof Hen) {
-                            animalView.setImage(new Image(new FileInputStream("Animals\\Africa\\GuineaFowl\\death.png")));
                             System.out.println("shshsshshshshshsh");
-                            this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_OF_HEN);
-                            this.height = (int) (animalView.getImage().getHeight() / (25 / Utils.COLUMNS_OF_HEN)+1);
+                            this.width = (int) (390 / Utils.COLUMNS_OF_HEN);
+                            this.height = (int) (350 / (25 / Utils.COLUMNS_OF_HEN));
+                            // group.getChildren().remove(imageView);
 
                         }
                         if (animal instanceof Sheep) {
                             this.width = (int) (animalView.getImage().getWidth() / Utils.COLUMNS_OF_DEATH_SHEEP);
                             this.height = (int) (animalView.getImage().getHeight() / (24 / Utils.COLUMNS_OF_DEATH_SHEEP));
 
-                        }
-                    } else if (!((ProducerAnimal)animal).isDead()){
-                        if (animal instanceof Sheep) {
 
+                        }
+                    } else if (!((ProducerAnimal) animal).isDead() && !((ProducerAnimal) animal).dontShow()) {
+                        System.out.println("mn daram mikhoraaaaaaaam");
+                        if (animal instanceof Sheep) {
+                            this.height = (int) Math.floor(animalView.getImage().getHeight() / 5);
+                            this.width = (int) (animalView.getImage().getWidth() / 5);
                         }
                         if (animal instanceof Cow) {
-
+                            this.height = (int) (animalView.getImage().getHeight() / 5 + 1);
+                            this.width = (int) (animalView.getImage().getWidth() / 5);
                         }
                         if (animal instanceof Hen) {
-                            animalView.setImage(new Image(new FileInputStream("Animals\\Africa\\GuineaFowl\\eat.png")));
-                            this.height = (int) (animalView.getImage().getHeight()/5+1);
-                            this.width = (int) (animalView.getImage().getWidth()/5);
+                            this.height = (int) (animalView.getImage().getHeight() / 5 + 1);
+                            this.width = (int) (animalView.getImage().getWidth() / 5);
                         }
                     }
 //                if (((ProducerAnimal) animal).dontShow()) {
 //                    if (imageView != null)
 //                        imageView.setVisible(false);
 //                }
+                }
+                if ((((ProducerAnimal) animal).dontShow())) {
+                    if (group.getChildren().contains(imageView))
+                        group.getChildren().remove(imageView);
                 }
             }
             if (animal.isMoving()) {
@@ -484,13 +501,13 @@ public class SpriteAnimalAnimation extends Transition {
                 animalView.setY(Utils.START_Y + Utils.CELL_HEIGHT * animal.getY() + animal.getyDirection() * animal.getSpeed());
                 this.setCycleDuration(Duration.millis(timeConstant / animal.getSpeed()));
             } else {
-                animalView.setX(Utils.START_X + cellSize * animal.getX() );
+                animalView.setX(Utils.START_X + cellSize * animal.getX());
                 animalView.setY(Utils.START_Y + Utils.CELL_HEIGHT * animal.getY());
-                this.setCycleDuration(Duration.millis(7000));
+                this.setCycleDuration(Duration.millis(2000f));
             }
             return animalView;
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+//            e.printStackTrace();
         }
 
         return animalView;

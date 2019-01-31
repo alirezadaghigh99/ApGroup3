@@ -131,18 +131,20 @@ public class GUI extends Application {
                         ArrayList<Animal> animals = FarmController.getInstance().getMap().getCells()[i][j].getCellAnimals();
                         for (Animal animal : animals) {
                             //  System.out.println("mamad");
+
                             SpriteAnimalAnimation animation = new SpriteAnimalAnimation(animal, 1000, group);
                             ImageView imageView1 = animation.getImageView();
                             imageView1.setViewport(new Rectangle2D(0, 0, animation.getWidth(), animation.getHeight()));
+                            System.out.println(animation.getWidth());
                             animation.setX(animal.getX());
                             animation.setY(animal.getY());
-                            //animalviews.add(animation.getImageView());
                             animation.setCycleCount(Animation.INDEFINITE);
                             animations.add(animation);
                         }
 
-                        for (Animation animation : animations)
+                        for (Animation animation : animations) {
                             animation.play();
+                        }
 
                     }
                 }

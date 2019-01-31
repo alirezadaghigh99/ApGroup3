@@ -2,22 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c64801da-0b49-48e1-b1f4-71066c99b6ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Model/OnMaps/Cage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/USER/Profile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/FarmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FarmController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Animals/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Animals/Cow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/Cow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Animals/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/Dog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Animals/DomesticAnimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/DomesticAnimal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Animals/Hen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/Hen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Animals/ProducerAnimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/ProducerAnimal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Animals/Sheep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/Sheep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Animals/WildAnimal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/WildAnimal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Workshop/SewingFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Workshop/SewingFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Workshop/WeavingFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Workshop/WeavingFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/GUI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -263,43 +250,43 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="16262" />
+          <entry key="java" value="16866" />
           <entry key="txt" value="43" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="16262" />
+          <entry key="JAVA" value="16866" />
           <entry key="PLAIN_TEXT" value="43" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="68" />
+          <entry key="java" value="69" />
           <entry key="png" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="7" />
-          <entry key="JAVA" value="68" />
+          <entry key="JAVA" value="69" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="489" column="13" lean-forward="true" selection-start-line="489" selection-start-column="13" selection-end-line="489" selection-end-column="13" />
+            <state relative-caret-position="126">
+              <caret line="509" column="34" selection-start-line="509" selection-start-column="14" selection-end-line="509" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#28081#28082#0" expanded="true" />
-                <element signature="e#28107#28108#0" expanded="true" />
-                <element signature="e#28138#28139#0" expanded="true" />
-                <element signature="e#28164#28165#0" expanded="true" />
+                <element signature="e#29617#29618#0" expanded="true" />
+                <element signature="e#29643#29644#0" expanded="true" />
+                <element signature="e#29674#29675#0" expanded="true" />
+                <element signature="e#29700#29701#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -358,23 +345,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Animals/ProducerAnimal.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2809">
-              <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
-              <folding>
-                <element signature="e#2598#2599#0" expanded="true" />
-                <element signature="e#2627#2628#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="930" column="41" lean-forward="true" selection-start-line="930" selection-start-column="41" selection-end-line="930" selection-end-column="41" />
+            <state relative-caret-position="99">
+              <caret line="137" column="66" selection-start-line="137" selection-start-column="66" selection-end-line="137" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -382,7 +356,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/USER/Profile.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="207">
@@ -426,6 +400,21 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Animals/ProducerAnimal.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="123" column="28" selection-start-line="123" selection-start-column="28" selection-end-line="123" selection-end-column="28" />
+              <folding>
+                <element signature="e#2598#2599#0" expanded="true" />
+                <element signature="e#2627#2628#0" expanded="true" />
+                <element signature="e#3361#3362#0" expanded="true" />
+                <element signature="e#3399#3400#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -456,7 +445,6 @@
       <find>playG</find>
       <find>showC</find>
       <find>Syst</find>
-      <find>System</find>
       <find>count</find>
       <find>showGra</find>
       <find>showG</find>
@@ -464,6 +452,11 @@
       <find>isMo</find>
       <find>CELL</find>
       <find>showUp</find>
+      <find>showprod</find>
+      <find>Sys</find>
+      <find>System</find>
+      <find>\n</find>
+      <find>.remo</find>
     </findStrings>
     <replaceStrings>
       <replace>length</replace>
@@ -521,18 +514,18 @@
         <option value="$PROJECT_DIR$/src/Model/Animals/Cow.java" />
         <option value="$PROJECT_DIR$/src/Model/Animals/Sheep.java" />
         <option value="$PROJECT_DIR$/src/Model/Workshop/WeavingFactory.java" />
-        <option value="$PROJECT_DIR$/src/Model/Animals/ProducerAnimal.java" />
         <option value="$PROJECT_DIR$/src/Model/Animals/Dog.java" />
         <option value="$PROJECT_DIR$/src/Model/Animals/DomesticAnimal.java" />
         <option value="$PROJECT_DIR$/src/Model/Animals/WildAnimal.java" />
         <option value="$PROJECT_DIR$/src/Model/OnMaps/Cage.java" />
-        <option value="$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java" />
         <option value="$PROJECT_DIR$/src/Controller/FarmController.java" />
         <option value="$PROJECT_DIR$/src/Model/Workshop/SewingFactory.java" />
         <option value="$PROJECT_DIR$/src/Model/Utils.java" />
         <option value="$PROJECT_DIR$/src/Model/Animals/Animal.java" />
-        <option value="$PROJECT_DIR$/src/views/GUI.java" />
         <option value="$PROJECT_DIR$/src/Model/USER/Profile.java" />
+        <option value="$PROJECT_DIR$/src/views/GUI.java" />
+        <option value="$PROJECT_DIR$/src/Model/Animals/ProducerAnimal.java" />
+        <option value="$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java" />
       </list>
     </option>
   </component>
@@ -634,6 +627,13 @@
               <item name="ApGroup3" type="b2602c69:ProjectViewProjectNode" />
               <item name="ApGroup3" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="Animals" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ApGroup3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ApGroup3" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -648,7 +648,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="getSp&#9;PSI&#9;JAVA://Model.Animals.Animal#getSpeed&#10;Ut&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/ApGroup3/src/Model/Utils.java&#10;playGame&#9;PSI&#9;JAVA://views.GUI#playGame&#10;showGrass&#9;PSI&#9;JAVA://views.GUI#showGrass&#10;isMov&#9;PSI&#9;JAVA://Model.Animals.Animal#isMoving&#10;isMo&#9;PSI&#9;JAVA://Model.Animals.Animal#isMoving&#10;showWea&#9;PSI&#9;JAVA://views.GUI#showWeavingFactory&#10;showWe&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showDe&#9;PSI&#9;JAVA://views.GUI#showDepot&#10;showSpinnery&#9;PSI&#9;JAVA://views.GUI#showspinneryFactory&#10;sPR&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/ApGroup3/src/Model/SpriteAnimation.java&#10;showWell&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showdep&#9;PSI&#9;JAVA://views.GUI#showDepot&#10;playgame&#9;PSI&#9;JAVA://views.GUI#playGame&#10;load&#9;PSI&#9;JAVA://Controller.FarmController#load&#10;save&#9;PSI&#9;JAVA://Controller.FarmController#save&#10;farmcont&#9;PSI&#9;JAVA://Controller.FarmController&#10;upMap&#9;PSI&#9;JAVA://views.GUI#showUpMap&#10;showCow&#9;PSI&#9;JAVA://views.GUI#showCow&#10;showHen&#9;PSI&#9;JAVA://views.GUI#showHen&#10;collision&#9;PSI&#9;JAVA://Controller.FarmController#collision&#10;showhen&#9;PSI&#9;JAVA://views.GUI#showHen&#10;showdepot&#9;null&#9;null&#10;eggPow&#9;PSI&#9;JAVA://views.GUI#showEggPowderPlant&#10;showCa&#9;PSI&#9;JAVA://views.GUI#showCakeBakery&#10;showCake&#9;PSI&#9;JAVA://views.GUI#showCakeBakery&#10;play&#9;PSI&#9;JAVA://views.GUI#playGame&#10;passtur&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;showW&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showGras&#9;PSI&#9;JAVA://views.GUI#showGrass&#10;henVie&#9;PSI&#9;JAVA://views.GUI#henView&#10;showhe&#9;PSI&#9;JAVA://views.GUI#showHen&#10;Turn&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;next&#9;PSI&#9;JAVA://Model.Animals.Animal#nextTurn&#10;showUpMa&#9;PSI&#9;JAVA://views.GUI#showUpMap&#10;showco&#9;PSI&#9;JAVA://views.GUI#showCow&#10;showwell&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showgrass&#9;PSI&#9;JAVA://views.GUI#showGrass&#10;pri&#9;PSI&#9;JAVA://Controller.FarmController#printInfoAction&#10;pass&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;passT&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;money&#9;PSI&#9;JAVA://Controller.FarmController#money&#10;addW&#9;PSI&#9;JAVA://Controller.FarmController#addWaterAction&#10;add&#9;PSI&#9;JAVA://Controller.FarmController#addAnimalAction&#10;tur&#9;PSI&#9;JAVA://Model.Animals.Animal#nextTurn&#10;akba&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/Approject/akbar.json&#10;Map&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/Approject/src/Model/OnMaps/Map.java&#10;map&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/Approject/maps.json&#10;go&#9;PSI&#9;JAVA://Controller.FarmController#goAction&#10;sale&#9;PSI&#9;JAVA://Controller.FarmController#saleAction" />
+    <property name="SearchEverywhereHistoryKey" value="showGrass&#9;PSI&#9;JAVA://views.GUI#showGrass&#10;getSp&#9;PSI&#9;JAVA://Model.Animals.Animal#getSpeed&#10;Ut&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/ApGroup3/src/Model/Utils.java&#10;playGame&#9;PSI&#9;JAVA://views.GUI#playGame&#10;isMov&#9;PSI&#9;JAVA://Model.Animals.Animal#isMoving&#10;isMo&#9;PSI&#9;JAVA://Model.Animals.Animal#isMoving&#10;showWea&#9;PSI&#9;JAVA://views.GUI#showWeavingFactory&#10;showWe&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showDe&#9;PSI&#9;JAVA://views.GUI#showDepot&#10;showSpinnery&#9;PSI&#9;JAVA://views.GUI#showspinneryFactory&#10;sPR&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/ApGroup3/src/Model/SpriteAnimation.java&#10;showWell&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showdep&#9;PSI&#9;JAVA://views.GUI#showDepot&#10;playgame&#9;PSI&#9;JAVA://views.GUI#playGame&#10;load&#9;PSI&#9;JAVA://Controller.FarmController#load&#10;save&#9;PSI&#9;JAVA://Controller.FarmController#save&#10;farmcont&#9;PSI&#9;JAVA://Controller.FarmController&#10;upMap&#9;PSI&#9;JAVA://views.GUI#showUpMap&#10;showCow&#9;PSI&#9;JAVA://views.GUI#showCow&#10;showHen&#9;PSI&#9;JAVA://views.GUI#showHen&#10;collision&#9;PSI&#9;JAVA://Controller.FarmController#collision&#10;showhen&#9;PSI&#9;JAVA://views.GUI#showHen&#10;showdepot&#9;null&#9;null&#10;eggPow&#9;PSI&#9;JAVA://views.GUI#showEggPowderPlant&#10;showCa&#9;PSI&#9;JAVA://views.GUI#showCakeBakery&#10;showCake&#9;PSI&#9;JAVA://views.GUI#showCakeBakery&#10;play&#9;PSI&#9;JAVA://views.GUI#playGame&#10;passtur&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;showW&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showGras&#9;PSI&#9;JAVA://views.GUI#showGrass&#10;henVie&#9;PSI&#9;JAVA://views.GUI#henView&#10;showhe&#9;PSI&#9;JAVA://views.GUI#showHen&#10;Turn&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;next&#9;PSI&#9;JAVA://Model.Animals.Animal#nextTurn&#10;showUpMa&#9;PSI&#9;JAVA://views.GUI#showUpMap&#10;showco&#9;PSI&#9;JAVA://views.GUI#showCow&#10;showwell&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showgrass&#9;PSI&#9;JAVA://views.GUI#showGrass&#10;pri&#9;PSI&#9;JAVA://Controller.FarmController#printInfoAction&#10;pass&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;passT&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;money&#9;PSI&#9;JAVA://Controller.FarmController#money&#10;addW&#9;PSI&#9;JAVA://Controller.FarmController#addWaterAction&#10;add&#9;PSI&#9;JAVA://Controller.FarmController#addAnimalAction&#10;tur&#9;PSI&#9;JAVA://Model.Animals.Animal#nextTurn&#10;akba&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/Approject/akbar.json&#10;Map&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/Approject/src/Model/OnMaps/Map.java&#10;map&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/Approject/maps.json&#10;go&#9;PSI&#9;JAVA://Controller.FarmController#goAction&#10;sale&#9;PSI&#9;JAVA://Controller.FarmController#saleAction" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548910850067" />
@@ -669,6 +669,118 @@
       <recent name="C:\Users\SE7EN-PC\Desktop\Approject\src" />
     </key>
   </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/pictures/online.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/pictures/save.png</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -682,6 +794,15 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.GUI (1)">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -758,15 +879,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.GUI" />
@@ -822,14 +934,7 @@
       <workItem from="1548769124485" duration="6061000" />
       <workItem from="1548789038490" duration="1188000" />
       <workItem from="1548905274023" duration="6150000" />
-      <workItem from="1548917722611" duration="10640000" />
-    </task>
-    <task id="LOCAL-00008" summary="nothing">
-      <created>1544736779682</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1544736779682</updated>
+      <workItem from="1548917722611" duration="12060000" />
     </task>
     <task id="LOCAL-00009" summary="nothing">
       <created>1544793418267</created>
@@ -1167,11 +1272,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548760634597</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="images">
+      <created>1548934161254</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1548934161255</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="340674000" />
+    <option name="totallyTimeSpent" value="346815000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1550,21 +1662,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Animals/ProducerAnimal.java">
+    <entry file="file://$PROJECT_DIR$/src/Model/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2809">
-          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+        <state relative-caret-position="149">
+          <caret line="110" column="46" lean-forward="true" selection-start-line="110" selection-start-column="46" selection-end-line="110" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/USER/Profile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/GUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="137" column="66" selection-start-line="137" selection-start-column="66" selection-end-line="137" selection-end-column="66" />
           <folding>
-            <element signature="e#2598#2599#0" expanded="true" />
-            <element signature="e#2627#2628#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/FarmController.java">
+    <entry file="file://$PROJECT_DIR$/src/Model/Animals/ProducerAnimal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="955" column="55" selection-start-line="955" selection-start-column="55" selection-end-line="955" selection-end-column="55" />
+        <state relative-caret-position="115">
+          <caret line="123" column="28" selection-start-line="123" selection-start-column="28" selection-end-line="123" selection-end-column="28" />
+          <folding>
+            <element signature="e#2598#2599#0" expanded="true" />
+            <element signature="e#2627#2628#0" expanded="true" />
+            <element signature="e#3361#3362#0" expanded="true" />
+            <element signature="e#3399#3400#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1585,24 +1716,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Utils.java">
+    <entry file="file://$PROJECT_DIR$/src/Controller/FarmController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="110" column="46" lean-forward="true" selection-start-line="110" selection-start-column="46" selection-end-line="110" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="489" column="13" lean-forward="true" selection-start-line="489" selection-start-column="13" selection-end-line="489" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#28081#28082#0" expanded="true" />
-            <element signature="e#28107#28108#0" expanded="true" />
-            <element signature="e#28138#28139#0" expanded="true" />
-            <element signature="e#28164#28165#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="296">
+          <caret line="955" column="55" selection-start-line="955" selection-start-column="55" selection-end-line="955" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -1639,20 +1756,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/GUI.java">
+    <entry file="file://$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="930" column="41" lean-forward="true" selection-start-line="930" selection-start-column="41" selection-end-line="930" selection-end-column="41" />
+        <state relative-caret-position="126">
+          <caret line="509" column="34" selection-start-line="509" selection-start-column="14" selection-end-line="509" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#29617#29618#0" expanded="true" />
+            <element signature="e#29643#29644#0" expanded="true" />
+            <element signature="e#29674#29675#0" expanded="true" />
+            <element signature="e#29700#29701#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/USER/Profile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
         </state>
       </provider>
     </entry>

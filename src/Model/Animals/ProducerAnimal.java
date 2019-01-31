@@ -121,7 +121,7 @@ public class ProducerAnimal extends DomesticAnimal {
     }
     public boolean dontShow()
     {
-        return this.energy==-1;
+        return this.energy<0;
     }
 
     public Product produced() {
@@ -169,9 +169,12 @@ public class ProducerAnimal extends DomesticAnimal {
             }
             this.smartWalk();
         } else if (isDead()) {
-            cells[x][y].getCellAnimals().remove(this);
-            ourFarm.getAnimals().remove(this);
             this.setEnergy(this.getEnergy() - 1);
+        }
+        else if (dontShow())
+        {
+            cells[x][y].getCellAnimals().remove(this);
+          ourFarm.getAnimals().remove(this);
         }
         setOnMap();
     }
