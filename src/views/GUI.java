@@ -165,9 +165,12 @@ public class GUI extends Application {
                 FarmController.getInstance().collision();
                 try {
                     showGrass();
+                    showProducts();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+
+
                 time++;
                 if ((time / 10) % 60 < 10) {
                     timer.setText("Time : " + time / 600 + ".0" + (time / 10) % 60);
@@ -195,6 +198,9 @@ public class GUI extends Application {
             for (int i = 0; i < Utils.mapSize; i++) {
                 for (int j = 0; j < Utils.mapSize; j++) {
                     grassView[i][j] = new ImageView();
+                    eggs[i][j] = new ImageView();
+                    wools[i][j] = new ImageView();
+                    milks[i][j] = new ImageView();
                 }
             }
         } catch (Exception e) {
@@ -451,7 +457,7 @@ public class GUI extends Application {
         animationTimer.start();
     }
 
-    private void showProducts(ArrayList<Product> products) throws Exception {
+    private void showProducts() throws Exception {
         Image eggIMG = new Image(new FileInputStream("Products/Egg/normal.png"));
         Image woolIMG = new Image(new FileInputStream("Products/Wool/normal.png"));
         Image milkIMG = new Image(new FileInputStream("Products/Milk.png"));
@@ -459,25 +465,25 @@ public class GUI extends Application {
             for (int j = 0; j < Utils.mapSize; j++) {
                 eggs[i][j].setImage(eggIMG);
                 eggs[i][j].relocate(Utils.START_Y + i * Utils.CELL_WIDTH, Utils.START_X + j * Utils.CELL_HEIGHT);
-                eggs[i][j].setFitWidth(Utils.CELL_WIDTH);
-                eggs[i][j].setFitHeight(Utils.CELL_HEIGHT);
+                if (!group.getChildren().contains(eggs[i][j]))
+                    group.getChildren().add(eggs[i][j]);
                 wools[i][j].setImage(woolIMG);
                 wools[i][j].relocate(Utils.START_Y + i * Utils.CELL_WIDTH, Utils.START_X + j * Utils.CELL_HEIGHT);
-                wools[i][j].setFitWidth(Utils.CELL_WIDTH);
-                wools[i][j].setFitHeight(Utils.CELL_HEIGHT);
+                if (!group.getChildren().contains(wools[i][j]))
+                    group.getChildren().add(wools[i][j]);
                 milks[i][j].setImage(milkIMG);
                 milks[i][j].relocate(Utils.START_Y + i * Utils.CELL_WIDTH, Utils.START_X + j * Utils.CELL_HEIGHT);
-                milks[i][j].setFitWidth(Utils.CELL_WIDTH);
-                milks[i][j].setFitHeight(Utils.CELL_HEIGHT);
+                if (!group.getChildren().contains(milks[i][j]))
+                    group.getChildren().add(milks[i][j]);
                 eggs[i][j].setVisible(false);
                 milks[i][j].setVisible(false);
                 wools[i][j].setVisible(false);
-                group.getChildren().addAll(wools[i][j], eggs[i][j], milks[i][j]);
             }
         }
+
         for (int i = 0; i < Utils.mapSize; i++) {
             for (int j = 0; j < Utils.mapSize; j++) {
-                for (Product product : products) {
+                for (Product product : FarmController.getInstance().ourProducts()) {
                     if (product instanceof Egg) {
                         eggs[product.getX()][product.getY()].setVisible(true);
                     }
