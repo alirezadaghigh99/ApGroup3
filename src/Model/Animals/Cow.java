@@ -41,7 +41,7 @@ public class Cow extends ProducerAnimal {
 
     {
         try {
-            CowToDownLeft = new Image(new FileInputStream("Animals\\Africa\\Buffalo\\down_left.png"));
+            CowToDownLeft = new Image(new FileInputStream("C:\\Users\\SE7EN-PC\\Desktop\\Approject\\Animals\\Africa\\Buffalo\\down_left.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

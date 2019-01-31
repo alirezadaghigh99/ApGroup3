@@ -3,7 +3,7 @@ package Model;
 public class Utils {
     public static final int ADDWATERCOST = 50;
     public static final int mapSize = 10;
-    public static final int LOW_ENERGY_AMOUNT = 3;
+    public static final int LOW_ENERGY_AMOUNT = 300;
     public static final int FULL_ENERGY_AMOUNT = 500;
     public static final int DEPOT_SIZE_FOR_EGG = 1;
     public static final int BUY_COST_FOR_EGG = 20;

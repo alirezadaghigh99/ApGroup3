@@ -58,7 +58,7 @@ public class GUI extends Application {
     private ArrayList<ImageView> animalviews = new ArrayList<>();
     private boolean sure;
     private ArrayList<Text> players = new ArrayList<>();
-    private ImageView[][] cowView = new ImageView[Utils.mapSize][Utils.mapSize];
+    ImageView[][] grassView = new ImageView[Utils.mapSize][Utils.mapSize];
     private ImageView[][] eggs = new ImageView[Utils.mapSize][Utils.mapSize];
     private ImageView[][] wools = new ImageView[Utils.mapSize][Utils.mapSize];
     private ImageView[][] milks = new ImageView[Utils.mapSize][Utils.mapSize];
@@ -77,6 +77,11 @@ public class GUI extends Application {
             FileInputStream loadGame = new FileInputStream("pictures/load.jpg");
             Image lPic = new Image(loadGame);
             loadGameButton = new ImageView(lPic);
+            for (int i = 0; i < Utils.mapSize; i++) {
+                for (int j = 0; j < Utils.mapSize; j++) {
+                    grassView[i][j] = new ImageView();
+                }
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -304,9 +309,7 @@ public class GUI extends Application {
         group.getChildren().removeAll(group);
         group.getChildren().addAll(background);
         FarmController.getInstance().listenForCommand();
-        showGrass();
-        // showHen();
-        // showCow();
+//        showGrass();
         showCoins();
         showUpMap();
         showDepot();
@@ -403,8 +406,8 @@ public class GUI extends Application {
                             for (Animal animal : animals) {
                                 //  System.out.println("mamad");
                                 SpriteAnimalAnimation animation = new SpriteAnimalAnimation(animal, 1000, group);
-                              ImageView imageView1 = animation.getImageView();
-                              imageView1.setViewport(new Rectangle2D(0 , 0 , animation.getWidth() ,animation.getHeight() ));
+                                ImageView imageView1 = animation.getImageView();
+                                imageView1.setViewport(new Rectangle2D(0, 0, animation.getWidth(), animation.getHeight()));
                                 animation.setX(animal.getX());
                                 animation.setY(animal.getY());
                                 //animalviews.add(animation.getImageView());
@@ -420,7 +423,11 @@ public class GUI extends Application {
 
 
                     FarmController.getInstance().collision();
-
+                    try {
+                        showGrass();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     time++;
                     if ((time / 10) % 60 < 10) {
                         timer.setText("Time : " + time / 600 + ".0" + (time / 10) % 60);
@@ -439,15 +446,15 @@ public class GUI extends Application {
         Image milkIMG = new Image(new FileInputStream("Products/Milk.png"));
         for (int i = 0; i < Utils.mapSize; i++) {
             for (int j = 0; j < Utils.mapSize; j++) {
-                eggs[i][j] = new ImageView(eggIMG);
+                eggs[i][j].setImage(eggIMG);
                 eggs[i][j].relocate(Utils.START_Y + i * Utils.CELL_WIDTH, Utils.START_X + j * Utils.CELL_HEIGHT);
                 eggs[i][j].setFitWidth(Utils.CELL_WIDTH);
                 eggs[i][j].setFitHeight(Utils.CELL_HEIGHT);
-                wools[i][j] = new ImageView(woolIMG);
+                wools[i][j].setImage(woolIMG);
                 wools[i][j].relocate(Utils.START_Y + i * Utils.CELL_WIDTH, Utils.START_X + j * Utils.CELL_HEIGHT);
                 wools[i][j].setFitWidth(Utils.CELL_WIDTH);
                 wools[i][j].setFitHeight(Utils.CELL_HEIGHT);
-                milks[i][j] = new ImageView(milkIMG);
+                milks[i][j].setImage(milkIMG);
                 milks[i][j].relocate(Utils.START_Y + i * Utils.CELL_WIDTH, Utils.START_X + j * Utils.CELL_HEIGHT);
                 milks[i][j].setFitWidth(Utils.CELL_WIDTH);
                 milks[i][j].setFitHeight(Utils.CELL_HEIGHT);
@@ -512,10 +519,9 @@ public class GUI extends Application {
 
     public void showGrass() throws Exception {
         Image grassIMG = (new Grass()).getImageGrass1();
-        ImageView[][] grassView = new ImageView[Utils.mapSize][Utils.mapSize];
         for (int i = 0; i < Utils.mapSize; i++) {
             for (int j = 0; j < Utils.mapSize; j++) {
-                grassView[i][j] = new ImageView(grassIMG);
+                grassView[i][j].setImage(grassIMG);
                 grassView[i][j].relocate(Utils.START_Y + i * Utils.CELL_WIDTH, Utils.START_X + j * Utils.CELL_HEIGHT);
                 grassView[i][j].setViewport(new Rectangle2D(0, 0, Utils.CELL_WIDTH, Utils.CELL_HEIGHT));
                 Grass.getInstance().grassAnimation().setCycleCount(Animation.INDEFINITE);
@@ -524,9 +530,15 @@ public class GUI extends Application {
                     grassView[i][j].setVisible(true);
                 else
                     grassView[i][j].setVisible(false);
+                if (group.getChildren().contains(grassView[i][j]))
+                    group.getChildren().remove(grassView[i][j]);
                 group.getChildren().add(grassView[i][j]);
             }
         }
+
+    }
+
+    {
         background.setOnMouseClicked(event -> {
             int i = (int) (event.getX() - Utils.START_Y) / Utils.CELL_WIDTH;
             int j = (int) (event.getY() - Utils.START_Y) / Utils.CELL_HEIGHT;
@@ -538,8 +550,6 @@ public class GUI extends Application {
                 e.printStackTrace();
             }
         });
-
-
     }
 
     public void showDepot() {

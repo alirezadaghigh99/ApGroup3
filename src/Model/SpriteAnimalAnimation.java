@@ -65,8 +65,7 @@ public class SpriteAnimalAnimation extends Transition {
             int y = (index / columns) * height + offsetY;
             imageView.setViewport(new Rectangle2D(x, y, width, height));
             imageView.relocate(Utils.START_Y + x * Utils.CELL_WIDTH, Utils.START_X + y * Utils.CELL_HEIGHT);
-            imageView.setFitWidth(Utils.CELL_WIDTH);
-            imageView.setFitHeight(Utils.CELL_HEIGHT);
+            imageView.setVisible(false);
             System.out.println(height);
             if (animal.isMoving()) {
                 imageView.setX(imageView.getX() + animal.getxDirection() * cellSize / count);
@@ -75,7 +74,6 @@ public class SpriteAnimalAnimation extends Transition {
             lastIndex = index;
         }
 
-//        group.getChildren().remove(imageView);
     }
 
 
