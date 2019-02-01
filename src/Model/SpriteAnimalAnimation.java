@@ -19,11 +19,22 @@ public class SpriteAnimalAnimation extends Transition {
     int flag1 = 0;
     int flag2 = 0;
     int flag3 = 0;
+    long timeLine ;
+    long now ;
     Image image;
 
     {
         try {
             image = new Image(new FileInputStream("Cages\\build01.png"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    Image image2;
+
+    {
+        try {
+            image2 = new Image(new FileInputStream("Cages\\break01.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -53,10 +64,11 @@ public class SpriteAnimalAnimation extends Transition {
         }
     }
 
-    public SpriteAnimalAnimation(Animal animal, int timeConstant, Group group) {
+    public SpriteAnimalAnimation(Animal animal, int timeConstant, Group group, long now) {
         this.animal = animal;
         this.timeConstant = 2000;
         this.group = group;
+        this.now = now ;
         this.imageView = getAnimalImageView();
         this.setInterpolator(Interpolator.LINEAR);
 
@@ -179,6 +191,7 @@ public class SpriteAnimalAnimation extends Transition {
                 ImageView cageView = new ImageView(image);
                 animalView.setOnMouseClicked(event -> {
                     animal.setMoved(false);
+                    timeLine = now ;
                     cageView.setX(Utils.START_X + cellSize * animal.getX() - 40);
                     cageView.setY(Utils.START_Y + Utils.CELL_HEIGHT * animal.getY() - 30);
                     if (!group.getChildren().contains(cageView))
@@ -187,6 +200,21 @@ public class SpriteAnimalAnimation extends Transition {
                     cage.cageAnimation(cageView).setCycleCount(Animation.INDEFINITE);
                     cage.cageAnimation(cageView).play();
                 });
+                if (!animal.isMoved()&&(now - timeLine)==50)
+                {
+                    if (group.getChildren().contains(cageView)) {
+                        group.getChildren().remove(cageView);
+                    }
+                        ImageView freeView = new ImageView(image2);
+                        freeView.setX(Utils.START_X + cellSize * animal.getX() - 40);
+                        freeView.setY(Utils.START_Y + Utils.CELL_HEIGHT * animal.getY() - 30);
+
+                    if (!group.getChildren().contains(freeView))
+                        group.getChildren().add(freeView);
+                    freeView.setViewport(new Rectangle2D(0, 0, image2.getWidth() / 3, image2.getHeight() / 3));
+                    cage.cageAnimation(freeView).setCycleCount(Animation.INDEFINITE);
+                    cage.cageAnimation(freeView).play();
+                }
             }
             if (animal.isMoving()) {//ismoving
                 if ((animal.getxDirection() == 1 && animal.getyDirection() == 1)) {//OK//ALANCHECKSHOD

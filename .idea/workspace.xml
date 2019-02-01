@@ -2,315 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c64801da-0b49-48e1-b1f4-71066c99b6ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Model/USER/client/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/USER/network_models/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/USER/network_models/Profile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/USER/server/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/USER/threads/GetDataRunnable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/USER/threads/MessageListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pictures/empty.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< Updated upstream
-      <change beforePath="$PROJECT_DIR$/src/Model/USER/Profile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Utils.java" afterDir="false" />
-=======
+      <change beforePath="$PROJECT_DIR$/src/Model/Animals/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/Animal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/GUI.java" afterDir="false" />
->>>>>>> Stashed changes
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
-  </component>
   <component name="FUSProjectUsageTrigger">
-    <session id="617322221">
-      <usages-collector id="statistics.lifecycle.project">
+    <session id="992961832">
+      <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="project.closed" value="5" />
-          <entry key="project.open.time.11" value="1" />
-          <entry key="project.open.time.12" value="1" />
-          <entry key="project.open.time.15" value="1" />
-          <entry key="project.open.time.18" value="1" />
-          <entry key="project.open.time.19" value="1" />
-          <entry key="project.open.time.2" value="4" />
-          <entry key="project.open.time.26" value="2" />
-          <entry key="project.open.time.28" value="1" />
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.30" value="1" />
-          <entry key="project.open.time.35" value="1" />
-          <entry key="project.open.time.46" value="1" />
-          <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="17" />
+          <entry key="java" value="284" />
+          <entry key="txt" value="12" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="284" />
+          <entry key="PLAIN_TEXT" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="JAVA/Depot" value="1" />
-          <entry key="java" value="319" />
-          <entry key="json" value="8" />
-          <entry key="uml" value="8" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="319" />
-          <entry key="JSON" value="8" />
-          <entry key="UML" value="9" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="dummy" value="10" />
-          <entry key="java" value="17539" />
-          <entry key="json" value="199" />
-          <entry key="txt" value="207" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
+      <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="17539" />
-          <entry key="JSON" value="199" />
-          <entry key="PLAIN_TEXT" value="217" />
           <entry key="XML" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="-1470841858">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="17" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="17" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="6" />
-          <entry key="txt" value="100" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="6" />
-          <entry key="PLAIN_TEXT" value="100" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="2058630927">
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="74" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="74" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="1667" />
-          <entry key="txt" value="142" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="1667" />
-          <entry key="PLAIN_TEXT" value="142" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="1661438568">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="21" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="21" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="1226" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="1226" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="-142238292">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="21" />
-          <entry key="jpg" value="7" />
-          <entry key="png" value="7" />
-          <entry key="svg" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="Image" value="14" />
-          <entry key="JAVA" value="21" />
-          <entry key="SVG" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="dummy" value="6" />
-          <entry key="java" value="2880" />
-          <entry key="txt" value="91" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="2880" />
-          <entry key="PLAIN_TEXT" value="97" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="-1546609068">
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="6" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="6" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="1486" />
-          <entry key="txt" value="9" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="1486" />
-          <entry key="PLAIN_TEXT" value="9" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="992961832">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="5" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.11" value="1" />
-          <entry key="project.open.time.17" value="1" />
-          <entry key="project.open.time.2" value="3" />
-          <entry key="project.open.time.20" value="1" />
-          <entry key="project.open.time.24" value="1" />
-          <entry key="project.open.time.26" value="1" />
-          <entry key="project.open.time.27" value="1" />
-          <entry key="project.open.time.30" value="1" />
-          <entry key="project.open.time.33" value="1" />
-          <entry key="project.open.time.34" value="1" />
-          <entry key="project.opened" value="13" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-<<<<<<< Updated upstream
-          <entry key="java" value="16262" />
-=======
-          <entry key="java" value="17796" />
->>>>>>> Stashed changes
-          <entry key="txt" value="43" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-<<<<<<< Updated upstream
-          <entry key="JAVA" value="16262" />
-=======
-          <entry key="JAVA" value="17796" />
->>>>>>> Stashed changes
-          <entry key="PLAIN_TEXT" value="43" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="68" />
-          <entry key="png" value="7" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="Image" value="7" />
-          <entry key="JAVA" value="68" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="1550425542">
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="26" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="26" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="class" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CLASS" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -320,50 +44,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-            <state relative-caret-position="246">
-              <caret line="154" column="13" selection-start-line="154" selection-start-column="13" selection-end-line="154" selection-end-column="13" />
+            <state relative-caret-position="184">
+              <caret line="202" column="57" selection-start-line="202" selection-start-column="57" selection-end-line="202" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
-=======
-            <state relative-caret-position="114">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#29451#29452#0" expanded="true" />
-                <element signature="e#29477#29478#0" expanded="true" />
-                <element signature="e#29508#29509#0" expanded="true" />
-                <element signature="e#29534#29535#0" expanded="true" />
->>>>>>> Stashed changes
+                <element signature="e#30785#30786#0" expanded="true" />
+                <element signature="e#30811#30812#0" expanded="true" />
+                <element signature="e#30842#30843#0" expanded="true" />
+                <element signature="e#30868#30869#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Utils.java">
+        <entry file="file://$PROJECT_DIR$/src/Model/Workshop/SewingFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="158" column="21" lean-forward="true" selection-start-line="158" selection-start-column="21" selection-end-line="158" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/views/GUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-            <state relative-caret-position="202">
-              <caret line="461" column="17" selection-start-line="461" selection-start-column="17" selection-end-line="461" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#8621#8622#0" expanded="true" />
-                <element signature="e#8655#8656#0" expanded="true" />
-                <element signature="e#8723#8724#0" expanded="true" />
-                <element signature="e#8769#8770#0" expanded="true" />
-                <element signature="e#22180#22181#0" expanded="true" />
-                <element signature="e#22263#22264#0" expanded="true" />
-=======
             <state relative-caret-position="460">
               <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
               <folding>
@@ -373,111 +69,6 @@
                 <element signature="e#572#573#0" expanded="true" />
                 <element signature="e#3385#3386#0" expanded="true" />
                 <element signature="e#3408#3409#0" expanded="true" />
->>>>>>> Stashed changes
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/USER/network_models/Message.java">
-          <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-            <state relative-caret-position="68">
-              <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
-=======
-            <state relative-caret-position="265">
-              <caret line="955" column="55" selection-start-line="955" selection-start-column="55" selection-end-line="955" selection-end-column="55" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
->>>>>>> Stashed changes
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/USER/threads/MessageListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-            <state relative-caret-position="136">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-=======
-            <state relative-caret-position="2530">
-              <caret line="110" column="46" selection-start-line="110" selection-start-column="46" selection-end-line="110" selection-end-column="46" />
->>>>>>> Stashed changes
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/USER/threads/GetDataRunnable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="48" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="48" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< Updated upstream
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/USER/server/Server.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="65" selection-start-line="65" selection-end-line="65" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#946#947#0" expanded="true" />
-                <element signature="e#980#981#0" expanded="true" />
-                <element signature="e#1624#1625#0" expanded="true" />
-                <element signature="e#1699#1700#0" expanded="true" />
-=======
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/views/GUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="605" lean-forward="true" selection-start-line="605" selection-end-line="605" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#22446#22447#0" expanded="true" />
-                <element signature="e#22529#22530#0" expanded="true" />
->>>>>>> Stashed changes
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../MyChatroom/out/production/MyChatroom/Controller/Server.class">
-          <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-            <state relative-caret-position="-531">
-              <folding>
-                <element signature="e#0#2059#0" expanded="true" />
-              </folding>
-=======
-            <state relative-caret-position="253">
-              <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
->>>>>>> Stashed changes
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Model/USER/client/Client.java">
-          <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-            <state relative-caret-position="527">
-              <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
-=======
-            <state relative-caret-position="3151">
-              <caret line="164" column="16" selection-start-line="164" selection-start-column="16" selection-end-line="164" selection-end-column="16" />
->>>>>>> Stashed changes
-              <folding>
-                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -486,10 +77,91 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/FarmController.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-            <state relative-caret-position="23">
-              <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
-=======
+            <state relative-caret-position="265">
+              <caret line="955" column="55" selection-start-line="955" selection-start-column="55" selection-end-line="955" selection-end-column="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Utils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2530">
+              <caret line="110" column="46" selection-start-line="110" selection-start-column="46" selection-end-line="110" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Animals/WildAnimal.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+              <folding>
+                <element signature="e#2362#2363#0" expanded="true" />
+                <element signature="e#2394#2395#0" expanded="true" />
+                <element signature="e#2438#2439#0" expanded="true" />
+                <element signature="e#2470#2471#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/views/GUI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="103">
+              <caret line="582" column="16" selection-start-line="582" selection-start-column="16" selection-end-line="582" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#22446#22447#0" expanded="true" />
+                <element signature="e#22529#22530#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Animals/Animal.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="227">
+              <caret line="101" selection-start-line="101" selection-end-line="101" />
+              <folding>
+                <element signature="e#1686#1687#0" expanded="true" />
+                <element signature="e#1719#1720#0" expanded="true" />
+                <element signature="e#1771#1772#0" expanded="true" />
+                <element signature="e#1815#1816#0" expanded="true" />
+                <element signature="e#1852#1853#0" expanded="true" />
+                <element signature="e#1885#1886#0" expanded="true" />
+                <element signature="e#1937#1938#0" expanded="true" />
+                <element signature="e#1981#1982#0" expanded="true" />
+                <element signature="e#2123#2124#0" expanded="true" />
+                <element signature="e#2151#2152#0" expanded="true" />
+                <element signature="e#2194#2195#0" expanded="true" />
+                <element signature="e#2228#2229#0" expanded="true" />
+                <element signature="e#2562#2563#0" expanded="true" />
+                <element signature="e#2591#2592#0" expanded="true" />
+                <element signature="e#2627#2628#0" expanded="true" />
+                <element signature="e#2660#2661#0" expanded="true" />
+                <element signature="e#2692#2693#0" expanded="true" />
+                <element signature="e#2721#2722#0" expanded="true" />
+                <element signature="e#2751#2752#0" expanded="true" />
+                <element signature="e#2778#2779#0" expanded="true" />
+                <element signature="e#2812#2813#0" expanded="true" />
+                <element signature="e#2843#2844#0" expanded="true" />
+                <element signature="e#3353#3354#0" expanded="true" />
+                <element signature="e#3377#3378#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Animals/ProducerAnimal.java">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2070">
               <caret line="123" column="28" selection-start-line="123" selection-start-column="28" selection-end-line="123" selection-end-column="28" />
               <folding>
@@ -498,59 +170,17 @@
                 <element signature="e#3361#3362#0" expanded="true" />
                 <element signature="e#3397#3398#0" expanded="true" />
               </folding>
->>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Enum" />
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>lenght</find>
-      <find>WildAnimal</find>
-      <find>yOfAnimal</find>
-      <find>animals.get(k)</find>
-      <find>save</find>
-      <find>well</find>
-      <find>Load</find>
-      <find>requirment</find>
-      <find>new</find>
-      <find>Me</find>
-      <find>media</find>
-      <find>play</find>
-      <find>play()</find>
-      <find>showCo</find>
-      <find>playG</find>
-      <find>showC</find>
-      <find>Syst</find>
-      <find>System</find>
-      <find>count</find>
-      <find>showGra</find>
-      <find>showG</find>
-      <find>isM</find>
-      <find>isMo</find>
-      <find>showUp</find>
-      <find>CELL</find>
+      <find>showEmp</find>
+      <find>UpdtateStream</find>
     </findStrings>
-    <replaceStrings>
-      <replace>length</replace>
-      <replace>Animal</replace>
-      <replace>y</replace>
-      <replace>animal</replace>
-      <replace>requirement</replace>
-      <replace>load</replace>
-      <replace>animalView</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="UPDATE_TYPE" value="MERGE" />
@@ -559,68 +189,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Model/Requests/FromDepotToWorkShop.java" />
-        <option value="$PROJECT_DIR$/src/Model/Requests/FromWorkShopToDepot.java" />
-        <option value="$PROJECT_DIR$/src/JsonWorkshop.java" />
-        <option value="$PROJECT_DIR$/src/Model/Map.java" />
-        <option value="$PROJECT_DIR$/src/Model/Workshop/CookieBakery.java" />
-        <option value="$PROJECT_DIR$/src/ReadMap.java" />
-        <option value="$PROJECT_DIR$/Workshop.json" />
-        <option value="$PROJECT_DIR$/maps.json" />
-        <option value="$PROJECT_DIR$/akbar.json" />
-        <option value="$PROJECT_DIR$/src/Model/OnMaps/Map.java" />
-        <option value="$PROJECT_DIR$/src/Model/OurFarm.java" />
-        <option value="$PROJECT_DIR$/src/Model/OnMaps/Cell.java" />
-        <option value="$PROJECT_DIR$/src/Model/Transport/Truck.java" />
-        <option value="$PROJECT_DIR$/src/Model/Upgradable.java" />
-        <option value="$PROJECT_DIR$/src/Model/Products/Product.java" />
-        <option value="$PROJECT_DIR$/src/Model/Workshop/Costum.java" />
-        <option value="$PROJECT_DIR$/src/Model/CheckGoal.java" />
-        <option value="$PROJECT_DIR$/src/Model/Requests/PrintInfoRequest.java" />
-        <option value="$PROJECT_DIR$/src/Controller/CommandAnalyzer.java" />
-        <option value="$PROJECT_DIR$/src/View/View.java" />
-        <option value="$PROJECT_DIR$/src/View/GUI.java" />
-        <option value="$USER_HOME$/AppData/Local/Temp/Rar$DIa0.139/Main.java" />
-        <option value="$PROJECT_DIR$/src/Model/SpriteAnimation.java" />
-        <option value="$PROJECT_DIR$/src/Model/Transport/Helicopter.java" />
-        <option value="$PROJECT_DIR$/src/Model/Animals/Cat.java" />
-        <option value="$PROJECT_DIR$/src/Model/Workshop/SpinneryFactory.java" />
-        <option value="$PROJECT_DIR$/src/Model/OnMaps/Depot.java" />
-        <option value="$PROJECT_DIR$/src/Model/OnMaps/Grass.java" />
-        <option value="$PROJECT_DIR$/src/Model/Animals/Lion.java" />
-        <option value="$PROJECT_DIR$/src/SpriteAnimalAnimation.java" />
-        <option value="$PROJECT_DIR$/src/Model/Workshop/CakeBakery.java" />
-        <option value="$PROJECT_DIR$/src/Model/Workshop/EggPowderPlantWorkShop.java" />
-        <option value="$PROJECT_DIR$/src/Model/OnMaps/Well.java" />
-        <option value="$PROJECT_DIR$/src/Model/Animals/Hen.java" />
-        <option value="$PROJECT_DIR$/src/Model/Animals/Cow.java" />
-        <option value="$PROJECT_DIR$/src/Model/Animals/Sheep.java" />
-        <option value="$PROJECT_DIR$/src/Model/Workshop/WeavingFactory.java" />
-        <option value="$PROJECT_DIR$/src/Model/Animals/ProducerAnimal.java" />
-        <option value="$PROJECT_DIR$/src/Model/Animals/Dog.java" />
-        <option value="$PROJECT_DIR$/src/Model/Animals/DomesticAnimal.java" />
-        <option value="$PROJECT_DIR$/src/Model/Animals/WildAnimal.java" />
-        <option value="$PROJECT_DIR$/src/Model/OnMaps/Cage.java" />
-<<<<<<< Updated upstream
-        <option value="$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java" />
-        <option value="$PROJECT_DIR$/src/Controller/FarmController.java" />
-=======
->>>>>>> Stashed changes
-        <option value="$PROJECT_DIR$/src/Model/Workshop/SewingFactory.java" />
         <option value="$PROJECT_DIR$/src/Model/Animals/Animal.java" />
-<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/src/views/GUI.java" />
-        <option value="$PROJECT_DIR$/src/Model/USER/Profile.java" />
-        <option value="$PROJECT_DIR$/src/Model/Utils.java" />
-        <option value="$PROJECT_DIR$/src/Model/USER/server/Server.java" />
-        <option value="$PROJECT_DIR$/src/Model/USER/client/Client.java" />
-=======
-        <option value="$PROJECT_DIR$/src/Model/USER/Profile.java" />
-        <option value="$PROJECT_DIR$/src/Model/Animals/ProducerAnimal.java" />
         <option value="$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java" />
-        <option value="$PROJECT_DIR$/src/Controller/FarmController.java" />
-        <option value="$PROJECT_DIR$/src/views/GUI.java" />
->>>>>>> Stashed changes
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
       </list>
     </option>
   </component>
@@ -629,17 +201,6 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand />
-      <select />
-    </treeState>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="27" />
-    <option name="width" value="1386" />
-    <option name="height" value="788" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -655,65 +216,73 @@
         <subPane>
           <expand>
             <path>
-              <item name="frenz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frenz" type="462c0819:PsiDirectoryNode" />
+              <item name="ApGroup3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ApGroup3" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="frenz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frenz" type="462c0819:PsiDirectoryNode" />
+              <item name="ApGroup3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ApGroup3" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ApGroup3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ApGroup3" type="462c0819:PsiDirectoryNode" />
               <item name="Animals" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="frenz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frenz" type="462c0819:PsiDirectoryNode" />
+              <item name="ApGroup3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ApGroup3" type="462c0819:PsiDirectoryNode" />
               <item name="Animals" type="462c0819:PsiDirectoryNode" />
               <item name="Africa" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="frenz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frenz" type="462c0819:PsiDirectoryNode" />
+              <item name="ApGroup3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ApGroup3" type="462c0819:PsiDirectoryNode" />
               <item name="Animals" type="462c0819:PsiDirectoryNode" />
               <item name="Africa" type="462c0819:PsiDirectoryNode" />
-              <item name="GuineaFowl" type="462c0819:PsiDirectoryNode" />
+              <item name="Cow" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="frenz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frenz" type="462c0819:PsiDirectoryNode" />
+              <item name="ApGroup3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ApGroup3" type="462c0819:PsiDirectoryNode" />
+              <item name="Animals" type="462c0819:PsiDirectoryNode" />
+              <item name="Africa" type="462c0819:PsiDirectoryNode" />
+              <item name="Grizzly" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ApGroup3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ApGroup3" type="462c0819:PsiDirectoryNode" />
               <item name="pictures" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="frenz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frenz" type="462c0819:PsiDirectoryNode" />
+              <item name="ApGroup3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ApGroup3" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="frenz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frenz" type="462c0819:PsiDirectoryNode" />
+              <item name="ApGroup3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ApGroup3" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ApGroup3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ApGroup3" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="frenz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frenz" type="462c0819:PsiDirectoryNode" />
+              <item name="ApGroup3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ApGroup3" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="USER" type="462c0819:PsiDirectoryNode" />
+              <item name="Animals" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="frenz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frenz" type="462c0819:PsiDirectoryNode" />
+              <item name="ApGroup3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ApGroup3" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="USER" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="frenz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frenz" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Model" type="462c0819:PsiDirectoryNode" />
-              <item name="USER" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -722,36 +291,8 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
-    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
-<<<<<<< Updated upstream
-    <property name="SearchEverywhereHistoryKey" value="getSp&#9;PSI&#9;JAVA://Model.Animals.Animal#getSpeed&#10;Ut&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/ApGroup3/src/Model/Utils.java&#10;playGame&#9;PSI&#9;JAVA://views.GUI#playGame&#10;showGrass&#9;PSI&#9;JAVA://views.GUI#showGrass&#10;isMov&#9;PSI&#9;JAVA://Model.Animals.Animal#isMoving&#10;isMo&#9;PSI&#9;JAVA://Model.Animals.Animal#isMoving&#10;showWea&#9;PSI&#9;JAVA://views.GUI#showWeavingFactory&#10;showWe&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showDe&#9;PSI&#9;JAVA://views.GUI#showDepot&#10;showSpinnery&#9;PSI&#9;JAVA://views.GUI#showspinneryFactory&#10;sPR&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/ApGroup3/src/Model/SpriteAnimation.java&#10;showWell&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showdep&#9;PSI&#9;JAVA://views.GUI#showDepot&#10;playgame&#9;PSI&#9;JAVA://views.GUI#playGame&#10;load&#9;PSI&#9;JAVA://Controller.FarmController#load&#10;save&#9;PSI&#9;JAVA://Controller.FarmController#save&#10;farmcont&#9;PSI&#9;JAVA://Controller.FarmController&#10;upMap&#9;PSI&#9;JAVA://views.GUI#showUpMap&#10;showCow&#9;PSI&#9;JAVA://views.GUI#showCow&#10;showHen&#9;PSI&#9;JAVA://views.GUI#showHen&#10;collision&#9;PSI&#9;JAVA://Controller.FarmController#collision&#10;showhen&#9;PSI&#9;JAVA://views.GUI#showHen&#10;showdepot&#9;null&#9;null&#10;eggPow&#9;PSI&#9;JAVA://views.GUI#showEggPowderPlant&#10;showCa&#9;PSI&#9;JAVA://views.GUI#showCakeBakery&#10;showCake&#9;PSI&#9;JAVA://views.GUI#showCakeBakery&#10;play&#9;PSI&#9;JAVA://views.GUI#playGame&#10;passtur&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;showW&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showGras&#9;PSI&#9;JAVA://views.GUI#showGrass&#10;henVie&#9;PSI&#9;JAVA://views.GUI#henView&#10;showhe&#9;PSI&#9;JAVA://views.GUI#showHen&#10;Turn&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;next&#9;PSI&#9;JAVA://Model.Animals.Animal#nextTurn&#10;showUpMa&#9;PSI&#9;JAVA://views.GUI#showUpMap&#10;showco&#9;PSI&#9;JAVA://views.GUI#showCow&#10;showwell&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showgrass&#9;PSI&#9;JAVA://views.GUI#showGrass&#10;pri&#9;PSI&#9;JAVA://Controller.FarmController#printInfoAction&#10;pass&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;passT&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;money&#9;PSI&#9;JAVA://Controller.FarmController#money&#10;addW&#9;PSI&#9;JAVA://Controller.FarmController#addWaterAction&#10;add&#9;PSI&#9;JAVA://Controller.FarmController#addAnimalAction&#10;tur&#9;PSI&#9;JAVA://Model.Animals.Animal#nextTurn&#10;akba&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/Approject/akbar.json&#10;Map&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/Approject/src/Model/OnMaps/Map.java&#10;map&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/Approject/maps.json&#10;go&#9;PSI&#9;JAVA://Controller.FarmController#goAction&#10;sale&#9;PSI&#9;JAVA://Controller.FarmController#saleAction" />
-=======
-    <property name="SearchEverywhereHistoryKey" value="showWell&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showGrass&#9;PSI&#9;JAVA://views.GUI#showGrass&#10;showProdu&#9;PSI&#9;JAVA://views.GUI#showProducts&#10;showProd&#9;null&#9;null&#10;showDepot&#9;PSI&#9;JAVA://views.GUI#showDepot&#10;showPro&#9;PSI&#9;JAVA://views.GUI#showProducts&#10;showProduct&#9;PSI&#9;JAVA://views.GUI#showProducts&#10;getSp&#9;PSI&#9;JAVA://Model.Animals.Animal#getSpeed&#10;Ut&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/ApGroup3/src/Model/Utils.java&#10;playGame&#9;PSI&#9;JAVA://views.GUI#playGame&#10;isMov&#9;PSI&#9;JAVA://Model.Animals.Animal#isMoving&#10;isMo&#9;PSI&#9;JAVA://Model.Animals.Animal#isMoving&#10;showWea&#9;PSI&#9;JAVA://views.GUI#showWeavingFactory&#10;showWe&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showDe&#9;PSI&#9;JAVA://views.GUI#showDepot&#10;showSpinnery&#9;PSI&#9;JAVA://views.GUI#showspinneryFactory&#10;sPR&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/ApGroup3/src/Model/SpriteAnimation.java&#10;showdep&#9;PSI&#9;JAVA://views.GUI#showDepot&#10;playgame&#9;PSI&#9;JAVA://views.GUI#playGame&#10;load&#9;PSI&#9;JAVA://Controller.FarmController#load&#10;save&#9;PSI&#9;JAVA://Controller.FarmController#save&#10;farmcont&#9;PSI&#9;JAVA://Controller.FarmController&#10;upMap&#9;PSI&#9;JAVA://views.GUI#showUpMap&#10;showCow&#9;PSI&#9;JAVA://views.GUI#showCow&#10;showHen&#9;PSI&#9;JAVA://views.GUI#showHen&#10;collision&#9;PSI&#9;JAVA://Controller.FarmController#collision&#10;showhen&#9;PSI&#9;JAVA://views.GUI#showHen&#10;showdepot&#9;null&#9;null&#10;eggPow&#9;PSI&#9;JAVA://views.GUI#showEggPowderPlant&#10;showCa&#9;PSI&#9;JAVA://views.GUI#showCakeBakery&#10;showCake&#9;PSI&#9;JAVA://views.GUI#showCakeBakery&#10;play&#9;PSI&#9;JAVA://views.GUI#playGame&#10;passtur&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;showW&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showGras&#9;PSI&#9;JAVA://views.GUI#showGrass&#10;henVie&#9;PSI&#9;JAVA://views.GUI#henView&#10;showhe&#9;PSI&#9;JAVA://views.GUI#showHen&#10;Turn&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;next&#9;PSI&#9;JAVA://Model.Animals.Animal#nextTurn&#10;showUpMa&#9;PSI&#9;JAVA://views.GUI#showUpMap&#10;showco&#9;PSI&#9;JAVA://views.GUI#showCow&#10;showwell&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showgrass&#9;PSI&#9;JAVA://views.GUI#showGrass&#10;pri&#9;PSI&#9;JAVA://Controller.FarmController#printInfoAction&#10;pass&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;passT&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;money&#9;PSI&#9;JAVA://Controller.FarmController#money&#10;addW&#9;PSI&#9;JAVA://Controller.FarmController#addWaterAction&#10;add&#9;PSI&#9;JAVA://Controller.FarmController#addAnimalAction" />
->>>>>>> Stashed changes
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548910850067" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ChatRoom" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Colors" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549018670110" />
   </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\10\IdeaProjects\finalProject" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\10\IdeaProjects\finalProject\src\View" />
-      <recent name="C:\Users\SE7EN-PC\Desktop\Approject\src" />
-    </key>
-  </component>
-<<<<<<< Updated upstream
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
     <UpdatedFiles>
       <FILE-GROUP>
@@ -767,9 +308,7 @@
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
           <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/Animals/ProducerAnimal.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/views/GUI.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/Utils.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -777,6 +316,12 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/USER/client/Client.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/USER/network_models/Message.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/USER/network_models/Profile.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/USER/server/Server.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/USER/threads/GetDataRunnable.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/USER/threads/MessageListener.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -784,6 +329,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/USER/Profile.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -865,8 +411,6 @@
       </FILE-GROUP>
     </UpdatedFiles>
   </component>
-=======
->>>>>>> Stashed changes
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -879,45 +423,10 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.GUI (1)">
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GUI (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="views.GUI" />
-      <module name="Approject" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="views.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="View.GUI" />
-      <module name="Approject" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="views.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="views.GUI" />
       <module name="Approject" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="views.*" />
@@ -928,52 +437,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Approject" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Application.GUI" />
-      <item itemvalue="Application.GUI (1)" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GUI (1)" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.GUI" />
       </list>
     </recent_temporary>
@@ -1020,33 +485,8 @@
       <workItem from="1548769124485" duration="6061000" />
       <workItem from="1548789038490" duration="1188000" />
       <workItem from="1548905274023" duration="6150000" />
-<<<<<<< Updated upstream
-      <workItem from="1548917722611" duration="10640000" />
-    </task>
-    <task id="LOCAL-00008" summary="nothing">
-      <created>1544736779682</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1544736779682</updated>
-    </task>
-    <task id="LOCAL-00009" summary="nothing">
-      <created>1544793418267</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1544793418267</updated>
-=======
       <workItem from="1548917722611" duration="12060000" />
-      <workItem from="1548963388089" duration="9216000" />
->>>>>>> Stashed changes
-    </task>
-    <task id="LOCAL-00010" summary="nothing">
-      <created>1544793689273</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1544793689273</updated>
+      <workItem from="1548963388089" duration="11332000" />
     </task>
     <task id="LOCAL-00011" summary="command analayzer">
       <created>1544793710421</created>
@@ -1370,13 +810,6 @@
       <option name="project" value="LOCAL" />
       <updated>1548760634597</updated>
     </task>
-<<<<<<< Updated upstream
-    <option name="localTasksCounter" value="57" />
-    <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="342948000" />
-=======
     <task id="LOCAL-00057" summary="images">
       <created>1548934161254</created>
       <option name="number" value="00057" />
@@ -1391,33 +824,23 @@
       <option name="project" value="LOCAL" />
       <updated>1548942344632</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00001" summary="somechanges">
+      <created>1549017077881</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1549017077885</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="356281000" />
->>>>>>> Stashed changes
-  </component>
-  <component name="TodoView" selected-index="1">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
+    <option name="totallyTimeSpent" value="2080000" />
   </component>
   <component name="ToolWindowManager">
-<<<<<<< Updated upstream
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25402144" />
-=======
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2700454" />
->>>>>>> Stashed changes
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2700454" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1483,14 +906,7 @@
       <window_info anchor="right" id="PlantUML" order="9" weight="0.32980332" />
     </layout-to-restore>
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="cage complete" />
     <MESSAGE value="cage and collision debugged" />
     <MESSAGE value="some thing upgrade" />
     <MESSAGE value="next turn started" />
@@ -1515,7 +931,8 @@
     <MESSAGE value="sfdadsf" />
     <MESSAGE value="akbar" />
     <MESSAGE value="images" />
-    <option name="LAST_COMMIT_MESSAGE" value="images" />
+    <MESSAGE value="somechanges" />
+    <option name="LAST_COMMIT_MESSAGE" value="somechanges" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -1525,275 +942,10 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pictures/play.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Animals/Cat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1150">
-          <caret line="62" column="5" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pictures/Full.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pictures/yesButton.svg" />
-    <entry file="file://$PROJECT_DIR$/pictures/yesButton.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Workshop/CookieBakery.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/OnMaps/Grass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="12" column="33" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SpriteAnimalAnimation.java" />
-    <entry file="file://$PROJECT_DIR$/src/Model/OurFarm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/OnMaps/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Workshop/EggPowderPlantWorkShop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="60" column="56" selection-start-line="60" selection-start-column="56" selection-end-line="60" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/OnMaps/Cell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/com/sun/glass/ui/win/WinApplication.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/scene/image/ImageView.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/animation/AnimationTimer.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/security/AccessController.java" />
-    <entry file="file://$PROJECT_DIR$/src/Model/Animals/Lion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/scene/media/MediaPlayer.java" />
-    <entry file="file://$PROJECT_DIR$/src/Model/OnMaps/Depot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5037">
-          <caret line="223" column="35" selection-start-line="223" selection-start-column="35" selection-end-line="223" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/io/FileInputStream.java" />
-    <entry file="file://$PROJECT_DIR$/Animals/Africa/GuineaFowl/up_left.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Animals/Africa/GuineaFowl/up.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Animals/Africa/GuineaFowl/left.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Animals/Africa/GuineaFowl/eat.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Animals/Africa/GuineaFowl/down_left.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Animals/Africa/GuineaFowl/down.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Animals/Africa/GuineaFowl/death.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/SpriteAnimation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Animals/Hen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="202" selection-start-line="202" selection-end-line="202" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Animals/Cow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Animals/Sheep.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Workshop/WeavingFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Workshop/CakeBakery.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="851">
-          <caret line="54" column="68" selection-start-line="54" selection-start-column="68" selection-end-line="54" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Workshop/SpinneryFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="67" column="22" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/OnMaps/Cage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/OnMaps/Well.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="101" column="71" selection-start-line="101" selection-start-column="71" selection-end-line="101" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Animals/Dog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="107" column="8" selection-start-line="107" selection-start-column="8" selection-end-line="107" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Animals/DomesticAnimal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="21" />
-<<<<<<< Updated upstream
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Animals/ProducerAnimal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2809">
-          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
-          <folding>
-            <element signature="e#2598#2599#0" expanded="true" />
-            <element signature="e#2627#2628#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/FarmController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Workshop/SewingFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
-=======
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Workshop/SewingFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
-          <folding>
-            <element signature="e#471#472#0" expanded="true" />
-            <element signature="e#499#500#0" expanded="true" />
-            <element signature="e#538#539#0" expanded="true" />
-            <element signature="e#572#573#0" expanded="true" />
-            <element signature="e#3385#3386#0" expanded="true" />
-            <element signature="e#3408#3409#0" expanded="true" />
-          </folding>
->>>>>>> Stashed changes
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-        <state relative-caret-position="436">
-          <caret line="158" column="21" lean-forward="true" selection-start-line="158" selection-start-column="21" selection-end-line="158" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="154" column="13" selection-start-line="154" selection-start-column="13" selection-end-line="154" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-=======
-        <state relative-caret-position="2530">
-          <caret line="110" column="46" selection-start-line="110" selection-start-column="46" selection-end-line="110" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Animals/WildAnimal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-          <folding>
-            <element signature="e#2362#2363#0" expanded="true" />
-            <element signature="e#2394#2395#0" expanded="true" />
-            <element signature="e#2438#2439#0" expanded="true" />
-            <element signature="e#2470#2471#0" expanded="true" />
->>>>>>> Stashed changes
-          </folding>
-        </state>
-      </provider>
-    </entry>
-<<<<<<< Updated upstream
-=======
-    <entry file="file://$PROJECT_DIR$/src/Model/USER/Profile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
->>>>>>> Stashed changes
     <entry file="file://$PROJECT_DIR$/src/Model/Animals/Animal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3151">
-          <caret line="164" column="16" selection-start-line="164" selection-start-column="16" selection-end-line="164" selection-end-column="16" />
+        <state relative-caret-position="227">
+          <caret line="101" selection-start-line="101" selection-end-line="101" />
           <folding>
             <element signature="e#1686#1687#0" expanded="true" />
             <element signature="e#1719#1720#0" expanded="true" />
@@ -1823,195 +975,38 @@
         </state>
       </provider>
     </entry>
-<<<<<<< Updated upstream
-    <entry file="file://$PROJECT_DIR$/src/views/GUI.java">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="461" column="17" selection-start-line="461" selection-start-column="17" selection-end-line="461" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#8621#8622#0" expanded="true" />
-            <element signature="e#8655#8656#0" expanded="true" />
-            <element signature="e#8723#8724#0" expanded="true" />
-            <element signature="e#8769#8770#0" expanded="true" />
-            <element signature="e#22180#22181#0" expanded="true" />
-            <element signature="e#22263#22264#0" expanded="true" />
-=======
-    <entry file="file://$PROJECT_DIR$/src/Model/Animals/ProducerAnimal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2070">
-          <caret line="123" column="28" selection-start-line="123" selection-start-column="28" selection-end-line="123" selection-end-column="28" />
-          <folding>
-            <element signature="e#2598#2599#0" expanded="true" />
-            <element signature="e#2627#2628#0" expanded="true" />
-            <element signature="e#3361#3362#0" expanded="true" />
-            <element signature="e#3397#3398#0" expanded="true" />
->>>>>>> Stashed changes
-          </folding>
+        <state relative-caret-position="99">
+          <caret line="1158" column="6" selection-start-line="1158" selection-start-column="6" selection-end-line="1158" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-<<<<<<< Updated upstream
-    <entry file="file://$PROJECT_DIR$/src/Model/USER/Profile.java" />
-    <entry file="file://$PROJECT_DIR$/src/Model/USER/network_models/Profile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="5" selection-start-line="4" selection-start-column="4" selection-end-line="27" selection-end-column="5" />
-          <folding>
-            <element signature="e#424#425#0" expanded="true" />
-            <element signature="e#455#456#0" expanded="true" />
-            <element signature="e#503#504#0" expanded="true" />
-            <element signature="e#543#544#0" expanded="true" />
-            <element signature="e#578#579#0" expanded="true" />
-            <element signature="e#609#610#0" expanded="true" />
-            <element signature="e#657#658#0" expanded="true" />
-            <element signature="e#697#698#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../MyChatroom/out/production/MyChatroom/Controller/Server.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-531">
-          <folding>
-            <element signature="e#0#2059#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/USER/server/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#946#947#0" expanded="true" />
-            <element signature="e#980#981#0" expanded="true" />
-            <element signature="e#1624#1625#0" expanded="true" />
-            <element signature="e#1699#1700#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/USER/client/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-=======
     <entry file="file://$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="184">
+          <caret line="202" column="57" selection-start-line="202" selection-start-column="57" selection-end-line="202" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#29451#29452#0" expanded="true" />
-            <element signature="e#29477#29478#0" expanded="true" />
-            <element signature="e#29508#29509#0" expanded="true" />
-            <element signature="e#29534#29535#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/FarmController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="955" column="55" selection-start-line="955" selection-start-column="55" selection-end-line="955" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#30785#30786#0" expanded="true" />
+            <element signature="e#30811#30812#0" expanded="true" />
+            <element signature="e#30842#30843#0" expanded="true" />
+            <element signature="e#30868#30869#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="605" lean-forward="true" selection-start-line="605" selection-end-line="605" />
+        <state relative-caret-position="103">
+          <caret line="582" column="16" selection-start-line="582" selection-start-column="16" selection-end-line="582" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#22446#22447#0" expanded="true" />
             <element signature="e#22529#22530#0" expanded="true" />
->>>>>>> Stashed changes
           </folding>
         </state>
       </provider>
     </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>Approject</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>com.github.arteam:simple-json-rpc-client:0.9</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>
