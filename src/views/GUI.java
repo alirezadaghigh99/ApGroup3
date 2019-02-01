@@ -7,10 +7,7 @@ import Model.OnMaps.Depot;
 import Model.OnMaps.Grass;
 import Model.OnMaps.Well;
 import Model.OurFarm;
-import Model.Products.Egg;
-import Model.Products.Milk;
-import Model.Products.Product;
-import Model.Products.Wool;
+import Model.Products.*;
 import Model.SpriteAnimalAnimation;
 import Model.Utils;
 import Model.Workshop.*;
@@ -115,15 +112,6 @@ public class GUI extends Application {
                     }
                 }
 
-
-//                    for (Animal animal : OurFarm.getOurFarm().getAnimals()) {
-//                        animal.nextTurn();
-//                        int x = animal.getX();
-//                        int y = animal.getY();
-//                        cells[x][y].getCellAnimals().add(animal);
-//
-//                    }
-                //group.getChildren().removeAll(animalviews);
                 for (int i = 0; i < Utils.mapSize; i++) {
                     for (int j = 0; j < Utils.mapSize; j++) {
                         ArrayList<Animation> animations = new ArrayList<>();
@@ -135,7 +123,6 @@ public class GUI extends Application {
                             SpriteAnimalAnimation animation = new SpriteAnimalAnimation(animal, 1000, group);
                             ImageView imageView1 = animation.getImageView();
                             imageView1.setViewport(new Rectangle2D(0, 0, animation.getWidth(), animation.getHeight()));
-                            System.out.println(animation.getWidth());
                             animation.setX(animal.getX());
                             animation.setY(animal.getY());
                             animation.setCycleCount(Animation.INDEFINITE);
@@ -498,6 +485,34 @@ public class GUI extends Application {
                 }
             }
         }
+        for (int i = 0 ; i<Utils.mapSize ; i++)
+        {
+            for (int j = 0 ; j<Utils.mapSize ; j++)
+            {
+                for (Product product : FarmController.getInstance().ourProducts()) {
+                    if (product instanceof Egg) {
+                        eggs[product.getX()][product.getY()].setOnMouseClicked(event -> {
+                            System.out.println("farshad ahmad zade");
+                            FarmController.getInstance().getMap().getCells()[product.getX()][product.getY()].getCellProducts().clear();
+                            eggs[product.getX()][product.getY()].setVisible(false);
+
+                            Depot.getDepot().getStoredProducts().add(new Egg());
+                            System.out.println(Depot.getDepot().getStoredProducts().size());
+                        });
+                    }
+                    if (product instanceof Wool) {
+                        wools[product.getX()][product.getY()].setOnMouseClicked(event -> {
+                            wools[product.getX()][product.getY()].setVisible(false);
+                            Depot.getDepot().getStoredProducts().add(new Wool());
+                        });                    }
+                    if (product instanceof Milk) {
+                        milks[product.getX()][product.getY()].setOnMouseClicked(event -> {
+                            milks[product.getX()][product.getY()].setVisible(false);
+                            Depot.getDepot().getStoredProducts().add(new Milk());
+                        });                    }
+                }
+            }
+        }
 
     }
 //    private void showCow() {
@@ -564,11 +579,34 @@ public class GUI extends Application {
             if (i >= 0 && j >= 0 && i < Utils.mapSize && j < Utils.mapSize)
                 FarmController.getInstance().addGrassAction(i, j);
             try {
+                if (Well.getWell().getStorage()>18)
                 showGrass();
+                else
+                    showEmpty();
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
+    }
+
+    private void showEmpty() {
+        try {
+            Image image = new Image(new FileInputStream("pictures\\empty.jpg"));
+            ImageView viewOfEmprty = new ImageView(image);
+            viewOfEmprty.setY(80);
+            viewOfEmprty.setX(500);
+            viewOfEmprty.setFitWidth(50);
+            viewOfEmprty.setFitHeight(50);
+            Timeline timeline = new Timeline(
+                    new KeyFrame(Duration.ZERO, new KeyValue(viewOfEmprty.imageProperty(), image)),
+                    new KeyFrame(Duration.seconds(2), new KeyValue(viewOfEmprty.imageProperty(), null))
+            );
+            timeline.play();
+            group.getChildren().add(viewOfEmprty);
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     public void showDepot() {
@@ -592,6 +630,39 @@ public class GUI extends Application {
             behindView.setFitWidth(600);
             behindView.setFitHeight(550);
             behindView.setVisible(true);
+            int numberOfEgg=0;
+            int numberOfDriedEgg=0;
+            int numberOfMilk=0;
+            int numberOfWool=0;
+            //int numberOfEgg;
+
+
+            for (int i = 0 ; i<Depot.getDepot().getStoredProducts().size() ; i++)
+            {
+                if (Depot.getDepot().getStoredProducts().get(i) instanceof Egg) {
+                    numberOfEgg++;
+                    System.out.println("reza");
+                }
+                if (Depot.getDepot().getStoredProducts().get(i) instanceof Milk)
+                    numberOfMilk++;
+                if (Depot.getDepot().getStoredProducts().get(i) instanceof EggPowder)
+                    numberOfDriedEgg++;
+                if (Depot.getDepot().getStoredProducts().get(i) instanceof Wool)
+                    numberOfWool++;
+
+
+            }
+            int finalNumberOfEgg = numberOfEgg;
+            int finalNumberOfWool = numberOfWool;
+            int finalNumberOfMilk = numberOfMilk;
+            int finalNumberOfDriedEgg = numberOfDriedEgg;
+            depotView.setOnMouseEntered(event1 -> {
+                System.out.println("Egg: "+ finalNumberOfEgg);
+                System.out.println("Wool: "+ finalNumberOfWool);
+                System.out.println("Milk: "+ finalNumberOfMilk);
+                System.out.println("DriedEgg: "+ finalNumberOfDriedEgg);
+
+            });
             if (!group.getChildren().contains(behindView))
                 group.getChildren().add(behindView);
             backView.setVisible(true);

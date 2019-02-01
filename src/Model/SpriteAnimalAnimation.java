@@ -20,9 +20,17 @@ public class SpriteAnimalAnimation extends Transition {
     int flag2 = 0;
     int flag3 = 0;
     Image image;
+
+    {
+        try {
+            image = new Image(new FileInputStream("Cages\\build01.png"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
     ImageView animalView = new ImageView();
     Cage cage = new Cage();
-    private ImageView cageView = new ImageView(image);
     private Animal animal;
     private ImageView imageView;
     private int timeConstant;
@@ -156,9 +164,8 @@ public class SpriteAnimalAnimation extends Transition {
             if (flag2 != 1 && flag1 != 1 && flag3 != 1) {
 
                 // animalView = new ImageView(new Image(new FileInputStream(finalPathToImage)));
-                if (group.getChildren().contains(this.imageView))
-                    group.getChildren().remove(this.imageView);
-                System.out.println(finalPathToImage);
+//                if (group.getChildren().contains(this.imageView))
+//                    group.getChildren().remove(this.imageView);
                 animalView.setImage(new Image(new FileInputStream(finalPathToImage)));
             }
 
@@ -169,10 +176,12 @@ public class SpriteAnimalAnimation extends Transition {
                 animalView.setScaleX(-1);
             }
             if (animal instanceof WildAnimal) {
+                ImageView cageView = new ImageView(image);
                 animalView.setOnMouseClicked(event -> {
                     animal.setMoved(false);
                     cageView.setX(Utils.START_X + cellSize * animal.getX() - 40);
                     cageView.setY(Utils.START_Y + Utils.CELL_HEIGHT * animal.getY() - 30);
+                    if (!group.getChildren().contains(cageView))
                     group.getChildren().add(cageView);
                     cageView.setViewport(new Rectangle2D(0, 0, image.getWidth() / 3, image.getHeight() / 3));
                     cage.cageAnimation(cageView).setCycleCount(Animation.INDEFINITE);
@@ -490,10 +499,10 @@ public class SpriteAnimalAnimation extends Transition {
 //                        imageView.setVisible(false);
 //                }
                 }
-                if ((((ProducerAnimal) animal).dontShow())) {
-                    if (group.getChildren().contains(imageView))
-                        group.getChildren().remove(imageView);
-                }
+//                if ((((ProducerAnimal) animal).dontShow())) {
+//                    if (group.getChildren().contains(imageView))
+//                        group.getChildren().remove(imageView);
+//                }
             }
             if (animal.isMoving()) {
                 animalView.setX(Utils.START_X + cellSize * animal.getX() + animal.getxDirection() * animal.getSpeed());
@@ -503,7 +512,7 @@ public class SpriteAnimalAnimation extends Transition {
             } else {
                 animalView.setX(Utils.START_X + cellSize * animal.getX());
                 animalView.setY(Utils.START_Y + Utils.CELL_HEIGHT * animal.getY());
-                this.setCycleDuration(Duration.millis(2000f));
+                this.setCycleDuration(Duration.millis(2000));
             }
             return animalView;
         } catch (FileNotFoundException e) {
