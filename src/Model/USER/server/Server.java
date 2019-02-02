@@ -1,5 +1,6 @@
 package Model.USER.server;
 
+import Model.USER.client.Client;
 import Model.USER.network_models.Message;
 import Model.USER.threads.GetDataRunnable;
 import Model.USER.threads.MessageListener;
@@ -15,11 +16,9 @@ import java.util.ArrayList;
 public class Server implements MessageListener {
     private static Server instance = new Server(Utils.SERVER_PORT);
     private int port;
-
-
-
     private ServerSocket serverSocket;
     private Socket clientSocket;
+    private ArrayList<Client> clients = new ArrayList<>();
     private ObjectOutputStream outputStream;
     private ObjectInputStream inputStream;
 
@@ -31,7 +30,7 @@ public class Server implements MessageListener {
         return instance;
     }
 
-    public void start(){
+    public void start() {
         try {
             setup();
             waitForClient();
@@ -61,11 +60,21 @@ public class Server implements MessageListener {
     }
 
     public void sendData(String text, String from) {
+        Message message = new Message(text, from);
+        try {
+            outputStream.writeObject(message);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
     @Override
-    public void receive(Message message){
+    public void receive(Message message) {
 
+    }
+
+    public ArrayList<Client> getClients() {
+        return clients;
     }
 }

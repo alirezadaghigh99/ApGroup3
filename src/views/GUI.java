@@ -13,6 +13,7 @@ import Model.Utils;
 import Model.Workshop.*;
 import javafx.animation.*;
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -21,6 +22,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
@@ -70,6 +72,7 @@ public class GUI extends Application {
             if (lastTime == 0) {
                 lastTime = now;
             }
+
             if (now > lastTime + second / 10) {
                 animalviews.clear();
                 lastTime = now;
@@ -120,7 +123,7 @@ public class GUI extends Application {
                         for (Animal animal : animals) {
                             //  System.out.println("mamad");
 
-                            SpriteAnimalAnimation animation = new SpriteAnimalAnimation(animal, 1000, group , now);
+                            SpriteAnimalAnimation animation = new SpriteAnimalAnimation(animal, 1000, group, now);
                             ImageView imageView1 = animation.getImageView();
                             imageView1.setViewport(new Rectangle2D(0, 0, animation.getWidth(), animation.getHeight()));
                             animation.setX(animal.getX());
@@ -148,7 +151,6 @@ public class GUI extends Application {
 //                        }
 //
 //                        }
-
 
 
                 FarmController.getInstance().collision();
@@ -442,8 +444,18 @@ public class GUI extends Application {
         timer.relocate(830, 675);
         timer.setTextFill(Color.YELLOWGREEN);
         timer.setFont(Font.font("cooper black", FontWeight.BOLD, 30));
-        group.getChildren().add(timer);
         animationTimer.start();
+        background.setOnKeyPressed(event -> {
+            if (event.getCode().equals(KeyCode.X)) {
+                FarmController.money = 100000;
+                try {
+                    showCoins();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        group.getChildren().add(timer);
     }
 
     private void showProducts() throws Exception {
@@ -485,10 +497,8 @@ public class GUI extends Application {
                 }
             }
         }
-        for (int i = 0 ; i<Utils.mapSize ; i++)
-        {
-            for (int j = 0 ; j<Utils.mapSize ; j++)
-            {
+        for (int i = 0; i < Utils.mapSize; i++) {
+            for (int j = 0; j < Utils.mapSize; j++) {
                 for (Product product : FarmController.getInstance().ourProducts()) {
                     if (product instanceof Egg) {
                         eggs[product.getX()][product.getY()].setOnMouseClicked(event -> {
@@ -504,12 +514,14 @@ public class GUI extends Application {
                         wools[product.getX()][product.getY()].setOnMouseClicked(event -> {
                             wools[product.getX()][product.getY()].setVisible(false);
                             Depot.getDepot().getStoredProducts().add(new Wool());
-                        });                    }
+                        });
+                    }
                     if (product instanceof Milk) {
                         milks[product.getX()][product.getY()].setOnMouseClicked(event -> {
                             milks[product.getX()][product.getY()].setVisible(false);
                             Depot.getDepot().getStoredProducts().add(new Milk());
-                        });                    }
+                        });
+                    }
                 }
             }
         }
@@ -557,7 +569,7 @@ public class GUI extends Application {
             for (int j = 0; j < Utils.mapSize; j++) {
                 grassView[i][j].setImage(grassIMG);
                 grassView[i][j].relocate(Utils.START_Y + i * Utils.CELL_WIDTH, Utils.START_X + j * Utils.CELL_HEIGHT);
-                grassView[i][j].setViewport(new Rectangle2D(0, 0, grassIMG.getWidth()/4, grassIMG.getHeight()/4));
+                grassView[i][j].setViewport(new Rectangle2D(0, 0, grassIMG.getWidth() / 4, grassIMG.getHeight() / 4));
                 Grass.getInstance().grassAnimation().setCycleCount(Animation.INDEFINITE);
                 Grass.getInstance().grassAnimation().play();
                 if (FarmController.getInstance().getMap().getCells()[i][j].getGrass().isGrass())
@@ -579,8 +591,8 @@ public class GUI extends Application {
             if (i >= 0 && j >= 0 && i < Utils.mapSize && j < Utils.mapSize)
                 FarmController.getInstance().addGrassAction(i, j);
             try {
-                if (Well.getWell().getStorage()>18)
-                showGrass();
+                if (Well.getWell().getStorage() > 18)
+                    showGrass();
                 else
                     showEmpty();
             } catch (Exception e) {
@@ -630,15 +642,14 @@ public class GUI extends Application {
             behindView.setFitWidth(600);
             behindView.setFitHeight(550);
             behindView.setVisible(true);
-            int numberOfEgg=0;
-            int numberOfDriedEgg=0;
-            int numberOfMilk=0;
-            int numberOfWool=0;
+            int numberOfEgg = 0;
+            int numberOfDriedEgg = 0;
+            int numberOfMilk = 0;
+            int numberOfWool = 0;
             //int numberOfEgg;
 
 
-            for (int i = 0 ; i<Depot.getDepot().getStoredProducts().size() ; i++)
-            {
+            for (int i = 0; i < Depot.getDepot().getStoredProducts().size(); i++) {
                 if (Depot.getDepot().getStoredProducts().get(i) instanceof Egg) {
                     numberOfEgg++;
                     System.out.println("reza");
@@ -657,10 +668,10 @@ public class GUI extends Application {
             int finalNumberOfMilk = numberOfMilk;
             int finalNumberOfDriedEgg = numberOfDriedEgg;
             depotView.setOnMouseEntered(event1 -> {
-                System.out.println("Egg: "+ finalNumberOfEgg);
-                System.out.println("Wool: "+ finalNumberOfWool);
-                System.out.println("Milk: "+ finalNumberOfMilk);
-                System.out.println("DriedEgg: "+ finalNumberOfDriedEgg);
+                System.out.println("Egg: " + finalNumberOfEgg);
+                System.out.println("Wool: " + finalNumberOfWool);
+                System.out.println("Milk: " + finalNumberOfMilk);
+                System.out.println("DriedEgg: " + finalNumberOfDriedEgg);
 
             });
             if (!group.getChildren().contains(behindView))
@@ -773,7 +784,6 @@ public class GUI extends Application {
     }
 
 
-
     public void showWell() {
         //if (Well.getWell().getLevel()==1)
         Well.getWell().checkLevel();
@@ -869,7 +879,7 @@ public class GUI extends Application {
         weavingView.setX(500);
         weavingView.setY(700);
         group.getChildren().add(weavingView);
-        weavingView.setViewport(new Rectangle2D(0  , 0,weavingView.getImage().getWidth() , weavingView.getImage().getHeight()));
+        weavingView.setViewport(new Rectangle2D(0, 0, weavingView.getImage().getWidth(), weavingView.getImage().getHeight()));
         WeavingFactory.getWeavingFactory().wavingAnimation().setCycleCount(Animation.INDEFINITE);
         WeavingFactory.getWeavingFactory().wavingAnimation().play();
         weavingView.setOnMouseClicked(event -> {
@@ -987,7 +997,7 @@ public class GUI extends Application {
         upgradeWell.setViewport(new Rectangle2D(0, 0, 600, 544));
         Well.getWell().wellBoardAnimation(upgradeWell, 1).setCycleCount(Animation.INDEFINITE);
         Well.getWell().wellBoardAnimation(upgradeWell, 1).play();
-        group.getChildren().addAll(upgradeWell, viewOfSpinnery, viewUpgradeDepot , sewingView);
+        group.getChildren().addAll(upgradeWell, viewOfSpinnery, viewUpgradeDepot, sewingView);
         Label wellPrice = new Label("" + Utils.UPGRADE_WELL_COST);
         wellPrice.relocate(200, 109);
         wellPrice.setTextFill(Color.YELLOW);
@@ -1038,11 +1048,9 @@ public class GUI extends Application {
         });
 
         sewingView.setOnMouseClicked(event -> {
-            try{
+            try {
                 areYouSure("SewingFactory");
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         });
@@ -1112,8 +1120,7 @@ public class GUI extends Application {
                 Depot.getDepot().checkDepotLevel();
 
             }
-            if (toUpgrade.toLowerCase().equals("sewingfactory"))
-            {
+            if (toUpgrade.toLowerCase().equals("sewingfactory")) {
                 SewingFactory.getSewingFactory().checkLevelOfSwewingFactory();
                 SewingFactory.getSewingFactory().sewingAnimation().setCycleCount(Animation.INDEFINITE);
                 SewingFactory.getSewingFactory().sewingAnimation().play();

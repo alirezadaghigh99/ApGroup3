@@ -22,11 +22,11 @@ public class Client implements MessageListener {
         this.nickName = nickName;
     }
 
-    public void start(){
+    public void start() {
         try {
             connect2Server();
             initIOStreams();
-            startTheards();
+            startThreads();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -41,12 +41,12 @@ public class Client implements MessageListener {
         inputStream = new ObjectInputStream(clientSocket.getInputStream());
     }
 
-    private void startTheards() {
+    private void startThreads() {
         new Thread(new GetDataRunnable(inputStream, this)).start();
     }
 
     public void sendData(String text) {
-        Message message = new Message(text, "Client");
+        Message message = new Message(text, this.userName);
         try {
             outputStream.writeObject(message);
         } catch (IOException e) {
@@ -57,5 +57,13 @@ public class Client implements MessageListener {
     @Override
     public void receive(Message message) {
 
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getNickName() {
+        return nickName;
     }
 }

@@ -68,7 +68,7 @@ public class FarmController {
             this.money = 800;
     }
 
-    private static int money;
+    public static int money;
     private long time = 0;
 
     public boolean isGameFinished() {
