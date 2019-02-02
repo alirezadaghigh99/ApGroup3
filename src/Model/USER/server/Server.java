@@ -17,10 +17,11 @@ public class Server implements MessageListener {
     private static Server instance = new Server(Utils.SERVER_PORT);
     private int port;
     private ServerSocket serverSocket;
-    private Socket clientSocket;
+    private ArrayList<Socket> clientSocket;
     private ArrayList<Client> clients = new ArrayList<>();
-    private ObjectOutputStream outputStream;
-    private ObjectInputStream inputStream;
+    private ArrayList<ObjectOutputStream> outputStream;
+    private ArrayList<ObjectInputStream> inputStream;
+    private int counter = 0;
 
     private Server(int port) {
         this.port = port;
@@ -34,7 +35,6 @@ public class Server implements MessageListener {
         try {
             setup();
             waitForClient();
-            initIOStreams();
             startThreads();
         } catch (Exception e) {
             e.printStackTrace();
@@ -47,27 +47,27 @@ public class Server implements MessageListener {
     }
 
     private void waitForClient() throws IOException {
-        clientSocket = serverSocket.accept();
+        new Wait(serverSocket,clientSocket,outputStream,inputStream).start();
     }
 
-    private void initIOStreams() throws IOException {
-        outputStream = new ObjectOutputStream(clientSocket.getOutputStream());
-        inputStream = new ObjectInputStream(clientSocket.getInputStream());
-    }
+//    private void initIOStreams() throws IOException {
+//        outputStream.add()new ObjectOutputStream(clientSocket[counter].getOutputStream());
+//        inputStream = new ObjectInputStream(clientSocket[counter].getInputStream());
+//    }
 
     private void startThreads() {
         new Thread(new GetDataRunnable(inputStream, this)).start();
     }
 
-    public void sendData(String text, String from) {
-        Message message = new Message(text, from);
-        try {
-            outputStream.writeObject(message);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
+//    public void sendData(String text, String from) {
+//        Message message = new Message(text, from);
+//        try {
+//            outputStream.writeObject(message);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//    }
 
     @Override
     public void receive(Message message) {
@@ -77,4 +77,5 @@ public class Server implements MessageListener {
     public ArrayList<Client> getClients() {
         return clients;
     }
+
 }
