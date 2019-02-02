@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c64801da-0b49-48e1-b1f4-71066c99b6ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/GUI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -102,8 +101,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/views/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="507" selection-start-line="507" selection-end-line="507" />
+            <state relative-caret-position="549">
+              <caret line="507" lean-forward="true" selection-start-line="507" selection-end-line="507" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#8113#8114#0" expanded="true" />
@@ -328,7 +327,7 @@
     <property name="SearchEverywhereHistoryKey" value="showEg&#9;PSI&#9;JAVA://views.GUI#showEggPowderPlant&#10;showpro&#9;PSI&#9;JAVA://views.GUI#showProducts&#10;showDe&#9;PSI&#9;JAVA://views.GUI#showDepot&#10;showUpM&#9;PSI&#9;JAVA://views.GUI#showUpMap&#10;che&#9;PSI&#9;JAVA://Controller.FarmController#checkFinishGame&#10;check&#9;PSI&#9;JAVA://Controller.FarmController#checkFinishGame&#10;showProdu&#9;PSI&#9;JAVA://views.GUI#showProducts&#10;showSewin&#9;PSI&#9;JAVA://views.GUI#showSewingFactory&#10;showPro&#9;PSI&#9;JAVA://views.GUI#showProducts&#10;showDepot&#9;PSI&#9;JAVA://views.GUI#showDepot&#10;showDepo&#9;PSI&#9;JAVA://views.GUI#showDepot&#10;showUp&#9;PSI&#9;JAVA://views.GUI#showUpMap&#10;addAnimalAc&#9;PSI&#9;JAVA://Controller.FarmController#addAnimalAction" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549140807844" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549140850088" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
@@ -519,14 +518,7 @@
       <workItem from="1548905274023" duration="6150000" />
       <workItem from="1548917722611" duration="12060000" />
       <workItem from="1548963388089" duration="12188000" />
-      <workItem from="1549026906272" duration="22658000" />
-    </task>
-    <task id="LOCAL-00014" summary="plant grass action">
-      <created>1544811091844</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1544811091844</updated>
+      <workItem from="1549026906272" duration="23336000" />
     </task>
     <task id="LOCAL-00015" summary="well and plant">
       <created>1544811452669</created>
@@ -864,17 +856,23 @@
       <option name="project" value="LOCAL" />
       <updated>1549139734322</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="sine">
+      <created>1549140860847</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1549140860847</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25594000" />
+    <option name="totallyTimeSpent" value="26272000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27382752" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27382752" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -883,7 +881,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32984293" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30136988" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30136988" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39554796" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1154,8 +1152,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="507" selection-start-line="507" selection-end-line="507" />
+        <state relative-caret-position="549">
+          <caret line="507" lean-forward="true" selection-start-line="507" selection-end-line="507" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#8113#8114#0" expanded="true" />
