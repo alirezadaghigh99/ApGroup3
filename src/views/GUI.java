@@ -457,7 +457,7 @@ public class GUI extends Application {
         }
         Image imageOfLevel3 = null;
         try {
-            imageOfLevel3 = new Image(new FileInputStream("pictures\\hard.jpg"));
+            imageOfLevel3 = new Image(new FileInputStream("pictures\\hard.png"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -698,6 +698,33 @@ public class GUI extends Application {
         depotView.setX(400);
         depotView.setY(530);
         group.getChildren().add(depotView);
+        depotView.setOnMouseEntered(event1 -> {
+            if (Depot.getDepot().getStoredProducts().size()==0)
+            {
+
+                try {
+                    Image empty = new Image(new FileInputStream("pictures\\empty1.png"));
+                    ImageView emptyView = new ImageView(empty);
+                    emptyView.setX(400);
+                    emptyView.setY(480);
+                    emptyView.setFitWidth(100);
+                    emptyView.setFitHeight(100);
+                    Timeline timeline = new Timeline(
+                            new KeyFrame(Duration.ZERO, new KeyValue(emptyView.imageProperty(), empty)),
+                            new KeyFrame(Duration.seconds(2), new KeyValue(emptyView.imageProperty(), null))
+                    );
+                    timeline.play();
+                    group.getChildren().addAll(emptyView);
+
+
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+
+        });
         depotView.setOnMouseClicked(event -> {
             animationTimer.stop();
             ImageView behindView = Depot.getDepot().getBehindView();
@@ -737,10 +764,7 @@ public class GUI extends Application {
 
             }
 
-            depotView.setOnMouseEntered(event1 -> {
 
-
-            });
             if (!group.getChildren().contains(behindView))
                 group.getChildren().add(behindView);
             backView.setVisible(true);
