@@ -1006,6 +1006,10 @@ public class FarmController {
         {
             SewingFactory.getSewingFactory().upgrade();
         }
+        if (type.equals("eggpowderplantworkshop"))
+        {
+            EggPowderPlantWorkShop.getEggPowderPlantWorkShop().upgrade();
+        }
 
     }
 

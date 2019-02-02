@@ -194,6 +194,16 @@ public class Depot extends Building implements Upgradable {
             e.printStackTrace();
         }
     }
+    Image EggPowderIcon;
+
+    {
+        try {
+            sewingIconImage = new Image(new FileInputStream("Products\\EggPowder.png"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     Image flourImageIcon;
 
@@ -204,6 +214,9 @@ public class Depot extends Building implements Upgradable {
             e.printStackTrace();
         }
     }
+    ImageView eggPowderView = new ImageView(eggPowderImageIcon);
+
+
 
 
     ImageView imageView = new ImageView();
@@ -234,6 +247,7 @@ public void checkDepotLevel()
     public ImageView getMilkView() {
         return milkView;
     }
+
 
     public ImageView getEggView() {
         return EggView;

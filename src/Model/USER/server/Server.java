@@ -35,7 +35,7 @@ public class Server implements MessageListener {
         try {
             setup();
             waitForClient();
-            startThreads();
+           // startThreads();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -55,9 +55,9 @@ public class Server implements MessageListener {
 //        inputStream = new ObjectInputStream(clientSocket[counter].getInputStream());
 //    }
 
-    private void startThreads() {
-        new Thread(new GetDataRunnable(inputStream, this)).start();
-    }
+//    private void startThreads() {
+//        new Thread(new GetDataRunnable(inputStream, this)).start();
+//    }
 
 //    public void sendData(String text, String from) {
 //        Message message = new Message(text, from);

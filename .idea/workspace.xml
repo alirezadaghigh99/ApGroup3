@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c64801da-0b49-48e1-b1f4-71066c99b6ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Model/ImageViewOfMine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/FarmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FarmController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Animals/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/Cat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Animals/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Animals/Dog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/OnMaps/Depot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/OnMaps/Depot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/USER/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/USER/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Workshop/EggPowderPlantWorkShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Workshop/EggPowderPlantWorkShop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/GUI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,25 +20,25 @@
     <session id="992961832">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="3161" />
-          <entry key="txt" value="21" />
+          <entry key="java" value="4253" />
+          <entry key="txt" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3161" />
-          <entry key="PLAIN_TEXT" value="21" />
+          <entry key="JAVA" value="4253" />
+          <entry key="PLAIN_TEXT" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="5" />
+          <entry key="java" value="7" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="5" />
+          <entry key="JAVA" value="7" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
@@ -92,8 +90,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/FarmController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="413" column="8" selection-start-line="413" selection-start-column="8" selection-end-line="413" selection-end-column="8" />
+            <state relative-caret-position="226">
+              <caret line="1010" column="73" selection-start-line="1010" selection-start-column="73" selection-end-line="1010" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1025#1026#0" expanded="true" />
@@ -105,20 +103,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Utils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="104" column="28" selection-start-line="104" selection-start-column="28" selection-end-line="104" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/views/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="842" column="91" selection-start-line="842" selection-start-column="91" selection-end-line="842" selection-end-column="91" />
+            <state relative-caret-position="-279">
+              <caret line="1232" column="95" selection-start-line="1232" selection-start-column="95" selection-end-line="1232" selection-end-column="95" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#8113#8114#0" expanded="true" />
@@ -133,12 +122,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/Workshop/EggPowderPlantWorkShop.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="87" column="9" lean-forward="true" selection-start-line="87" selection-start-column="9" selection-end-line="87" selection-end-column="9" />
+              <folding>
+                <element signature="e#2821#2822#0" expanded="true" />
+                <element signature="e#2840#2841#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/USER/server/Server.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="388">
+              <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/OnMaps/Depot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-118">
-              <caret line="233" column="36" selection-start-line="233" selection-start-column="36" selection-end-line="233" selection-end-column="36" />
+            <state relative-caret-position="250">
+              <caret line="249" selection-start-line="249" selection-end-line="249" />
               <folding>
+                <element signature="e#5806#5807#0" expanded="true" />
                 <element signature="e#5837#5838#0" expanded="true" />
+                <element signature="e#5527#5528#0" expanded="true" />
+                <element signature="e#5557#5558#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -169,21 +183,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/Animals/ProducerAnimal.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2162">
-              <caret line="123" column="28" selection-start-line="123" selection-start-column="28" selection-end-line="123" selection-end-column="28" />
-              <folding>
-                <element signature="e#2598#2599#0" expanded="true" />
-                <element signature="e#2627#2628#0" expanded="true" />
-                <element signature="e#3361#3362#0" expanded="true" />
-                <element signature="e#3397#3398#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -200,6 +199,7 @@
       <find>showGrass</find>
       <find>Syste</find>
       <find>getX</find>
+      <find>upgrade</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -213,8 +213,10 @@
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/Model/Animals/Cat.java" />
         <option value="$PROJECT_DIR$/src/Model/Animals/Dog.java" />
-        <option value="$PROJECT_DIR$/src/Model/OnMaps/Depot.java" />
         <option value="$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java" />
+        <option value="$PROJECT_DIR$/src/Model/USER/server/Server.java" />
+        <option value="$PROJECT_DIR$/src/Model/OnMaps/Depot.java" />
+        <option value="$PROJECT_DIR$/src/Model/Workshop/EggPowderPlantWorkShop.java" />
         <option value="$PROJECT_DIR$/src/Controller/FarmController.java" />
         <option value="$PROJECT_DIR$/src/views/GUI.java" />
       </list>
@@ -327,10 +329,10 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="showUpM&#9;PSI&#9;JAVA://views.GUI#showUpMap&#10;che&#9;PSI&#9;JAVA://Controller.FarmController#checkFinishGame&#10;check&#9;PSI&#9;JAVA://Controller.FarmController#checkFinishGame&#10;showProdu&#9;PSI&#9;JAVA://views.GUI#showProducts&#10;showSewin&#9;PSI&#9;JAVA://views.GUI#showSewingFactory&#10;showPro&#9;PSI&#9;JAVA://views.GUI#showProducts&#10;showDepot&#9;PSI&#9;JAVA://views.GUI#showDepot&#10;showDepo&#9;PSI&#9;JAVA://views.GUI#showDepot&#10;showUp&#9;PSI&#9;JAVA://views.GUI#showUpMap&#10;addAnimalAc&#9;PSI&#9;JAVA://Controller.FarmController#addAnimalAction" />
+    <property name="SearchEverywhereHistoryKey" value="showEg&#9;PSI&#9;JAVA://views.GUI#showEggPowderPlant&#10;showpro&#9;PSI&#9;JAVA://views.GUI#showProducts&#10;showDe&#9;PSI&#9;JAVA://views.GUI#showDepot&#10;showUpM&#9;PSI&#9;JAVA://views.GUI#showUpMap&#10;che&#9;PSI&#9;JAVA://Controller.FarmController#checkFinishGame&#10;check&#9;PSI&#9;JAVA://Controller.FarmController#checkFinishGame&#10;showProdu&#9;PSI&#9;JAVA://views.GUI#showProducts&#10;showSewin&#9;PSI&#9;JAVA://views.GUI#showSewingFactory&#10;showPro&#9;PSI&#9;JAVA://views.GUI#showProducts&#10;showDepot&#9;PSI&#9;JAVA://views.GUI#showDepot&#10;showDepo&#9;PSI&#9;JAVA://views.GUI#showDepot&#10;showUp&#9;PSI&#9;JAVA://views.GUI#showUpMap&#10;addAnimalAc&#9;PSI&#9;JAVA://Controller.FarmController#addAnimalAction" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549132819438" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549139637387" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
@@ -347,12 +349,8 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Controller/FarmController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/USER/client/Client.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/USER/client/exGUI.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/USER/server/Server.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/Utils.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/views/GUI.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -360,7 +358,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/USER/client/exGUI.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/USER/server/Wait.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -368,7 +366,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/USER/network_models/Profile.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -526,14 +523,7 @@
       <workItem from="1548905274023" duration="6150000" />
       <workItem from="1548917722611" duration="12060000" />
       <workItem from="1548963388089" duration="12188000" />
-      <workItem from="1549026906272" duration="17795000" />
-    </task>
-    <task id="LOCAL-00012" summary="command analayzer">
-      <created>1544793861211</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1544793861211</updated>
+      <workItem from="1549026906272" duration="21498000" />
     </task>
     <task id="LOCAL-00013" summary="plant grass action">
       <created>1544810739854</created>
@@ -871,11 +861,18 @@
       <option name="project" value="LOCAL" />
       <updated>1549019107580</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="catt and dog">
+      <created>1549133151319</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1549133151319</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20731000" />
+    <option name="totallyTimeSpent" value="24434000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -954,7 +951,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="some thing upgrade" />
     <MESSAGE value="next turn started" />
     <MESSAGE value="Domestic animal: next turn method added" />
     <MESSAGE value="All of next turns added" />
@@ -979,7 +975,8 @@
     <MESSAGE value="images" />
     <MESSAGE value="somechanges" />
     <MESSAGE value="new image" />
-    <option name="LAST_COMMIT_MESSAGE" value="new image" />
+    <MESSAGE value="catt and dog" />
+    <option name="LAST_COMMIT_MESSAGE" value="catt and dog" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -1089,30 +1086,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/OnMaps/Depot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-118">
-          <caret line="233" column="36" selection-start-line="233" selection-start-column="36" selection-end-line="233" selection-end-column="36" />
-          <folding>
-            <element signature="e#5837#5838#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/FarmController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="413" column="8" selection-start-line="413" selection-start-column="8" selection-end-line="413" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1025#1026#0" expanded="true" />
-            <element signature="e#1059#1060#0" expanded="true" />
-            <element signature="e#1110#1111#0" expanded="true" />
-            <element signature="e#1156#1157#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
@@ -1138,10 +1111,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/USER/server/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/OnMaps/Depot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="249" selection-start-line="249" selection-end-line="249" />
+          <folding>
+            <element signature="e#5806#5807#0" expanded="true" />
+            <element signature="e#5837#5838#0" expanded="true" />
+            <element signature="e#5527#5528#0" expanded="true" />
+            <element signature="e#5557#5558#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Workshop/EggPowderPlantWorkShop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="87" column="9" lean-forward="true" selection-start-line="87" selection-start-column="9" selection-end-line="87" selection-end-column="9" />
+          <folding>
+            <element signature="e#2821#2822#0" expanded="true" />
+            <element signature="e#2840#2841#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/FarmController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="1010" column="73" selection-start-line="1010" selection-start-column="73" selection-end-line="1010" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1025#1026#0" expanded="true" />
+            <element signature="e#1059#1060#0" expanded="true" />
+            <element signature="e#1110#1111#0" expanded="true" />
+            <element signature="e#1156#1157#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="842" column="91" selection-start-line="842" selection-start-column="91" selection-end-line="842" selection-end-column="91" />
+        <state relative-caret-position="-279">
+          <caret line="1232" column="95" selection-start-line="1232" selection-start-column="95" selection-end-line="1232" selection-end-column="95" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#8113#8114#0" expanded="true" />
