@@ -14,7 +14,7 @@ import javafx.util.Duration;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
-public class SpriteAnimalAnimation extends Transition {
+public class    SpriteAnimalAnimation extends Transition {
     private final int cellSize = Utils.CELL_WIDTH;
     int flag1 = 0;
     int flag2 = 0;
@@ -66,14 +66,14 @@ public class SpriteAnimalAnimation extends Transition {
 
     public SpriteAnimalAnimation(Animal animal, int timeConstant, Group group, long now) {
         this.animal = animal;
-        this.timeConstant = 2000;
+        this.timeConstant = timeConstant * 2;
         this.group = group;
         this.now = now ;
         this.imageView = getAnimalImageView();
         this.setInterpolator(Interpolator.LINEAR);
 
 
-//        if (!group.getChildren().contains(this.imageView))
+        if (!group.getChildren().contains(this.imageView))
         group.getChildren().add(this.imageView);
 
     }
@@ -94,11 +94,11 @@ public class SpriteAnimalAnimation extends Transition {
     protected void interpolate(double k) {
         int index = Math.min((int) Math.floor(k * count), count - 1);
         if (index != lastIndex) {
-            int x = (index % columns) * width + offsetX;
+             int x = (index % columns) * width + offsetX;
             int y = (index / columns) * height + offsetY;
             imageView.setViewport(new Rectangle2D(x, y, width, height));
             imageView.relocate(Utils.START_Y + x * Utils.CELL_WIDTH, Utils.START_X + y * Utils.CELL_HEIGHT);
-            imageView.setVisible(false);
+                imageView.setVisible(false);
             if (animal.isMoving()) {
                 imageView.setX(imageView.getX() + animal.getxDirection() * cellSize / count);
                 imageView.setY(imageView.getY() + animal.getyDirection() * cellSize / count);
@@ -113,8 +113,9 @@ public class SpriteAnimalAnimation extends Transition {
         String pathToImage = "Animals\\Africa\\";
         String finalPathToImage = new String();
         String finalPathRightsToImage = new String();
-        if (animal instanceof Cat)
+        if (animal instanceof Cat) {
             pathToImage = pathToImage.concat("Cat");
+        }
         else if (animal instanceof Dog)
             pathToImage = pathToImage.concat("Dog");
         else if (animal instanceof Bear)
@@ -191,7 +192,10 @@ public class SpriteAnimalAnimation extends Transition {
                 ImageView cageView = new ImageView(image);
                 animalView.setOnMouseClicked(event -> {
                     animal.setMoved(false);
+                    System.out.println(now);
                     timeLine = now ;
+                    System.out.println(timeLine);
+
                     cageView.setX(Utils.START_X + cellSize * animal.getX() - 40);
                     cageView.setY(Utils.START_Y + Utils.CELL_HEIGHT * animal.getY() - 30);
                     if (!group.getChildren().contains(cageView))
@@ -200,20 +204,24 @@ public class SpriteAnimalAnimation extends Transition {
                     cage.cageAnimation(cageView).setCycleCount(Animation.INDEFINITE);
                     cage.cageAnimation(cageView).play();
                 });
-                if (!animal.isMoved()&&(now - timeLine)==50)
-                {
-                    if (group.getChildren().contains(cageView)) {
-                        group.getChildren().remove(cageView);
-                    }
-                        ImageView freeView = new ImageView(image2);
-                        freeView.setX(Utils.START_X + cellSize * animal.getX() - 40);
-                        freeView.setY(Utils.START_Y + Utils.CELL_HEIGHT * animal.getY() - 30);
+                if (!animal.isMoved()) {
 
-                    if (!group.getChildren().contains(freeView))
-                        group.getChildren().add(freeView);
-                    freeView.setViewport(new Rectangle2D(0, 0, image2.getWidth() / 3, image2.getHeight() / 3));
-                    cage.cageAnimation(freeView).setCycleCount(Animation.INDEFINITE);
-                    cage.cageAnimation(freeView).play();
+
+                    if (group.getChildren().contains(cageView)) {
+                        cageView.setOnMouseClicked(event -> {
+                            group.getChildren().remove(cageView);
+
+                            ImageView freeView = new ImageView(image2);
+                            freeView.setX(Utils.START_X + cellSize * animal.getX() - 40);
+                            freeView.setY(Utils.START_Y + Utils.CELL_HEIGHT * animal.getY() - 30);
+
+                            if (!group.getChildren().contains(freeView))
+                                group.getChildren().add(freeView);
+                            freeView.setViewport(new Rectangle2D(0, 0, image2.getWidth() / 5, image2.getHeight() / 5));
+                            cage.cageAnimation(freeView).setCycleCount(Animation.INDEFINITE);
+                            cage.cageAnimation(freeView).play();
+                        });
+                    }
                 }
             }
             if (animal.isMoving()) {//ismoving
@@ -228,7 +236,7 @@ public class SpriteAnimalAnimation extends Transition {
 
                     }
                     if (animal instanceof Hen) {
-                        this.height = (int) (animalView.getImage().getHeight() / Math.ceil(count / Utils.COLUMNS_OF_HEN));
+                        this.height = (int) (animalView.getImage().getHeight()/5 );
                         this.width = (int) (animalView.getImage().getWidth() / (Utils.COLUMNS_OF_HEN));
                     }
                     if (animal instanceof Lion) {
@@ -495,7 +503,6 @@ public class SpriteAnimalAnimation extends Transition {
 
                         }
                         if (animal instanceof Hen) {
-                            System.out.println("shshsshshshshshsh");
                             this.width = (int) (390 / Utils.COLUMNS_OF_HEN);
                             this.height = (int) (350 / (25 / Utils.COLUMNS_OF_HEN));
                             // group.getChildren().remove(imageView);
@@ -508,7 +515,6 @@ public class SpriteAnimalAnimation extends Transition {
 
                         }
                     } else if (!((ProducerAnimal) animal).isDead() && !((ProducerAnimal) animal).dontShow()) {
-                        System.out.println("mn daram mikhoraaaaaaaam");
                         if (animal instanceof Sheep) {
                             this.height = (int) Math.floor(animalView.getImage().getHeight() / 5);
                             this.width = (int) (animalView.getImage().getWidth() / 5);
@@ -522,21 +528,13 @@ public class SpriteAnimalAnimation extends Transition {
                             this.width = (int) (animalView.getImage().getWidth() / 5);
                         }
                     }
-//                if (((ProducerAnimal) animal).dontShow()) {
-//                    if (imageView != null)
-//                        imageView.setVisible(false);
-//                }
-                }
-//                if ((((ProducerAnimal) animal).dontShow())) {
-//                    if (group.getChildren().contains(imageView))
-//                        group.getChildren().remove(imageView);
-//                }
+           }
             }
             if (animal.isMoving()) {
                 animalView.setX(Utils.START_X + cellSize * animal.getX() + animal.getxDirection() * animal.getSpeed());
 
                 animalView.setY(Utils.START_Y + Utils.CELL_HEIGHT * animal.getY() + animal.getyDirection() * animal.getSpeed());
-                this.setCycleDuration(Duration.millis(timeConstant / animal.getSpeed()));
+                this.setCycleDuration(Duration.millis(50));
             } else {
                 animalView.setX(Utils.START_X + cellSize * animal.getX());
                 animalView.setY(Utils.START_Y + Utils.CELL_HEIGHT * animal.getY());
@@ -577,6 +575,7 @@ public class SpriteAnimalAnimation extends Transition {
         }
         return "";
     }
+
 
 
     public void setX(int x) {

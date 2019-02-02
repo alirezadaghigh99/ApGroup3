@@ -21,9 +21,14 @@ public class Cat extends DomesticAnimal implements Upgradable {
     public Cat() throws FileNotFoundException {
     }
 
-
+@Override
+    public boolean isMoving()
+{
+    return true ;
+}
     @Override
     public void upgrade() throws Exception {
+
         int money = 100;
         if(level == 2)
             throw new Exception("Level exceeded");

@@ -25,14 +25,23 @@ public class FarmController {
     private WorkShop workShopcu = new Costum();
     private views.ViewBefore viewBefore = new views.ViewBefore();
     private int Money;
-    private int levelOfGame;
+    private int levelOfGame = 1;
     private boolean isFinished = false;
-    private int hens;
-    private int sheeps;
-    private int cows;
+    private int hens = 0;
+    private int sheeps = 0 ;
+    private int cows = 0;
     private int eggs;
     private int milk;
     private int wool;
+
+    public int getLevelOfGame() {
+        return levelOfGame;
+    }
+
+    public void setLevelOfGame(int levelOfGame) {
+        this.levelOfGame = levelOfGame;
+    }
+
     private static FarmController instance = new FarmController();
 
     private FarmController() {
@@ -362,8 +371,50 @@ public class FarmController {
             }
         }
     }
+    public boolean checkFinishGame()
+    {
+        hens = 0 ;
+        sheeps = 0 ;
+        cows = 0 ;
+        eggs = 0;
 
-    private void saleAction(String transName, String produtName, int count) {
+
+           for (int i = 0 ; i<OurFarm.getOurFarm().getAnimals().size() ; i++)
+           {
+               if (OurFarm.getOurFarm().getAnimals().get(i) instanceof Hen)
+               {
+                   hens++;
+                   System.out.println("mn hen daram");
+               }
+               if (OurFarm.getOurFarm().getAnimals().get(i) instanceof Cow)
+               {
+                   cows++;
+               }
+               if (OurFarm.getOurFarm().getAnimals().get(i) instanceof Sheep)
+               {
+                   sheeps++;
+               }
+           }
+        if (levelOfGame==1)
+        {
+           if ( OurFarm.getOurFarm().getProducts().size()==2&&hens==3&&cows==1)
+           {
+              // System.out.println("man be hadafam residdam");
+               return true;
+           }
+        }
+      else   if (levelOfGame==2)
+        {
+            if ( OurFarm.getOurFarm().getProducts().size()==5&&hens==5&&cows==2&&sheeps==3)
+            {
+               // System.out.println("man be hadafam residdam");
+                return true;
+            }
+        }
+         return false;
+    }
+
+    public void saleAction(String transName, String produtName, int count) {
         Depot depot = Depot.getDepot();
         if (transName.equals("truck")) {
             Truck truck = Truck.getTruck();

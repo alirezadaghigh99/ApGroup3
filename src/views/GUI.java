@@ -13,7 +13,6 @@ import Model.Utils;
 import Model.Workshop.*;
 import javafx.animation.*;
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -22,7 +21,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
@@ -41,6 +39,16 @@ import java.util.Iterator;
 
 public class GUI extends Application {
     ImageView wellView = Well.getWell().getImageView1();
+    Image endImage;
+
+    {
+        try {
+            endImage = new Image(new FileInputStream("pictures\\perfect.jpg"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
     Media music = new Media(new File("music/pirates.mp3").toURI().toString());
     MediaPlayer player = new MediaPlayer(music);
     int X;
@@ -72,7 +80,6 @@ public class GUI extends Application {
             if (lastTime == 0) {
                 lastTime = now;
             }
-
             if (now > lastTime + second / 10) {
                 animalviews.clear();
                 lastTime = now;
@@ -123,7 +130,7 @@ public class GUI extends Application {
                         for (Animal animal : animals) {
                             //  System.out.println("mamad");
 
-                            SpriteAnimalAnimation animation = new SpriteAnimalAnimation(animal, 1000, group, now);
+                            SpriteAnimalAnimation animation = new SpriteAnimalAnimation(animal, 1000, group , now);
                             ImageView imageView1 = animation.getImageView();
                             imageView1.setViewport(new Rectangle2D(0, 0, animation.getWidth(), animation.getHeight()));
                             animation.setX(animal.getX());
@@ -153,6 +160,7 @@ public class GUI extends Application {
 //                        }
 
 
+
                 FarmController.getInstance().collision();
                 try {
                     showGrass();
@@ -163,6 +171,16 @@ public class GUI extends Application {
 
 
                 time++;
+                if (FarmController.getInstance().checkFinishGame())
+                {
+                    animationTimer.stop();
+                    ImageView endView = new ImageView(endImage);
+                    endView.setX(background.getX());
+                    endView.setY(background.getY());
+                    endView.setFitHeight(background.getFitHeight());
+                    endView.setFitWidth(background.getFitWidth());
+                    group.getChildren().add(endView);
+                }
                 if ((time / 10) % 60 < 10) {
                     timer.setText("Time : " + time / 600 + ".0" + (time / 10) % 60);
                 } else {
@@ -444,18 +462,8 @@ public class GUI extends Application {
         timer.relocate(830, 675);
         timer.setTextFill(Color.YELLOWGREEN);
         timer.setFont(Font.font("cooper black", FontWeight.BOLD, 30));
-        animationTimer.start();
-        background.setOnKeyPressed(event -> {
-            if (event.getCode().equals(KeyCode.X)) {
-                FarmController.money = 100000;
-                try {
-                    showCoins();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
         group.getChildren().add(timer);
+        animationTimer.start();
     }
 
     private void showProducts() throws Exception {
@@ -497,8 +505,10 @@ public class GUI extends Application {
                 }
             }
         }
-        for (int i = 0; i < Utils.mapSize; i++) {
-            for (int j = 0; j < Utils.mapSize; j++) {
+        for (int i = 0 ; i<Utils.mapSize ; i++)
+        {
+            for (int j = 0 ; j<Utils.mapSize ; j++)
+            {
                 for (Product product : FarmController.getInstance().ourProducts()) {
                     if (product instanceof Egg) {
                         eggs[product.getX()][product.getY()].setOnMouseClicked(event -> {
@@ -514,14 +524,12 @@ public class GUI extends Application {
                         wools[product.getX()][product.getY()].setOnMouseClicked(event -> {
                             wools[product.getX()][product.getY()].setVisible(false);
                             Depot.getDepot().getStoredProducts().add(new Wool());
-                        });
-                    }
+                        });                    }
                     if (product instanceof Milk) {
                         milks[product.getX()][product.getY()].setOnMouseClicked(event -> {
                             milks[product.getX()][product.getY()].setVisible(false);
                             Depot.getDepot().getStoredProducts().add(new Milk());
-                        });
-                    }
+                        });                    }
                 }
             }
         }
@@ -569,7 +577,7 @@ public class GUI extends Application {
             for (int j = 0; j < Utils.mapSize; j++) {
                 grassView[i][j].setImage(grassIMG);
                 grassView[i][j].relocate(Utils.START_Y + i * Utils.CELL_WIDTH, Utils.START_X + j * Utils.CELL_HEIGHT);
-                grassView[i][j].setViewport(new Rectangle2D(0, 0, grassIMG.getWidth() / 4, grassIMG.getHeight() / 4));
+                grassView[i][j].setViewport(new Rectangle2D(0, 0, grassIMG.getWidth()/4, grassIMG.getHeight()/4));
                 Grass.getInstance().grassAnimation().setCycleCount(Animation.INDEFINITE);
                 Grass.getInstance().grassAnimation().play();
                 if (FarmController.getInstance().getMap().getCells()[i][j].getGrass().isGrass())
@@ -591,8 +599,8 @@ public class GUI extends Application {
             if (i >= 0 && j >= 0 && i < Utils.mapSize && j < Utils.mapSize)
                 FarmController.getInstance().addGrassAction(i, j);
             try {
-                if (Well.getWell().getStorage() > 18)
-                    showGrass();
+                if (Well.getWell().getStorage()>18)
+                showGrass();
                 else
                     showEmpty();
             } catch (Exception e) {
@@ -642,14 +650,15 @@ public class GUI extends Application {
             behindView.setFitWidth(600);
             behindView.setFitHeight(550);
             behindView.setVisible(true);
-            int numberOfEgg = 0;
-            int numberOfDriedEgg = 0;
-            int numberOfMilk = 0;
-            int numberOfWool = 0;
+            int numberOfEgg=0;
+            int numberOfDriedEgg=0;
+            int numberOfMilk=0;
+            int numberOfWool=0;
             //int numberOfEgg;
 
 
-            for (int i = 0; i < Depot.getDepot().getStoredProducts().size(); i++) {
+            for (int i = 0 ; i<Depot.getDepot().getStoredProducts().size() ; i++)
+            {
                 if (Depot.getDepot().getStoredProducts().get(i) instanceof Egg) {
                     numberOfEgg++;
                     System.out.println("reza");
@@ -668,10 +677,10 @@ public class GUI extends Application {
             int finalNumberOfMilk = numberOfMilk;
             int finalNumberOfDriedEgg = numberOfDriedEgg;
             depotView.setOnMouseEntered(event1 -> {
-                System.out.println("Egg: " + finalNumberOfEgg);
-                System.out.println("Wool: " + finalNumberOfWool);
-                System.out.println("Milk: " + finalNumberOfMilk);
-                System.out.println("DriedEgg: " + finalNumberOfDriedEgg);
+                System.out.println("Egg: "+ finalNumberOfEgg);
+                System.out.println("Wool: "+ finalNumberOfWool);
+                System.out.println("Milk: "+ finalNumberOfMilk);
+                System.out.println("DriedEgg: "+ finalNumberOfDriedEgg);
 
             });
             if (!group.getChildren().contains(behindView))
@@ -696,14 +705,23 @@ public class GUI extends Application {
             Image imageOfSheep = new Image(new FileInputStream("UI\\Icons\\Products\\sheep.png"));
             Image imageOfTruck = new Image(new FileInputStream("UI\\Truck\\01.png"));
             Image imageOfHelicopter = new Image(new FileInputStream("UI\\Helicopter\\01.png"));
+            Image imageOfCat = new Image(new FileInputStream("pictures\\cat.jpg"));
+            Image imageOfDog = new Image(new FileInputStream("pictures\\dog.jpg"));
+
             ImageView viewOfTruck = new ImageView(imageOfTruck);
             ImageView viewOfHen = new ImageView(imageOfHen);
             ImageView viewOfCow = new ImageView(imageOfCow);
             ImageView viewOfSheep = new ImageView(imageOfSheep);
             ImageView viewOfHelicopter = new ImageView(imageOfHelicopter);
+            ImageView viewOfCat = new ImageView(imageOfCat);
+            ImageView viewOfDog = new ImageView(imageOfDog);
             ImageView area1 = new ImageView(imageOfBack);
             ImageView area2 = new ImageView(imageOfBack);
             ImageView area3 = new ImageView(imageOfBack);
+            ImageView area4 = new ImageView(imageOfBack);
+            ImageView area5 = new ImageView(imageOfBack);
+
+
             area1.relocate(0, -60);
             area1.setFitWidth(80);
             area1.setFitHeight(280);
@@ -713,6 +731,12 @@ public class GUI extends Application {
             area3.relocate(160, -60);
             area3.setFitWidth(80);
             area3.setFitHeight(280);
+            area4.relocate(240, -60);
+            area4.setFitWidth(80);
+            area4.setFitHeight(280);
+            area5.relocate(320, -60);
+            area5.setFitWidth(80);
+            area5.setFitHeight(280);
             viewOfHen.setFitHeight(60);
             viewOfHen.setFitWidth(60);
             viewOfHen.relocate(10, 10);
@@ -740,6 +764,39 @@ public class GUI extends Application {
                     e.printStackTrace();
                 }
             });
+            viewOfCat.relocate(250, 10);
+            viewOfCat.setFitHeight(60);
+            viewOfCat.setFitWidth(60);
+            viewOfCat.setOnMouseClicked(event -> {
+                try {
+                    Cat cat = new Cat();
+                    FarmController.getInstance().addAnimalAction(cat);
+                    showCoins();
+
+                }
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+            });
+            viewOfDog.setFitHeight(60);
+            viewOfDog.setFitWidth(60);
+            viewOfDog.relocate(330, 10);
+            viewOfDog.setOnMouseClicked(event -> {
+                try {
+
+                    FarmController.getInstance().addAnimalAction(new Dog());
+                    showCoins();
+
+                }
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+            });
+
+
+
             viewOfSheep.setFitHeight(60);
             viewOfSheep.setFitWidth(60);
             viewOfSheep.relocate(90, 10);
@@ -773,15 +830,24 @@ public class GUI extends Application {
             cowPrice.setFont(Font.font("cooper black", 30));
             cowPrice.setTextFill(Color.YELLOW);
             cowPrice.relocate(190, 80);
-            group.getChildren().addAll(area1, area2, area3);
-            group.getChildren().addAll(viewOfHen, viewOfCow, viewOfSheep, viewOfTruck, viewOfHelicopter);
-            group.getChildren().addAll(henPrice, sheepPrice, cowPrice);
+            Label catPrice = new Label("" + Utils.CAT_PRICE);
+            catPrice.setFont(Font.font("cooper black", 30));
+            catPrice.setTextFill(Color.YELLOW);
+            catPrice.relocate(270, 80);
+            Label DogPrice = new Label("" + Utils.DOG_PRICE);
+            DogPrice.setFont(Font.font("cooper black", 30));
+            DogPrice.setTextFill(Color.YELLOW);
+            DogPrice.relocate(350, 80);
+            group.getChildren().addAll(area1, area2, area3  ,area4 , area5);
+            group.getChildren().addAll(viewOfHen, viewOfCow, viewOfSheep, viewOfTruck, viewOfHelicopter , viewOfCat , viewOfDog);
+            group.getChildren().addAll(henPrice, sheepPrice, cowPrice , catPrice , DogPrice);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 
 
     }
+
 
 
     public void showWell() {
@@ -877,9 +943,9 @@ public class GUI extends Application {
         WeavingFactory.getWeavingFactory().checkLevelOfWeaving();
         ImageView weavingView = WeavingFactory.getWeavingFactory().getWeavingView();
         weavingView.setX(500);
-        weavingView.setY(700);
+        weavingView.setY(600);
         group.getChildren().add(weavingView);
-        weavingView.setViewport(new Rectangle2D(0, 0, weavingView.getImage().getWidth(), weavingView.getImage().getHeight()));
+        weavingView.setViewport(new Rectangle2D(0  , 0,weavingView.getImage().getWidth() , weavingView.getImage().getHeight()));
         WeavingFactory.getWeavingFactory().wavingAnimation().setCycleCount(Animation.INDEFINITE);
         WeavingFactory.getWeavingFactory().wavingAnimation().play();
         weavingView.setOnMouseClicked(event -> {
@@ -997,7 +1063,7 @@ public class GUI extends Application {
         upgradeWell.setViewport(new Rectangle2D(0, 0, 600, 544));
         Well.getWell().wellBoardAnimation(upgradeWell, 1).setCycleCount(Animation.INDEFINITE);
         Well.getWell().wellBoardAnimation(upgradeWell, 1).play();
-        group.getChildren().addAll(upgradeWell, viewOfSpinnery, viewUpgradeDepot, sewingView);
+        group.getChildren().addAll(upgradeWell, viewOfSpinnery, viewUpgradeDepot , sewingView);
         Label wellPrice = new Label("" + Utils.UPGRADE_WELL_COST);
         wellPrice.relocate(200, 109);
         wellPrice.setTextFill(Color.YELLOW);
@@ -1048,9 +1114,11 @@ public class GUI extends Application {
         });
 
         sewingView.setOnMouseClicked(event -> {
-            try {
+            try{
                 areYouSure("SewingFactory");
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 e.printStackTrace();
             }
         });
@@ -1120,7 +1188,8 @@ public class GUI extends Application {
                 Depot.getDepot().checkDepotLevel();
 
             }
-            if (toUpgrade.toLowerCase().equals("sewingfactory")) {
+            if (toUpgrade.toLowerCase().equals("sewingfactory"))
+            {
                 SewingFactory.getSewingFactory().checkLevelOfSwewingFactory();
                 SewingFactory.getSewingFactory().sewingAnimation().setCycleCount(Animation.INDEFINITE);
                 SewingFactory.getSewingFactory().sewingAnimation().play();

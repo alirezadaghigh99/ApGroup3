@@ -185,6 +185,15 @@ public class Depot extends Building implements Upgradable {
             e.printStackTrace();
         }
     }
+    Image MilkIconImage;
+
+    {
+        try {
+            sewingIconImage = new Image(new FileInputStream("Products\\Milk.png"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
     Image flourImageIcon;
 
@@ -220,6 +229,11 @@ public void checkDepotLevel()
     ImageView flouryCakeView = new ImageView(flouryCakeImageIcon);
     ImageView sewingView = new ImageView(sewingIconImage);
     ImageView carnivalView = new ImageView(carnivalDressIcon);
+    ImageView milkView = new ImageView(milKImageIcon);
+
+    public ImageView getMilkView() {
+        return milkView;
+    }
 
     public ImageView getEggView() {
         return EggView;

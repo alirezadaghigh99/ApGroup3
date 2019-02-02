@@ -4,61 +4,9 @@ import Model.OnMaps.Cell;
 import Model.OnMaps.Map;
 import Model.OurFarm;
 import Model.Utils;
-import javafx.scene.image.Image;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 
 public class Dog extends Animal {
-    Image DogToLeft;
-
-    {
-        try {
-            DogToLeft = new Image(new FileInputStream("Animals\\Africa\\Dog\\left.png"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    Image DogToDown;
-
-    {
-        try {
-            DogToDown = new Image(new FileInputStream("Animals\\Africa\\Dog\\down.png"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    Image DogToDownLeft;
-
-    {
-        try {
-            DogToDownLeft = new Image(new FileInputStream("Animals\\Africa\\Dog\\down_left.png"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    Image DogToUp;
-
-    {
-        try {
-            DogToUp = new Image(new FileInputStream("Animal\\Africa\\Dog\\up.png"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    Image DogToUpLeft;
-
-    {
-        try {
-            DogToUpLeft = new Image(new FileInputStream("Animal\\Africa\\Dog\\up_left.png"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
 
 
     @Override
@@ -100,7 +48,7 @@ public class Dog extends Animal {
 
     @Override
     public boolean isMoving() {
-        return false;
+        return true;
     }
 
     @Override
