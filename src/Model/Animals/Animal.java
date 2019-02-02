@@ -100,6 +100,7 @@ public abstract class Animal extends Entity {
         this.moved = moved;
     }
 
+
     public abstract boolean isMoving();
     protected Image toLeft  ;
     protected Image toDownLeft  ;

@@ -120,7 +120,7 @@ public class GUI extends Application {
                         for (Animal animal : animals) {
                             //  System.out.println("mamad");
 
-                            SpriteAnimalAnimation animation = new SpriteAnimalAnimation(animal, 1000, group);
+                            SpriteAnimalAnimation animation = new SpriteAnimalAnimation(animal, 1000, group , now);
                             ImageView imageView1 = animation.getImageView();
                             imageView1.setViewport(new Rectangle2D(0, 0, animation.getWidth(), animation.getHeight()));
                             animation.setX(animal.getX());
