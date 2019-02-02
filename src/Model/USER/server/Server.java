@@ -14,19 +14,17 @@ import java.util.ArrayList;
 
 public class Server implements MessageListener {
     private static Server instance = new Server(Utils.SERVER_PORT);
-    private int port1;
-    private int port2;
-    private ArrayList<Integer> ports = new ArrayList<Integer>();
+    private int port;
 
 
-    private ServerSocket serverSocket1;
-    private ServerSocket serverSocket2;
-    private Socket clientSocket1;
-    private ObjectOutputStream outputStream1;
-    private ObjectInputStream inputStream1;
 
-    private Server(int port1) {
-        this.port1 = port1;
+    private ServerSocket serverSocket;
+    private Socket clientSocket;
+    private ObjectOutputStream outputStream;
+    private ObjectInputStream inputStream;
+
+    private Server(int port) {
+        this.port = port;
     }
 
     public static Server getInstance() {
@@ -46,20 +44,20 @@ public class Server implements MessageListener {
 
 
     private void setup() throws IOException {
-        serverSocket1 = new ServerSocket(port1);
+        serverSocket = new ServerSocket(port);
     }
 
     private void waitForClient() throws IOException {
-        clientSocket1 = serverSocket1.accept();
+        clientSocket = serverSocket.accept();
     }
 
     private void initIOStreams() throws IOException {
-        outputStream1 = new ObjectOutputStream(clientSocket1.getOutputStream());
-        inputStream1 = new ObjectInputStream(clientSocket1.getInputStream());
+        outputStream = new ObjectOutputStream(clientSocket.getOutputStream());
+        inputStream = new ObjectInputStream(clientSocket.getInputStream());
     }
 
     private void startThreads() {
-        new Thread(new GetDataRunnable(inputStream1, this)).start();
+        new Thread(new GetDataRunnable(inputStream, this)).start();
     }
 
     public void sendData(String text, String from) {

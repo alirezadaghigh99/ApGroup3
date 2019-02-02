@@ -1,21 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c64801da-0b49-48e1-b1f4-71066c99b6ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Model/USER/client/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/USER/network_models/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/USER/network_models/Profile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/USER/server/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/USER/threads/GetDataRunnable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/USER/threads/MessageListener.java" afterDir="false" />
+    <list default="true" id="c64801da-0b49-48e1-b1f4-71066c99b6ad" name="Default Changelist" comment="client - server added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< Updated upstream
-      <change beforePath="$PROJECT_DIR$/src/Model/USER/Profile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Utils.java" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/GUI.java" afterDir="false" />
->>>>>>> Stashed changes
+      <change beforePath="$PROJECT_DIR$/src/Model/USER/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/USER/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/USER/network_models/Profile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/USER/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/USER/server/Server.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -252,30 +242,21 @@
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.26" value="1" />
-          <entry key="project.open.time.27" value="1" />
           <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.34" value="1" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-<<<<<<< Updated upstream
           <entry key="java" value="16262" />
-=======
-          <entry key="java" value="17796" />
->>>>>>> Stashed changes
           <entry key="txt" value="43" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-<<<<<<< Updated upstream
           <entry key="JAVA" value="16262" />
-=======
-          <entry key="JAVA" value="17796" />
->>>>>>> Stashed changes
           <entry key="PLAIN_TEXT" value="43" />
         </counts>
       </usages-collector>
@@ -295,22 +276,26 @@
     <session id="1550425542">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="26" />
+          <entry key="java" value="67" />
+          <entry key="txt" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="26" />
+          <entry key="JAVA" value="67" />
+          <entry key="PLAIN_TEXT" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="1" />
+          <entry key="java" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="1" />
+          <entry key="JAVA" value="3" />
         </counts>
       </usages-collector>
     </session>
@@ -320,21 +305,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-            <state relative-caret-position="246">
-              <caret line="154" column="13" selection-start-line="154" selection-start-column="13" selection-end-line="154" selection-end-column="13" />
+            <state relative-caret-position="382">
+              <caret line="162" column="13" selection-start-line="162" selection-start-column="13" selection-end-line="162" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-=======
-            <state relative-caret-position="114">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#29451#29452#0" expanded="true" />
-                <element signature="e#29477#29478#0" expanded="true" />
-                <element signature="e#29508#29509#0" expanded="true" />
-                <element signature="e#29534#29535#0" expanded="true" />
->>>>>>> Stashed changes
               </folding>
             </state>
           </provider>
@@ -349,63 +323,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/views/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
             <state relative-caret-position="202">
-              <caret line="461" column="17" selection-start-line="461" selection-start-column="17" selection-end-line="461" selection-end-column="17" />
+              <caret line="591" column="17" selection-start-line="591" selection-start-column="17" selection-end-line="591" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#8621#8622#0" expanded="true" />
-                <element signature="e#8655#8656#0" expanded="true" />
-                <element signature="e#8723#8724#0" expanded="true" />
-                <element signature="e#8769#8770#0" expanded="true" />
-                <element signature="e#22180#22181#0" expanded="true" />
-                <element signature="e#22263#22264#0" expanded="true" />
-=======
-            <state relative-caret-position="460">
-              <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
-              <folding>
-                <element signature="e#471#472#0" expanded="true" />
-                <element signature="e#499#500#0" expanded="true" />
-                <element signature="e#538#539#0" expanded="true" />
-                <element signature="e#572#573#0" expanded="true" />
-                <element signature="e#3385#3386#0" expanded="true" />
-                <element signature="e#3408#3409#0" expanded="true" />
->>>>>>> Stashed changes
+                <element signature="e#8107#8108#0" expanded="true" />
+                <element signature="e#8141#8142#0" expanded="true" />
+                <element signature="e#8209#8210#0" expanded="true" />
+                <element signature="e#8255#8256#0" expanded="true" />
+                <element signature="e#23288#23289#0" expanded="true" />
+                <element signature="e#23371#23372#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/USER/network_models/Message.java">
-          <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-            <state relative-caret-position="68">
-              <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
-=======
-            <state relative-caret-position="265">
-              <caret line="955" column="55" selection-start-line="955" selection-start-column="55" selection-end-line="955" selection-end-column="55" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
->>>>>>> Stashed changes
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Model/USER/threads/MessageListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-            <state relative-caret-position="136">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-=======
-            <state relative-caret-position="2530">
-              <caret line="110" column="46" selection-start-line="110" selection-start-column="46" selection-end-line="110" selection-end-column="46" />
->>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -422,29 +353,17 @@
           </provider>
         </entry>
       </file>
-<<<<<<< Updated upstream
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/USER/server/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="65" selection-start-line="65" selection-end-line="65" />
+            <state relative-caret-position="482">
+              <caret line="59" column="50" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#946#947#0" expanded="true" />
                 <element signature="e#980#981#0" expanded="true" />
                 <element signature="e#1624#1625#0" expanded="true" />
                 <element signature="e#1699#1700#0" expanded="true" />
-=======
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/views/GUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="605" lean-forward="true" selection-start-line="605" selection-end-line="605" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#22446#22447#0" expanded="true" />
-                <element signature="e#22529#22530#0" expanded="true" />
->>>>>>> Stashed changes
               </folding>
             </state>
           </provider>
@@ -453,29 +372,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../MyChatroom/out/production/MyChatroom/Controller/Server.class">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
             <state relative-caret-position="-531">
               <folding>
                 <element signature="e#0#2059#0" expanded="true" />
               </folding>
-=======
-            <state relative-caret-position="253">
-              <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
->>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/USER/client/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-            <state relative-caret-position="527">
-              <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
-=======
-            <state relative-caret-position="3151">
-              <caret line="164" column="16" selection-start-line="164" selection-start-column="16" selection-end-line="164" selection-end-column="16" />
->>>>>>> Stashed changes
+            <state relative-caret-position="125">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -484,21 +393,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.023/Server.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/FarmController.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
             <state relative-caret-position="23">
               <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
-=======
-            <state relative-caret-position="2070">
-              <caret line="123" column="28" selection-start-line="123" selection-start-column="28" selection-end-line="123" selection-end-column="28" />
-              <folding>
-                <element signature="e#2598#2599#0" expanded="true" />
-                <element signature="e#2627#2628#0" expanded="true" />
-                <element signature="e#3361#3362#0" expanded="true" />
-                <element signature="e#3397#3398#0" expanded="true" />
-              </folding>
->>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -601,26 +504,15 @@
         <option value="$PROJECT_DIR$/src/Model/Animals/DomesticAnimal.java" />
         <option value="$PROJECT_DIR$/src/Model/Animals/WildAnimal.java" />
         <option value="$PROJECT_DIR$/src/Model/OnMaps/Cage.java" />
-<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java" />
         <option value="$PROJECT_DIR$/src/Controller/FarmController.java" />
-=======
->>>>>>> Stashed changes
         <option value="$PROJECT_DIR$/src/Model/Workshop/SewingFactory.java" />
         <option value="$PROJECT_DIR$/src/Model/Animals/Animal.java" />
-<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/src/views/GUI.java" />
         <option value="$PROJECT_DIR$/src/Model/USER/Profile.java" />
         <option value="$PROJECT_DIR$/src/Model/Utils.java" />
-        <option value="$PROJECT_DIR$/src/Model/USER/server/Server.java" />
         <option value="$PROJECT_DIR$/src/Model/USER/client/Client.java" />
-=======
-        <option value="$PROJECT_DIR$/src/Model/USER/Profile.java" />
-        <option value="$PROJECT_DIR$/src/Model/Animals/ProducerAnimal.java" />
-        <option value="$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java" />
-        <option value="$PROJECT_DIR$/src/Controller/FarmController.java" />
-        <option value="$PROJECT_DIR$/src/views/GUI.java" />
->>>>>>> Stashed changes
+        <option value="$PROJECT_DIR$/src/Model/USER/server/Server.java" />
       </list>
     </option>
   </component>
@@ -650,7 +542,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -713,12 +604,21 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
               <item name="USER" type="462c0819:PsiDirectoryNode" />
+              <item name="network_models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="frenz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="frenz" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="USER" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -726,14 +626,10 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
-<<<<<<< Updated upstream
     <property name="SearchEverywhereHistoryKey" value="getSp&#9;PSI&#9;JAVA://Model.Animals.Animal#getSpeed&#10;Ut&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/ApGroup3/src/Model/Utils.java&#10;playGame&#9;PSI&#9;JAVA://views.GUI#playGame&#10;showGrass&#9;PSI&#9;JAVA://views.GUI#showGrass&#10;isMov&#9;PSI&#9;JAVA://Model.Animals.Animal#isMoving&#10;isMo&#9;PSI&#9;JAVA://Model.Animals.Animal#isMoving&#10;showWea&#9;PSI&#9;JAVA://views.GUI#showWeavingFactory&#10;showWe&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showDe&#9;PSI&#9;JAVA://views.GUI#showDepot&#10;showSpinnery&#9;PSI&#9;JAVA://views.GUI#showspinneryFactory&#10;sPR&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/ApGroup3/src/Model/SpriteAnimation.java&#10;showWell&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showdep&#9;PSI&#9;JAVA://views.GUI#showDepot&#10;playgame&#9;PSI&#9;JAVA://views.GUI#playGame&#10;load&#9;PSI&#9;JAVA://Controller.FarmController#load&#10;save&#9;PSI&#9;JAVA://Controller.FarmController#save&#10;farmcont&#9;PSI&#9;JAVA://Controller.FarmController&#10;upMap&#9;PSI&#9;JAVA://views.GUI#showUpMap&#10;showCow&#9;PSI&#9;JAVA://views.GUI#showCow&#10;showHen&#9;PSI&#9;JAVA://views.GUI#showHen&#10;collision&#9;PSI&#9;JAVA://Controller.FarmController#collision&#10;showhen&#9;PSI&#9;JAVA://views.GUI#showHen&#10;showdepot&#9;null&#9;null&#10;eggPow&#9;PSI&#9;JAVA://views.GUI#showEggPowderPlant&#10;showCa&#9;PSI&#9;JAVA://views.GUI#showCakeBakery&#10;showCake&#9;PSI&#9;JAVA://views.GUI#showCakeBakery&#10;play&#9;PSI&#9;JAVA://views.GUI#playGame&#10;passtur&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;showW&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showGras&#9;PSI&#9;JAVA://views.GUI#showGrass&#10;henVie&#9;PSI&#9;JAVA://views.GUI#henView&#10;showhe&#9;PSI&#9;JAVA://views.GUI#showHen&#10;Turn&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;next&#9;PSI&#9;JAVA://Model.Animals.Animal#nextTurn&#10;showUpMa&#9;PSI&#9;JAVA://views.GUI#showUpMap&#10;showco&#9;PSI&#9;JAVA://views.GUI#showCow&#10;showwell&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showgrass&#9;PSI&#9;JAVA://views.GUI#showGrass&#10;pri&#9;PSI&#9;JAVA://Controller.FarmController#printInfoAction&#10;pass&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;passT&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;money&#9;PSI&#9;JAVA://Controller.FarmController#money&#10;addW&#9;PSI&#9;JAVA://Controller.FarmController#addWaterAction&#10;add&#9;PSI&#9;JAVA://Controller.FarmController#addAnimalAction&#10;tur&#9;PSI&#9;JAVA://Model.Animals.Animal#nextTurn&#10;akba&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/Approject/akbar.json&#10;Map&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/Approject/src/Model/OnMaps/Map.java&#10;map&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/Approject/maps.json&#10;go&#9;PSI&#9;JAVA://Controller.FarmController#goAction&#10;sale&#9;PSI&#9;JAVA://Controller.FarmController#saleAction" />
-=======
-    <property name="SearchEverywhereHistoryKey" value="showWell&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showGrass&#9;PSI&#9;JAVA://views.GUI#showGrass&#10;showProdu&#9;PSI&#9;JAVA://views.GUI#showProducts&#10;showProd&#9;null&#9;null&#10;showDepot&#9;PSI&#9;JAVA://views.GUI#showDepot&#10;showPro&#9;PSI&#9;JAVA://views.GUI#showProducts&#10;showProduct&#9;PSI&#9;JAVA://views.GUI#showProducts&#10;getSp&#9;PSI&#9;JAVA://Model.Animals.Animal#getSpeed&#10;Ut&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/ApGroup3/src/Model/Utils.java&#10;playGame&#9;PSI&#9;JAVA://views.GUI#playGame&#10;isMov&#9;PSI&#9;JAVA://Model.Animals.Animal#isMoving&#10;isMo&#9;PSI&#9;JAVA://Model.Animals.Animal#isMoving&#10;showWea&#9;PSI&#9;JAVA://views.GUI#showWeavingFactory&#10;showWe&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showDe&#9;PSI&#9;JAVA://views.GUI#showDepot&#10;showSpinnery&#9;PSI&#9;JAVA://views.GUI#showspinneryFactory&#10;sPR&#9;FILE&#9;file://C:/Users/SE7EN-PC/Desktop/ApGroup3/src/Model/SpriteAnimation.java&#10;showdep&#9;PSI&#9;JAVA://views.GUI#showDepot&#10;playgame&#9;PSI&#9;JAVA://views.GUI#playGame&#10;load&#9;PSI&#9;JAVA://Controller.FarmController#load&#10;save&#9;PSI&#9;JAVA://Controller.FarmController#save&#10;farmcont&#9;PSI&#9;JAVA://Controller.FarmController&#10;upMap&#9;PSI&#9;JAVA://views.GUI#showUpMap&#10;showCow&#9;PSI&#9;JAVA://views.GUI#showCow&#10;showHen&#9;PSI&#9;JAVA://views.GUI#showHen&#10;collision&#9;PSI&#9;JAVA://Controller.FarmController#collision&#10;showhen&#9;PSI&#9;JAVA://views.GUI#showHen&#10;showdepot&#9;null&#9;null&#10;eggPow&#9;PSI&#9;JAVA://views.GUI#showEggPowderPlant&#10;showCa&#9;PSI&#9;JAVA://views.GUI#showCakeBakery&#10;showCake&#9;PSI&#9;JAVA://views.GUI#showCakeBakery&#10;play&#9;PSI&#9;JAVA://views.GUI#playGame&#10;passtur&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;showW&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showGras&#9;PSI&#9;JAVA://views.GUI#showGrass&#10;henVie&#9;PSI&#9;JAVA://views.GUI#henView&#10;showhe&#9;PSI&#9;JAVA://views.GUI#showHen&#10;Turn&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;next&#9;PSI&#9;JAVA://Model.Animals.Animal#nextTurn&#10;showUpMa&#9;PSI&#9;JAVA://views.GUI#showUpMap&#10;showco&#9;PSI&#9;JAVA://views.GUI#showCow&#10;showwell&#9;PSI&#9;JAVA://views.GUI#showWell&#10;showgrass&#9;PSI&#9;JAVA://views.GUI#showGrass&#10;pri&#9;PSI&#9;JAVA://Controller.FarmController#printInfoAction&#10;pass&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;passT&#9;PSI&#9;JAVA://Controller.FarmController#passTurn&#10;money&#9;PSI&#9;JAVA://Controller.FarmController#money&#10;addW&#9;PSI&#9;JAVA://Controller.FarmController#addWaterAction&#10;add&#9;PSI&#9;JAVA://Controller.FarmController#addAnimalAction" />
->>>>>>> Stashed changes
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548910850067" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549105189845" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ChatRoom" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -751,7 +647,6 @@
       <recent name="C:\Users\SE7EN-PC\Desktop\Approject\src" />
     </key>
   </component>
-<<<<<<< Updated upstream
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
     <UpdatedFiles>
       <FILE-GROUP>
@@ -767,7 +662,6 @@
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
           <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/Animals/ProducerAnimal.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/views/GUI.java</PATH>
         </FILE-GROUP>
@@ -865,8 +759,6 @@
       </FILE-GROUP>
     </UpdatedFiles>
   </component>
-=======
->>>>>>> Stashed changes
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -1020,15 +912,7 @@
       <workItem from="1548769124485" duration="6061000" />
       <workItem from="1548789038490" duration="1188000" />
       <workItem from="1548905274023" duration="6150000" />
-<<<<<<< Updated upstream
       <workItem from="1548917722611" duration="10640000" />
-    </task>
-    <task id="LOCAL-00008" summary="nothing">
-      <created>1544736779682</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1544736779682</updated>
     </task>
     <task id="LOCAL-00009" summary="nothing">
       <created>1544793418267</created>
@@ -1036,10 +920,6 @@
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
       <updated>1544793418267</updated>
-=======
-      <workItem from="1548917722611" duration="12060000" />
-      <workItem from="1548963388089" duration="9216000" />
->>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00010" summary="nothing">
       <created>1544793689273</created>
@@ -1370,33 +1250,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548760634597</updated>
     </task>
-<<<<<<< Updated upstream
-    <option name="localTasksCounter" value="57" />
-    <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="342948000" />
-=======
-    <task id="LOCAL-00057" summary="images">
-      <created>1548934161254</created>
+    <task id="LOCAL-00057" summary="client - server added">
+      <created>1549097022710</created>
       <option name="number" value="00057" />
       <option name="presentableId" value="LOCAL-00057" />
       <option name="project" value="LOCAL" />
-      <updated>1548934161255</updated>
+      <updated>1549097022710</updated>
     </task>
-    <task id="LOCAL-00058" summary="images">
-      <created>1548942344622</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1548942344632</updated>
-    </task>
-    <option name="localTasksCounter" value="59" />
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="356281000" />
->>>>>>> Stashed changes
+    <option name="totallyTimeSpent" value="345068000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1408,16 +1273,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-<<<<<<< Updated upstream
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25402144" />
-=======
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2700454" />
->>>>>>> Stashed changes
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25402144" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1426,7 +1285,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32984293" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30136988" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30136988" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39554796" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1490,7 +1349,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="cage complete" />
     <MESSAGE value="cage and collision debugged" />
     <MESSAGE value="some thing upgrade" />
     <MESSAGE value="next turn started" />
@@ -1515,7 +1373,8 @@
     <MESSAGE value="sfdadsf" />
     <MESSAGE value="akbar" />
     <MESSAGE value="images" />
-    <option name="LAST_COMMIT_MESSAGE" value="images" />
+    <MESSAGE value="client - server added" />
+    <option name="LAST_COMMIT_MESSAGE" value="client - server added" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -1525,20 +1384,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pictures/play.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Animals/Cat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1150">
-          <caret line="62" column="5" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pictures/Full.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pictures/yesButton.svg" />
     <entry file="file://$PROJECT_DIR$/pictures/yesButton.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1675,6 +1520,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Animals/WildAnimal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+          <folding>
+            <element signature="e#2362#2363#0" expanded="true" />
+            <element signature="e#2394#2395#0" expanded="true" />
+            <element signature="e#2438#2439#0" expanded="true" />
+            <element signature="e#2470#2471#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/OnMaps/Cage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
@@ -1700,7 +1558,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="89">
           <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="21" />
-<<<<<<< Updated upstream
         </state>
       </provider>
     </entry>
@@ -1726,29 +1583,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
-=======
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Workshop/SewingFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
           <folding>
             <element signature="e#471#472#0" expanded="true" />
             <element signature="e#499#500#0" expanded="true" />
             <element signature="e#538#539#0" expanded="true" />
             <element signature="e#572#573#0" expanded="true" />
+            <element signature="e#2565#2566#0" expanded="true" />
+            <element signature="e#2613#2614#0" expanded="true" />
             <element signature="e#3385#3386#0" expanded="true" />
-            <element signature="e#3408#3409#0" expanded="true" />
+            <element signature="e#3413#3414#0" expanded="true" />
           </folding>
->>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
         <state relative-caret-position="436">
           <caret line="158" column="21" lean-forward="true" selection-start-line="158" selection-start-column="21" selection-end-line="158" selection-end-column="21" />
         </state>
@@ -1756,43 +1605,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="154" column="13" selection-start-line="154" selection-start-column="13" selection-end-line="154" selection-end-column="13" />
+        <state relative-caret-position="382">
+          <caret line="162" column="13" selection-start-line="162" selection-start-column="13" selection-end-line="162" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-=======
-        <state relative-caret-position="2530">
-          <caret line="110" column="46" selection-start-line="110" selection-start-column="46" selection-end-line="110" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Animals/WildAnimal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-          <folding>
-            <element signature="e#2362#2363#0" expanded="true" />
-            <element signature="e#2394#2395#0" expanded="true" />
-            <element signature="e#2438#2439#0" expanded="true" />
-            <element signature="e#2470#2471#0" expanded="true" />
->>>>>>> Stashed changes
           </folding>
         </state>
       </provider>
     </entry>
-<<<<<<< Updated upstream
-=======
-    <entry file="file://$PROJECT_DIR$/src/Model/USER/Profile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
->>>>>>> Stashed changes
     <entry file="file://$PROJECT_DIR$/src/Model/Animals/Animal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3151">
+        <state relative-caret-position="158">
           <caret line="164" column="16" selection-start-line="164" selection-start-column="16" selection-end-line="164" selection-end-column="16" />
           <folding>
             <element signature="e#1686#1687#0" expanded="true" />
@@ -1823,52 +1646,35 @@
         </state>
       </provider>
     </entry>
-<<<<<<< Updated upstream
-    <entry file="file://$PROJECT_DIR$/src/views/GUI.java">
+    <entry file="file://$PROJECT_DIR$/src/Model/USER/Profile.java" />
+    <entry file="file://$PROJECT_DIR$/src/Model/USER/network_models/Message.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="461" column="17" selection-start-line="461" selection-start-column="17" selection-end-line="461" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#8621#8622#0" expanded="true" />
-            <element signature="e#8655#8656#0" expanded="true" />
-            <element signature="e#8723#8724#0" expanded="true" />
-            <element signature="e#8769#8770#0" expanded="true" />
-            <element signature="e#22180#22181#0" expanded="true" />
-            <element signature="e#22263#22264#0" expanded="true" />
-=======
-    <entry file="file://$PROJECT_DIR$/src/Model/Animals/ProducerAnimal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2070">
-          <caret line="123" column="28" selection-start-line="123" selection-start-column="28" selection-end-line="123" selection-end-column="28" />
-          <folding>
-            <element signature="e#2598#2599#0" expanded="true" />
-            <element signature="e#2627#2628#0" expanded="true" />
-            <element signature="e#3361#3362#0" expanded="true" />
-            <element signature="e#3397#3398#0" expanded="true" />
->>>>>>> Stashed changes
-          </folding>
+        <state relative-caret-position="68">
+          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-<<<<<<< Updated upstream
-    <entry file="file://$PROJECT_DIR$/src/Model/USER/Profile.java" />
     <entry file="file://$PROJECT_DIR$/src/Model/USER/network_models/Profile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="5" selection-start-line="4" selection-start-column="4" selection-end-line="27" selection-end-column="5" />
-          <folding>
-            <element signature="e#424#425#0" expanded="true" />
-            <element signature="e#455#456#0" expanded="true" />
-            <element signature="e#503#504#0" expanded="true" />
-            <element signature="e#543#544#0" expanded="true" />
-            <element signature="e#578#579#0" expanded="true" />
-            <element signature="e#609#610#0" expanded="true" />
-            <element signature="e#657#658#0" expanded="true" />
-            <element signature="e#697#698#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="289">
+          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/USER/threads/MessageListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.383/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1844" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.023/Server.java">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../MyChatroom/out/production/MyChatroom/Controller/Server.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -1879,10 +1685,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/USER/client/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/USER/server/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        <state relative-caret-position="482">
+          <caret line="59" column="50" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#946#947#0" expanded="true" />
@@ -1893,46 +1709,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/USER/client/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-=======
-    <entry file="file://$PROJECT_DIR$/src/Model/SpriteAnimalAnimation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#29451#29452#0" expanded="true" />
-            <element signature="e#29477#29478#0" expanded="true" />
-            <element signature="e#29508#29509#0" expanded="true" />
-            <element signature="e#29534#29535#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/FarmController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="955" column="55" selection-start-line="955" selection-start-column="55" selection-end-line="955" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="605" lean-forward="true" selection-start-line="605" selection-end-line="605" />
+        <state relative-caret-position="202">
+          <caret line="591" column="17" selection-start-line="591" selection-start-column="17" selection-end-line="591" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#22446#22447#0" expanded="true" />
-            <element signature="e#22529#22530#0" expanded="true" />
->>>>>>> Stashed changes
+            <element signature="e#8107#8108#0" expanded="true" />
+            <element signature="e#8141#8142#0" expanded="true" />
+            <element signature="e#8209#8210#0" expanded="true" />
+            <element signature="e#8255#8256#0" expanded="true" />
+            <element signature="e#23288#23289#0" expanded="true" />
+            <element signature="e#23371#23372#0" expanded="true" />
           </folding>
         </state>
       </provider>

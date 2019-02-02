@@ -14,6 +14,13 @@ public class Client implements MessageListener {
     private Socket clientSocket;
     private ObjectOutputStream outputStream;
     private ObjectInputStream inputStream;
+    private String userName;
+    private String nickName;
+
+    public Client(String userName, String nickName) {
+        this.userName = userName;
+        this.nickName = nickName;
+    }
 
     public void start(){
         try {
