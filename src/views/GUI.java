@@ -361,7 +361,8 @@ public class GUI extends Application {
         playButton.setOnMouseClicked(event -> {
             group.getChildren().removeAll(group.getChildren());
             try {
-                playGame();
+                //playGame();
+                showStages();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -433,6 +434,87 @@ public class GUI extends Application {
                 e.printStackTrace();
             }
         });
+    }
+    public void showStages()
+    {
+        Image stackView = null ;
+        try {
+            stackView = new Image(new FileInputStream("pictures\\blank.jpg"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image imageOfLevel1 = null;
+        try {
+             imageOfLevel1 = new Image(new FileInputStream("pictures\\easy.jpg"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image imageOfLevel2 = null;
+        try {
+            imageOfLevel2 = new Image(new FileInputStream("pictures\\normal.jpg"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Image imageOfLevel3 = null;
+        try {
+            imageOfLevel3 = new Image(new FileInputStream("pictures\\hard.jpg"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        ImageView blankView = new ImageView(stackView);
+        ImageView easyView = new ImageView(imageOfLevel1);
+        ImageView normalView = new ImageView(imageOfLevel2);
+        ImageView hardView = new ImageView(imageOfLevel3);
+        blankView.setFitHeight(background.getFitHeight());
+        blankView.setFitWidth(background.getFitWidth());
+        blankView.setX(background.getX());
+        blankView.setY(background.getY());
+        easyView.setX(200);
+        easyView.setY(200);
+        normalView.setX(200);
+        normalView.setY(400);
+        hardView.setX(400);
+        hardView.setY(300);
+        easyView.setFitWidth(100);
+        easyView.setFitHeight(100);
+        normalView.setFitWidth(100);
+        normalView.setFitHeight(100);
+        hardView.setFitWidth(100);
+        hardView.setFitHeight(100);
+        group.getChildren().addAll(blankView);
+        group.getChildren().addAll(easyView , normalView , hardView);
+        easyView.setOnMouseClicked(event -> {
+            FarmController.getInstance().setLevelOfGame(1);
+            group.getChildren().removeAll(group.getChildren());
+
+            try {
+                playGame();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        normalView.setOnMouseClicked(event -> {
+            group.getChildren().removeAll(group.getChildren());
+
+            FarmController.getInstance().setLevelOfGame(2);
+            try {
+                playGame();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        hardView.setOnMouseClicked(event -> {
+            group.getChildren().removeAll(group.getChildren());
+
+            FarmController.getInstance().setLevelOfGame(3);
+            try {
+                playGame();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+
     }
 
     public void playGame() throws Exception {
