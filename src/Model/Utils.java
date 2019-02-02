@@ -153,6 +153,9 @@ public class Utils {
     public static final int COULUMNS_OF_UP_LEFT_CAT = 6;
     public static final int COULUMNS_OF_UP_LEFT_BEAR = 4;
     public static final int COULUMNS_OF_UP_LEFT_LION = 6;
+    public static final int SERVER_PORT = 12345;
+    public static final String SERVER_ADDRESS  = "localhost";
+
     private Utils() {
     }
 
