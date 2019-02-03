@@ -100,8 +100,8 @@ public class    SpriteAnimalAnimation extends Transition {
             imageView.relocate(Utils.START_Y + x * Utils.CELL_WIDTH, Utils.START_X + y * Utils.CELL_HEIGHT);
                 imageView.setVisible(false);
             if (animal.isMoving()) {
-                imageView.setX(imageView.getX() + animal.getxDirection() * cellSize / count);
-                imageView.setY(imageView.getY() + animal.getyDirection() * cellSize / count);
+                imageView.setX(imageView.getX() + animal.getxDirection() * Utils.CELL_WIDTH / count);
+                imageView.setY(imageView.getY() + animal.getyDirection() * Utils.CELL_HEIGHT / count);
             }
             lastIndex = index;
         }

@@ -15,6 +15,7 @@ import java.io.FileNotFoundException;
 
 public class CakeBakery extends WorkShop {
     private static CakeBakery cakeBakery = new CakeBakery();
+
     // flour & cookie --> cake
     private boolean count1 = false;
     private boolean count2 = false;
@@ -34,6 +35,21 @@ Image cakeBakeryImage;
             e.printStackTrace();
         }
     }
+    Image startOfCakeBakery;
+
+    {
+        try {
+            startOfCakeBakery = new Image(new FileInputStream("pictures\\start1.jpg"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    ImageView startViewOfCakeBakery = new ImageView(startOfCakeBakery);
+
+    public ImageView getStartViewOfCakeBakery() {
+        return startViewOfCakeBakery;
+    }
+
     ImageView viewOfCakeBakery = new ImageView(cakeBakeryImage);
 
     public ImageView getViewOfCakeBakery() {
@@ -69,10 +85,6 @@ Image cakeBakeryImage;
         } else {
             for (int k = ourFarm.getInPutsOfCakeBakery().size() - 1; k >= 0; k--) {
                 if (Depot.getDepot().getStoredProducts().get(k) instanceof Egg)
-                    count1 = true;
-                if (Depot.getDepot().getStoredProducts().get(k) instanceof Flour)
-                    count2 = true;
-                if (count1 && count2)
                     Depot.getDepot().getStoredProducts().add(new Cake());
 
             }

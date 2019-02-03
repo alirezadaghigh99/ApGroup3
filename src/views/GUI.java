@@ -998,7 +998,7 @@ public class GUI extends Application {
 
     public void showCakeBakery() {
         ImageView viewCakeBakery = CakeBakery.getCakeBakery().getViewOfCakeBakery();
-        ImageView startView = CakeBakery.getCakeBakery().getStartView();
+        ImageView startView = CakeBakery.getCakeBakery().getStartViewOfCakeBakery();
         startView.setX(110);
         startView.setY(210);
 
