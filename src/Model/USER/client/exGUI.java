@@ -44,6 +44,7 @@ public class exGUI extends Application {
             if (event.getCode().equals(KeyCode.ENTER)) {
                 boolean existed = false;
                 for (Client client : Server.getInstance().getClients()) {
+                    System.out.println(client.getUserName());
                     if (client.getUserName().equals(id.getText())) {
                         existed = true;
                         break;
@@ -56,6 +57,7 @@ public class exGUI extends Application {
                 }
                 else{
                     System.out.println("existed");
+                    user();
                 }
                 name.clear();
                 id.clear();
